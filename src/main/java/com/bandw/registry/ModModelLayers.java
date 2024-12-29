@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 
 public class ModModelLayers implements ClientModInitializer {
     public static final EntityModelLayer DARK_ENDERMAN_LAYER = new EntityModelLayer(new Identifier("bandw", "dark_enderman"), "main");
-
     @Override
     public void onInitializeClient() {
         EntityModelLayerRegistry.registerModelLayer(DARK_ENDERMAN_LAYER, DarkEndermanModel::getTexturedModelData);
