@@ -43,8 +43,7 @@ public class dark_endermanAnimation {
 			new Keyframe(1.5F, AnimationHelper.createRotationalVector(22.5F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
 			new Keyframe(2.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
 		))
-		.build();
-
+        .build();
 	public static final Animation head_explosion = Animation.Builder.create(2.5F)
 		.addBoneAnimation("Head", new Transformation(Transformation.Targets.ROTATE, 
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(1440.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
