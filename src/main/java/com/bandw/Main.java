@@ -6,7 +6,11 @@ import com.bandw.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 // mod checker utility
-public class ModChecker { public static boolean isModLoaded(String modId) { return FabricLoader.getInstance().isModLoaded(modId);};};
+public class ModChecker { 
+    public static boolean isModLoaded(String modId) {
+        return FabricLoader.getInstance().isModLoaded(modId);
+    };
+};
 public class Main implements ModInitializer {
     public static boolean isCharterLoaded;
     @Override
