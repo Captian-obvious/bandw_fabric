@@ -15,6 +15,7 @@ public class Main implements ModInitializer {
     public static boolean isCharterLoaded;
     @Override
     public void onInitialize() {
+        ModBlocks.registerBlocks();
         ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
