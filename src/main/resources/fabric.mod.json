@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "bandw",
+  "version": "1.0.0",
+  "name": "B&W",
+  "description": "A mod adding entites, weapons, and judgment.",
+  "authors": [
+    "YourName"
+  ],
+  "contact": {
+    "homepage": "https://example.com",
+    "sources": "https://github.com/Captian-obvious/bandw-fabric"
+  },
+  "license": "MIT",
+  "icon": "assets/bandw/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.bandw.Main"
+    ],
+    "client": [
+      "com.bandw.ClientMain"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.12.0",
+    "fabric": "*",
+    "minecraft": "1.18.1"
+  },
+  "suggests": {
+    "charter": "*"
+  }
+}
