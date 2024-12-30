@@ -14,6 +14,7 @@ public class ModItems {
     public static final Item DARK_LOG_ITEM = new BlockItem(ModBlocks.DARK_LOG, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item DARK_BARK_ITEM = new BlockItem(ModBlocks.DARK_BARK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item LIGHT_CHISELED_BRICKS_ITEM = new BlockItem(ModBlocks.LIGHT_CHISELED_BRICKS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item LIGHT_PLANKS_ITEM = new BlockItem(ModBlocks.LIGHT_PLANKS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static void registerItems() {
         Registry.register(Registry.ITEM, new Identifier("bandw", "dark_enderman_spawn_egg"), DARK_ENDERMAN_SPAWN_EGG);
         Registry.register(Registry.ITEM, new Identifier("bandw", "dark_bricks"), DARK_BRICKS_ITEM);
@@ -21,5 +22,6 @@ public class ModItems {
         Registry.register(Registry.ITEM, new Identifier("bandw", "dark_log"), DARK_LOG_ITEM);
         Registry.register(Registry.ITEM, new Identifier("bandw", "dark_bark"), DARK_BARK_ITEM);
         Registry.register(Registry.ITEM, new Identifier("bandw", "light_chiseled_bricks"), LIGHT_CHISELED_BRICKS_ITEM);
+        Registry.register(Registry.ITEM, new Identifier("bandw", "light_planks"), LIGHT_PLANKS_ITEM);
     };
 };
