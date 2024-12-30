@@ -20,6 +20,6 @@ public class ModItems {
         Registry.register(Registry.ITEM, new Identifier("bandw", "light_bricks"), LIGHT_BRICKS_ITEM);
         Registry.register(Registry.ITEM, new Identifier("bandw", "dark_log"), DARK_LOG_ITEM);
         Registry.register(Registry.ITEM, new Identifier("bandw", "dark_bark"), DARK_BARK_ITEM);
-        Registry.register(Registry.ITEM, new Identifier("bandw", "dark_bark"), LIGHT_CHISELED_BRICKS_ITEM);
+        Registry.register(Registry.ITEM, new Identifier("bandw", "light_chiseled_bricks"), LIGHT_CHISELED_BRICKS_ITEM);
     };
 };
