@@ -9,14 +9,15 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModEntities {
-    public static final EntityType<DarkEndermanEntity> DARK_ENDERMAN = Registry.register(
-        Registry.ENTITY_TYPE,
-        new Identifier("bandw", "dark_enderman"),
-        FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, entities.DarkEndermanEntity::new)
-            .dimensions(EntityDimensions.fixed(0.6F, 2.9F)) // Adjust dimensions as needed
-            .build()
-    );
+    public static final EntityType<DarkEndermanEntity> DARK_ENDERMAN;
     public static void registerEntities() {
+        DARK_ENDERMAN = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("bandw", "dark_enderman"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, DarkEndermanEntity::new)
+                .dimensions(EntityDimensions.fixed(0.6F, 2.9F)) // Adjust dimensions as needed
+                .build()
+        );
         System.out.println("Entities registered");
     };
 };
