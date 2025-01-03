@@ -17,6 +17,6 @@ public class ModEntities {
             .build()
     );
     public static void registerEntities() {
-        // Register entities here
+        System.out.println("Entities registered");
     };
 };
