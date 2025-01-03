@@ -7,7 +7,7 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
-public class ElectricArcUtils {
+public class ElectricArcUtil {
     private static final Random RANDOM = new Random();
 
     public static void createElectricArc(ClientWorld world, Vec3d start, Vec3d end, float offsetMultiplier, float arcWidth) {

@@ -13,6 +13,7 @@ public class ModChecker {
 };
 public class Main implements ModInitializer {
     public static boolean isCharterLoaded;
+    public static String MOD_ID="bandw";
     @Override
     public void onInitialize() {
         ModBlocks.registerBlocks();
