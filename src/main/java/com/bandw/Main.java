@@ -17,6 +17,7 @@ public class Main implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.registerBlocks();
+        ModBlocks.registerBlockEntities();
         ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
