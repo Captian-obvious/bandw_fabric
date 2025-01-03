@@ -32,7 +32,7 @@ public class ModBlocks {
     public static void registerBlockEntities() {
         SHIELD_OF_LIGHT_BLOCK_ENTITY = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
-            new Identifier("yourmod", "shield_of_light_block_entity"),
+            new Identifier(Main.MOD_ID, "shield_of_light_block_entity"),
             FabricBlockEntityTypeBuilder.create(blocks.ShieldBlockEntity::new, SHIELD_OF_LIGHT_BLOCK).build()
         );
     };
