@@ -33,7 +33,16 @@ public class Shield {
         };
     };
     public void collapse(){
-        
+        new Thread(()->{
+            while (size>0) {
+                size-=size*.05;
+                try{
+                    Thread.sleep(50);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                };
+            };
+        }).start();
     };
     public void toggleActive() {
         isActive = !isActive;
@@ -56,4 +65,4 @@ public class Shield {
     public boolean setStrength(int val) {
         strength=val;
     };
-}
+};
