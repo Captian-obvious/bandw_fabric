@@ -27,27 +27,33 @@ public class Shield {
     public void weaken(float amount) {
         if (isActive) {
             strength = Math.max(0, strength - amount);
+            if (strength<=0) {
+                this.collapse();
+            };
         };
+    };
+    public void collapse(){
+        
     };
     public void toggleActive() {
         isActive = !isActive;
     };
-    public void boolean getIsActive() {
+    public boolean getIsActive() {
         return isActive;
     };
-    public void boolean getSize() {
+    public boolean getSize() {
         return size;
     };
-    public void boolean getStrength() {
+    public boolean getStrength() {
         return strength;
     };
-    public void boolean setIsActive(boolean val) {
+    public boolean setIsActive(boolean val) {
         isActive=val;
     };
-    public void boolean setSize(int val) {
+    public boolean setSize(int val) {
         size=val;
     };
-    public void boolean setStrength(int val) {
+    public boolean setStrength(int val) {
         strength=val;
     };
 }
