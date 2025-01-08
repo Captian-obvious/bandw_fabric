@@ -1,6 +1,5 @@
 package com.bandw;
 
-import com.bandw.Main;
 import com.bandw.render;
 import com.bandw.registry;
 import com.bandw.utils.ElectricArcUtils;
@@ -11,6 +10,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.Vec3d;
 
 public class ClientMain implements ClientModInitializer {
+    public String MOD_ID="bandw";
     @Override
     public void onInitializeClient() {
         EntityRendererRegistry.register(registry.ModEntities.DARK_ENDERMAN, render.DarkEndermanRenderer::new);
