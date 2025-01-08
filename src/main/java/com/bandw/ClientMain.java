@@ -13,8 +13,7 @@ public class ClientMain implements ClientModInitializer {
     public String MOD_ID="bandw";
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(registry.ModEntities.DARK_ENDERMAN, render.DarkEndermanRenderer::new);
-        BlockEntityRendererRegistry.INSTANCE.register(registry.ModBlocks.SHIELD_OF_LIGHT_BLOCK_ENTITY, render.ShieldRenderer::new);
+        registry
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.world != null) {
             Vec3d start = new Vec3d(0, 64, 0);
