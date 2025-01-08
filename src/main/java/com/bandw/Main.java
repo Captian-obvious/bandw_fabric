@@ -13,6 +13,7 @@ public class ModChecker {
 public class Main implements ModInitializer {
     public static boolean isCharterLoaded;
     public static final String MOD_ID = "bandw";
+    public static boolean judgmentEnabled=false;
     @Override
     public void onInitialize() {
         ModBlocks.registerBlocks();
@@ -25,6 +26,7 @@ public class Main implements ModInitializer {
         isCharterLoaded = ModChecker.isModLoaded("charter");
         if (isCharterLoaded) {
             System.out.println("Charter mod is loaded! Enabling additional features.");
+            judgmentEnabled=true;
         }else{
             System.out.println("Charter mod is not loaded.");
         };
