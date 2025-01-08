@@ -7,7 +7,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.util.math.Vec3d;
 
-public class BandWModClient implements ClientModInitializer {
+public class ClientMain implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         EntityRendererRegistry.register(ModEntities.DARK_ENDERMAN, DarkEndermanRenderer::new);
