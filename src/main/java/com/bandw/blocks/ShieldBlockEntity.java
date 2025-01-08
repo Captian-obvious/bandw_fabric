@@ -19,4 +19,7 @@ public class ShieldBlockEntity extends BlockEntity {
             shield.weaken(0.005f); // Example: Weaken shield gradually
         };
     };
+    public Shield getShield(){
+        return shield;
+    };
 };

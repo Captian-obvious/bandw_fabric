@@ -50,7 +50,6 @@ public class ShieldRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
             new Vec3f(size, size, size),    // Top-right-front
             new Vec3f(-size, size, size)    // Top-left-front
         };
-
         int[][] faces = {
             {0, 1, 2, 3}, // Back
             {4, 5, 6, 7}, // Front
@@ -59,19 +58,30 @@ public class ShieldRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
             {0, 4, 7, 3}, // Left
             {1, 5, 6, 2}  // Right
         };
-
-        for (int[] face : faces) {
+        // Corresponding UV coordinates for the vertices of each face
+        float[][] uvs = {
+            {0, 0, 1, 0, 1, 1, 0, 1}, // Back
+            {0, 0, 1, 0, 1, 1, 0, 1}, // Front
+            {0, 0, 1, 0, 1, 1, 0, 1}, // Bottom
+            {0, 0, 1, 0, 1, 1, 0, 1}, // Top
+            {0, 0, 1, 0, 1, 1, 0, 1}, // Left
+            {0, 0, 1, 0, 1, 1, 0, 1}  // Right
+        };
+        for (int faceIndex = 0; faceIndex < faces.length; faceIndex++) {
+            int[] face = faces[faceIndex];
+            float[] uv = uvs[faceIndex];
             for (int i = 0; i < 4; i++) {
                 Vec3f vertex = vertices[face[i]];
                 vertexConsumer.vertex(matrices.peek().getPositionMatrix(), vertex.getX(), vertex.getY(), vertex.getZ())
                     .color(255, 255, 255, 255)
-                    .texture(0, 0)
+                    .texture(uv[i * 2], uv[i * 2 + 1]) // Set the texture coordinates
                     .overlay(overlay)
                     .light(light)
                     .normal(0, 1, 0)
                     .next();
             };
         };
+        // Pop the transformation matrix
         matrices.pop();
     };
 };
