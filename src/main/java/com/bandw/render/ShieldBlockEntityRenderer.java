@@ -14,9 +14,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3f;
-public class ShieldRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
+public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
     private static final Identifier TEXTURE = new Identifier(ClientMain.MOD_ID,"textures/entity/shield.png");
-    public ShieldRenderer(BlockEntityRenderDispatcher dispatcher) {
+    public ShieldBlockEntityRenderer(BlockEntityRenderDispatcher dispatcher) {
         super(dispatcher);
     };
     @Override
