@@ -15,8 +15,8 @@ public class ModBlocks {
     public static final Block DARK_BRICKS = new DarkBricksBlock();
     public static final Block LIGHT_BRICKS = new LightBricksBlock();
     public static final Block DARK_LOG = new DarkLogBlock();
-    public static final Block DARK_BARK = new ]DarkBarkBlock();
-    public static final Block LIGHT_CHISELED_BRICKS = new ]LightChiseledBricksBlock();
+    public static final Block DARK_BARK = new DarkBarkBlock();
+    public static final Block LIGHT_CHISELED_BRICKS = new LightChiseledBricksBlock();
     public static final Block LIGHT_PLANKS = new LightPlanksBlock();
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(FabricBlockSettings.of(Material.STONE).strength(4.0F, 12.0F));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
