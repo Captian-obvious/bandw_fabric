@@ -13,7 +13,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vec3f;
+import net.minecraft.util.math.Vec3f;
 public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
     private static final Identifier TEXTURE = new Identifier(ClientMain.MOD_ID,"textures/entity/shield.png");
     public ShieldBlockEntityRenderer(BlockEntityRenderDispatcher dispatcher) {
@@ -40,15 +40,15 @@ public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEn
         matrices.push();
         VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntitySolid(texture));
         float size = 0.5f;
-        vec3ff[] vertices = {
-            new vec3f(-size, -size, -size), // Bottom-left-back
-            new vec3f(size, -size, -size),  // Bottom-right-back
-            new vec3f(size, size, -size),   // Top-right-back
-            new vec3f(-size, size, -size),  // Top-left-back
-            new vec3f(-size, -size, size),  // Bottom-left-front
-            new vec3f(size, -size, size),   // Bottom-right-front
-            new vec3f(size, size, size),    // Top-right-front
-            new vec3f(-size, size, size)    // Top-left-front
+        Vec3f[] vertices = {
+            new Vec3f(-size, -size, -size), // Bottom-left-back
+            new Vec3f(size, -size, -size),  // Bottom-right-back
+            new Vec3f(size, size, -size),   // Top-right-back
+            new Vec3f(-size, size, -size),  // Top-left-back
+            new Vec3f(-size, -size, size),  // Bottom-left-front
+            new Vec3f(size, -size, size),   // Bottom-right-front
+            new Vec3f(size, size, size),    // Top-right-front
+            new Vec3f(-size, size, size)    // Top-left-front
         };
         int[][] faces = {
             {0, 1, 2, 3}, // Back
