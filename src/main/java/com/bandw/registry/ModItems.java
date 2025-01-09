@@ -15,7 +15,7 @@ public class ModItems {
         Identifier itemID = new Identifier("mymod", id);
         return Registry.register(Registries.ITEM, itemID, item);
     };
-    public static void registerItems()
+    public static void registerItems() {
         register(DARK_ENDERMAN_SPAWN_EGG, "dark_enderman_spawn_egg");
     };
 };
