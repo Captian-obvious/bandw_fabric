@@ -1,8 +1,12 @@
 package com.bandw;
 
-import com.bandw.registry;
 import com.bandw.ModChecker;
 import com.bandw.registry.ModBlocks;
+import com.bandw.registry.ModEntities;
+import com.bandw.registry.ModBlocks;
+import com.bandw.registry.ModItems;
+import com.bandw.registry.ModEntityAttributes;
+import com.bandw.registry.ModPotions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 // mod checker utility
@@ -14,11 +18,11 @@ public class Main implements ModInitializer {
     public void onInitialize() {
         ModBlocks.registerBlocks();
         ModBlocks.registerBlockEntities();
-        registry.ModEntities.registerEntities();
-        registry.ModEntityAttributes.registerAttributes();
-        registry.ModItems.registerItems();
-        registry.ModEffects.registerEffects();
-        registry.ModPotions.registerPotions();
+        ModEntities.registerEntities();
+        ModEntityAttributes.registerAttributes();
+        ModItems.registerItems();
+        ModEffects.registerEffects();
+        ModPotions.registerPotions();
         isCharterLoaded = ModChecker.isModLoaded("charter");
         if (isCharterLoaded) {
             System.out.println("Charter mod is loaded! Enabling additional features.");
