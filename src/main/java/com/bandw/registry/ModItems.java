@@ -12,7 +12,7 @@ import net.minecraft.item.ItemGroup;
 public class ModItems {
     public static final Item DARK_ENDERMAN_SPAWN_EGG = new SpawnEggItem(ModEntities.DARK_ENDERMAN, 0x000000, 0xFFFFFF, new FabricItemSettings().group(ItemGroup.MISC));
     public static Item register(Item item, String id) {
-        Identifier itemID = new Identifier("mymod", id);
+        Identifier itemID = new Identifier(Main.MOD_ID, id);
         return Registry.register(Registries.ITEM, itemID, item);
     };
     public static void registerItems() {
