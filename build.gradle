@@ -22,7 +22,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"bandw" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
