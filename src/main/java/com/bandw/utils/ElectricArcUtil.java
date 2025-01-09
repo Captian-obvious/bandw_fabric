@@ -3,18 +3,18 @@ package com.bandw.utils;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vec3d;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
 public class ElectricArcUtil {
     private static final Random RANDOM = new Random();
 
-    public static void createElectricArc(ClientWorld world, vec3d start, vec3d end, float offsetMultiplier, float arcWidth) {
+    public static void createElectricArc(ClientWorld world, Vec3d start, Vec3d end, float offsetMultiplier, float arcWidth) {
         int steps = 20;
         vec3d diff = end.subtract(start);
         vec3d direction = diff.normalize();
-        vec3d perpendicular = direction.crossProduct(new vec3d(0, 1, 0)).normalize();
+        vec3d perpendicular = direction.crossProduct(new Vec3d(0, 1, 0)).normalize();
 
         for (int i = 0; i < steps; i++) {
             double t = (double) i / (steps - 1);
