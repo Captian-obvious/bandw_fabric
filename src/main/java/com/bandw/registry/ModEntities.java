@@ -14,7 +14,7 @@ public class ModEntities {
     public static void registerEntities() {
         DARK_ENDERMAN = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(Main.MOD_ID, "dark_enderman"),
+            Identifier.of(Main.MOD_ID, "dark_enderman"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, DarkEndermanEntity::new)
                 .dimensions(EntityDimensions.fixed(0.6F, 2.9F)) // Adjust dimensions as needed
                 .build()

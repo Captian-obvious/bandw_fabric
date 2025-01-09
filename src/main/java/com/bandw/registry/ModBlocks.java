@@ -21,13 +21,13 @@ public class ModBlocks {
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(FabricBlockSettings.of(Material.STONE).strength(4.0F, 12.0F));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
     public static void registerBlocks() {
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_bricks"), DARK_BRICKS);
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "light_bricks"), LIGHT_BRICKS);
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_log"), DARK_LOG);
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_bark"), DARK_BARK);
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "light_chiseled_bricks"), LIGHT_CHISELED_BRICKS);
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "light_planks"), LIGHT_PLANKS);
-        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "shield_of_light"), SHIELD_OF_LIGHT_BLOCK);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "dark_bricks"), DARK_BRICKS);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "light_bricks"), LIGHT_BRICKS);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "dark_log"), DARK_LOG);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "dark_bark"), DARK_BARK);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "light_chiseled_bricks"), LIGHT_CHISELED_BRICKS);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "light_planks"), LIGHT_PLANKS);
+        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "shield_of_light"), SHIELD_OF_LIGHT_BLOCK);
     };
     public static void registerBlockEntities() {
         SHIELD_OF_LIGHT_BLOCK_ENTITY = Registry.register(

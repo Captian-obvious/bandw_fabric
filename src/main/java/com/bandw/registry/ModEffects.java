@@ -9,6 +9,6 @@ import net.minecraft.util.registry.Registry;
 public class ModEffects {
     public static final StatusEffect CORRUPTION_EFFECT = new CorruptionStatusEffect(StatusEffectCategory.HARMFUL, 0x98D982);
     public static void registerEffects() {
-        Registry.register(Registry.STATUS_EFFECT, new Identifier("bandw", "corruption"), CORRUPTION_EFFECT);
+        Registry.register(Registry.STATUS_EFFECT, Identifier.of("bandw", "corruption"), CORRUPTION_EFFECT);
     };
 };
