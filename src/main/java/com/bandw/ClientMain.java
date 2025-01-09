@@ -2,6 +2,7 @@ package com.bandw;
 
 import com.bandw.render;
 import com.bandw.registry.ClientRegistry;
+import com.bandw.registry.ModModelLayers;
 import com.bandw.utils.ElectricArcUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -14,6 +15,7 @@ public class ClientMain implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ClientRegistry.registerClientRenderers();
+        ModModelLayers.registerModelLayers();
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.world != null) {
             Vec3d start = new Vec3d(0, 64, 0);

@@ -1,7 +1,7 @@
 package com.bandw.registry;
 
-import com.bandw.entities;
 import com.bandw.Main;
+import com.bandw.entities.DarkEndermanEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -14,7 +14,7 @@ public class ModEntities {
     public static void registerEntities() {
         DARK_ENDERMAN = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(main.MOD_ID, "dark_enderman"),
+            new Identifier(Main.MOD_ID, "dark_enderman"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, DarkEndermanEntity::new)
                 .dimensions(EntityDimensions.fixed(0.6F, 2.9F)) // Adjust dimensions as needed
                 .build()
