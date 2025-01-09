@@ -4,7 +4,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class CorruptionStatusEffect extends StatusEffect {
-    public CustomStatusEffect(StatusEffectCategory category, int color) {
+    public CorruptionStatusEffect(StatusEffectCategory category, int color) {
         super(category, color);
     };
     // Override methods to define the custom effect behavior
