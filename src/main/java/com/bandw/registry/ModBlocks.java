@@ -20,14 +20,29 @@ public class ModBlocks {
     public static final Block LIGHT_PLANKS = new LightPlanksBlock();
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(FabricBlockSettings.of(Material.STONE).strength(4.0F, 12.0F));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
+    public static Block register(Block block, String name, boolean shouldRegisterItem) {
+        // Ensure block and name are not null
+        if (block == null || name == null) {
+            throw new IllegalArgumentException("Block and name must not be null");
+        };
+        // Create the identifier for the block
+        Identifier id = Identifier.of(Main.MOD_ID,name);
+        // Register the block item if needed
+        if (shouldRegisterItem) {
+            BlockItem blockItem = new BlockItem(block, new Item.Settings());
+            Registry.register(Registries.ITEM, id, blockItem);
+        };
+        // Register the block
+        return Registry.register(Registries.BLOCK, id, block);
+    };
     public static void registerBlocks() {
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "dark_bricks"), DARK_BRICKS);
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "light_bricks"), LIGHT_BRICKS);
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "dark_log"), DARK_LOG);
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "dark_bark"), DARK_BARK);
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "light_chiseled_bricks"), LIGHT_CHISELED_BRICKS);
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "light_planks"), LIGHT_PLANKS);
-        Registry.register(Registry.BLOCK, Identifier.of(Main.MOD_ID, "shield_of_light"), SHIELD_OF_LIGHT_BLOCK);
+        register(DARK_BRICKS,"dark_bricks",true);
+        register(LIGHT_BRICKS,"light_bricks",true);
+        register(DARK_LOG,"dark_log",true);
+        register(DARK_BARK,"dark_bark",true);
+        register(LIGHT_CHISELED_BRICKS,"light_chiseled_bricks",true);
+        register(LIGHT_PLANKS,"light_planks",true);
+        register(SHIELD_OF_LIGHT_BLOCK,"shield_of_light",true);
     };
     public static void registerBlockEntities() {
         SHIELD_OF_LIGHT_BLOCK_ENTITY = Registry.register(
