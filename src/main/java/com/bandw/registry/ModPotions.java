@@ -2,7 +2,7 @@ package com.bandw.registry;
 
 import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 public class ModPotions {
     public static final Potion CORRUPTION_POTION = new Potion(new StatusEffectInstance(ModEffects.CORRUPTION_EFFECT,3600));
