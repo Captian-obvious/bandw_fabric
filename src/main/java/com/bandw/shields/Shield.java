@@ -50,19 +50,19 @@ public class Shield {
     public boolean getIsActive() {
         return isActive;
     };
-    public boolean getSize() {
+    public float getSize() {
         return size;
     };
-    public boolean getStrength() {
+    public float getStrength() {
         return strength;
     };
-    public boolean setIsActive(boolean val) {
+    public void setIsActive(boolean val) {
         isActive=val;
     };
-    public boolean setSize(int val) {
+    public void setSize(int val) {
         size=val;
     };
-    public boolean setStrength(int val) {
+    public void setStrength(int val) {
         strength=val;
     };
 };
