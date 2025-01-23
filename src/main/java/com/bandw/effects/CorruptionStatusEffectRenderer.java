@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.potion.PotionEffect;
 
 public class CorruptionStatusEffectRenderer {
-    private static final Identifier ICON = new Identifier(ClientMain.MOD_ID, "textures/mob_effect/corruption.png");
+    private static final Identifier ICON = Identifier.of(ClientMain.MOD_ID, "textures/mob_effect/corruption.png");
     public void renderInventoryEffect(int x, int y, PotionEffect effect, MinecraftClient mc) {
         mc.getTextureManager().bindTexture(SpriteAtlasTexture.STATUS_EFFECT_TEXTURE);
         Sprite sprite = mc.getSpriteAtlas(SpriteAtlasTexture.STATUS_EFFECT_TEXTURE).apply(ICON);
