@@ -70,7 +70,7 @@ public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEn
             int[] face = faces[faceIndex];
             float[] uv = uvs[faceIndex];
             for (int i = 0; i < 4; i++) {
-                vec3f vertex = vertices[face[i]];
+                Vec3d vertex = vertices[face[i]];
                 vertexConsumer.vertex(matrices.peek().getPositionMatrix(), vertex.getX(), vertex.getY(), vertex.getZ())
                     .color(255, 255, 255, 255)
                     .texture(uv[i * 2], uv[i * 2 + 1]) // Set the texture coordinates
