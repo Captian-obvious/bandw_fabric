@@ -1,6 +1,8 @@
 package com.bandw;
 
+//Mod Checker Utility
 import com.bandw.ModChecker;
+//end Mod Checker
 import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModEntities;
 import com.bandw.registry.ModBlocks;
@@ -9,7 +11,7 @@ import com.bandw.registry.ModEntityAttributes;
 import com.bandw.registry.ModPotions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-// mod checker utility
+
 public class Main implements ModInitializer {
     public static boolean isCharterLoaded;
     public static final String MOD_ID = "bandw";
