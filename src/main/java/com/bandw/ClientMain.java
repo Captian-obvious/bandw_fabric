@@ -3,7 +3,6 @@ package com.bandw;
 import com.bandw.render;
 import com.bandw.registry.ClientRegistry;
 import com.bandw.registry.ModModelLayers;
-import com.bandw.utils.ElectricArcUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
@@ -16,11 +15,5 @@ public class ClientMain implements ClientModInitializer {
     public void onInitializeClient() {
         ClientRegistry.registerClientRenderers();
         ModModelLayers.registerModelLayers();
-        MinecraftClient client = MinecraftClient.getInstance();
-        if (client.world != null) {
-            Vec3d start = new Vec3d(0, 64, 0);
-            Vec3d end = new Vec3d(10, 64, 10);
-            ElectricArcUtils.createElectricArc(client.world, start, end, 0.5f, 1.0f);
-        };
     };
 };
