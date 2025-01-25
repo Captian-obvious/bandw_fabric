@@ -1,6 +1,6 @@
 package com.bandw;
 
-import com.bandw.render;
+import com.bandw.render.*;
 import com.bandw.registry.ClientRegistry;
 import com.bandw.registry.ModModelLayers;
 import net.fabricmc.api.ClientModInitializer;
