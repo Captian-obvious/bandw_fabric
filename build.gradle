@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.10-SNAPSHOT'
+    id 'fabric-loom' version '1.9'
     id 'maven-publish'
 }
 
@@ -11,9 +11,11 @@ base {
 }
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // Loom adds essential maven repositories automatically.
+    maven {
+        url "https://maven.fabricmc.net/"
+    }
 }
+
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
