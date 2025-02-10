@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": { "model": "bandw:block/dark_log" },
+    "axis=z": { "model": "bandw:block/dark_log", "x": 90 },
+    "axis=x": { "model": "bandw:block/dark_log", "x": 90, "y": 90 }
+  }
+}
