@@ -16,7 +16,7 @@ public class CorruptionStatusEffect extends StatusEffect {
         return super.canApplyUpdateEffect(duration, amplifier);
     };
     @Override
-    public void applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
-        super.applyUpdateEffect(world,entity, amplifier);
+    public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
+        return super.applyUpdateEffect(world,entity, amplifier);
     };
 };

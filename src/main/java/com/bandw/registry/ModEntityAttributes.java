@@ -7,6 +7,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 
 public class ModEntityAttributes {
     public static void registerAttributes() {
-        FabricDefaultAttributeRegistry.register(ModEntities.DARK_ENDERMAN, DarkEndermanEntity.createEndermanAttributes());
+        //FabricDefaultAttributeRegistry.register(ModEntities.DARK_ENDERMAN, DarkEndermanEntity.createEndermanAttributes());
+        return;
     };
 };
