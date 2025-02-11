@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.AbstractBlock.Settings;
 
 public class ModBlocks {
     public static final Block DARK_BRICKS = new DarkBricksBlock();
@@ -18,7 +19,7 @@ public class ModBlocks {
     public static final Block DARK_BARK = new DarkBarkBlock();
     public static final Block LIGHT_CHISELED_BRICKS = new LightChiseledBricksBlock();
     public static final Block LIGHT_PLANKS = new LightPlanksBlock();
-    public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(FabricBlockSettings.of(Material.STONE).strength(4.0F, 12.0F));
+    public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(Settings.of(Material.STONE).strength(4.0F, 12.0F));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
         // Ensure block and name are not null
