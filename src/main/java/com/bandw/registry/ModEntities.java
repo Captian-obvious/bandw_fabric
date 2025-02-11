@@ -11,7 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 
 public class ModEntities {
-    public static final EntityType<DarkEndermanEntity> DARK_ENDERMAN;
+    //public static final EntityType<DarkEndermanEntity> DARK_ENDERMAN;
     public static void registerEntities() {
         /*DARK_ENDERMAN = Registry.register(
             Registries.ENTITY_TYPE,
