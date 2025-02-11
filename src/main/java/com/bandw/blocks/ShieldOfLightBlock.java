@@ -13,14 +13,17 @@ public class ShieldOfLightBlock extends Block {
     public ShieldOfLightBlock() {
         super(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F));
     };
-
-    @Override
+    /*@Override
     public BlockEntity createBlockEntity(BlockView world) {
-        return new ShieldBlockEntity();
-    };
+        return new ShieldBlockEntity(this.getPosition());
+    };*/
 
     @Override
     public boolean hasBlockEntity() {
         return true;
+    };
+
+    public BlockPos getPosition() {
+        return new BlockPos(this.posX, this.posY, this.posZ);
     };
 };
