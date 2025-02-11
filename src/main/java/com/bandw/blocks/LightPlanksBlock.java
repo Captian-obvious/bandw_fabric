@@ -1,11 +1,11 @@
 package com.bandw.blocks;
 
 import net.minecraft.block.Block;
-import net.fabricmc.fabric.api.block.Material;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
 
 public class LightPlanksBlock extends Block {
     public LightPlanksBlock() {
-        super(Settings.of(Material.WOOD).strength(2.0F, 2.0F));
+        super(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F));
     }
 }
