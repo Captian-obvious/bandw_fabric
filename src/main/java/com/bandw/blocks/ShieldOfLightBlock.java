@@ -17,8 +17,6 @@ public class ShieldOfLightBlock extends Block {
     public BlockEntity createBlockEntity(BlockView world) {
         return new ShieldBlockEntity(this.getPosition());
     };*/
-
-    @Override
     public boolean hasBlockEntity() {
         return true;
     };

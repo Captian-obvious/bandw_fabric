@@ -16,7 +16,7 @@ public class CorruptionStatusEffect extends StatusEffect {
         return true;
     };
     @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+    public void applyUpdateEffect(World world, LivingEntity entity, int amplifier) {
         // Define the effect on the entity
         if (entity instanceof PlayerEntity) {
             ((PlayerEntity) entity).addExperience(1); // Example: Grant experience points

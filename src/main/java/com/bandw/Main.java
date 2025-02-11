@@ -5,6 +5,7 @@ import com.bandw.ModChecker;
 //end Mod Checker
 import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModEntities;
+import com.bandw.registry.ModEffects;
 import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModItems;
 import com.bandw.registry.ModEntityAttributes;
