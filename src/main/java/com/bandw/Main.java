@@ -9,7 +9,6 @@ import com.bandw.registry.ModEffects;
 import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModItems;
 import com.bandw.registry.ModEntityAttributes;
-import com.bandw.registry.ModPotions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
@@ -28,7 +27,6 @@ public class Main implements ModInitializer {
         ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
         ModEffects.registerEffects();
-        ModPotions.registerPotions();
         isCharterLoaded = ModChecker.isModLoaded("charter");
         if (isCharterLoaded) {
             LOGGER.info("Charter mod is loaded! Enabling additional features.");
