@@ -22,8 +22,4 @@ public class ShieldOfLightBlock extends Block {
     public boolean hasBlockEntity() {
         return true;
     };
-
-    public BlockPos getPosition() {
-        return new BlockPos(this.posX, this.posY, this.posZ);
-    };
 };

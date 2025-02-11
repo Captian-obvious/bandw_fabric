@@ -12,8 +12,6 @@ public class DarkEndermanEntity extends EndermanEntity {
         super(entityType, world);
     };
     public static DefaultAttributeContainer.Builder createEndermanAttributes() {
-        return EndermanEntity.createEndermanAttributes()
-            .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0D)
-            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3D);
+        return EndermanEntity.createEndermanAttributes();
     };
 };
