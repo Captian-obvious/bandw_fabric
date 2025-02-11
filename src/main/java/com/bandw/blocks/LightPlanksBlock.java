@@ -1,7 +1,7 @@
 package com.bandw.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.fabricmc.fabric.api.block.Material;
 import net.minecraft.block.AbstractBlock.Settings;
 
 public class LightPlanksBlock extends Block {
