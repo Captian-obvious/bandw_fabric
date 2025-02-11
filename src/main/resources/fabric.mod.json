@@ -5,11 +5,11 @@
   "name": "B&W",
   "description": "A mod adding entites, weapons, and judgment.",
   "authors": [
-    "YourName"
+    "Captian-obvious","GuardianGabe811"
   ],
   "contact": {
     "homepage": "https://example.com",
-    "sources": "https://github.com/Captian-obvious/bandw-fabric"
+    "sources": "https://github.com/Captian-obvious/bandw-fabric2"
   },
   "license": "MIT",
   "icon": "assets/bandw/icon.png",
