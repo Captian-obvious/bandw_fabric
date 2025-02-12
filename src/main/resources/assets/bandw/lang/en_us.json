@@ -13,6 +13,9 @@
     "item.bandw.light_chiseled_bricks": "Light Chiseled Bricks",
     "item.bandw.light_planks": "Light Planks",
     "item.bandw.shield_of_light": "Shield of Light",
+    "item.bandw.dark_rotten_flesh": "Dark Rotten Flesh",
+    "item.bandw.dark_bone": "Dark Bone",
+    "item.bandw.dark_spider_eye": "Dark Spider Eye",
     "item.bandw.corruption_potion": "Potion of Corruption",
     "item.bandw.corruption_potion.desc": "Upon consumpion, the corruption grows..",
     "effect.bandw.corruption": "Corruption"
