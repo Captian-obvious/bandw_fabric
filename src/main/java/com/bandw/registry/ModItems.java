@@ -23,7 +23,7 @@ public class ModItems {
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64));
     public static final Item dark_shard=new Item(new Item.Settings().maxCount(64));
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63));
-    public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings().group(ItemGroups.COMBAT));
+    public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings());
     public void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
