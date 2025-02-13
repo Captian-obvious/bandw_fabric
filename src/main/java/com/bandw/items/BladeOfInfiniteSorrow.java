@@ -5,6 +5,7 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
@@ -24,7 +25,7 @@ public class BladeOfInfiniteSorrow extends SwordItem {
                 target.setHealth(target.getMaxHealth());
                 ServerWorld world=(ServerWorld) target.getWorld();
                 BlockPos pos=target.getBlockPos();
-                LightningEntity bolt=EntityType.create(world);
+                LightningEntity bolt=EntityType.create(world,SpawnReason.CUSTOM);
                 bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
                 world.spawnEntity(bolt);
                 target.setHealth(0.0F);

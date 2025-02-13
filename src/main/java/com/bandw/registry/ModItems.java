@@ -13,6 +13,7 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
@@ -22,7 +23,7 @@ public class ModItems {
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64));
     public static final Item dark_shard=new Item(new Item.Settings().maxCount(64));
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63));
-    public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings().group(ItemGroup.COMBAT));
+    public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings().group(ItemGroups.COMBAT));
     public void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
