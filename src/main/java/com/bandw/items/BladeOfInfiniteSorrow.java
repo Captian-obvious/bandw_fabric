@@ -25,7 +25,7 @@ public class BladeOfInfiniteSorrow extends SwordItem {
                 target.setHealth(target.getMaxHealth());
                 ServerWorld world=(ServerWorld) target.getWorld();
                 BlockPos pos=target.getBlockPos();
-                LightningEntity bolt=new LightningEntity(world);
+                LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
                 world.spawnEntity(bolt);
                 target.setHealth(0.0F);
