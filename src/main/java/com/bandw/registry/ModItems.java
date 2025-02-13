@@ -10,6 +10,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
@@ -22,7 +23,7 @@ public class ModItems {
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64));
     public static final Item dark_shard=new Item(new Item.Settings().maxCount(64));
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63));
-    //public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(INFINITE_SORROW_MATERIAL,);
+    public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterials.DIAMOND,15,-2.4F,new Item.Settings().group(ItemGroup.COMBAT));
     public void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
@@ -32,6 +33,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM,key.getValue(),item);
     };
     public static void registerItems(){
+        register(blade_of_infinite_sorrow,"blade_of_infinite_sorrow");
         register(light_shard,"light_shard");
         register(burnt_flesh,"dark_rotten_flesh");
         register(dark_bone,"dark_bone");
