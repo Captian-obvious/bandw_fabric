@@ -1,9 +1,8 @@
-# Fabric Example Mod
+# B&W
+
+A mod adding blocks, entities, and judgment
 
 ## Setup
 
-For setup instructions please see the [fabric documentation page](https://docs.fabricmc.net/develop/getting-started/setting-up-a-development-environment) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Download latest release and if you haven't already,download the fabric API and mod loader to allow this mod to function
+For detailed setup instructions please see the [fabric documentation](https://docs.fabricmc.net)
