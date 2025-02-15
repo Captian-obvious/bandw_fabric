@@ -5,7 +5,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
 
 public class DarkBricksBlock extends Block {
-    public DarkBricksBlock() {
-        super(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F));
+    public DarkBricksBlock(Settings settings) {
+        super(settings);
     }
 };

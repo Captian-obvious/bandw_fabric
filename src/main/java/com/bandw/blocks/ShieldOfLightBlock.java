@@ -10,8 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
 public class ShieldOfLightBlock extends Block {
-    public ShieldOfLightBlock() {
-        super(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F));
+    public ShieldOfLightBlock(Settings settings) {
+        super(settings);
     };
     /*@Override
     public BlockEntity createBlockEntity(BlockView world) {

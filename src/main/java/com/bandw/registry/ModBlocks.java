@@ -13,41 +13,48 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
 
 public class ModBlocks {
-    public static final Block DARK_BRICKS = new DarkBricksBlock();
-    public static final Block LIGHT_BRICKS = new LightBricksBlock();
-    public static final Block DARK_LOG = new DarkLogBlock();
-    public static final Block DARK_BARK = new DarkBarkBlock();
-    public static final Block LIGHT_CHISELED_BRICKS = new LightChiseledBricksBlock();
-    public static final Block LIGHT_PLANKS = new LightPlanksBlock();
-    public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock();
+    public static final RegistryKey<Block> DARK_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_bricks"));
+    public static final Block DARK_BRICKS = new DarkBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(DARK_BRICKS_KEY));
+    public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_bricks"));
+    public static final Block LIGHT_BRICKS = new LightBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_BRICKS_KEY));
+    public static final RegistryKey<Block> DARK_LOG_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_log"));
+    public static final Block DARK_LOG = new DarkLogBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_LOG_KEY));
+    public static final RegistryKey<Block> DARK_BARK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_bark"));
+    public static final Block DARK_BARK = new DarkBarkBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_BARK_KEY));
+    public static final RegistryKey<Block> LIGHT_CHISELED_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_chiseled_bricks"));
+    public static final Block LIGHT_CHISELED_BRICKS = new LightChiseledBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_CHISELED_BRICKS_KEY));
+    public static final RegistryKey<Block> LIGHT_PLANKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_planks"));
+    public static final Block LIGHT_PLANKS = new LightPlanksBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(LIGHT_PLANKS_KEY));
+    public static final RegistryKey<Block> SHIELD_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"shield_of_light"));
+    public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F).registryKey(SHIELD_OF_LIGHT_KEY));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
-    public static Block register(Block block, String name, boolean shouldRegisterItem) {
+    public static Block register(Block block, RegistryKey key, boolean shouldRegisterItem) {
         // Ensure block and name are not null
-        if (block == null || name == null) {
-            throw new IllegalArgumentException("Block and name must not be null");
+        if (block == null || key == null) {
+            throw new IllegalArgumentException("Block and key must not be null");
         };
         // Create the key for the block
-        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,name));
         // Register the block item if needed
         if (shouldRegisterItem) {
             RegistryKey<Item> itemkey=RegistryKey.of(RegistryKeys.ITEM,key.getValue());
-            BlockItem blockItem = new BlockItem(block, new Item.Settings());
+            BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemkey));
             Registry.register(Registries.ITEM, itemkey, blockItem);
         };
         // Register the block
         return Registry.register(Registries.BLOCK, key, block);
     };
     public static void registerBlocks() {
-        register(DARK_BRICKS,"dark_bricks",true);
-        register(LIGHT_BRICKS,"light_bricks",true);
-        register(DARK_LOG,"dark_log",true);
-        register(DARK_BARK,"dark_bark",true);
-        register(LIGHT_CHISELED_BRICKS,"light_chiseled_bricks",true);
-        register(LIGHT_PLANKS,"light_planks",true);
-        register(SHIELD_OF_LIGHT_BLOCK,"shield_of_light",true);
+        register(DARK_BRICKS,DARK_BRICKS_KEY,true);
+        register(LIGHT_BRICKS,LIGHT_BRICKS_KEY,true);
+        register(DARK_LOG,DARK_LOG_KEY,true);
+        register(DARK_BARK,DARK_BARK_KEY,true);
+        register(LIGHT_CHISELED_BRICKS,LIGHT_CHISELED_BRICKS_KEY,true);
+        register(LIGHT_PLANKS,LIGHT_PLANKS_KEY,true);
+        register(SHIELD_OF_LIGHT_BLOCK,SHIELD_OF_LIGHT_KEY,true);
     };
     /*public static void registerBlockEntities() {
         SHIELD_OF_LIGHT_BLOCK_ENTITY = Registry.register(
