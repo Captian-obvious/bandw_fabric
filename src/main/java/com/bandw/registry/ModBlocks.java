@@ -10,6 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.AbstractBlock.Settings;
 
@@ -27,15 +29,16 @@ public class ModBlocks {
         if (block == null || name == null) {
             throw new IllegalArgumentException("Block and name must not be null");
         };
-        // Create the identifier for the block
-        Identifier id = Identifier.of(Main.MOD_ID,name);
+        // Create the key for the block
+        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,name));
         // Register the block item if needed
         if (shouldRegisterItem) {
+            RegistryKey<Item> itemkey=RegistryKey.of(RegistryKeys.ITEM,key.getValue());
             BlockItem blockItem = new BlockItem(block, new Item.Settings());
-            Registry.register(Registries.ITEM, id, blockItem);
+            Registry.register(Registries.ITEM, itemkey, blockItem);
         };
         // Register the block
-        return Registry.register(Registries.BLOCK, id, block);
+        return Registry.register(Registries.BLOCK, key, block);
     };
     public static void registerBlocks() {
         register(DARK_BRICKS,"dark_bricks",true);
