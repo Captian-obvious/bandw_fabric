@@ -13,15 +13,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public class BladeOfInfiniteSorrow extends SwordItem {
+    public int attack_damage;
     public BladeOfInfiniteSorrow(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
+        attack_damage=attackDamage;
         super(material,attackDamage,attackSpeed,settings);
     };
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (!target.getWorld().isClient){
-            float damageAmount=16.0F;
             float targetHealth=target.getHealth();
-            if (targetHealth<damageAmount){
+            if (targetHealth<attack_damage){
                 target.setHealth(target.getMaxHealth());
                 ServerWorld world=(ServerWorld) target.getWorld();
                 BlockPos pos=target.getBlockPos();
