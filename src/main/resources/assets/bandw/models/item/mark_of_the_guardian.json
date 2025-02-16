@@ -2,5 +2,8 @@
     "parent": "minecraft:item/generated",
     "textures": {
         "layer0": "bandw:item/mark_of_the_guardian"
+    },
+    "display": {
+        "description": "They say it is immortal, they say it has power, they say, the guardian protects them all."
     }
 }
