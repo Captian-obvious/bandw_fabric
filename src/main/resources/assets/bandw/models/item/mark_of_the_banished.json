@@ -2,8 +2,5 @@
     "parent": "minecraft:item/generated",
     "textures": {
         "layer0": "bandw:item/mark_of_the_banished"
-    },
-    "display": {
-        "description": "Thou who hath done wrongdoing, the mark of banishment is given."
     }
 }
