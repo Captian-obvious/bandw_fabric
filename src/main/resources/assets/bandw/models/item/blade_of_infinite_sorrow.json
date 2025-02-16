@@ -2,5 +2,6 @@
     "parent": "minecraft:item/handheld",
     "textures": {
         "layer0": "bandw:item/blade_of_infinite_sorrow"
-    }
+    },
+    "scale": 2.0
 }
