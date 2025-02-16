@@ -15,8 +15,8 @@ import net.minecraft.util.math.Vec3d;
 public class BladeOfInfiniteSorrow extends SwordItem {
     public int attack_damage;
     public BladeOfInfiniteSorrow(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
-        attack_damage=attackDamage;
         super(material,attackDamage,attackSpeed,settings);
+        attack_damage=attackDamage;
     };
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker){
