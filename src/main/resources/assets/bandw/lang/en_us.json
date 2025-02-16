@@ -19,5 +19,7 @@
     "item.bandw.corruption_potion": "Potion of Corruption",
     "item.bandw.corruption_potion.desc": "Upon consumpion, the corruption grows..",
     "item.bandw.blade_of_infinite_sorrow": "Blade of Infinite Sorrow",
+    "item.bandw.light_shard": "Light Shard",
+    "item.bandw.dark_shard": "Dark Shard",
     "effect.bandw.corruption": "Corruption"
 }
