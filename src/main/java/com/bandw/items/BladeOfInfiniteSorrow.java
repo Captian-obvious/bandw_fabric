@@ -35,3 +35,4 @@ public class BladeOfInfiniteSorrow extends SwordItem {
         return super.postHit(stack,target,attacker);
     };
 };
+//wcwcc?
