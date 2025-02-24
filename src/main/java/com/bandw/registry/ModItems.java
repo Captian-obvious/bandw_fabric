@@ -22,7 +22,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
-    public static final RegistryKey<ItemGroup> bandw_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(FabricDocsReference.MOD_ID, "item_group"));
+    public static final RegistryKey<ItemGroup> bandw_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Main.MOD_ID, "item_group"));
     public static final ItemGroup bandw_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.dark_bone)).displayName(Text.translatable("itemGroup.bandw")).build();
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_shard"));
     public static final Item light_shard=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
@@ -48,7 +48,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM,key,item);
     };
     public static void registerItems(){
-        Registry.register(Registries.ITEM_GROUP,BANDW_GROUP_KEY,BANDW_GROUP);
+        Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(light_shard,light_shard_key);
         register(burnt_flesh,burnt_flesh_key);
@@ -58,7 +58,7 @@ public class ModItems {
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_shard,dark_shard_key);
         Main.LOGGER.info("Registering Item Group Contents");
-        ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
+        ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
             itemGroup.add(ModItems.blade_of_infinite_sorrow);
             itemGroup.add(ModItems.light_shard);
             itemGroup.add(ModItems.burnt_flesh);
