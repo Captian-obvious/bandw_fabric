@@ -40,6 +40,8 @@ public class ModItems {
     public static final Item mark_of_the_guardian=new MarkOfTheGuardian(new Item.Settings().maxCount(1).registryKey(mark_of_the_guardian_key));
     public static final RegistryKey<Item> blade_of_infinite_sorrow_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_infinite_sorrow"));
     public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings().registryKey(blade_of_infinite_sorrow_key));
+    public static final RegistryKey<Item> blade_of_karma_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_karma"));
+    public static final SwordItem blade_of_karma=new BladeOfKarma(ToolMaterial.DIAMOND,10,-2.4F,new Item.Settings().registryKey(blade_of_karma_key));
     public void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
@@ -50,6 +52,7 @@ public class ModItems {
     public static void registerItems(){
         Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
+        register(blade_of_karma,blade_of_karma_key);
         register(light_shard,light_shard_key);
         register(burnt_flesh,burnt_flesh_key);
         register(dark_bone,dark_bone_key);
@@ -60,13 +63,21 @@ public class ModItems {
         Main.LOGGER.info("Registering Item Group Contents");
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
             itemGroup.add(ModItems.blade_of_infinite_sorrow);
+            itemGroup.add(ModItems.blade_of_karma);
+            itemGroup.add(ModItems.mark_of_the_banished);
+            itemGroup.add(ModItems.mark_of_the_guardian);
             itemGroup.add(ModItems.light_shard);
             itemGroup.add(ModItems.burnt_flesh);
             itemGroup.add(ModItems.dark_bone);
             itemGroup.add(ModItems.dark_spider_eye);
             itemGroup.add(ModItems.dark_shard);
-            itemGroup.add(ModItems.mark_of_the_banished);
-            itemGroup.add(ModItems.mark_of_the_guardian);
+            itemGroup.add(ModBlocks.DARK_LOG.asItem());
+            itemGroup.add(ModBlocks.DARK_BARK.asItem());
+            itemGroup.add(ModBlocks.DARK_BRICKS.asItem());
+            itemGroup.add(ModBlocks.LIGHT_PLANKS.asItem());
+            itemGroup.add(ModBlocks.LIGHT_BRICKS.asItem());
+            itemGroup.add(ModBlocks.SHIELD_OF_LIGHT_BLOCK.asItem());
+            itemGroup.add(ModBlocks.LIGHT_CHISELED_BRICKS.asItem());
         });
     };
 };

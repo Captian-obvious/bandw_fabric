@@ -16,7 +16,7 @@ jobs:
         ]
     runs-on: ubuntu-22.04
     steps:
-      - name: checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
       - name: validate gradle wrapper
         uses: gradle/wrapper-validation-action@v2
@@ -25,11 +25,11 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           distribution: 'microsoft'
-      - name: make gradle wrapper executable
+      - name: Make Gradle Wrapper Executable
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
-      - name: capture build artifacts
+      - name: Capture Build Artifacts
         if: ${{ matrix.java == '21' }} # Only upload artifacts built from latest java
         uses: actions/upload-artifact@v4
         with:

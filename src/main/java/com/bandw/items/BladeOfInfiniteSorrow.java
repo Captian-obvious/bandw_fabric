@@ -24,7 +24,6 @@ public class BladeOfInfiniteSorrow extends SwordItem {
         if (!target.getWorld().isClient){
             float targetHealth=target.getHealth();
             if (targetHealth<attack_damage){
-                target.setHealth(target.getMaxHealth());
                 weapon_effect(stack,target,attacker);
             };
         };
@@ -32,6 +31,7 @@ public class BladeOfInfiniteSorrow extends SwordItem {
     };
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
+            target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
             BlockPos pos=target.getBlockPos();
             LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
