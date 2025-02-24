@@ -27,7 +27,7 @@ public class Main implements ModInitializer {
         ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
         ModEffects.registerEffects();
-        isCharterLoaded = ModChecker.isModLoaded("charter");
+        isCharterLoaded=ModChecker.isModLoaded("charter");
         if (isCharterLoaded) {
             LOGGER.info("Charter mod is loaded! Enabling additional features.");
             judgmentEnabled=true;
