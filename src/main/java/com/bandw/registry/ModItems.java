@@ -3,6 +3,8 @@ package com.bandw.registry;
 // Imports go below here
 import com.bandw.Main;
 import com.bandw.items.*;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
@@ -14,10 +16,14 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
+    public static final RegistryKey<ItemGroup> bandw_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(FabricDocsReference.MOD_ID, "item_group"));
+    public static final ItemGroup bandw_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.dark_bone)).displayName(Text.translatable("itemGroup.bandw")).build();
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_shard"));
     public static final Item light_shard=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
     public static final RegistryKey<Item> burnt_flesh_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_rotten_flesh"));
@@ -42,6 +48,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM,key,item);
     };
     public static void registerItems(){
+        Registry.register(Registries.ITEM_GROUP,BANDW_GROUP_KEY,BANDW_GROUP);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(light_shard,light_shard_key);
         register(burnt_flesh,burnt_flesh_key);
@@ -50,5 +57,16 @@ public class ModItems {
         register(mark_of_the_banished,mark_of_the_banished_key);
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_shard,dark_shard_key);
+        Main.LOGGER.info("Registering Item Group Contents");
+        ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(ModItems.blade_of_infinite_sorrow);
+            itemGroup.add(ModItems.light_shard);
+            itemGroup.add(ModItems.burnt_flesh);
+            itemGroup.add(ModItems.dark_bone);
+            itemGroup.add(ModItems.dark_spider_eye);
+            itemGroup.add(ModItems.dark_shard);
+            itemGroup.add(ModItems.mark_of_the_banished);
+            itemGroup.add(ModItems.mark_of_the_guardian);
+        });
     };
 };
