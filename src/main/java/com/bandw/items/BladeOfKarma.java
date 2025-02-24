@@ -13,9 +13,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class BladeOfKarama extends SwordItem {
+public class BladeOfKarma extends SwordItem {
     public int attack_damage;
-    public BladeOfKarama(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
+    public BladeOfKarma(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
         attack_damage=attackDamage;
     };
