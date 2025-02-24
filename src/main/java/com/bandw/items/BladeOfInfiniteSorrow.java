@@ -1,5 +1,6 @@
 package com.bandw.items;
 
+import com.bandw.Main;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
@@ -24,15 +25,22 @@ public class BladeOfInfiniteSorrow extends SwordItem {
             float targetHealth=target.getHealth();
             if (targetHealth<attack_damage){
                 target.setHealth(target.getMaxHealth());
-                ServerWorld world=(ServerWorld) target.getWorld();
-                BlockPos pos=target.getBlockPos();
-                LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
-                bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
-                world.spawnEntity(bolt);
-                target.setHealth(0.0F);
+                weapon_effect(stack,target,attacker);
             };
         };
         return super.postHit(stack,target,attacker);
+    };
+    public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
+        if (target!=null && attacker!=null){
+            ServerWorld world=(ServerWorld) target.getWorld();
+            BlockPos pos=target.getBlockPos();
+            LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
+            bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+            world.spawnEntity(bolt);
+            target.setHealth(0.0F);
+        }else{
+            Main.LOGGER.info("ERROR: target and attacker must not be null!");
+        };
     };
 };
 //wcwcc?
