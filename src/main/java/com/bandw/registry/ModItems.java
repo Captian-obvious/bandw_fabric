@@ -32,7 +32,7 @@ public class ModItems {
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_shard"));
     public static final Item light_shard=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
     public static final RegistryKey<Item> burnt_flesh_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_rotten_flesh"));
-    public static final ConsumableComponent dark_rotten_flesh_consumable_component=new ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.CORRUPTION_INTERNAL,600,1),1.0f)).build();
+    public static final ConsumableComponent dark_rotten_flesh_consumable_component=ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.CORRUPTION_INTERNAL,600,1),1.0f)).build();
     public static final FoodComponent dark_rotten_flesh_food_component=new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build();
     public static final Item burnt_flesh=new Item(new Item.Settings().maxCount(64).food(dark_rotten_flesh_food_component,dark_rotten_flesh_consumable_component).registryKey(burnt_flesh_key));
     public static final RegistryKey<Item> dark_bone_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_bone"));
