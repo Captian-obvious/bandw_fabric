@@ -12,7 +12,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.component.type.ConsumableComponent;
-import net.minecraft.item.comsume.ApplyEffectsConsumeEffect;
+import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
