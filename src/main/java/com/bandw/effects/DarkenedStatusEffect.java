@@ -9,8 +9,8 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
 
-public class DarkenedStatusEffect extends StatusEffect {
-    public DarkenedStatusEffect(StatusEffectCategory category, int color) {
+public class DarkeningStatusEffect extends StatusEffect {
+    public DarkeningStatusEffect(StatusEffectCategory category, int color) {
         super(category,color);
     };
     // Override methods to define the custom effect behavior
