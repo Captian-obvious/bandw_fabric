@@ -21,7 +21,7 @@ public class DarkenedStatusEffect extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
-            DamageSource damageSource=new DamageSource(DamageTypes.MAGIC);
+            DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.MAGIC.getValue()).get());
             float damage = 1.0F; // You can adjust this value as needed
             entity.damage(world,damageSource,damage);
         };
