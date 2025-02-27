@@ -1,0 +1,28 @@
+package com.bandw.effects;
+
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.damage.DamageSources;
+import net.minecraft.server.world.ServerWorld;
+
+public class DarkenedStatusEffect extends StatusEffect {
+    public DarkenedStatusEffect(StatusEffectCategory category, int color) {
+        super(category,color);
+    };
+    // Override methods to define the custom effect behavior
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+        int interval = 40 >> amplifier;
+        return interval > 0 && duration % interval == 0;
+    };
+    @Override
+    public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
+        if (entity instanceof LivingEntity){
+            float damage = 1.0F; // You can adjust this value as needed
+            entity.applyDamage(world,DamageSources.magic,damage);
+        };
+        return super.applyUpdateEffect(world,entity, amplifier);
+    };
+};

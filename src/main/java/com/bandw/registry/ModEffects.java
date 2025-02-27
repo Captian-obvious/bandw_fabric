@@ -11,8 +11,11 @@ import net.minecraft.registry.entry.RegistryEntry;
 
 public class ModEffects {
     public static final StatusEffect CORRUPTION_EFFECT = new CorruptionStatusEffect(StatusEffectCategory.HARMFUL, 0x015032);
-    public static RegistryEntry<StatusEffect> CORRUPTION_INTERNAL;
+    public static final StatusEffect DARKENED_EFFECT = new DarkenedStatusEffect(StatusEffectCategory.HARMFUL, 0x111111);
+    public static RegistryEntry<StatusEffect> CORRUPTION;
+    public static RegistryEntry<StatusEffect> DARKENED;
     public static void registerEffects() {
-        CORRUPTION_INTERNAL=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "corruption"), CORRUPTION_EFFECT);
+        CORRUPTION=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "corruption"), CORRUPTION_EFFECT);
+        DARKENED=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "darkened"), DARKENED_EFFECT);
     };
 };
