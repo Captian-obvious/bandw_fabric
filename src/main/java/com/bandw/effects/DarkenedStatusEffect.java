@@ -5,6 +5,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.world.ServerWorld;
 
 public class DarkenedStatusEffect extends StatusEffect {
@@ -20,8 +21,9 @@ public class DarkenedStatusEffect extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
+            DamageSource damageSource=new DamageSource(DamageTypes.MAGIC);
             float damage = 1.0F; // You can adjust this value as needed
-            entity.damage(world,DamageTypes.MAGIC,damage);
+            entity.damage(world,damageSource,damage);
         };
         return super.applyUpdateEffect(world,entity, amplifier);
     };
