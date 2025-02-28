@@ -1,6 +1,6 @@
 package com.bandw.items;
 
-import com.bandw.ModEffects;
+import com.bandw.registry.ModEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
