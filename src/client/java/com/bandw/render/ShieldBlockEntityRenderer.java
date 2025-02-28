@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.MathHelper;
 import com.mojang.blaze3d.systems.RenderSystem;
-public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
+public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBlockEntity> {
     private static final Identifier TEXTURE = Identifier.of(ClientMain.MOD_ID,"textures/entity/shield.png");
     public ShieldBlockEntityRenderer(BlockEntityRenderDispatcher dispatcher) {
         super(dispatcher);
