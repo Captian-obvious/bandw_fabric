@@ -22,10 +22,11 @@ public class MarkOfTheBanished extends Item {
     public MarkOfTheBanished(Settings settings){
         super(settings);
     };
+    
     @Override
-    public void inventoryTick(ItemStack stack, World world, LivingEntity entity, int slot, boolean isSelected){
+    public void inventoryTick(ItemStack stack,World world,LivingEntity entity,int slot,boolean selected) {
         if (!world.isClient()){
-            if (entity instanceof LivingEntity && isSelected){
+            if (entity instanceof LivingEntity && selected){
                 effectAcc+=1;
                 if (effectAcc>=effectDelay){
                     // apply darkening to the player
@@ -38,6 +39,6 @@ public class MarkOfTheBanished extends Item {
                 };
             };
         };
-        super.inventoryTick(stack,world,entity,slot,isSelected);
+        super.inventoryTick(stack, world, entity, slot, selected); // Call the super method to retain default behavior
     };
 };

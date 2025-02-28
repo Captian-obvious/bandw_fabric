@@ -23,7 +23,7 @@ public class MarkOfTheGuardian extends Item {
         super(settings);
     };
     @Override
-    public void inventoryTick(ItemStack stack, World world, LivingEntity entity, int slot, boolean isSelected){
+    public void inventoryTick(ItemStack stack,World world,LivingEntity entity,int slot,boolean selected) {
         if (!world.isClient()){
             if (entity instanceof LivingEntity){
                 effectAcc+=1;
@@ -38,6 +38,6 @@ public class MarkOfTheGuardian extends Item {
                 };
             };
         };
-        super.inventoryTick(stack,world,entity,slot,isSelected);
+        super.inventoryTick(stack,world,entity,slot,selected);
     };
 };
