@@ -28,10 +28,11 @@ public class MarkOfTheGuardian extends Item {
         if (!world.isClient()){
             if (entity instanceof LivingEntity){
                 effectAcc+=1;
+                LivingEntity livingEntity=(LivingEntity) entity;
                 if (effectAcc>=effectDelay){
                     // apply resistance to the player (they are immortal)
                     StatusEffectInstance instance = new StatusEffectInstance(StatusEffects.RESISTANCE,60,3,false,true,true);
-                    boolean success=entity.addStatusEffect(instance);
+                    boolean success=livingEntity.addStatusEffect(instance);
                     if (!success){
                         Main.LOGGER.info("Failed to apply effect 'minecraft:resistance' to entity, ignoring and continuing");
                     };
