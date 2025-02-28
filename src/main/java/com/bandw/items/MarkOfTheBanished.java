@@ -1,5 +1,7 @@
 package com.bandw.items;
 
+import com.bandw.ModEffects;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
@@ -13,7 +15,25 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public class MarkOfTheBanished extends Item {
+    int effectDelay=10; //delay in ticks before applying effect
+    int effectAcc=0;
     public MarkOfTheBanished(Settings settings){
         super(settings);
+    };
+    @Override
+    public void inventoryTick(ItemStack stack, ServerWorld world, LivingEntity entity, int slot, boolean isSelected){
+        if (entity instanceof LivingEntity && isSelected){
+            effectAcc+=1;
+            if (effectAcc>=effectDelay){
+                // apply darkening to the player
+                StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,60,0,false,true,true);
+                boolean success=entity.addStatusEffect(instance);
+                if (!success){
+                    Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
+                };
+                effectAcc=0;
+            };
+        };
+        super.inventoryTick(stack,world,entity,slot,isSelected);
     };
 };
