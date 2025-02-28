@@ -18,8 +18,8 @@ import net.minecraft.util.math.MathHelper;
 import com.mojang.blaze3d.systems.RenderSystem;
 public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBlockEntity> {
     private static final Identifier TEXTURE = Identifier.of(ClientMain.MOD_ID,"textures/entity/shield.png");
-    public ShieldBlockEntityRenderer(BlockEntityRenderDispatcher dispatcher) {
-        super(dispatcher);
+    public ShieldBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
+        super();
     };
     @Override
     public void render(ShieldBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
