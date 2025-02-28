@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
@@ -23,7 +24,7 @@ public class MarkOfTheGuardian extends Item {
         super(settings);
     };
     @Override
-    public void inventoryTick(ItemStack stack,World world,LivingEntity entity,int slot,boolean selected) {
+    public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected) {
         if (!world.isClient()){
             if (entity instanceof LivingEntity){
                 effectAcc+=1;
