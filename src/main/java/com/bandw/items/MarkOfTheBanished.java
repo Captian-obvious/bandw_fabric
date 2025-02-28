@@ -1,5 +1,6 @@
 package com.bandw.items;
 
+import com.bandw.Main;
 import com.bandw.registry.ModEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
@@ -11,6 +12,7 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
@@ -21,17 +23,19 @@ public class MarkOfTheBanished extends Item {
         super(settings);
     };
     @Override
-    public void inventoryTick(ItemStack stack, ServerWorld world, LivingEntity entity, int slot, boolean isSelected){
-        if (entity instanceof LivingEntity && isSelected){
-            effectAcc+=1;
-            if (effectAcc>=effectDelay){
-                // apply darkening to the player
-                StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,60,0,false,true,true);
-                boolean success=entity.addStatusEffect(instance);
-                if (!success){
-                    Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
+    public void inventoryTick(ItemStack stack, World world, LivingEntity entity, int slot, boolean isSelected){
+        if (!world.isClient()){
+            if (entity instanceof LivingEntity && isSelected){
+                effectAcc+=1;
+                if (effectAcc>=effectDelay){
+                    // apply darkening to the player
+                    StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,60,0,false,true,true);
+                    boolean success=entity.addStatusEffect(instance);
+                    if (!success){
+                        Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
+                    };
+                    effectAcc=0;
                 };
-                effectAcc=0;
             };
         };
         super.inventoryTick(stack,world,entity,slot,isSelected);
