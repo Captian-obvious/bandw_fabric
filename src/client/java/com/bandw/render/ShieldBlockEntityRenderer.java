@@ -4,8 +4,8 @@ import com.bandw.ClientMain;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
+import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
-import net.minecraft.client.render.model.ModelLoader;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -15,7 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.MathHelper;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.math.Matrix4f;
 public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEntity> {
     private static final Identifier TEXTURE = Identifier.of(ClientMain.MOD_ID,"textures/entity/shield.png");
     public ShieldBlockEntityRenderer(BlockEntityRenderDispatcher dispatcher) {
@@ -71,8 +70,7 @@ public class ShieldBlockEntityRenderer extends BlockEntityRenderer<ShieldBlockEn
                     .texture(uv[i * 2], uv[i * 2 + 1])
                     .overlay(overlay)
                     .light(light)
-                    .normal(0, 1, 0)
-                    .next();
+                    .normal(0, 1, 0);
             };
         };
         matrices.pop();
