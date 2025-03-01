@@ -9,13 +9,14 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-public class ShieldOfLightBlock extends Block {
+public class ShieldOfLightBlock extends BlockWithEntity {
     public ShieldOfLightBlock(Settings settings) {
         super(settings);
     };
-    /*@Override
-    public BlockEntity createBlockEntity(BlockView world) {
-        return new ShieldBlockEntity(this.getPosition());
+    /*@Nullable
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new ShieldBlockEntity(pos, state);
     };*/
     public boolean hasBlockEntity() {
         return true;
