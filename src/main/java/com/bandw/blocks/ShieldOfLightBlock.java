@@ -10,11 +10,15 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-public class ShieldOfLightBlock extends BlockWithEntity {
+public class ShieldOfLightBlock extends Block {
     public ShieldOfLightBlock(Settings settings) {
         super(settings);
     };
-    /*@Nullable
+    /*@Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return createCodec(ShieldOfLightBlock::new);
+    };
+    @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new ShieldBlockEntity(pos, state);
