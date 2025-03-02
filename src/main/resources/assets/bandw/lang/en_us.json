@@ -23,9 +23,9 @@
     "item.bandw.light_shard": "Light Shard",
     "item.bandw.dark_shard": "Dark Shard",
     "item.bandw.mark_of_the_banished": "Mark of the Banished",
-    "item.bandw.mark_of_the_banished.desc": "Thou who hath done wrongdoing, the mark of banishment is given.",
+    "itemTooltip.bandw.mark_of_the_banished": "Thou who hath done wrongdoing, the mark of banishment is given.",
     "item.bandw.mark_of_the_guardian": "Mark of the Guardian",
-    "item.bandw.mark_of_the_guardian.desc": "They say it is immortal, they say it has power, they say, the guardian protects them all.",
+    "itemTooltip.bandw.mark_of_the_guardian": "They say it is immortal, they say it has power, they say, the guardian protects them all.",
     "itemGroup.bandw": "B&W",
     "effect.bandw.corruption": "Corruption",
     "effect.bandw.darkening": "Darkening"
