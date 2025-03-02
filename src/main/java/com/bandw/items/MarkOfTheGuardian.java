@@ -18,7 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public class MarkOfTheGuardian extends Item {
-    int effectDelay=10; //delay in ticks before applying effect
+    int effectDelay=20; //delay in ticks before applying effect
     int effectAcc=0;
     public MarkOfTheGuardian(Settings settings){
         super(settings);
@@ -31,7 +31,7 @@ public class MarkOfTheGuardian extends Item {
                 LivingEntity livingEntity=(LivingEntity) entity;
                 if (effectAcc>=effectDelay){
                     // apply resistance to the player (they are immortal)
-                    StatusEffectInstance instance = new StatusEffectInstance(StatusEffects.RESISTANCE,60,3,false,true,true);
+                    StatusEffectInstance instance = new StatusEffectInstance(StatusEffects.RESISTANCE,100,5,false,true,true);
                     boolean success=livingEntity.addStatusEffect(instance);
                     if (!success){
                         Main.LOGGER.info("Failed to apply effect 'minecraft:resistance' to entity, ignoring and continuing");

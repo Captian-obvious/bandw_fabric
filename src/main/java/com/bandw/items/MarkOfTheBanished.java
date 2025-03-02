@@ -18,7 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public class MarkOfTheBanished extends Item {
-    int effectDelay=10; //delay in ticks before applying effect
+    int effectDelay=20; //delay in ticks before applying effect
     int effectAcc=0;
     public MarkOfTheBanished(Settings settings){
         super(settings);
@@ -31,7 +31,7 @@ public class MarkOfTheBanished extends Item {
                 LivingEntity livingEntity=(LivingEntity) entity;
                 if (effectAcc>=effectDelay){
                     // apply darkening to the player
-                    StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,60,0,false,true,true);
+                    StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,100,0,false,true,true);
                     boolean success=livingEntity.addStatusEffect(instance);
                     if (!success){
                         Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
