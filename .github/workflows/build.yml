@@ -18,16 +18,16 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: validate gradle wrapper
+      - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v2
-      - name: setup jdk ${{ matrix.java }}
+      - name: Setup JDK ${{ matrix.java }}
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java }}
           distribution: 'microsoft'
       - name: Make Gradle Wrapper Executable
         run: chmod +x ./gradlew
-      - name: build
+      - name: Build
         run: ./gradlew build
       - name: Capture Build Artifacts
         if: ${{ matrix.java == '21' }} # Only upload artifacts built from latest java
