@@ -50,6 +50,10 @@ public class ModItems {
     public static final Item mark_of_the_guardian=new MarkOfTheGuardian(new Item.Settings().maxCount(1).registryKey(mark_of_the_guardian_key));
     public static final RegistryKey<Item> blade_of_infinite_sorrow_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_infinite_sorrow"));
     public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_infinite_sorrow_key));
+    public static final RegistryKey<Item> halfshade_blade_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"halfshade_blade"));
+    public static final SwordItem halfshade_blade=new HalfShadeSword(ToolMaterial.DIAMOND,6,-2.4F,new Item.Settings().enchantable(10).registryKey(halfshade_blade_key));
+    public static final RegistryKey<Item> blade_of_light_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_light"));
+    public static final SwordItem blade_of_light=new BladeOfLight(ToolMaterial.DIAMOND,6,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_light_key));
     public static final RegistryKey<Item> blade_of_karma_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_karma"));
     public static final SwordItem blade_of_karma=new BladeOfKarma(ToolMaterial.DIAMOND,10,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_karma_key));
     public void initialize(){
@@ -63,6 +67,7 @@ public class ModItems {
         Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(blade_of_karma,blade_of_karma_key);
+        register(halfshade_blade,halfshade_blade_key);
         register(light_shard,light_shard_key);
         register(burnt_flesh,burnt_flesh_key);
         register(dark_bone,dark_bone_key);
@@ -74,6 +79,7 @@ public class ModItems {
         Main.LOGGER.info("Registering Item Group Contents");
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
             itemGroup.add(ModItems.blade_of_infinite_sorrow);
+            itemGroup.add(ModItems.halfshade_blade);
             itemGroup.add(ModItems.blade_of_karma);
             itemGroup.add(ModItems.mark_of_the_banished);
             itemGroup.add(ModItems.mark_of_the_guardian);
