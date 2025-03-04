@@ -25,9 +25,9 @@ public class CleansingStatusEffect extends StatusEffect {
                 StatusEffectInstance instance = new StatusEffectInstance(ModEffects.CORRUPTION,0,0);
                 StatusEffectInstance instance2 = new StatusEffectInstance(ModEffects.DARKENING,200,0);
                 StatusEffectInstance instance3 = new StatusEffectInstance(StatusEffects.NAUSEA,200,0);
-                boolean success=livingEntity.addStatusEffect(instance);
-                boolean success2=livingEntity.addStatusEffect(instance2);
-                boolean success3=livingEntity.addStatusEffect(instance3);
+                boolean success=entity.addStatusEffect(instance);
+                boolean success2=entity.addStatusEffect(instance2);
+                boolean success3=entity.addStatusEffect(instance3);
                 if (!success){
                     Main.LOGGER.info("Failed to remove effect 'bandw:corruption' from entity, ignoring and continuing");
                 };
