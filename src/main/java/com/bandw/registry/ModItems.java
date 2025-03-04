@@ -67,6 +67,7 @@ public class ModItems {
         Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(blade_of_karma,blade_of_karma_key);
+        register(blade_of_light,blade_of_light_key);
         register(halfshade_blade,halfshade_blade_key);
         register(light_shard,light_shard_key);
         register(burnt_flesh,burnt_flesh_key);
@@ -81,6 +82,7 @@ public class ModItems {
             itemGroup.add(ModItems.blade_of_infinite_sorrow);
             itemGroup.add(ModItems.halfshade_blade);
             itemGroup.add(ModItems.blade_of_karma);
+            itemGroup.add(ModItems.blade_of_light);
             itemGroup.add(ModItems.mark_of_the_banished);
             itemGroup.add(ModItems.mark_of_the_guardian);
             itemGroup.add(ModItems.light_shard);
