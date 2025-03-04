@@ -1,5 +1,6 @@
 package com.bandw.effects;
 
+import com.bandw.Main;
 import com.bandw.registry.ModEffects;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
@@ -39,6 +40,6 @@ public class CleansingStatusEffect extends StatusEffect {
                 };
             };
         };
-        return super.applyUpdateEffect(world,entity, amplifier);
+        return super.applyUpdateEffect(world,entity,amplifier);
     };
 };

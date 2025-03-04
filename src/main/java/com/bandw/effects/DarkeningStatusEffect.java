@@ -26,6 +26,6 @@ public class DarkeningStatusEffect extends StatusEffect {
             float damage = 1.0F; // You can adjust this value as needed
             entity.damage(world,damageSource,damage);
         };
-        return super.applyUpdateEffect(world,entity, amplifier);
+        return super.applyUpdateEffect(world,entity,amplifier);
     };
 };
