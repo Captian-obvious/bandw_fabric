@@ -6,36 +6,38 @@ public class Shield {
     private Vec3d position;
     private float size;
     private float strength;
+    private float maxStrength;
     private boolean isActive;
 
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
+        this.maxStrength=strength;
         this.strength = strength;
         this.isActive = true;
     };
     public void expand(float amount) {
         if (isActive) {
-            size += amount;
+            this.size += amount;
         };
     };
     public void contract(float amount) {
         if (isActive) {
-            size = Math.max(0, size - amount);
+            this.size = Math.max(0, this.size - amount);
         };
     };
     public void weaken(float amount) {
         if (isActive) {
-            strength = Math.max(0, strength - amount);
-            if (strength<=0) {
+            this.strength = Math.max(0, this.strength - amount);
+            if (this.strength<=0) {
                 this.collapse();
             };
         };
     };
     public void collapse(){
         new Thread(()->{
-            while (size>0) {
-                size-=size*.05;
+            while (this.size>0) {
+                this.size-=this.size*.05;
                 try{
                     Thread.sleep(50);
                 }catch (InterruptedException e){
@@ -45,24 +47,30 @@ public class Shield {
         }).start();
     };
     public void toggleActive() {
-        isActive = !isActive;
+        this.isActive = !this.isActive;
     };
     public boolean getIsActive() {
-        return isActive;
+        return this.isActive;
     };
     public float getSize() {
-        return size;
+        return this.size;
     };
     public float getStrength() {
-        return strength;
+        return this.strength;
+    };
+    public float getMaxStrength() {
+        return this.maxStrength;
     };
     public void setIsActive(boolean val) {
-        isActive=val;
+        this.isActive=val;
     };
-    public void setSize(int val) {
-        size=val;
+    public void setSize(float val) {
+        this.size=val;
     };
-    public void setStrength(int val) {
-        strength=val;
+    public void setStrength(float val) {
+        this.strength=val;
+    };
+    public float setMaxStrength(float val) {
+        this.maxStrength=val;
     };
 };
