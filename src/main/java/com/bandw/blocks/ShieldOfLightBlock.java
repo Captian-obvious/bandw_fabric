@@ -10,7 +10,6 @@ import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
-import javax.annotation.Nullable;
 
 public class ShieldOfLightBlock extends BlockWithEntity {
     public ShieldOfLightBlock(Settings settings) {
@@ -20,7 +19,6 @@ public class ShieldOfLightBlock extends BlockWithEntity {
     protected MapCodec<? extends BlockWithEntity> getCodec() {
         return createCodec(ShieldOfLightBlock::new);
     };
-    @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new ShieldBlockEntity(pos, state);
