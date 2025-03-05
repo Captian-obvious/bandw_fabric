@@ -8,7 +8,6 @@ public class Shield {
     private float strength;
     private float maxStrength;
     private boolean isActive;
-
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
