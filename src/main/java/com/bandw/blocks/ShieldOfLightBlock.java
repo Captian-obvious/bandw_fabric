@@ -10,6 +10,7 @@ import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
+import javax.annotation.Nullable;
 
 public class ShieldOfLightBlock extends BlockWithEntity {
     public ShieldOfLightBlock(Settings settings) {
