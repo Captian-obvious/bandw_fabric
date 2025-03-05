@@ -1,5 +1,6 @@
 package com.bandw.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
@@ -10,11 +11,11 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-public class ShieldOfLightBlock extends Block {
+public class ShieldOfLightBlock extends BlockWithEntity {
     public ShieldOfLightBlock(Settings settings) {
         super(settings);
     };
-    /*@Override
+    @Override
     protected MapCodec<? extends BlockWithEntity> getCodec() {
         return createCodec(ShieldOfLightBlock::new);
     };
@@ -22,7 +23,7 @@ public class ShieldOfLightBlock extends Block {
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new ShieldBlockEntity(pos, state);
-    };*/
+    };
     public boolean hasBlockEntity() {
         return true;
     };
