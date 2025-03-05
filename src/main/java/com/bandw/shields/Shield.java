@@ -70,7 +70,7 @@ public class Shield {
     public void setStrength(float val) {
         this.strength=val;
     };
-    public float setMaxStrength(float val) {
+    public void setMaxStrength(float val) {
         this.maxStrength=val;
     };
 };
