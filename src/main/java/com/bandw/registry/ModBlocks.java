@@ -2,6 +2,7 @@ package com.bandw.registry;
 
 import com.bandw.Main;
 import com.bandw.blocks.*;
+import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
