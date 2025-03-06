@@ -34,10 +34,10 @@ public class ModBlocks {
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F).registryKey(SHIELD_OF_LIGHT_KEY));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
     private static RegistryKey<Block> keyOfBlock(String name){
-        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(FabricDocsReference.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Main.MOD_ID, name));
 	};
 	private static RegistryKey<Item> keyOfItem(String name){
-        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(FabricDocsReference.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Main.MOD_ID, name));
 	};
     private static Block register_new(String name,Function<Settings, Block> blockFactory,Settings settings,boolean shouldRegisterItem){
 		RegistryKey<Block> blockKey=keyOfBlock(name);
