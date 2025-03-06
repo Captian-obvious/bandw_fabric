@@ -14,6 +14,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
 
