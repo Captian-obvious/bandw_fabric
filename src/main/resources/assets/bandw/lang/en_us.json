@@ -32,5 +32,6 @@
     "itemTooltip.bandw.mark_of_the_guardian": "They say it is immortal, they say it has power, they say, the guardian protects them all.",
     "itemGroup.bandw": "B&W",
     "effect.bandw.corruption": "Corruption",
-    "effect.bandw.darkening": "Darkening"
+    "effect.bandw.darkening": "Darkening",
+    "sound.bandw.corrupt": "Corruption Spreads"
 }

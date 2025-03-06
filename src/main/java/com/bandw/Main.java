@@ -7,6 +7,8 @@ import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModEntities;
 import com.bandw.registry.ModEffects;
 import com.bandw.registry.ModBlocks;
+import com.bandw.registry.ModSounds;
+import com.bandw.registry.ModBlockEntities;
 import com.bandw.registry.ModItems;
 import com.bandw.registry.ModEntityAttributes;
 import net.fabricmc.api.ModInitializer;
@@ -24,11 +26,12 @@ public class Main implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Server Initializing...");
         ModBlocks.registerBlocks();
-        //ModBlocks.registerBlockEntities();
+        ModBlockEntities.registerBlockEntities();
         ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
         ModEffects.registerEffects();
+        ModSounds.registerSounds();
         isCharterLoaded=ModChecker.isModLoaded("charter");
         if (isCharterLoaded) {
             LOGGER.info("Charter mod is loaded! Enabling additional features.");

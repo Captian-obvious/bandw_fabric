@@ -1,0 +1,20 @@
+package com.bandw.registry;
+
+import com.bandw.Main;
+import com.bandw.effects.*;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
+
+public class ModEffects {
+    public static final SoundEvent CORRUPT=registerSound("corrupt");
+    private static SoundEvent registerSound(String id){
+        Identifier identifier=Identifier.of(Main.MOD_ID,id);
+        return Registry.register(Registries.SOUND_EVENT,identifier,SoundEvent.of(identifier));
+    };
+    public static void registerSounds() {
+        Main.LOGGER.info("Registering Sounds...");
+    };
+};

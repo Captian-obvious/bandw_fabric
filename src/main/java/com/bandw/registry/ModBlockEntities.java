@@ -24,4 +24,7 @@ public class ModBlockEntities {
         Identifier id=Identifier.of(Main.MOD_ID,name);
         return Registry.register(Registries.BLOCK_ENTITY_TYPE,id,FabricBlockEntityTypeBuilder.<T>create(entityFactory,blocks).build());
     };
+    public static void registerBlockEntities() {
+        Main.LOGGER.info("Registering block entities...");
+    };
 };

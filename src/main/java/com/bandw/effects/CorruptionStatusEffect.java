@@ -1,5 +1,6 @@
 package com.bandw.effects;
 
+import com.bandw.Main;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.LivingEntity;
@@ -13,10 +14,14 @@ public class CorruptionStatusEffect extends StatusEffect {
     // Override methods to define the custom effect behavior
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return super.canApplyUpdateEffect(duration, amplifier);
+        int interval = 60 >> amplifier;
+        return interval > 0 && duration % interval == 0;
     };
     @Override
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
+        if (entity instanceof LivingEntity){
+            
+        };
         return super.applyUpdateEffect(world,entity, amplifier);
     };
 };

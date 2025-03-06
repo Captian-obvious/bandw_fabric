@@ -1,0 +1,8 @@
+{
+    "corrupt": {
+        "subtitle": "sound.bandw.corrupt",
+        "sounds": [
+            "bandw:corrupt"
+        ]
+    }
+}
