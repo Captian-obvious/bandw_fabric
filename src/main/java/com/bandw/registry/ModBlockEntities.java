@@ -20,7 +20,7 @@ import net.minecraft.block.AbstractBlock.Settings;
 public class ModBlockEntities {
     public static final BlockEntityType<ShieldBlockEntity> SHIELD_BLOCK_ENTITY=register("shield",ShieldBlockEntity::new,ModBlocks.ShieldOfLightBlock);
     private static <T extends BlockEntity> BlockEntityType<T> register(String name,FabricBlockEntityTypeBuilder.Factory<? extends T> entityFactory,Block... blocks) {
-        Identifier id = Identifier.of(Main.MOD_ID, name);
+        Identifier id=Identifier.of(Main.MOD_ID,name);
         return Registry.register(Registries.BLOCK_ENTITY_TYPE,id,FabricBlockEntityTypeBuilder.<T>create(entityFactory,blocks).build());
     };
 };
