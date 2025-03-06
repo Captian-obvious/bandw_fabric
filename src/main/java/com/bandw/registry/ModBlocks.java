@@ -35,22 +35,22 @@ public class ModBlocks {
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
     private static RegistryKey<Block> keyOfBlock(String name){
         return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Main.MOD_ID, name));
-	};
-	private static RegistryKey<Item> keyOfItem(String name){
+    };
+    private static RegistryKey<Item> keyOfItem(String name){
         return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Main.MOD_ID, name));
-	};
+    };
     private static Block register_new(String name,Function<Settings, Block> blockFactory,Settings settings,boolean shouldRegisterItem){
-		RegistryKey<Block> blockKey=keyOfBlock(name);
-		Block block=blockFactory.apply(settings.registryKey(blockKey));
-		// Sometimes, you may not want to register an item for the block.
-		// Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
-		if (shouldRegisterItem){
-			RegistryKey<Item> itemKey=keyOfItem(name);
-			BlockItem blockItem=new BlockItem(block,new Item.Settings().registryKey(itemKey));
-			Registry.register(Registries.ITEM,itemKey,blockItem);
-		};
-		return Registry.register(Registries.BLOCK, blockKey, block);
-	};
+        RegistryKey<Block> blockKey=keyOfBlock(name);
+        Block block=blockFactory.apply(settings.registryKey(blockKey));
+        // Sometimes, you may not want to register an item for the block.
+        // // Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
+        if (shouldRegisterItem){
+            RegistryKey<Item> itemKey=keyOfItem(name);
+            BlockItem blockItem=new BlockItem(block,new Item.Settings().registryKey(itemKey));
+            Registry.register(Registries.ITEM,itemKey,blockItem);
+        };
+        return Registry.register(Registries.BLOCK, blockKey, block);
+    };
     public static Block register(Block block, RegistryKey key, boolean shouldRegisterItem) {
         // Ensure block and name are not null
         if (block == null || key == null) {
