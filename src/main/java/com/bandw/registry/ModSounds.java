@@ -8,7 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 
-public class ModEffects {
+public class ModSounds {
     public static final SoundEvent CORRUPT=registerSound("corrupt");
     private static SoundEvent registerSound(String id){
         Identifier identifier=Identifier.of(Main.MOD_ID,id);
