@@ -20,7 +20,7 @@ public class ShieldBlockEntity extends BlockEntity {
         this.shield=new Shield(new Vec3d(pos.getX(),pos.getY(),pos.getZ()),100.0f,1.0f);
         this.shield.setChangeHandler(onchange);
     };
-    public onchange(float size,float strength){
+    public void onchange(float size,float strength){
         this.size=size;
         this.strength=strength;
         this.max_strength=this.shield.getMaxStrength();
