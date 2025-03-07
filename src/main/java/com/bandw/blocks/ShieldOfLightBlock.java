@@ -23,7 +23,7 @@ public class ShieldOfLightBlock extends BlockWithEntity {
     public BlockEntity createBlockEntity(BlockPos pos,BlockState state) {
         ShieldBlockEntity h=new ShieldBlockEntity(pos,state);
         h.initialize();
-        return h
+        return h;
     };
     public boolean hasBlockEntity() {
         return true;
