@@ -9,6 +9,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.nbt.NbtCompound;
+import java.util.function.BiFunction;
 
 public class ShieldBlockEntity extends BlockEntity {
     private Shield shield;
@@ -19,14 +20,15 @@ public class ShieldBlockEntity extends BlockEntity {
         super(ModBlockEntities.SHIELD_BLOCK_ENTITY,pos,state);
         this.shield=new Shield(new Vec3d(pos.getX(),pos.getY(),pos.getZ()),100.0f,1.0f);
     };
-    public void onchange(float size,float strength){
-        this.size=size;
-        this.strength=strength;
-        this.max_strength=this.shield.getMaxStrength();
-        this.markDirty();
-    };
     public void initialize(){
-        this.shield.setChangeHandler(this.onchange);
+        BiFunction<Float, Float, Void> changeHandler = (newSize, newStrength) -> {
+            this.size=newSize;
+            this.strength=newStrength;
+            this.max_strength=this.shield.getMaxStrength();
+            this.markDirty();
+            return null;
+        };
+        this.shield.setChangeHandler(changeHandler);
     };
     @Override
     protected void writeNbt(NbtCompound nbt,RegistryWrapper.WrapperLookup registryLookup) {

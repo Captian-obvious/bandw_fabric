@@ -9,7 +9,7 @@ public class Shield {
     private float strength;
     private float maxStrength;
     private boolean isActive;
-    private BiFunction<Float, Float, Void> on_change=null;
+    public BiFunction<Float, Float, Void> on_change=null;
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
