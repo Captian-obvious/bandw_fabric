@@ -20,8 +20,8 @@ public class ShieldOfLightBlock extends BlockWithEntity {
         return createCodec(ShieldOfLightBlock::new);
     };
     @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new ShieldBlockEntity(pos, state);
+    public BlockEntity createBlockEntity(BlockPos pos,BlockState state) {
+        return new ShieldBlockEntity(pos,state);
     };
     public boolean hasBlockEntity() {
         return true;
