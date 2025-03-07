@@ -18,14 +18,16 @@ public class ShieldBlockEntity extends BlockEntity {
     public ShieldBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SHIELD_BLOCK_ENTITY,pos,state);
         this.shield=new Shield(new Vec3d(pos.getX(),pos.getY(),pos.getZ()),100.0f,1.0f);
-        this.shield.setChangeHandler(onchange);
     };
     public void onchange(float size,float strength){
         this.size=size;
         this.strength=strength;
         this.max_strength=this.shield.getMaxStrength();
         this.markDirty();
-    }
+    };
+    public void initialize(){
+        this.shield.setChangeHandler(onchange);
+    };
     @Override
     protected void writeNbt(NbtCompound nbt,RegistryWrapper.WrapperLookup registryLookup) {
         nbt.putFloat("size",this.size);

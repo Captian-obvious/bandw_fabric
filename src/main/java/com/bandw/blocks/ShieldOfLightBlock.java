@@ -21,7 +21,9 @@ public class ShieldOfLightBlock extends BlockWithEntity {
     };
     @Override
     public BlockEntity createBlockEntity(BlockPos pos,BlockState state) {
-        return new ShieldBlockEntity(pos,state);
+        ShieldBlockEntity h=new ShieldBlockEntity(pos,state);
+        h.initialize();
+        return h
     };
     public boolean hasBlockEntity() {
         return true;
