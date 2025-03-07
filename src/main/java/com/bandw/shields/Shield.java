@@ -9,7 +9,7 @@ public class Shield {
     private float strength;
     private float maxStrength;
     private boolean isActive;
-    private Function<float, float, float> on_change=null;
+    private Function<float, float> on_change=null;
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
@@ -17,7 +17,7 @@ public class Shield {
         this.strength = strength;
         this.isActive = true;
     };
-    public void setChangeHandler(Function<float, float, float> handler){
+    public void setChangeHandler(Function<float, float> handler){
         if (handler!=null){
             this.on_change=handler;
         };
@@ -25,19 +25,19 @@ public class Shield {
     public void expand(float amount) {
         if (isActive) {
             this.size += amount;
-            this.on_change.apply(this.size,this.strength,this.maxStrength);
+            this.on_change.apply(this.size,this.strength);
         };
     };
     public void contract(float amount) {
         if (isActive) {
             this.size = Math.max(0, this.size - amount);
-            this.on_change.apply(this.size,this.strength,this.maxStrength);
+            this.on_change.apply(this.size,this.strength);
         };
     };
     public void weaken(float amount) {
         if (isActive) {
             this.strength = Math.max(0, this.strength - amount);
-            this.on_change.apply(this.size,this.strength,this.maxStrength);
+            this.on_change.apply(this.size,this.strength);
             if (this.strength<=0) {
                 this.collapse();
             };
@@ -45,13 +45,13 @@ public class Shield {
     };
     public void collapse(){
         new Thread(()->{
-            float decrement=this.size*0.05;
+            float decrement=this.size*(float) 0.05;
             float original_size=this.size;
             while (this.size>0) {
                 //this.size-=this.size*.05;
                 this.size-=decrement;
-                decrement+=original_size*0.05;
-                this.on_change.apply(this.size,this.strength,this.maxStrength);
+                decrement+=original_size*(float) 0.05;
+                this.on_change.apply(this.size,this.strength);
                 try{
                     Thread.sleep(50);
                 }catch (InterruptedException e){
@@ -80,14 +80,14 @@ public class Shield {
     };
     public void setSize(float val) {
         this.size=val;
-        this.on_change.apply(this.size,this.strength,this.maxStrength);
+        this.on_change.apply(this.size,this.strength);
     };
     public void setStrength(float val) {
         this.strength=val;
-        this.on_change.apply(this.size,this.strength,this.maxStrength);
+        this.on_change.apply(this.size,this.strength);
     };
     public void setMaxStrength(float val) {
         this.maxStrength=val;
-        this.on_change.apply(this.size,this.strength,this.maxStrength);
+        this.on_change.apply(this.size,this.strength);
     };
 };
