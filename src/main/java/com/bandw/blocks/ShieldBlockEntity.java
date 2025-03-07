@@ -7,7 +7,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.nbt.RegistryWrapper;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.nbt.NbtCompound;
 
 public class ShieldBlockEntity extends BlockEntity {
