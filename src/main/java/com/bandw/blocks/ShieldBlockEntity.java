@@ -26,7 +26,7 @@ public class ShieldBlockEntity extends BlockEntity {
         this.markDirty();
     };
     public void initialize(){
-        this.shield.setChangeHandler(onchange);
+        this.shield.setChangeHandler(this.onchange);
     };
     @Override
     protected void writeNbt(NbtCompound nbt,RegistryWrapper.WrapperLookup registryLookup) {
