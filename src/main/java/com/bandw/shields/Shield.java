@@ -9,7 +9,7 @@ public class Shield {
     private float strength;
     private float maxStrength;
     private boolean isActive;
-    private BiFunction<float, float, void> on_change=null;
+    private BiFunction<Float, Float, Void> on_change=null;
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
@@ -17,7 +17,7 @@ public class Shield {
         this.strength = strength;
         this.isActive = true;
     };
-    public void setChangeHandler(BiFunction<float, float, void> handler){
+    public void setChangeHandler(BiFunction<Float, Float, Void> handler){
         if (handler!=null){
             this.on_change=handler;
         };
