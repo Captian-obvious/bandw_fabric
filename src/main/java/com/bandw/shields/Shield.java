@@ -9,7 +9,7 @@ public class Shield {
     private float strength;
     private float maxStrength;
     private boolean isActive;
-    private Function on_change=null;
+    private Function<float, float, float> on_change=null;
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
@@ -17,7 +17,7 @@ public class Shield {
         this.strength = strength;
         this.isActive = true;
     };
-    public void setChangeHandler(Function handler){
+    public void setChangeHandler(Function<float, float, float> handler){
         if (handler!=null){
             this.on_change=handler;
         };
