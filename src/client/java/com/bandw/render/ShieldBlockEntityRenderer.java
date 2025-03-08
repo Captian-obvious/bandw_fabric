@@ -25,7 +25,10 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
     public void render(ShieldBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         matrices.push();
         BlockPos pos = entity.getPos();
-        matrices.translate(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+        double camX = MinecraftClient.getInstance().gameRenderer.getCamera().getPos().x;
+        double camY = MinecraftClient.getInstance().gameRenderer.getCamera().getPos().y;
+        double camZ = MinecraftClient.getInstance().gameRenderer.getCamera().getPos().z;
+        matrices.translate((pos.getX()-(float) camX) + 0.5, (pos.getY()-(float) camY) + 0.5, (pos.getZ()-(float) camZ) + 0.5);
         float size = MathHelper.clamp(entity.getShield().getSize(), 1.0F, 100.0F);
         matrices.scale(size, size, size);
         renderCube(matrices, vertexConsumers, light, overlay, TEXTURE);
