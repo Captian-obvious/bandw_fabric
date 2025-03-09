@@ -10,7 +10,7 @@ import net.minecraft.item.EnderPearlItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 
 public class DarkEnderPearl extends EnderPearlItem {
@@ -18,7 +18,7 @@ public class DarkEnderPearl extends EnderPearlItem {
         super(settings);
     };
     @Override
-    public TypedActionResult<ItemStack> use(World world,PlayerEntity player,Hand hand) {
+    public ActionResult use(World world,PlayerEntity player,Hand hand) {
         if (!world.isClient()){
             if (player instanceof LivingEntity){
                 LivingEntity livingEntity=(LivingEntity) player;
