@@ -18,12 +18,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.EnderPearlItem;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import java.util.function.Function;
 
 public class ModItems {
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
@@ -48,6 +50,8 @@ public class ModItems {
     public static final Item mark_of_the_banished=new MarkOfTheBanished(new Item.Settings().maxCount(1).registryKey(mark_of_the_banished_key));
     public static final RegistryKey<Item> mark_of_the_guardian_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"mark_of_the_guardian"));
     public static final Item mark_of_the_guardian=new MarkOfTheGuardian(new Item.Settings().maxCount(1).registryKey(mark_of_the_guardian_key));
+    public static final RegistryKey<Item> dark_ender_pearl_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_ender_pearl"));
+    public static final EnderPearlItem dark_ender_pearl=new MarkOfTheGuardian(new Item.Settings().maxCount(1).registryKey(dark_ender_pearl_key));
     public static final RegistryKey<Item> blade_of_infinite_sorrow_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_infinite_sorrow"));
     public static final SwordItem blade_of_infinite_sorrow=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND,15,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_infinite_sorrow_key));
     public static final RegistryKey<Item> halfshade_blade_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"halfshade_blade"));
@@ -60,6 +64,15 @@ public class ModItems {
         System.out.println("Mod Items Initialized!");
         registerItems();
     };
+	/*public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+		// Create the item key.
+		RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,name));
+		// Create the item instance.
+		Item item=itemFactory.apply(settings.registryKey(itemKey));
+		// Register the item.
+		Registry.register(Registries.ITEM,itemKey,item);
+		return item;
+	};*/
     public static Item register(Item item,RegistryKey key){
         return Registry.register(Registries.ITEM,key,item);
     };
@@ -76,6 +89,7 @@ public class ModItems {
         register(dark_string,dark_string_key);
         register(mark_of_the_banished,mark_of_the_banished_key);
         register(mark_of_the_guardian,mark_of_the_guardian_key);
+        register(dark_ender_pearl,dark_ender_pearl_key);
         register(dark_shard,dark_shard_key);
         Main.LOGGER.info("Registering Item Group Contents");
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
@@ -85,6 +99,7 @@ public class ModItems {
             itemGroup.add(ModItems.blade_of_light);
             itemGroup.add(ModItems.mark_of_the_banished);
             itemGroup.add(ModItems.mark_of_the_guardian);
+            itemGroup.add(ModItems.dark_ender_pearl);
             itemGroup.add(ModItems.light_shard);
             itemGroup.add(ModItems.burnt_flesh);
             itemGroup.add(ModItems.dark_bone);
