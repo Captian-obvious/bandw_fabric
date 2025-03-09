@@ -13,9 +13,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class HalfShadeSword extends SwordItem {
+public class HalfshadeBlade extends SwordItem {
     public int attack_damage;
-    public HalfShadeSword(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
+    public HalfshadeBlade(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
         attack_damage=attackDamage;
     };
@@ -31,13 +31,13 @@ public class HalfShadeSword extends SwordItem {
     };
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
-            target.setHealth(target.getMaxHealth());
+            /*target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
             BlockPos pos=target.getBlockPos();
             LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
             bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
             world.spawnEntity(bolt);
-            target.setHealth(0.0F);
+            target.setHealth(0.0F);*/
         }else{
             Main.LOGGER.info("ERROR: target and attacker must not be null!");
         };
