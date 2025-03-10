@@ -17,16 +17,8 @@ public abstract class PureLight extends FlowableFluid {
         super.appendProperties(builder);
         builder.add(Properties.LEVEL_1_8); // Add the fluid level property
     };
-    @Override
+    /*@Override
     public boolean matchesType(Fluid fluid) {
         return fluid == STILL || fluid == FLOWING;
-    };
-    @Override
-    protected boolean isInfinite() {
-        return false; // Define if the fluid source is infinite
-    };
-    @Override
-    protected void beforeBreakingBlock(BlockView world, BlockPos pos, FluidState state) {
-        // Custom behavior when breaking a block
-    };
+    };*/
 };
