@@ -1,6 +1,7 @@
 package com.bandw.effects;
 
 import com.bandw.Main;
+import com.bandw.registry.ModSounds;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.LivingEntity;
@@ -20,7 +21,7 @@ public class CorruptionStatusEffect extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
-            
+            entity.playSound(SoundEvents.CORRUPT, 2f, 1f);
         };
         return super.applyUpdateEffect(world,entity, amplifier);
     };
