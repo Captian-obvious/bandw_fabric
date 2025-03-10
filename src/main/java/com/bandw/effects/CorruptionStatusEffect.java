@@ -21,7 +21,7 @@ public class CorruptionStatusEffect extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
-            entity.playSound(SoundEvents.CORRUPT, 2f, 1f);
+            entity.playSound(ModSounds.CORRUPT, 2f, 1f);
         };
         return super.applyUpdateEffect(world,entity, amplifier);
     };
