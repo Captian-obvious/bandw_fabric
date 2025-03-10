@@ -7,6 +7,7 @@ import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModEntities;
 import com.bandw.registry.ModEffects;
 import com.bandw.registry.ModBlocks;
+import com.bandw.registry.ModFluids;
 import com.bandw.registry.ModSounds;
 import com.bandw.registry.ModBlockEntities;
 import com.bandw.registry.ModItems;
@@ -27,6 +28,7 @@ public class Main implements ModInitializer {
         LOGGER.info("Server Initializing...");
         ModBlocks.registerBlocks();
         ModBlockEntities.registerBlockEntities();
+        ModFluids.registerFluids();
         ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
