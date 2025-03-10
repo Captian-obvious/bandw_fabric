@@ -37,7 +37,7 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
     };
     public void renderCube(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Identifier texture) {
         matrices.push();
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntitySolid(texture));
+        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(texture));
         float size = 0.5f;
         Vec3d[] vertices = {
             new Vec3d(-size, -size, -size), // Bottom-left-back
@@ -57,13 +57,16 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
             {0, 4, 7, 3}, // Left
             {1, 5, 6, 2}  // Right
         };
+        float tileFactor=1.0F; // Number of texture tiles per block unit.
+        float uMin=0.0F;
+        float uMax=size*tileFactor;
         float[][] uvs = {
-            {0, 0, 1, 0, 1, 1, 0, 1}, // Back
-            {0, 0, 1, 0, 1, 1, 0, 1}, // Front
-            {0, 0, 1, 0, 1, 1, 0, 1}, // Bottom
-            {0, 0, 1, 0, 1, 1, 0, 1}, // Top
-            {0, 0, 1, 0, 1, 1, 0, 1}, // Left
-            {0, 0, 1, 0, 1, 1, 0, 1}  // Right
+            {uMin, uMin, uMax, uMin, uMax, uMax, uMin, uMax}, // Back face
+            {uMin, uMin, uMax, uMin, uMax, uMax, uMin, uMax}, // Front face
+            {uMin, uMin, uMax, uMin, uMax, uMax, uMin, uMax}, // Bottom face
+            {uMin, uMin, uMax, uMin, uMax, uMax, uMin, uMax}, // Top face
+            {uMin, uMin, uMax, uMin, uMax, uMax, uMin, uMax}, // Left face
+            {uMin, uMin, uMax, uMin, uMax, uMax, uMin, uMax}  // Right face
         };
         for (int faceIndex = 0; faceIndex < faces.length; faceIndex++) {
             int[] face = faces[faceIndex];
