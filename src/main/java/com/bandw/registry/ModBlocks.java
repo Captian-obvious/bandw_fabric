@@ -5,6 +5,7 @@ import com.bandw.blocks.*;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -23,7 +24,7 @@ public class ModBlocks {
     public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_bricks"));
     public static final Block LIGHT_BRICKS = new LightBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_BRICKS_KEY));
     public static final RegistryKey<Block> DARK_LOG_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_log"));
-    public static final Block DARK_LOG = new DarkLogBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_LOG_KEY));
+    public static final PillarBlock DARK_LOG = new DarkLogBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_LOG_KEY));
     public static final RegistryKey<Block> DARK_BARK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_bark"));
     public static final Block DARK_BARK = new DarkBarkBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_BARK_KEY));
     public static final RegistryKey<Block> LIGHT_CHISELED_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_chiseled_bricks"));

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "bandw:block/light_chiseled_bricks"
-  }
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "bandw:block/light_chiseled_bricks"
+    }
 }

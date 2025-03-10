@@ -1,7 +1,16 @@
 {
-  "variants": {
-    "axis=y": { "model": "bandw:block/dark_log" },
-    "axis=z": { "model": "bandw:block/dark_log", "x": 90 },
-    "axis=x": { "model": "bandw:block/dark_log", "x": 90, "y": 90 }
-  }
+    "variants": {
+        "axis=x": {
+            "model": "bandw:block/dark_log_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "bandw:block/dark_log"
+        },
+        "axis=z": {
+            "model": "bandw:block/dark_log_horizontal",
+            "x": 90
+        }
+    }
 }

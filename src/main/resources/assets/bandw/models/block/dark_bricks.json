@@ -1,8 +1,8 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:block/cube_all",
-	"textures": {
-	    "all": "bandw:block/dark_bricks"
-	}
+    "credit": "Made with Blockbench",
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "bandw:block/dark_bricks"
+    }
 }
   
