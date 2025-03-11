@@ -3,7 +3,7 @@ package com.bandw;
 import com.bandw.registry.ModBlockEntities;
 import com.bandw.render.ShieldBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererFactories;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 public class ClientMain implements ClientModInitializer {
