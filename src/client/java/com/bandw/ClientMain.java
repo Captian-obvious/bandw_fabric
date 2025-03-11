@@ -3,7 +3,7 @@ package com.bandw;
 import com.bandw.registry.ModBlockEntities;
 import com.bandw.render.ShieldBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererFactories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 public class ClientMain implements ClientModInitializer {
@@ -13,7 +13,7 @@ public class ClientMain implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         LOGGER.info("Client Initializing...");
-        BlockEntityRendererRegistry.register(ModBlockEntities.SHIELD_BLOCK_ENTITY,ShieldBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.SHIELD_BLOCK_ENTITY,ShieldBlockEntityRenderer::new);
         LOGGER.info("Client Initialized (B&W v"+VERSION+")");
     };
 };
