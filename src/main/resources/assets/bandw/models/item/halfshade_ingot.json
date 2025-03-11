@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "bandw:item/light_shard"
+        "layer0": "bandw:item/halfshade_ingot"
     }
 }

@@ -47,6 +47,8 @@ public class ModItems {
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63).registryKey(dark_spider_eye_key));
     public static final RegistryKey<Item> dark_string_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_string"));
     public static final Item dark_string=new Item(new Item.Settings().maxCount(64).registryKey(dark_string_key));
+    public static final RegistryKey<Item> halfshade_ingot_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"halfshade_ingot"));
+    public static final Item halfshade_ingot=new Item(new Item.Settings().maxCount(64).registryKey(halfshade_ingot_key));
     public static final RegistryKey<Item> mark_of_the_banished_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"mark_of_the_banished"));
     public static final Item mark_of_the_banished=new MarkOfTheBanished(new Item.Settings().maxCount(1).registryKey(mark_of_the_banished_key));
     public static final RegistryKey<Item> mark_of_the_guardian_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"mark_of_the_guardian"));
@@ -88,6 +90,7 @@ public class ModItems {
         register(dark_bone,dark_bone_key);
         register(dark_spider_eye,dark_spider_eye_key);
         register(dark_string,dark_string_key);
+        register(halfshade_ingot,halfshade_ingot_key);
         register(mark_of_the_banished,mark_of_the_banished_key);
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_ender_pearl,dark_ender_pearl_key);
@@ -101,6 +104,7 @@ public class ModItems {
             itemGroup.add(ModItems.mark_of_the_banished);
             itemGroup.add(ModItems.mark_of_the_guardian);
             itemGroup.add(ModItems.dark_ender_pearl);
+            itemGroup.add(ModItems.halfshade_ingot);
             itemGroup.add(ModItems.light_shard);
             itemGroup.add(ModItems.burnt_flesh);
             itemGroup.add(ModItems.dark_bone);
