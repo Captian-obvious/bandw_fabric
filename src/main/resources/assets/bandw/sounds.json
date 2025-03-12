@@ -4,5 +4,11 @@
         "sounds": [
             "bandw:corrupt"
         ]
+    },
+    "shockwave": {
+        "subtitle": "sound.bandw.shockwave",
+        "sounds": [
+            "bandw:shockwave"
+        ]
     }
 }

@@ -10,6 +10,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 
 public class ModSounds {
     public static final SoundEvent CORRUPT=registerSound("corrupt");
+    public static final SoundEvent SHOCKWAVE=registerSound("shockwave");
     private static SoundEvent registerSound(String id){
         Identifier identifier=Identifier.of(Main.MOD_ID,id);
         return Registry.register(Registries.SOUND_EVENT,identifier,SoundEvent.of(identifier));

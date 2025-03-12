@@ -2,6 +2,7 @@ package com.bandw.shields;
 
 import net.minecraft.util.math.Vec3d;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class Shield {
     private Vec3d position;
@@ -10,6 +11,8 @@ public class Shield {
     private float maxStrength;
     private boolean isActive;
     public BiFunction<Float, Float, Void> on_change=null;
+    public Function<Float, Void> on_collapse=null;
+    public Function<Boolean, Void> on_active_changed=null;
     public Shield(Vec3d position, float size, float strength) {
         this.position = position;
         this.size = size;
@@ -20,6 +23,16 @@ public class Shield {
     public void setChangeHandler(BiFunction<Float, Float, Void> handler){
         if (handler!=null){
             this.on_change=handler;
+        };
+    };
+    public void setCollapseHandler(Function<Float, Void> handler){
+        if (handler!=null){
+            this.on_collapse=handler;
+        };
+    };
+    public void setActiveChangedHandler(Function<Boolean, Void> handler){
+        if (handler!=null){
+            this.on_active_changed=handler;
         };
     };
     public void expand(float amount) {
@@ -44,6 +57,7 @@ public class Shield {
         };
     };
     public void collapse(){
+        this.on_collapse.apply(this.size);
         new Thread(()->{
             float decrement=this.size*(float) 0.05;
             float original_size=this.size;
@@ -62,6 +76,7 @@ public class Shield {
     };
     public void toggleActive() {
         this.isActive = !this.isActive;
+        this.on_active_changed.apply(this.isActive);
     };
     public boolean getIsActive() {
         return this.isActive;
@@ -77,6 +92,7 @@ public class Shield {
     };
     public void setIsActive(boolean val) {
         this.isActive=val;
+        this.on_active_changed.apply(this.isActive);
     };
     public void setSize(float val) {
         this.size=val;
