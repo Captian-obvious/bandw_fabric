@@ -1,7 +1,7 @@
 package com.bandw.items;
 
 import com.bandw.Main;
-import net.minecraft.item.SwordItem;
+import com.bandw.items.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
@@ -13,22 +13,11 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class BladeOfInfiniteSorrow extends SwordItem {
-    public int attack_damage;
+public class BladeOfInfiniteSorrow extends SwordItemWithEffect {
     public BladeOfInfiniteSorrow(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
-        attack_damage=attackDamage;
     };
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker){
-        if (!target.getWorld().isClient){
-            float targetHealth=target.getHealth();
-            if (targetHealth<attack_damage){
-                weapon_effect(stack,target,attacker);
-            };
-        };
-        return super.postHit(stack,target,attacker);
-    };
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
             target.setHealth(target.getMaxHealth());
