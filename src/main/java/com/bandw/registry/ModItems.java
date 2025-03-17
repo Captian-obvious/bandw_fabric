@@ -63,6 +63,8 @@ public class ModItems {
     public static final SwordItem blade_of_light=new BladeOfLight(ToolMaterial.DIAMOND,6,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_light_key));
     public static final RegistryKey<Item> blade_of_karma_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_karma"));
     public static final SwordItem blade_of_karma=new BladeOfKarma(ToolMaterial.DIAMOND,10,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_karma_key));
+    public static final RegistryKey<Item> casshen_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"casshen"));
+    public static final SwordItem casshen=new Casshen(ToolMaterial.DIAMOND,10,-2.4F,new Item.Settings().enchantable(10).registryKey(casshen_key));
     public static void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
@@ -83,6 +85,7 @@ public class ModItems {
         Main.LOGGER.info("Registering items...");
         Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
+        register(casshen,casshen_key);
         register(blade_of_karma,blade_of_karma_key);
         register(blade_of_light,blade_of_light_key);
         register(halfshade_blade,halfshade_blade_key);
@@ -100,6 +103,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
             itemGroup.add(ModItems.blade_of_infinite_sorrow);
             itemGroup.add(ModItems.halfshade_blade);
+            itemGroup.add(ModItems.casshen);
             itemGroup.add(ModItems.blade_of_karma);
             itemGroup.add(ModItems.blade_of_light);
             itemGroup.add(ModItems.mark_of_the_banished);
