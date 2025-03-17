@@ -12,7 +12,7 @@ public class DarkEndermanEntity extends EndermanEntity {
         super(entityType, world);
     };
     @Override
-    public DefaultAttributeContainer.Builder createEndermanAttributes() {
+    public static DefaultAttributeContainer.Builder createEndermanAttributes() {
         return super.createEndermanAttributes();
     };
 };
