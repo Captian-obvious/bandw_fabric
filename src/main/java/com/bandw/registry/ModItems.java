@@ -80,6 +80,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM,key,item);
     };
     public static void registerItems(){
+        Main.LOGGER.info("Registering items...");
         Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(blade_of_karma,blade_of_karma_key);

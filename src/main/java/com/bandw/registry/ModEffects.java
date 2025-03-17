@@ -17,6 +17,7 @@ public class ModEffects {
     public static RegistryEntry<StatusEffect> DARKENING;
     public static RegistryEntry<StatusEffect> CLEANSING;
     public static void registerEffects() {
+        Main.LOGGER.info("Registering effects...")
         CORRUPTION=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "corruption"), CORRUPTION_EFFECT);
         DARKENING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "darkening"), DARKENED_EFFECT);
         CLEANSING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "cleansing"), CLEANSING_EFFECT);

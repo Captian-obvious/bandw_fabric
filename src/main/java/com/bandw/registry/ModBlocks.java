@@ -68,6 +68,7 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, key, block);
     };
     public static void registerBlocks() {
+        Main.LOGGER.info("Registering blocks...");
         register(DARK_BRICKS,DARK_BRICKS_KEY,true);
         register(LIGHT_BRICKS,LIGHT_BRICKS_KEY,true);
         register(DARK_LOG,DARK_LOG_KEY,true);
