@@ -12,6 +12,6 @@ public class DarkEndermanEntity extends EndermanEntity {
         super(entityType, world);
     };
     public static DefaultAttributeContainer.Builder createEndermanAttributes() {
-        return EndermanEntity.createEndermanAttributes();
+        return super.createEndermanAttributes();
     };
 };
