@@ -3,6 +3,7 @@ package com.bandw.shields;
 import net.minecraft.util.math.Vec3d;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+
 public class Shield {
     private Vec3d position;
     private float size;
