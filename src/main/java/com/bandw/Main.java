@@ -29,8 +29,8 @@ public class Main implements ModInitializer {
         ModBlocks.registerBlocks();
         ModBlockEntities.registerBlockEntities();
         ModFluids.registerFluids();
-        ModEntities.registerEntities();
-        ModEntityAttributes.registerAttributes();
+        //ModEntities.registerEntities();
+        //ModEntityAttributes.registerAttributes();
         ModItems.registerItems();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
