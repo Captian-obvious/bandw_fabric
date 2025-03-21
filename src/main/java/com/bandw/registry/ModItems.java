@@ -49,6 +49,8 @@ public class ModItems {
     public static final Item dark_string=new Item(new Item.Settings().maxCount(64).registryKey(dark_string_key));
     public static final RegistryKey<Item> halfshade_ingot_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"halfshade_ingot"));
     public static final Item halfshade_ingot=new Item(new Item.Settings().maxCount(64).registryKey(halfshade_ingot_key));
+    public static final RegistryKey<Item> halfshade_stick_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"halfshade_stick"));
+    public static final Item halfshade_stick=new Item(new Item.Settings().maxCount(64).registryKey(halfshade_stick_key));
     public static final RegistryKey<Item> mark_of_the_banished_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"mark_of_the_banished"));
     public static final Item mark_of_the_banished=new MarkOfTheBanished(new Item.Settings().maxCount(1).registryKey(mark_of_the_banished_key));
     public static final RegistryKey<Item> mark_of_the_guardian_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"mark_of_the_guardian"));
@@ -89,6 +91,7 @@ public class ModItems {
         register(blade_of_karma,blade_of_karma_key);
         register(blade_of_light,blade_of_light_key);
         register(halfshade_blade,halfshade_blade_key);
+        register(halfshade_stick,halfshade_stick_key);
         register(light_shard,light_shard_key);
         register(burnt_flesh,burnt_flesh_key);
         register(dark_bone,dark_bone_key);
@@ -110,6 +113,7 @@ public class ModItems {
             itemGroup.add(ModItems.mark_of_the_guardian);
             itemGroup.add(ModItems.dark_ender_pearl);
             itemGroup.add(ModItems.halfshade_ingot);
+            itemGroup.add(ModItems.halfshade_stick);
             itemGroup.add(ModItems.light_shard);
             itemGroup.add(ModItems.burnt_flesh);
             itemGroup.add(ModItems.dark_bone);

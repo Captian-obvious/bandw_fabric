@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": "bandw:halfshade_ingot",
+    "result": {
+        "id": "bandw:halfshade_stick",
+        "count": 2
+    },
+    "group": "itemGroup.bandw"
+}

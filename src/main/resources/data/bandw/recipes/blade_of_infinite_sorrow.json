@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #b",
+        "#b#",
+        "/# "
+    ],
+    "key": {
+        "#": "bandw:light_shard",
+        "b": "bandw:halfshade_ingot",
+        "/": "bandw:halfshade_stick"
+    },
+    "result": {
+        "id": "bandw:blade_of_infinite_sorrow",
+        "count": 1
+    },
+    "group": "itemGroup.bandw"
+}
