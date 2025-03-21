@@ -38,5 +38,6 @@
     "itemGroup.bandw": "B&W",
     "effect.bandw.corruption": "Corruption",
     "effect.bandw.darkening": "Darkening",
-    "sound.bandw.corrupt": "Corruption Spreads"
+    "sound.bandw.corrupt": "Corruption Spreads",
+    "sound.bandw.shockwave": "Shockwave Booming"
 }
