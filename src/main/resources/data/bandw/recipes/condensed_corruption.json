@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": "bandw:dark_shard"
+    },
+    "result": {
+        "id": "bandw:condensed_corruption",
+        "count": 1
+    },
+    "group": "bandw_group"
+}
