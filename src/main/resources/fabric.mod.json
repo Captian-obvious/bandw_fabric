@@ -11,7 +11,7 @@
     "homepage": "https://example.com",
     "sources": "https://github.com/Captian-obvious/bandw-fabric"
   },
-  "license": "MIT",
+  "license": "CCO",
   "icon": "assets/bandw/icon.png",
   "environment": "*",
   "entrypoints": {
