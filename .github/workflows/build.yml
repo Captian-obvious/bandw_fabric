@@ -3,7 +3,7 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-name: build
+name: Build
 on: [pull_request, push]
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
       - name: Build
         run: ./gradlew build
       - name: Extract Problems Report
-        if: ${{ matrix.java == '21' }} # Only upload artifacts built from latest java
+        if: ${{ matrix.java == '21' || failure() }} # Only upload artifacts built from latest java
         uses: actions/upload-artifact@v4
         with:
           name: problems_report
