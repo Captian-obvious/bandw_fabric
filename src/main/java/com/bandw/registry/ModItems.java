@@ -121,6 +121,7 @@ public class ModItems {
             itemGroup.add(ModBlocks.DARK_BRICKS.asItem());
             itemGroup.add(ModBlocks.LIGHT_PLANKS.asItem());
             itemGroup.add(ModBlocks.LIGHT_BRICKS.asItem());
+            itemGroup.add(ModBlocks.CONDENSED_CORRUPTION.asItem());
             itemGroup.add(ModBlocks.SHIELD_OF_LIGHT_BLOCK.asItem());
             itemGroup.add(ModBlocks.LIGHT_CHISELED_BRICKS.asItem());
         });
