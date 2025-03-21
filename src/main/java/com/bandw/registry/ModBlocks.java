@@ -77,6 +77,7 @@ public class ModBlocks {
         register(DARK_BARK,DARK_BARK_KEY,true);
         register(LIGHT_CHISELED_BRICKS,LIGHT_CHISELED_BRICKS_KEY,true);
         register(LIGHT_PLANKS,LIGHT_PLANKS_KEY,true);
+        register(CONDENSED_CORRUPTION,CONDENSED_CORRUPTION_KEY,true);
         register(SHIELD_OF_LIGHT_BLOCK,SHIELD_OF_LIGHT_KEY,true);
     };
     /*public static void registerBlockEntities() {
