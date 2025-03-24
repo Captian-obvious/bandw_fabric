@@ -41,6 +41,6 @@ public class Main implements ModInitializer {
         }else{
             LOGGER.info("Charter mod is not loaded.");
         };
-        LOGGER.info("Server Initialized (B&W v"+VERSION+")");
+        LOGGER.info("Server Initialized (Defiance v"+VERSION+")");
     };
 };

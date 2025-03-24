@@ -14,6 +14,6 @@ public class ClientMain implements ClientModInitializer {
     public void onInitializeClient() {
         LOGGER.info("Client Initializing...");
         BlockEntityRendererFactories.register(ModBlockEntities.SHIELD_BLOCK_ENTITY,ShieldBlockEntityRenderer::new);
-        LOGGER.info("Client Initialized (B&W v"+VERSION+")");
+        LOGGER.info("Client Initialized (Defiance v"+VERSION+")");
     };
 };
