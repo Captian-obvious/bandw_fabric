@@ -32,7 +32,7 @@ public class ModBlocks {
     public static final RegistryKey<Block> LIGHT_PLANKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_planks"));
     public static final Block LIGHT_PLANKS = new LightPlanksBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(LIGHT_PLANKS_KEY));
     public static final RegistryKey<Block> CONDENSED_CORRUPTION_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"condensed_corruption"));
-    public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.GRASS).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
+    public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.DIRT).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
     public static final RegistryKey<Block> SHIELD_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"shield_of_light"));
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F).registryKey(SHIELD_OF_LIGHT_KEY));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
