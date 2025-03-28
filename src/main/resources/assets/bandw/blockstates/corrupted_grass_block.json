@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "bandw:block/corrupted_grass_block" }
+    }
+}
