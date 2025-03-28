@@ -37,7 +37,7 @@ public class ModItems {
     public static final RegistryKey<Item> burnt_flesh_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_rotten_flesh"));
     public static final ConsumableComponent dark_rotten_flesh_consumable_component=ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.DARKENING,80,1),1.0f)).build();
     public static final FoodComponent dark_rotten_flesh_food_component=new FoodComponent.Builder().build();
-    public static final Item burnt_flesh=new Item(new Item.Settings().maxCount(64).registryKey(burnt_flesh_key));
+    public static final Item burnt_flesh=new Item(new Item.Settings().maxCount(64).food(new FoodComponent.Builder().build()).registryKey(burnt_flesh_key));
     //.food(dark_rotten_flesh_food_component,dark_rotten_flesh_consumable_component)
     public static final RegistryKey<Item> dark_bone_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_bone"));
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64).registryKey(dark_bone_key));
@@ -125,7 +125,9 @@ public class ModItems {
             itemGroup.add(ModBlocks.DARK_BRICKS.asItem());
             itemGroup.add(ModBlocks.LIGHT_PLANKS.asItem());
             itemGroup.add(ModBlocks.LIGHT_BRICKS.asItem());
+            itemGroup.add(ModBlocks.CORRUPTED_STONE.asItem());
             itemGroup.add(ModBlocks.CONDENSED_CORRUPTION.asItem());
+            itemGroup.add(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem());
             itemGroup.add(ModBlocks.SHIELD_OF_LIGHT_BLOCK.asItem());
             itemGroup.add(ModBlocks.LIGHT_CHISELED_BRICKS.asItem());
         });
