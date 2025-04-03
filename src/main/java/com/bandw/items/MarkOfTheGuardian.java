@@ -33,7 +33,7 @@ public class MarkOfTheGuardian extends Item {
             if (entity instanceof LivingEntity){
                 effectAcc+=1;
                 LivingEntity livingEntity=(LivingEntity) entity;
-                if (effectAcc>=effectDelay){
+                if (!livingEntity.hasStatusEffect(StatusEffects.RESISTANCE)){
                     // apply resistance to the player (they are immortal)
                     StatusEffectInstance instance = new StatusEffectInstance(StatusEffects.RESISTANCE,100,5,false,true,true);
                     boolean success=livingEntity.addStatusEffect(instance);

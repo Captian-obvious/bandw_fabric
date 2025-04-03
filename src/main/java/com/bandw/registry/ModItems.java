@@ -1,6 +1,6 @@
 package com.bandw.registry;
 
-// Imports go below here
+// Imports
 import com.bandw.Main;
 import com.bandw.items.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
