@@ -5,6 +5,7 @@ import com.bandw.registry.ModEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
