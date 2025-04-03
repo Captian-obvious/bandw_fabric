@@ -57,7 +57,7 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
             {0, 4, 7, 3}, // Left
             {1, 5, 6, 2}  // Right
         };
-        float tileFactor=1.0F; // Number of texture tiles per block unit.
+        float tileFactor=16.0F; // Number of texture tiles per block unit.
         float uMin=0.0F;
         float uMax=size*tileFactor;
         float[][] uvs = {
