@@ -5,6 +5,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -16,6 +17,8 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.Formatting;
+import java.util.List;
 
 public class MarkOfTheGuardian extends Item {
     int effectDelay=20; //delay in ticks before applying effect
@@ -41,5 +44,9 @@ public class MarkOfTheGuardian extends Item {
             };
         };
         super.inventoryTick(stack,world,entity,slot,selected);
+    };
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("itemTooltip.bandw.guardian_mark").formatted(Formatting.GOLD));
     };
 };

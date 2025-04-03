@@ -42,4 +42,8 @@ public class MarkOfTheBanished extends Item {
         };
         super.inventoryTick(stack, world, entity, slot, selected); // Call the super method to retain default behavior
     };
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("itemTooltip.bandw.banished_mark").formatted(Formatting.RED));
+    };
 };
