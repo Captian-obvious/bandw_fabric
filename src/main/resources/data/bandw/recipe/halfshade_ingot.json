@@ -6,11 +6,10 @@
         "###"
     ],
     "key": {
-        "#": "bandw:dark_shard"
+        "#": "bandw:halfshade_nugget"
     },
     "result": {
-        "id": "bandw:condensed_corruption",
+        "id": "bandw:halfshade_ingot",
         "count": 1
-    },
-    "group": "Defiance"
+    }
 }

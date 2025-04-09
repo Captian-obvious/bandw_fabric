@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #W",
+        "#G#",
+        "H# "
+    ],
+    "key": {
+        "#": "bandw:light_iron",
+        "W": "bandw:white_pipe",
+        "G": "bandw:guardian_mark",
+        "H": "bandw:halfshade_stick"
+    },
+    "result": {
+        "id": "bandw:casshen",
+        "count": 1
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#L#",
+        "###"
+    ],
+    "key": {
+        "#": "minecraft:raw_iron",
+        "L": "bandw:light_shard"
+    },
+    "result": {
+        "id": "bandw:raw_light_ore",
+        "count": 8
+    }
+}

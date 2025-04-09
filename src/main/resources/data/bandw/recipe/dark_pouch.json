@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "D",
+        "N"
+    ],
+    "key": {
+        "#": "bandw:dark_sting",
+        "D": "bandw:dark_bonemeal",
+        "N": "bandw:dark_leather"
+    },
+    "result": {
+        "id": "bandw:dark_pouch",
+        "count": 1
+    }
+}

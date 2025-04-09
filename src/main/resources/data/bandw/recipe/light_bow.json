@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#LD",
+        "L D",
+        "#LD"
+    ],
+    "key": {
+        "#": "bandw:dark_shard",
+        "L": "bandw:light_stick",
+        "D": "bandw:dark_sting"
+    },
+    "result": {
+        "id": "bandw:light_bow",
+        "count": 1
+    }
+}
