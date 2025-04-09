@@ -21,7 +21,8 @@ public class DarkeningHeartsEffect {
         if (player != null && player.hasStatusEffect(ModEffects.DARKENING)) {
             // Custom rendering logic to make the health bar black
             RenderSystem.setShaderColor(0.0F, 0.0F, 0.0F, 1.0F); // Set to black
-            // Call original rendering logic or fully replace it
+        }else{
+            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F); // Reset shader to default color
         };
     };
 };
