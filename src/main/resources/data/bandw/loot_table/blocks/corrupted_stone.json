@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bandw:corrupted_stone"
+          "name": "bandw:corrupted_cobblestone"
         }
       ],
       "conditions": [

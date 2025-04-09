@@ -1,4 +1,4 @@
 {
     "replace": false,
-    "values": ["bandw:condensed_corruption","bandw:corrupted_grass_block"]
+    "values": ["bandw:condensed_corruption","bandw:corrupted_stone","bandw:corrupted_grass_block"]
 }

@@ -33,6 +33,8 @@ public class ModBlocks {
     public static final Block LIGHT_PLANKS = new LightPlanksBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(LIGHT_PLANKS_KEY));
     public static final RegistryKey<Block> CORRUPTED_STONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_stone"));
     public static final Block CORRUPTED_STONE = new CorruptedStoneBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CORRUPTED_STONE_KEY));
+    public static final RegistryKey<Block> CORRUPTED_COBBLESTONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_cobblestone"));
+    public static final Block CORRUPTED_COBBLESTONE = new CorruptedCobblestoneBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CORRUPTED_COBBLESTONE_KEY));
     public static final RegistryKey<Block> CONDENSED_CORRUPTION_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"condensed_corruption"));
     public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
     public static final RegistryKey<Block> CORRUPTED_DIRT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_dirt"));
@@ -83,6 +85,7 @@ public class ModBlocks {
         register(DARK_BARK,DARK_BARK_KEY,true);
         register(LIGHT_CHISELED_BRICKS,LIGHT_CHISELED_BRICKS_KEY,true);
         register(LIGHT_PLANKS,LIGHT_PLANKS_KEY,true);
+        register(CORRUPTED_COBBLESTONE,CORRUPTED_COBBLESTONE_KEY,true);
         register(CORRUPTED_STONE,CORRUPTED_STONE_KEY,true);
         register(CONDENSED_CORRUPTION,CONDENSED_CORRUPTION_KEY,true);
         register(CORRUPTED_DIRT,CORRUPTED_DIRT_KEY,true);

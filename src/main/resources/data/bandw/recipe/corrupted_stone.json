@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": "bandw:corrupted_cobblestone",
+    "result": {
+        "id": "bandw:corrupted_stone"
+    },
+    "experience": 0.1,
+    "cookingtime": 50,
+    "group": "Defiance"
+}
