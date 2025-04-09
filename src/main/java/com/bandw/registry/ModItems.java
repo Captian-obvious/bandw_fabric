@@ -127,6 +127,7 @@ public class ModItems {
             itemGroup.add(ModBlocks.LIGHT_BRICKS.asItem());
             itemGroup.add(ModBlocks.CORRUPTED_STONE.asItem());
             itemGroup.add(ModBlocks.CONDENSED_CORRUPTION.asItem());
+            itemGroup.add(ModBlocks.CORRUPTED_DIRT.asItem());
             itemGroup.add(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem());
             itemGroup.add(ModBlocks.SHIELD_OF_LIGHT_BLOCK.asItem());
             itemGroup.add(ModBlocks.LIGHT_CHISELED_BRICKS.asItem());

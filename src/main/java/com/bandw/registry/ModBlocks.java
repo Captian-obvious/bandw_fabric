@@ -35,6 +35,8 @@ public class ModBlocks {
     public static final Block CORRUPTED_STONE = new CorruptedStoneBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CORRUPTED_STONE_KEY));
     public static final RegistryKey<Block> CONDENSED_CORRUPTION_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"condensed_corruption"));
     public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
+    public static final RegistryKey<Block> CORRUPTED_DIRT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_dirt"));
+    public static final Block CORRUPTED_DIRT = new CorruptedDirtBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CORRUPTED_DIRT_KEY));
     public static final RegistryKey<Block> CORRUPTED_GRASS_BLOCK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_grass_block"));
     public static final Block CORRUPTED_GRASS_BLOCK = new CorruptedGrassBlock(Settings.create().sounds(BlockSoundGroup.GRASS).strength(2.0F, 1.0F).registryKey(CORRUPTED_GRASS_BLOCK_KEY));
     public static final RegistryKey<Block> SHIELD_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"shield_of_light"));
@@ -83,6 +85,7 @@ public class ModBlocks {
         register(LIGHT_PLANKS,LIGHT_PLANKS_KEY,true);
         register(CORRUPTED_STONE,CORRUPTED_STONE_KEY,true);
         register(CONDENSED_CORRUPTION,CONDENSED_CORRUPTION_KEY,true);
+        register(CORRUPTED_DIRT,CORRUPTED_DIRT_KEY,true);
         register(CORRUPTED_GRASS_BLOCK,CORRUPTED_GRASS_BLOCK_KEY,true);
         register(SHIELD_OF_LIGHT_BLOCK,SHIELD_OF_LIGHT_KEY,true);
     };
