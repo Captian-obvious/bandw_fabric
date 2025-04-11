@@ -1,6 +1,6 @@
 package com.bandw.mixin.client;
 
-import com.bandw.ClientMain.MOD_ID;
+import com.bandw.ClientMain;
 import com.bandw.registry.ModEffects;
 import net.minecraft.util.Identifier;
 import net.minecraft.client.render.RenderLayer;
@@ -17,10 +17,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
-public class StatusEffectHearts {
+public abstract class StatusEffectHearts {
     @Unique
-    private static final Identifier DARKENING_HEARTS=Identifier.of(MOD_ID,"textures/gui/darkening_hearts.png");
-    
+    private static final Identifier DARKENING_HEARTS=Identifier.of(ClientMain.MOD_ID,"textures/gui/darkening_hearts.png");
     @Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
     private void bandw$drawEffectHearts(DrawContext ctx,InGameHud.HeartType type,int x,int y,boolean hardcore,boolean blinking,boolean half,CallbackInfo info){
         if (!blinking && type == InGameHud.HeartType.NORMAL && MinecraftClient.getInstance().cameraEntity instanceof PlayerEntity player && (player.hasStatusEffect(ModEffects.DARKENING))){
