@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 
 public class CorruptionStatusEffect extends StatusEffect {
