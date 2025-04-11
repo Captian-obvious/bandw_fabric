@@ -1,12 +1,15 @@
 package com.bandw.effects;
 
 import com.bandw.Main;
+import com.bandw.util.CorruptionManager;
 import com.bandw.registry.ModSounds;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
 
 public class CorruptionStatusEffect extends StatusEffect {
     public CorruptionStatusEffect(StatusEffectCategory category, int color) {
@@ -22,6 +25,15 @@ public class CorruptionStatusEffect extends StatusEffect {
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
             entity.playSound(ModSounds.CORRUPT, 2f, 1f);
+            int range=2+amplifier;
+            BlockPos entityPos=entity.getBlockPos();
+            for (BlockPos pos : BlockPos.iterate(entityPos.add(-range,-range,-range),entityPos.add(range,range,range))){
+                BlockState currentState=world.getBlockState(pos);
+                Block corruptBlock=CorruptionManager.getReplacement(currentState.getBlock());
+                if (corruptedBlock!=currentState.getBlock()){
+                    world.setBlockState(pos,corruptBlock.getDefaultState());
+                };
+            };
         };
         return super.applyUpdateEffect(world,entity, amplifier);
     };
