@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class StatusEffectHearts {
     @Unique
     private static final Identifier DARKENING_HEARTS=Identifier.of(ClientMain.MOD_ID,"textures/gui/darkening_hearts.png");
-    @Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
+    /*@Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
     private void bandw$drawEffectHearts(DrawContext ctx,InGameHud.HeartType type,int x,int y,boolean hardcore,boolean blinking,boolean half,CallbackInfo info){
         if (!blinking && type == InGameHud.HeartType.NORMAL && MinecraftClient.getInstance().cameraEntity instanceof PlayerEntity player && (player.hasStatusEffect(ModEffects.DARKENING))){
             Identifier the_texture;
@@ -31,6 +31,15 @@ public abstract class StatusEffectHearts {
             };
             ctx.drawTexture(RenderLayer::getGuiTextured,the_texture,x,y,half ? 9 : 0,0,9,9);
             info.cancel();
+        };
+    };*/
+    @Inject(method = "renderHealthBar", at = @At("HEAD"), cancellable = true)
+    private void onRenderHealthBar(DrawContext context,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
+        if (player != null && player.hasStatusEffect(ModEffects.DARKENING)) {
+            // Custom rendering logic to make the health bar black
+            RenderSystem.setShaderColor(0.0F, 0.0F, 0.0F, 1.0F); // Set to black
+        }else{
+            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F); // Reset shader to default color
         };
     };
 };
