@@ -31,7 +31,7 @@ public class CorruptionStatusEffect extends StatusEffect {
             for (BlockPos pos : BlockPos.iterate(entityPos.add(-range,-range,-range),entityPos.add(range,range,range))){
                 BlockState currentState=world.getBlockState(pos);
                 Block corruptBlock=CorruptionManager.getReplacement(currentState.getBlock());
-                if (corruptedBlock!=currentState.getBlock()){
+                if (corruptBlock!=currentState.getBlock()){
                     world.setBlockState(pos,corruptBlock.getDefaultState());
                 };
             };
