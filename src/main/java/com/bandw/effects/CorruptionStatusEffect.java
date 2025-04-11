@@ -1,7 +1,7 @@
 package com.bandw.effects;
 
 import com.bandw.Main;
-import com.bandw.ModBlocks;
+import com.bandw.registry.ModBlocks;
 import com.bandw.util.CorruptionManager;
 import com.bandw.registry.ModSounds;
 import net.minecraft.entity.effect.StatusEffect;
