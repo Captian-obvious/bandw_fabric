@@ -2,6 +2,7 @@ package com.bandw.mixin.client;
 
 import com.bandw.ClientMain;
 import com.bandw.registry.ModEffects;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.util.Identifier;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.MinecraftClient;
