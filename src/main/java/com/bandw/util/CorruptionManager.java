@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CorruptionManager {
-    private static final Map<Block, Block> replacementMap;
+    private static Map<Block, Block> replacementMap;
     
     public CorruptionManager() {
         this.replacementMap = new HashMap<>();
