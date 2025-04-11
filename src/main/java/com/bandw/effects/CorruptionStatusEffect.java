@@ -1,6 +1,7 @@
 package com.bandw.effects;
 
 import com.bandw.Main;
+import com.bandw.ModBlocks;
 import com.bandw.util.CorruptionManager;
 import com.bandw.registry.ModSounds;
 import net.minecraft.entity.effect.StatusEffect;
@@ -28,9 +29,10 @@ public class CorruptionStatusEffect extends StatusEffect {
             entity.playSound(ModSounds.CORRUPT, 2f, 1f);
             int range=2+amplifier;
             BlockPos entityPos=entity.getBlockPos();
+            CorruptionManager corruptionManager=ModBlocks.corruptionManager;
             for (BlockPos pos : BlockPos.iterate(entityPos.add(-range,-range,-range),entityPos.add(range,range,range))){
                 BlockState currentState=world.getBlockState(pos);
-                Block corruptBlock=CorruptionManager.getReplacement(currentState.getBlock());
+                Block corruptBlock=corruptionManager.getReplacement(currentState.getBlock());
                 if (corruptBlock!=currentState.getBlock()){
                     world.setBlockState(pos,corruptBlock.getDefaultState());
                 };

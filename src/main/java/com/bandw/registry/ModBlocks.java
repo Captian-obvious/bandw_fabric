@@ -2,6 +2,7 @@ package com.bandw.registry;
 
 import com.bandw.Main;
 import com.bandw.blocks.*;
+import com.bandw.util.CorruptionManager;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
@@ -19,6 +20,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
 
 public class ModBlocks {
+    public static final CorruptionManager corruptionManager=new CorruptionManager();
     public static final RegistryKey<Block> DARK_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_bricks"));
     public static final Block DARK_BRICKS = new DarkBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(DARK_BRICKS_KEY));
     public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_bricks"));
@@ -91,6 +93,14 @@ public class ModBlocks {
         register(CORRUPTED_DIRT,CORRUPTED_DIRT_KEY,true);
         register(CORRUPTED_GRASS_BLOCK,CORRUPTED_GRASS_BLOCK_KEY,true);
         register(SHIELD_OF_LIGHT_BLOCK,SHIELD_OF_LIGHT_KEY,true);
+    };
+    public static void registerCorruptableBlocks(){
+        Main.LOGGER.info("Setting up CorruptionManager...");
+        corruptionManager.addReplacement(Blocks.DIRT,CORRUPTED_DIRT);
+        corruptionManager.addReplacement(Blocks.STONE,CORRUPTED_STONE);
+        corruptionManager.addReplacement(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);
+        corruptionManager.addReplacement(Blocks.GRASS_BLOCK,CORRUPTED_GRASS_BLOCK);
+        corruptionManager.addReplacement(LIGHT_BRICKS,DARK_BRICKS);
     };
     /*public static void registerBlockEntities() {
         SHIELD_OF_LIGHT_BLOCK_ENTITY = Registry.register(
