@@ -48,6 +48,7 @@
     "effect.bandw.corruption": "Corruption",
     "effect.bandw.cleansing": "Cleansing",
     "effect.bandw.darkening": "Darkening",
+    "effect.bandw.halfshade_poisoning": "Halfshade Poisoning",
     "sound.bandw.corrupt": "Corruption Spreads",
     "sound.bandw.shockwave": "Shockwave Booming"
 }
