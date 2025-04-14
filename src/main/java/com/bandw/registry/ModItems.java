@@ -43,6 +43,8 @@ public class ModItems {
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64).registryKey(dark_bone_key));
     public static final RegistryKey<Item> dark_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_shard"));
     public static final Item dark_shard=new Item(new Item.Settings().maxCount(64).registryKey(dark_shard_key));
+    public static final RegistryKey<Item> tec_dust_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"tec_dust"));
+    public static final Item tec_dust=new Item(new Item.Settings().maxCount(64).registryKey(tec_dust_key));
     public static final RegistryKey<Item> dark_spider_eye_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_spider_eye"));
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63).registryKey(dark_spider_eye_key));
     public static final RegistryKey<Item> dark_string_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_string"));
@@ -102,7 +104,8 @@ public class ModItems {
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_ender_pearl,dark_ender_pearl_key);
         register(dark_shard,dark_shard_key);
-        Main.LOGGER.info("Registering Item Group Contents");
+        register(tec_dust,tec_dust_key);
+        Main.LOGGER.info("Registering Item Group Contents...");
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
             itemGroup.add(ModItems.blade_of_infinite_sorrow);
             itemGroup.add(ModItems.halfshade_blade);
@@ -117,6 +120,7 @@ public class ModItems {
             itemGroup.add(ModItems.light_shard);
             itemGroup.add(ModItems.burnt_flesh);
             itemGroup.add(ModItems.dark_bone);
+            itemGroup.add(ModItems.tec_dust);
             itemGroup.add(ModItems.dark_spider_eye);
             itemGroup.add(ModItems.dark_string);
             itemGroup.add(ModItems.dark_shard);
