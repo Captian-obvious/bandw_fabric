@@ -1,7 +1,7 @@
 package com.bandw.registry;
 
 import com.bandw.Main;
-import com.bandw.entities.*;
+import com.bandw.entity.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
