@@ -21,12 +21,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class StatusEffectHearts {
     @Unique
     private static final Identifier DARKENING_HEARTS=Identifier.of(ClientMain.MOD_ID,"textures/gui/darkening_hearts.png");
+    @Unique
+    private static final Identifier HALFSHADE_POISONING_HEARTS=Identifier.of(ClientMain.MOD_ID,"textures/gui/halfshade_poisoning_hearts.png");
     /*@Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
-    private void bandw$drawEffectHearts(DrawContext ctx,InGameHud.HeartType type,int x,int y,boolean hardcore,boolean blinking,boolean half,CallbackInfo info){
+    private void drawEffectHeart(DrawContext ctx,InGameHud.HeartType type,int x,int y,boolean hardcore,boolean blinking,boolean half,CallbackInfo info){
         if (!blinking && type == InGameHud.HeartType.NORMAL && MinecraftClient.getInstance().cameraEntity instanceof PlayerEntity player && (player.hasStatusEffect(ModEffects.DARKENING))){
             Identifier the_texture;
             if (player.hasStatusEffect(ModEffects.DARKENING)){
                 the_texture=DARKENING_HEARTS;
+            }else if (player.hasStatusEffect(ModEffects.DARKENING)){
+                the_texture=HALFSHADE_POISONING_HEARTS;
             }else{
                 return;
             };
