@@ -1,7 +1,10 @@
 package com.bandw.items;
 
 import com.bandw.Main;
+import com.bandw.registry.ModEffects;
 import com.bandw.items.SwordItemWithEffect;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
@@ -20,13 +23,11 @@ public class HalfshadeBlade extends SwordItemWithEffect {
     @Override
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
-            /*target.setHealth(target.getMaxHealth());
-            ServerWorld world=(ServerWorld) target.getWorld();
-            BlockPos pos=target.getBlockPos();
-            LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
-            bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
-            world.spawnEntity(bolt);
-            target.setHealth(0.0F);*/
+            StatusEffectInstance instance = new StatusEffectInstance(ModEffects.HALFSHADE_POISONING,200,1,false,true,true);
+            boolean success=target.addStatusEffect(instance);
+            if (!success){
+                Main.LOGGER.info("Failed to apply effect 'bandw:halfshade_poisoning' to entity, ignoring and continuing");
+            };
         }else{
             Main.LOGGER.info("ERROR: target and attacker must not be null!");
         };
