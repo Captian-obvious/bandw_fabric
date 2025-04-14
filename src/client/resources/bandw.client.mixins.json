@@ -2,7 +2,8 @@
     "package": "com.bandw.mixin.client",
     "compatibilityLevel": "JAVA_21",
     "client": [
-        "ExampleClientMixin"
+        "ExampleClientMixin",
+        "StatusEffectHearts"
     ],
     "injectors": {
         "defaultRequire": 1
