@@ -1,4 +1,4 @@
-package com.bandw.effects;
+package com.bandw.effect;
 
 import com.bandw.Main;
 import com.bandw.registry.ModEffects;

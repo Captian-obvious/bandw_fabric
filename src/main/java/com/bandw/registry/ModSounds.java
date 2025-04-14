@@ -1,7 +1,7 @@
 package com.bandw.registry;
 
 import com.bandw.Main;
-import com.bandw.effects.*;
+import com.bandw.effect.*;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
