@@ -26,7 +26,7 @@ public class Main implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Server Initializing...");
         registerModules(); isCharterLoaded=ModChecker.isModLoaded("charter");
-        LOGGER.info(isCharterLoaded ? "Charter mod is loaded! Enabling additional features. : "Charter mod is not loaded.");
+        LOGGER.info(isCharterLoaded ? "Charter mod is loaded! Enabling additional features." : "Charter mod is not loaded.");
         judgmentEnabled=isCharterLoaded;
         LOGGER.info("Server Initialized (Defiance v"+VERSION+")");
     };
