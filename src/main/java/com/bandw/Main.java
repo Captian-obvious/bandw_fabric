@@ -6,7 +6,6 @@ import com.bandw.ModChecker;
 import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModEntities;
 import com.bandw.registry.ModEffects;
-import com.bandw.registry.ModBlocks;
 import com.bandw.registry.ModFluids;
 import com.bandw.registry.ModSounds;
 import com.bandw.registry.ModBlockEntities;
@@ -26,6 +25,12 @@ public class Main implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Server Initializing...");
+        registerModules(); isCharterLoaded=ModChecker.isModLoaded("charter");
+        LOGGER.info(isCharterLoaded ? "Charter mod is loaded! Enabling additional features. : "Charter mod is not loaded.");
+        judgmentEnabled=isCharterLoaded;
+        LOGGER.info("Server Initialized (Defiance v"+VERSION+")");
+    };
+    public static void registerModules(){
         ModBlocks.registerBlocks();
         ModBlockEntities.registerBlockEntities();
         ModFluids.registerFluids();
@@ -34,13 +39,5 @@ public class Main implements ModInitializer {
         ModItems.registerItems();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
-        isCharterLoaded=ModChecker.isModLoaded("charter");
-        if (isCharterLoaded) {
-            LOGGER.info("Charter mod is loaded! Enabling additional features.");
-            judgmentEnabled=true;
-        }else{
-            LOGGER.info("Charter mod is not loaded.");
-        };
-        LOGGER.info("Server Initialized (Defiance v"+VERSION+")");
-    };
+    }; 
 };
