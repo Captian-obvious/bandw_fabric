@@ -6,6 +6,6 @@ import java.util.HashMap;
 
 public class CharterContractManager {
     public CharterContractManager(boolean isCharterLoaded){
-        isCharterLoaded ? Main.LOGGER.info("Charter is loaded, setting up Contract hooks...") : Main.LOGGER.info("Charter is not loaded, Contract severing functionality not available.");
+        Main.LOGGER.info(isCharterLoaded ? "Charter is loaded, setting up Contract hooks..." : "Charter is not loaded, Contract severing functionality not available.");
     };
 };
