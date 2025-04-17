@@ -30,7 +30,7 @@ public class Main implements ModInitializer {
         registerModules();
         isCharterLoaded=ModChecker.isModLoaded("charter");
         judgmentEnabled=isCharterLoaded;
-        isCharterLoaded ? (LOGGER.info("Charter mod is loaded! Enabling additional features.");registerCharterHooks()):LOGGER.info("Charter mod is not loaded.");
+        isCharterLoaded ? (LOGGER.info("Charter mod is loaded! Enabling additional features.");registerCharterHooks();):(LOGGER.info("Charter mod is not loaded."););
         LOGGER.info("Server Initialized (Defiance v"+VERSION+")");
     };
     public static void registerModules(){
