@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "bandw:item/mark_of_the_banished"
+        "layer0": "bandw:item/banished_mark"
     }
 }
