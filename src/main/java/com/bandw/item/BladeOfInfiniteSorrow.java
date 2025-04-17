@@ -1,7 +1,7 @@
-package com.bandw.items;
+package com.bandw.item;
 
 import com.bandw.Main;
-import com.bandw.items.SwordItemWithEffect;
+import com.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
@@ -13,8 +13,8 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class Casshen extends SwordItemWithEffect {
-    public Casshen(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
+public class BladeOfInfiniteSorrow extends SwordItemWithEffect {
+    public BladeOfInfiniteSorrow(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
     };
     @Override
@@ -32,3 +32,4 @@ public class Casshen extends SwordItemWithEffect {
         };
     };
 };
+//wcwcc?

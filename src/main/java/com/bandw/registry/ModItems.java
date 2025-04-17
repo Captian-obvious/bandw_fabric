@@ -2,7 +2,7 @@ package com.bandw.registry;
 
 // Imports
 import com.bandw.Main;
-import com.bandw.items.*;
+import com.bandw.item.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registry;

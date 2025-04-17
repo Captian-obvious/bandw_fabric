@@ -1,4 +1,4 @@
-package com.bandw.items;
+package com.bandw.item;
 
 import com.bandw.Main;
 import net.minecraft.entity.effect.StatusEffects;
