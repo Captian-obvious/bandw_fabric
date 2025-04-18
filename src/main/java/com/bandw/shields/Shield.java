@@ -23,6 +23,7 @@ public class Shield {
     public void setChangeHandler(BiFunction<Float, Float, Void> handler){
         if (handler!=null){
             this.on_change=handler;
+            this.on_change.apply(this.size,this.strength);
         };
     };
     public void setCollapseHandler(Function<Float, Void> handler){
@@ -33,6 +34,7 @@ public class Shield {
     public void setActiveChangedHandler(Function<Boolean, Void> handler){
         if (handler!=null){
             this.on_active_changed=handler;
+            this.on_active_changed.apply(this.isActive);
         };
     };
     public void expand(float amount) {

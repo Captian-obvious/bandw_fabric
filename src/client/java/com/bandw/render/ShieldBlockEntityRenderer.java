@@ -32,10 +32,10 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
         matrices.translate((pos.getX()-(float) camX) + 0.5, (pos.getY()-(float) camY) + 0.5, (pos.getZ()-(float) camZ) + 0.5);
         float size = MathHelper.clamp(entity.getShield().getSize(), 1.0F, 100.0F);
         matrices.scale(size, size, size);
-        renderCube(matrices, vertexConsumers, light, overlay, TEXTURE);
+        renderCube(matrices, vertexConsumers, light, overlay, TEXTURE, size);
         matrices.pop();
     };
-    public void renderCube(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Identifier texture) {
+    public void renderCube(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Identifier texture, float cube_size) {
         matrices.push();
         VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(texture));
         float size = 0.5f;
@@ -57,7 +57,7 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
             {0, 4, 7, 3}, // Left
             {1, 5, 6, 2}  // Right
         };
-        float tileFactor=16.0F; // Number of texture tiles per block unit.
+        float tileFactor=cube_size; // Number of texture tiles per block unit.
         float uMin=0.0F;
         float uMax=size*tileFactor;
         float[][] uvs = {
