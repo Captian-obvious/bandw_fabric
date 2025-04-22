@@ -11,13 +11,15 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.Formatting;
+import net.minecraft.text.Text;
 import java.util.List;
 
 public class Casshen extends SwordItemWithEffect {
+    int oldCharge=0;
     public Casshen(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
     };
@@ -56,7 +58,7 @@ public class Casshen extends SwordItemWithEffect {
         };
     };
     public void setCharge(ItemStack stack, int charge) {
-        int oldValue=stack.set(ModComponents.CHARGE_COMPONENT,charge);
+        this.oldCharge=stack.set(ModComponents.CHARGE_COMPONENT,charge);
     };
     public int getCharge(ItemStack stack) {
         int charge=stack.getOrDefault(ModComponents.CHARGE_COMPONENT,0);
