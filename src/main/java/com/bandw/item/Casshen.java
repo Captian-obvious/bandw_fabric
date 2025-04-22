@@ -1,10 +1,13 @@
 package com.bandw.item;
 
 import com.bandw.Main;
+import com.bandw.registry.ModSounds;
 import com.bandw.registry.ModComponents;
 import com.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
@@ -12,6 +15,11 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
@@ -27,9 +35,23 @@ public class Casshen extends SwordItemWithEffect {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (target != null && attacker != null) {
             // Retrieve current charge value
-            int currentCharge=getCharge(stack);
-            // Calculate new charge value (e.g., incrementing by 1 for each hit)
-            setCharge(stack,currentCharge + 5);
+            int currentCharge=this.getCharge(stack);
+            if (currentCharge<30){
+                // Calculate new charge value (e.g., incrementing by 1 for each hit)
+                this.setCharge(stack,currentCharge + 5);
+            }else{
+                // Trigger the explosion if charge is above or at 30
+                World world=target.getWorld();
+                if (!world.isClient()){
+                    Vec3d pos=target.getBlockPos();
+                    world.playSound(world,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
+                    ServerWorld serverworld=(ServerWorld) world;
+                    DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.MAGIC.getValue()).get());
+                    world.createExplosion(target,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),4.0F,false,Explosion.DestructionType.NONE);
+                };
+                // Reset the charge
+                this.setCharge(0);
+            };
         };
         // Call the super method to ensure standard behavior
         return super.postHit(stack, target, attacker);
