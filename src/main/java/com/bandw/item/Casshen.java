@@ -43,14 +43,13 @@ public class Casshen extends SwordItemWithEffect {
                 // Trigger the explosion if charge is above or at 30
                 World world=target.getWorld();
                 if (!world.isClient()){
-                    Vec3d pos=target.getBlockPos();
-                    world.playSound(world,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
+                    Vec3d pos=Vec3d.ofBottomCenter(target.getBlockPos());
+                    world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
                     ServerWorld serverworld=(ServerWorld) world;
                     DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.MAGIC.getValue()).get());
-                    world.createExplosion(target,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),4.0F,false,Explosion.DestructionType.NONE);
                 };
                 // Reset the charge
-                this.setCharge(0);
+                this.setCharge(stack,0);
             };
         };
         // Call the super method to ensure standard behavior
