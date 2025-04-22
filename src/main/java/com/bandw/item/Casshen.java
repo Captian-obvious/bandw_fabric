@@ -44,7 +44,7 @@ public class Casshen extends SwordItemWithEffect {
                 World world=target.getWorld();
                 if (!world.isClient()){
                     Vec3d pos=Vec3d.ofBottomCenter(target.getBlockPos());
-                    world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
+                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
                     ServerWorld serverworld=(ServerWorld) world;
                     DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.MAGIC.getValue()).get());
                 };
