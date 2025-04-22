@@ -15,6 +15,7 @@ import net.minecraft.text.Text;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import java.util.List;
 
 public class Casshen extends SwordItemWithEffect {
     public Casshen(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
@@ -24,9 +25,9 @@ public class Casshen extends SwordItemWithEffect {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (target != null && attacker != null) {
             // Retrieve current charge value
-            int currentCharge = getCharge(stack);
+            int currentCharge=getCharge(stack);
             // Calculate new charge value (e.g., incrementing by 1 for each hit)
-            setCharge(stack, currentCharge + 5);
+            setCharge(stack,currentCharge + 5);
         };
         // Call the super method to ensure standard behavior
         return super.postHit(stack, target, attacker);
