@@ -1,6 +1,7 @@
 package com.bandw.item;
 
 import com.bandw.Main;
+import com.bandw.registry.ModComponents;
 import com.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
@@ -9,8 +10,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -25,7 +24,7 @@ public class Casshen extends SwordItemWithEffect {
             // Retrieve current charge value
             int currentCharge = getCharge(stack);
             // Calculate new charge value (e.g., incrementing by 1 for each hit)
-            setCharge(stack, currentCharge + 1);
+            setCharge(stack, currentCharge + 5);
         };
         // Call the super method to ensure standard behavior
         return super.postHit(stack, target, attacker);
@@ -44,12 +43,20 @@ public class Casshen extends SwordItemWithEffect {
             Main.LOGGER.info("ERROR: target and attacker must not be null!");
         };
     };
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        int charge=this.getCharge(stack);
+        if (charge>=30){
+            tooltip.add(Text.translatable("item.bandw.casshen.charge",charge).formatted(Formatting.RED));
+        }else{
+            tooltip.add(Text.translatable("item.bandw.casshen.charge",charge).formatted(Formatting.GOLD));
+        };
+    };
     public void setCharge(ItemStack stack, int charge) {
-        NbtCompound nbt = stack.getOrCreateNbt();
-        nbt.putInt("Charge", charge);
+        int oldValue=stack.set(ModComponents.CHARGE_COMPONENT,charge);
     };
     public int getCharge(ItemStack stack) {
-        NbtCompound nbt = stack.getNbt();
-        return nbt != null ? nbt.getInt("Charge") : 0; // Default to 0 if no charge is set
+        int charge=stack.getOrDefault(ModComponents.CHARGE_COMPONENT,0);
+        return charge;
     };
 };
