@@ -47,7 +47,7 @@ public class Casshen extends SwordItemWithEffect {
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
                     ServerWorld serverworld=(ServerWorld) world;
                     DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.MAGIC.getValue()).get());
-                    world.createExplosion(null,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),4.0F,false,World.ExplosionSourceType.NONE);
+                    world.createExplosion(null,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),8.0F,false,World.ExplosionSourceType.NONE);
                 };
                 // Reset the charge
                 this.setCharge(stack,0);
