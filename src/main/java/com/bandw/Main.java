@@ -10,6 +10,7 @@ import com.bandw.registry.ModFluids;
 import com.bandw.registry.ModSounds;
 import com.bandw.registry.ModBlockEntities;
 import com.bandw.registry.ModComponents;
+import com.bandw.registry.ModDamageSources;
 import com.bandw.registry.ModItems;
 import com.bandw.registry.ModEntityAttributes;
 import com.bandw.util.CharterContractManager;
