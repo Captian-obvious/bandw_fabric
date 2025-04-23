@@ -42,6 +42,7 @@ public class Main implements ModInitializer {
         ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
         ModComponents.registerComponents();
+        ModDamageSources.registerDamageSources();
         ModItems.registerItems();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
