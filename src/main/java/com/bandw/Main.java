@@ -9,6 +9,7 @@ import com.bandw.registry.ModEffects;
 import com.bandw.registry.ModFluids;
 import com.bandw.registry.ModSounds;
 import com.bandw.registry.ModBlockEntities;
+import com.bandw.registry.ModComponents;
 import com.bandw.registry.ModItems;
 import com.bandw.registry.ModEntityAttributes;
 import com.bandw.util.CharterContractManager;
@@ -40,6 +41,7 @@ public class Main implements ModInitializer {
         ModFluids.registerFluids();
         ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
+        ModComponents.registerComponents();
         ModItems.registerItems();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
