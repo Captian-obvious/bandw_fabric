@@ -1,4 +1,5 @@
-{"required": true,
+{
+    "required": true,
     "package": "com.normalorg.bandw.mixin.client",
     "compatibilityLevel": "JAVA_21",
     "client": [
