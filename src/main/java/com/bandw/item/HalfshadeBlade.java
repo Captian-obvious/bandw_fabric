@@ -1,7 +1,7 @@
-package com.bandw.item;
+package com.normalorg.bandw.item;
 
-import com.bandw.Main;
-import com.bandw.registry.ModEffects;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.registry.ModEffects;
 import net.minecraft.item.SwordItem;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;

@@ -1,8 +1,8 @@
-package com.bandw.registry;
+package com.normalorg.bandw.registry;
 
-import com.bandw.Main;
-import com.bandw.blocks.*;
-import com.bandw.util.CorruptionManager;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.blocks.*;
+import com.normalorg.bandw.util.CorruptionManager;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;

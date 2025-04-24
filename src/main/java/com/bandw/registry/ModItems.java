@@ -1,8 +1,8 @@
-package com.bandw.registry;
+package com.normalorg.bandw.registry;
 
 // Imports
-import com.bandw.Main;
-import com.bandw.item.*;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.item.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registry;

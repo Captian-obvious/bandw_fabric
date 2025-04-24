@@ -1,4 +1,4 @@
-package com.bandw.shields;
+package com.normalorg.bandw.shields;
 
 import net.minecraft.util.math.Vec3d;
 import java.util.function.BiFunction;

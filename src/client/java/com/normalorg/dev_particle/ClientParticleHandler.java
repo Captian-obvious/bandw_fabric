@@ -1,4 +1,4 @@
-package com.dev_particle;
+package com.normalorg.dev_particle;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;

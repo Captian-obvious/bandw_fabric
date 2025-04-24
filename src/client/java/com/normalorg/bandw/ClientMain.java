@@ -1,7 +1,7 @@
-package com.bandw;
+package com.normalorg.bandw;
 
-import com.bandw.registry.ModBlockEntities;
-import com.bandw.render.ShieldBlockEntityRenderer;
+import com.normalorg.bandw.registry.ModBlockEntities;
+import com.normalorg.bandw.render.ShieldBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import org.slf4j.Logger;

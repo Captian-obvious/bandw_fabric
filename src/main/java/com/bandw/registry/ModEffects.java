@@ -1,7 +1,7 @@
-package com.bandw.registry;
+package com.normalorg.bandw.registry;
 
-import com.bandw.Main;
-import com.bandw.effect.*;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.effect.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;

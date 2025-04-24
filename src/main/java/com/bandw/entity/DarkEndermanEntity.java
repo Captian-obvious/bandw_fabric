@@ -1,4 +1,4 @@
-package com.bandw.entity;
+package com.normalorg.bandw.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.EntityAttributes;

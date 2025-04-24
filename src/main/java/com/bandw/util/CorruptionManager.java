@@ -1,4 +1,4 @@
-package com.bandw.util;
+package com.normalorg.bandw.util;
 
 import net.minecraft.block.Block;
 import java.util.HashMap;

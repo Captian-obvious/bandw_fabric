@@ -1,7 +1,7 @@
-package com.bandw.item;
+package com.normalorg.bandw.item;
 
-import com.bandw.Main;
-import com.bandw.item.SwordItemWithEffect;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;

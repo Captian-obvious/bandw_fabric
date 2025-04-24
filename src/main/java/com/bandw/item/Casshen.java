@@ -1,10 +1,10 @@
-package com.bandw.item;
+package com.normalorg.bandw.item;
 
-import com.bandw.Main;
-import com.bandw.registry.ModSounds;
-import com.bandw.registry.ModComponents;
-import com.bandw.registry.ModDamageSources;
-import com.bandw.item.SwordItemWithEffect;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.registry.ModSounds;
+import com.normalorg.bandw.registry.ModComponents;
+import com.normalorg.bandw.registry.ModDamageSources;
+import com.normalorg.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.sound.SoundEvents;

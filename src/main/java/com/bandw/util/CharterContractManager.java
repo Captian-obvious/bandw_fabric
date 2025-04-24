@@ -1,6 +1,6 @@
-package com.bandw.util;
+package com.normalorg.bandw.util;
 
-import com.bandw.Main;
+import com.normalorg.bandw.Main;
 import java.util.Map;
 import java.util.HashMap;
 

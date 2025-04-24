@@ -1,6 +1,6 @@
-package com.bandw.item;
+package com.normalorg.bandw.item;
 
-import com.bandw.Main;
+import com.normalorg.bandw.Main;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;

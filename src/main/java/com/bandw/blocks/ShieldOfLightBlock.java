@@ -1,4 +1,4 @@
-package com.bandw.blocks;
+package com.normalorg.bandw.blocks;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;

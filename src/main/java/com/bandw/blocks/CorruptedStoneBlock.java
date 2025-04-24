@@ -1,7 +1,7 @@
-package com.bandw.blocks;
+package com.normalorg.bandw.blocks;
 
-import com.bandw.Main;
-import com.bandw.registry.ModEffects;
+import com.normalorg.bandw.Main;
+import com.normalorg.bandw.registry.ModEffects;
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.BlockState;

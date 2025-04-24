@@ -1,19 +1,19 @@
-package com.bandw;
+package com.normalorg.bandw;
 
 //Mod Checker Utility
-import com.bandw.util.ModChecker;
+import com.normalorg.bandw.util.ModChecker;
 //end Mod Checker
-import com.bandw.registry.ModBlocks;
-import com.bandw.registry.ModEntities;
-import com.bandw.registry.ModEffects;
-import com.bandw.registry.ModFluids;
-import com.bandw.registry.ModSounds;
-import com.bandw.registry.ModBlockEntities;
-import com.bandw.registry.ModComponents;
-import com.bandw.registry.ModDamageSources;
-import com.bandw.registry.ModItems;
-import com.bandw.registry.ModEntityAttributes;
-import com.bandw.util.CharterContractManager;
+import com.normalorg.bandw.registry.ModBlocks;
+import com.normalorg.bandw.registry.ModEntities;
+import com.normalorg.bandw.registry.ModEffects;
+import com.normalorg.bandw.registry.ModFluids;
+import com.normalorg.bandw.registry.ModSounds;
+import com.normalorg.bandw.registry.ModBlockEntities;
+import com.normalorg.bandw.registry.ModComponents;
+import com.normalorg.bandw.registry.ModDamageSources;
+import com.normalorg.bandw.registry.ModItems;
+import com.normalorg.bandw.registry.ModEntityAttributes;
+import com.normalorg.bandw.util.CharterContractManager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;

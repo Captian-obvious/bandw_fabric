@@ -1,4 +1,4 @@
-package com.bandw.util;
+package com.normalorg.bandw.util;
 // Imports
 import net.fabricmc.loader.api.FabricLoader;
 //mod checker utility

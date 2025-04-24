@@ -1,7 +1,7 @@
-package com.bandw.mixin.client;
+package com.normalorg.bandw.mixin.client;
 
-import com.bandw.ClientMain;
-import com.bandw.registry.ModEffects;
+import com.normalorg.bandw.ClientMain;
+import com.normalorg.bandw.registry.ModEffects;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.util.Identifier;
 import net.minecraft.client.render.RenderLayer;
