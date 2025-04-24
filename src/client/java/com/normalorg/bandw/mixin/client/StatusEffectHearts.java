@@ -29,7 +29,7 @@ public abstract class StatusEffectHearts {
             Identifier the_texture;
             if (player.hasStatusEffect(ModEffects.DARKENING)){
                 the_texture=DARKENING_HEARTS;
-            }else if (player.hasStatusEffect(ModEffects.DARKENING)){
+            }else if (player.hasStatusEffect(ModEffects.HALFSHADE_POISONING)){
                 the_texture=HALFSHADE_POISONING_HEARTS;
             }else{
                 return;
