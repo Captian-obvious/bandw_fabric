@@ -39,8 +39,8 @@ public abstract class StatusEffectHearts {
         };
     };*/
     @Inject(method = "renderHealthBar", at = @At("HEAD"), cancellable = true)
-    private void onRenderHealthBar(DrawContext context,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
-            if (player == null || !player.hasStatusEffect(ModEffects.DARKENING)) {
+    private void onRenderHealthBar(DrawContext ctx,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
+            if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) || !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING)) {
             // Default rendering logic (do nothing special)
             return;
         };
