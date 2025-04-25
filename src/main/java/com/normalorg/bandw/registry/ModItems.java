@@ -141,11 +141,11 @@ public class ModItems {
             ModItems.dark_shard
         };
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
-            for (Block block : blocks) {
-                itemGroup.add(block.asItem());
-            };
             for (Item item : items) {
                 itemGroup.add(item);
+            };
+            for (Block block : blocks) {
+                itemGroup.add(block.asItem());
             };
         });
     };
