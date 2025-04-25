@@ -53,16 +53,21 @@ public abstract class StatusEffectHearts {
         };
         if (heartTexture != null) {
             // Begin custom rendering of hearts
-            ctx.bindTexture(heartTexture);
+            //ctx.bindTexture(heartTexture);
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F); // Ensure default coloring
             for (int i = 0; i < health; i++) {
                 int heartX = x + (i % 10) * 8;
                 int heartY = y - (i / 10) * 10;
                 boolean halfHeart = i + 1 == health && (lastHealth % 2 != 0);
                 ctx.drawTexture(
-                    RenderLayer::getGuiTextured,heartTexture,heartX,heartY,
-                    halfHeart ? 9 : 0, // Adjust texture coordinates for half or full hearts
-                    0, // Y texture coordinate
+                    RenderLayer::getGuiTextured,
+                    heartTexture,
+                    heartX,
+                    heartY,
+                    halfHeart ? 9.0F : 0.0F, // Adjust texture coordinates for half or full hearts
+                    0.0F, // Y texture coordinate
+                    9, // Width
+                    9,  // Height
                     9, // Width
                     9  // Height
                 );
