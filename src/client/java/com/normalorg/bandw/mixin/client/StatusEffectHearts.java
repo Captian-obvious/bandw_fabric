@@ -72,8 +72,8 @@ public abstract class StatusEffectHearts {
                     9  // Height
                 );
             };
+            // Cancel default rendering to use custom logic
+            info.cancel();
         };
-        // Cancel default rendering to use custom logic
-        info.cancel();
     };
 };
