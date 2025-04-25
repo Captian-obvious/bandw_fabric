@@ -52,7 +52,10 @@
     "effect.bandw.halfshade_poisoning": "Halfshade Poisoning",
     "sound.bandw.corrupt": "Corruption Spreads",
     "sound.bandw.shockwave": "Shockwave Booming",
-    "death.attack.casshen_explode": "%1$s was turned to dust by %2$s",
+    "death.attack.casshen_explode": "%1$s was turned to dust",
+    "death.attack.casshen_explode.player": "%1$s was turned to dust by %2$s",
     "death.attack.casshen_beam": "%1$s was undone",
-    "death.attack.factured": "%1$s's existence was fractured"
+    "death.attack.casshen_beam.player": "%1$s was undone by %2$s",
+    "death.attack.fractured": "%1$s's existence was fractured",
+    "death.attack.darkened": "%1$s was darkened"
 }

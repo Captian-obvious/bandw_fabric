@@ -16,6 +16,7 @@ public class ModDamageSources {
     public static final RegistryKey<DamageType> CASSHEN_EXPLOSION = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Main.MOD_ID, "casshen_explode"));
     public static final RegistryKey<DamageType> CASSHEN_BEAM = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Main.MOD_ID, "casshen_beam"));
     public static final RegistryKey<DamageType> FRACTURED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Main.MOD_ID, "fractured"));
+    public static final RegistryKey<DamageType> DARKENED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Main.MOD_ID, "darkened"));
     public static void registerDamageSources() {
         Main.LOGGER.info("Registering damage types",Main.MOD_ID);
     };
