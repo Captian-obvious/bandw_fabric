@@ -23,6 +23,7 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.block.Block;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import java.util.function.Function;
@@ -73,16 +74,15 @@ public class ModItems {
         System.out.println("Mod Items Initialized!");
         registerItems();
     };
-    
-	/*public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
-		// Create the item key.
-		RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,name));
-		// Create the item instance.
-		Item item=itemFactory.apply(settings.registryKey(itemKey));
-		// Register the item.
-		Registry.register(Registries.ITEM,itemKey,item);
-		return item;
-	};*/
+    /*public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+        // Create the item key.
+        RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,name));
+        // Create the item instance.
+        Item item=itemFactory.apply(settings.registryKey(itemKey));
+        // Register the item.
+        Registry.register(Registries.ITEM,itemKey,item);
+        return item;
+    };*/
     public static Item register(Item item,RegistryKey key){
         return Registry.register(Registries.ITEM,key,item);
     };
@@ -107,36 +107,46 @@ public class ModItems {
         register(dark_shard,dark_shard_key);
         register(tec_dust,tec_dust_key);
         Main.LOGGER.info("Registering Item Group Contents...");
+        Block[] blocks={
+            ModBlocks.DARK_LOG,
+            ModBlocks.DARK_BARK,
+            ModBlocks.DARK_BRICKS,
+            ModBlocks.LIGHT_PLANKS,
+            ModBlocks.LIGHT_BRICKS,
+            ModBlocks.CORRUPTED_COBBLESTONE,
+            ModBlocks.CORRUPTED_STONE,
+            ModBlocks.CONDENSED_CORRUPTION,
+            ModBlocks.CORRUPTED_DIRT,
+            ModBlocks.CORRUPTED_GRASS_BLOCK,
+            ModBlocks.SHIELD_OF_LIGHT_BLOCK,
+            ModBlocks.LIGHT_CHISELED_BRICKS
+        };
+        Item[] items={
+            ModItems.blade_of_infinite_sorrow,
+            ModItems.halfshade_blade,
+            ModItems.casshen,
+            ModItems.blade_of_karma,
+            ModItems.blade_of_light,
+            ModItems.mark_of_the_banished,
+            ModItems.mark_of_the_guardian,
+            ModItems.dark_ender_pearl,
+            ModItems.halfshade_ingot,
+            ModItems.halfshade_stick,
+            ModItems.light_shard,
+            ModItems.burnt_flesh,
+            ModItems.dark_bone,
+            ModItems.tec_dust,
+            ModItems.dark_spider_eye,
+            ModItems.dark_string,
+            ModItems.dark_shard
+        };
         ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
-            itemGroup.add(ModItems.blade_of_infinite_sorrow);
-            itemGroup.add(ModItems.halfshade_blade);
-            itemGroup.add(ModItems.casshen);
-            itemGroup.add(ModItems.blade_of_karma);
-            itemGroup.add(ModItems.blade_of_light);
-            itemGroup.add(ModItems.mark_of_the_banished);
-            itemGroup.add(ModItems.mark_of_the_guardian);
-            itemGroup.add(ModItems.dark_ender_pearl);
-            itemGroup.add(ModItems.halfshade_ingot);
-            itemGroup.add(ModItems.halfshade_stick);
-            itemGroup.add(ModItems.light_shard);
-            itemGroup.add(ModItems.burnt_flesh);
-            itemGroup.add(ModItems.dark_bone);
-            itemGroup.add(ModItems.tec_dust);
-            itemGroup.add(ModItems.dark_spider_eye);
-            itemGroup.add(ModItems.dark_string);
-            itemGroup.add(ModItems.dark_shard);
-            itemGroup.add(ModBlocks.DARK_LOG.asItem());
-            itemGroup.add(ModBlocks.DARK_BARK.asItem());
-            itemGroup.add(ModBlocks.DARK_BRICKS.asItem());
-            itemGroup.add(ModBlocks.LIGHT_PLANKS.asItem());
-            itemGroup.add(ModBlocks.LIGHT_BRICKS.asItem());
-            itemGroup.add(ModBlocks.CORRUPTED_COBBLESTONE.asItem());
-            itemGroup.add(ModBlocks.CORRUPTED_STONE.asItem());
-            itemGroup.add(ModBlocks.CONDENSED_CORRUPTION.asItem());
-            itemGroup.add(ModBlocks.CORRUPTED_DIRT.asItem());
-            itemGroup.add(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem());
-            itemGroup.add(ModBlocks.SHIELD_OF_LIGHT_BLOCK.asItem());
-            itemGroup.add(ModBlocks.LIGHT_CHISELED_BRICKS.asItem());
+            for (Block block : blocks) {
+                itemGroup.add(block.asItem());
+            };
+            for (Item item : items) {
+                itemGroup.add(item);
+            };
         });
     };
 };
