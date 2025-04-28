@@ -4,6 +4,7 @@ package com.normalorg.bandw.registry;
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.item.*;
 import com.normalorg.bandw.block.ModBlocks;
+import com.normalorg.bandw.component.ModComponents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registry;
