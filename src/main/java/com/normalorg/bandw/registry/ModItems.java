@@ -3,6 +3,7 @@ package com.normalorg.bandw.registry;
 // Imports
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.item.*;
+import com.normalorg.bandw.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registry;
