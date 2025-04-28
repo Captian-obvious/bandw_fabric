@@ -2,7 +2,7 @@ package com.normalorg.bandw.item;
 
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.registry.ModSounds;
-import com.normalorg.bandw.registry.ModComponents;
+import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.registry.ModDamageSources;
 import com.normalorg.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
