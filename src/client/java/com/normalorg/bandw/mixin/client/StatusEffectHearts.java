@@ -40,7 +40,7 @@ public abstract class StatusEffectHearts {
     };*/
     @Inject(method = "renderHealthBar", at = @At("HEAD"), cancellable = true)
     private void onRenderHealthBar(DrawContext ctx,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
-            if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) || !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING)) {
+            if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) && !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING)) {
             // Default rendering logic (do nothing special)
             return;
         };
@@ -59,18 +59,7 @@ public abstract class StatusEffectHearts {
                 int heartX = x + (i % 10) * 8;
                 int heartY = y - (i / 10) * 10;
                 boolean halfHeart = i + 1 == health && (lastHealth % 2 != 0);
-                ctx.drawTexture(
-                    RenderLayer::getGuiTextured,
-                    heartTexture,
-                    heartX,
-                    heartY,
-                    halfHeart ? 9.0F : 0.0F, // Adjust texture coordinates for half or full hearts
-                    0.0F, // Y texture coordinate
-                    9, // Width
-                    9,  // Height
-                    9, // Width
-                    9  // Height
-                );
+                ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,halfHeart ? 9.0F : 0.0F,0.0F,9,9,18,9);
             };
             // Cancel default rendering to use custom logic
             info.cancel();
