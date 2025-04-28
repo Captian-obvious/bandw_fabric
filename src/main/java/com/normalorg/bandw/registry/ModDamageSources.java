@@ -1,7 +1,7 @@
 package com.normalorg.bandw.registry;
 
 import com.normalorg.bandw.Main;
-import com.normalorg.bandw.effect.*;
+import com.normalorg.bandw.entity.effect.*;
 import com.mojang.serialization.Codec;
 import net.minecraft.component.ComponentType;
 import net.minecraft.util.Identifier;

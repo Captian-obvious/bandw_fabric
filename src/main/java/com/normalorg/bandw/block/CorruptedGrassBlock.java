@@ -1,4 +1,4 @@
-package com.normalorg.bandw.blocks;
+package com.normalorg.bandw.block;
 
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.registry.ModEffects;
@@ -13,8 +13,8 @@ import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.AbstractBlock.Settings;
 
-public class CorruptedDirtBlock extends Block {
-    public CorruptedDirtBlock(Settings settings) {
+public class CorruptedGrassBlock extends GrassBlock {
+    public CorruptedGrassBlock(Settings settings) {
         super(settings);
     };
 };

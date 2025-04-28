@@ -1,4 +1,4 @@
-package com.normalorg.bandw.effect;
+package com.normalorg.bandw.entity.effect;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;

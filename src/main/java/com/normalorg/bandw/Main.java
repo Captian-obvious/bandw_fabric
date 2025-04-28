@@ -1,9 +1,7 @@
 package com.normalorg.bandw;
 
-//Mod Checker Utility
-import com.normalorg.bandw.util.ModChecker;
-//end Mod Checker
-import com.normalorg.bandw.registry.ModBlocks;
+//Imports
+import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.registry.ModEntities;
 import com.normalorg.bandw.registry.ModEffects;
 import com.normalorg.bandw.registry.ModFluids;
@@ -14,6 +12,7 @@ import com.normalorg.bandw.registry.ModDamageSources;
 import com.normalorg.bandw.registry.ModItems;
 import com.normalorg.bandw.registry.ModEntityAttributes;
 import com.normalorg.bandw.util.CharterContractManager;
+import com.normalorg.bandw.util.ModChecker;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;

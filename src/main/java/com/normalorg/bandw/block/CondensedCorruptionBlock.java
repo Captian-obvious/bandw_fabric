@@ -1,4 +1,4 @@
-package com.normalorg.bandw.blocks;
+package com.normalorg.bandw.block;
 
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.registry.ModEffects;

@@ -1,4 +1,4 @@
-package com.normalorg.bandw.effect;
+package com.normalorg.bandw.entity.effect;
 
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.registry.ModEffects;

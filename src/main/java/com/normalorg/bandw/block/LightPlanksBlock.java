@@ -1,4 +1,4 @@
-package com.normalorg.bandw.blocks;
+package com.normalorg.bandw.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;
