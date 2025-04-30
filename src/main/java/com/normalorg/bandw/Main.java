@@ -15,12 +15,18 @@ import com.normalorg.bandw.util.CharterContractManager;
 import com.normalorg.bandw.util.ModChecker;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
+import net.minecraft.item.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Main implements ModInitializer {
     public static boolean isCharterLoaded;
+    // Charter hooks
     public static CharterContractManager contract_manager;
+    public static Identifier LesserDvinityIdentifier;
+    public static Item LESSER_DIVINITY;
+    // End Charter Hooks
     public static final String MOD_ID = "bandw";
     public static final String VERSION="2.7.5";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -50,6 +56,7 @@ public class Main implements ModInitializer {
     public static void registerCharterHooks(){
         LOGGER.info("Registering Charter Hooks (contract severing functionality)...");
         contract_manager=new CharterContractManager(isCharterLoaded);
+        LesserDvinityIdentifier=Identifier.of("charter","lesser_divinity");
         LOGGER.info("Registered Charter Hooks successfully.");
     };
 };
