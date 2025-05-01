@@ -117,7 +117,7 @@ public class ModItems {
         register(dark_string,dark_string_key);
         register(dark_leather,dark_leather_key);
         register(halfshade_ingot,halfshade_ingot_key);
-        register(halfshade_nugget,halfshade_ingot_key);
+        register(halfshade_nugget,halfshade_nugget_key);
         register(mark_of_the_banished,mark_of_the_banished_key);
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_ender_pearl,dark_ender_pearl_key);
