@@ -1,4 +1,4 @@
-package com.normalorg.bandw.registry;
+package com.normalorg.bandw.sound;
 
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.entity.effect.*;
