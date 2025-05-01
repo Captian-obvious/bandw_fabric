@@ -2,7 +2,7 @@ package com.normalorg.bandw;
 
 //Imports
 import com.normalorg.bandw.block.ModBlocks;
-import com.normalorg.bandw.registry.ModEntities;
+import com.normalorg.bandw.entity.ModEntities;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import com.normalorg.bandw.fluid.ModFluids;
 import com.normalorg.bandw.sound.ModSounds;
@@ -10,7 +10,7 @@ import com.normalorg.bandw.block.entity.ModBlockEntities;
 import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.entity.damage.ModDamageSources;
 import com.normalorg.bandw.item.ModItems;
-import com.normalorg.bandw.registry.ModEntityAttributes;
+import com.normalorg.bandw.entity.ModEntityAttributes;
 import com.normalorg.bandw.util.CharterContractManager;
 import com.normalorg.bandw.util.ModChecker;
 import net.fabricmc.api.ModInitializer;

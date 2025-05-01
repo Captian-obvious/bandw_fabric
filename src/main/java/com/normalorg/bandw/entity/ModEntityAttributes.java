@@ -1,7 +1,6 @@
-package com.normalorg.bandw.registry;
+package com.normalorg.bandw.enity;
 
 import com.normalorg.bandw.Main;
-import com.normalorg.bandw.entity.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
