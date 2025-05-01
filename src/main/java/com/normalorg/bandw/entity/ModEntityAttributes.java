@@ -1,4 +1,4 @@
-package com.normalorg.bandw.enity;
+package com.normalorg.bandw.entity;
 
 import com.normalorg.bandw.Main;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
