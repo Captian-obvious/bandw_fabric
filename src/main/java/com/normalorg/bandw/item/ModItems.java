@@ -77,7 +77,7 @@ public class ModItems {
     public static final RegistryKey<Item> blade_of_light_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_light"));
     public static final SwordItem blade_of_light=new BladeOfLight(ToolMaterial.DIAMOND,6,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_light_key)
     public static final RegistryKey<Item> blade_of_darkness_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_darkness"));
-    public static final SwordItem blade_of_darkness=new BladeOfDarkness(ToolMaterial.DIAMOND,6,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_darkness_key)););
+    public static final SwordItem blade_of_darkness=new BladeOfDarkness(ToolMaterial.DIAMOND,6,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_darkness_key));
     public static final RegistryKey<Item> blade_of_karma_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"blade_of_karma"));
     public static final SwordItem blade_of_karma=new BladeOfKarma(ToolMaterial.DIAMOND,10,-2.4F,new Item.Settings().enchantable(10).registryKey(blade_of_karma_key));
     public static final RegistryKey<Item> casshen_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"casshen"));
