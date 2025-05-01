@@ -6,7 +6,7 @@ import com.normalorg.bandw.registry.ModEntities;
 import com.normalorg.bandw.registry.ModEffects;
 import com.normalorg.bandw.registry.ModFluids;
 import com.normalorg.bandw.registry.ModSounds;
-import com.normalorg.bandw.registry.ModBlockEntities;
+import com.normalorg.bandw.block.entity.ModBlockEntities;
 import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.registry.ModDamageSources;
 import com.normalorg.bandw.registry.ModItems;

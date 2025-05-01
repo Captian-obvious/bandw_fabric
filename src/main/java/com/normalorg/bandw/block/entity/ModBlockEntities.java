@@ -1,4 +1,4 @@
-package com.normalorg.bandw.registry;
+package com.normalorg.bandw.block.entity;
 
 import com.normalorg.bandw.Main;
 import com.normalorg.bandw.block.*;
