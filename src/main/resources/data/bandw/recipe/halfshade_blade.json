@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  b",
+        " b ",
+        "/  "
+    ],
+    "key": {
+        "b": "bandw:halfshade_ingot",
+        "/": "bandw:halfshade_stick"
+    },
+    "result": {
+        "id": "bandw:halfshade_blade",
+        "count": 1
+    }
+}

@@ -39,12 +39,14 @@ public class ModItems {
     public static final Item raw_light_ore=new Item(new Item.Settings().maxCount(64).registryKey(raw_light_ore_key));
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_shard"));
     public static final Item light_shard=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
+    public static final RegistryKey<Item> light_iron_ingot_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_iron_ingot"));
+    public static final Item light_iron_ingot=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
     public static final RegistryKey<Item> light_stick_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_stick"));
     public static final Item light_stick=new Item(new Item.Settings().maxCount(64).registryKey(light_stick_key));
     public static final RegistryKey<Item> burnt_flesh_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_rotten_flesh"));
     public static final ConsumableComponent dark_rotten_flesh_consumable_component=ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.DARKENING,80,1),1.0f)).build();
     public static final FoodComponent dark_rotten_flesh_food_component=new FoodComponent.Builder().build();
-    public static final Item burnt_flesh=new Item(new Item.Settings().maxCount(64).food(new FoodComponent.Builder().nutrition(2).build()).registryKey(burnt_flesh_key));
+    public static final Item burnt_flesh=new Item(new Item.Settings().maxCount(64).food(new FoodComponent.Builder().nutrition(2).saturationModifier(2.0f).build()).registryKey(burnt_flesh_key));
     //.food(dark_rotten_flesh_food_component,dark_rotten_flesh_consumable_component)
     public static final RegistryKey<Item> dark_bone_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_bone"));
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64).registryKey(dark_bone_key));
@@ -110,6 +112,7 @@ public class ModItems {
         register(halfshade_stick,halfshade_stick_key);
         register(light_stick,light_stick_key);
         register(light_shard,light_shard_key);
+        register(light_iron_ingot,light_iron_ingot_key);
         register(raw_light_ore,raw_light_ore_key);
         register(burnt_flesh,burnt_flesh_key);
         register(dark_bone,dark_bone_key);
@@ -153,6 +156,7 @@ public class ModItems {
             ModItems.halfshade_stick,
             ModItems.light_stick,
             ModItems.light_shard,
+            ModItems.light_iron_ingot,
             ModItems.raw_light_ore,
             ModItems.burnt_flesh,
             ModItems.dark_bone,

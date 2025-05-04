@@ -20,6 +20,8 @@ import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.world.World;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.world.explosion.Explosion;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -63,8 +65,21 @@ public class Casshen extends SwordItemWithEffect {
             target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
             BlockPos pos=target.getBlockPos();
+            Vec3d particlePos=Vec3d.ofBottomCenter(pos);
             LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
             bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+            /*int charter_color=16762880;
+            // Create dust effect with RGB (255,200,0) in floating-point format
+            DustParticleEffect charterSeverEffect=new DustParticleEffect(charter_color, 1.0F);
+            // Spawn particles in an outward expanding effect
+            for (int i = 0; i < 5;i++) {
+                world.spawnParticles(charterSeverEffect,
+                    particlePos.getX() + (Math.random() - 0.5) * i,
+                    particlePos.getY() + (Math.random() - 0.5) * i,
+                    particlePos.getZ() + (Math.random() - 0.5) * i,
+                    20, 0.5 * i, 0.5 * i, 0.5 * i, 0.05);
+            };
+            */
             world.spawnEntity(bolt);
             target.setHealth(0.0F);
         }else{
