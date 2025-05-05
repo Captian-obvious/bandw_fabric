@@ -54,7 +54,7 @@ public abstract class StatusEffectHearts {
         if (heartTexture != null) {
             // Begin custom rendering of hearts
             //ctx.bindTexture(heartTexture);
-            float health_loop=Math.ceil((float) health / 2f)
+            float health_loop=Math.ceil((float) health / 2f);
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F); // Ensure default coloring
             for (int i = 0; i < (int) health_loop / 2; i++) {
                 int heartX = x + (i % 10) * 8;
