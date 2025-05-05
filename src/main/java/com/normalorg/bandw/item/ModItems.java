@@ -40,7 +40,7 @@ public class ModItems {
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_shard"));
     public static final Item light_shard=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
     public static final RegistryKey<Item> light_iron_ingot_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_iron_ingot"));
-    public static final Item light_iron_ingot=new Item(new Item.Settings().maxCount(64).registryKey(light_shard_key));
+    public static final Item light_iron_ingot=new Item(new Item.Settings().maxCount(64).registryKey(light_iron_ingot_key));
     public static final RegistryKey<Item> light_stick_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"light_stick"));
     public static final Item light_stick=new Item(new Item.Settings().maxCount(64).registryKey(light_stick_key));
     public static final RegistryKey<Item> burnt_flesh_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Main.MOD_ID,"dark_rotten_flesh"));
