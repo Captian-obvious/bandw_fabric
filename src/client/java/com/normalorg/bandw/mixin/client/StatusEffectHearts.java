@@ -54,11 +54,12 @@ public abstract class StatusEffectHearts {
         if (heartTexture != null) {
             // Begin custom rendering of hearts
             //ctx.bindTexture(heartTexture);
+            float health_loop=Math.ceil((float) health / 2f)
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F); // Ensure default coloring
-            for (int i = 0; i < health / 2; i++) {
+            for (int i = 0; i < (int) health_loop / 2; i++) {
                 int heartX = x + (i % 10) * 8;
                 int heartY = y - (i / 10) * 10;
-                boolean halfHeart = i + 1 == health && (lastHealth % 2 != 0);
+                boolean halfHeart = (i == (int) health_loop - 1) && (health % 2 != 0);
                 ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,halfHeart ? 9.0F : 0.0F,0.0F,9,9,18,9);
             };
             // Cancel default rendering to use custom logic
