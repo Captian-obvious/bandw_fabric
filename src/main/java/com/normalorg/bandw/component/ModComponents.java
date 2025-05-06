@@ -10,8 +10,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 
 public class ModComponents {
-    public static final ComponentType<Integer> CHARGE_COMPONENT=Registry.register(Registries.DATA_COMPONENT_TYPE,Identifier.of(Main.MOD_ID,"charge"),ComponentType.<Integer>builder().codec(Codec.INT).build());
+    public static final ComponentType<Integer> CHARGE_COMPONENT=Registry.register(Registries.DATA_COMPONENT_TYPE,Identifier.of(Defiance.MOD_ID,"charge"),ComponentType.<Integer>builder().codec(Codec.INT).build());
     public static void registerComponents() {
-        Defiance.LOGGER.info("Registering {} components",Main.MOD_ID);
+        Defiance.LOGGER.info("Registering {} components",Defiance.MOD_ID);
     };
 };

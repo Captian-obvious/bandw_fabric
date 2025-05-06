@@ -19,9 +19,9 @@ public class ModEffects {
     public static RegistryEntry<StatusEffect> HALFSHADE_POISONING;
     public static void registerEffects() {
         Defiance.LOGGER.info("Registering effects...");
-        CORRUPTION=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "corruption"), CORRUPTION_EFFECT);
-        DARKENING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "darkening"), DARKENED_EFFECT);
-        CLEANSING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "cleansing"), CLEANSING_EFFECT);
-        HALFSHADE_POISONING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "halfshade_poisoning"), HALFSHADE_POISONING_EFFECT);
+        CORRUPTION=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Defiance.MOD_ID, "corruption"), CORRUPTION_EFFECT);
+        DARKENING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Defiance.MOD_ID, "darkening"), DARKENED_EFFECT);
+        CLEANSING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Defiance.MOD_ID, "cleansing"), CLEANSING_EFFECT);
+        HALFSHADE_POISONING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Defiance.MOD_ID, "halfshade_poisoning"), HALFSHADE_POISONING_EFFECT);
     };
 };

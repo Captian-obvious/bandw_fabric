@@ -20,36 +20,36 @@ import net.minecraft.block.AbstractBlock.Settings;
 
 public class ModBlocks {
     public static final CorruptionManager corruptionManager=new CorruptionManager();
-    public static final RegistryKey<Block> DARK_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_bricks"));
+    public static final RegistryKey<Block> DARK_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dark_bricks"));
     public static final Block DARK_BRICKS = new DarkBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(DARK_BRICKS_KEY));
-    public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_bricks"));
+    public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_bricks"));
     public static final Block LIGHT_BRICKS = new LightBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_BRICKS_KEY));
-    public static final RegistryKey<Block> DARK_LOG_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_log"));
+    public static final RegistryKey<Block> DARK_LOG_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dark_log"));
     public static final PillarBlock DARK_LOG = new DarkLogBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_LOG_KEY));
-    public static final RegistryKey<Block> DARK_BARK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"dark_bark"));
+    public static final RegistryKey<Block> DARK_BARK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dark_bark"));
     public static final Block DARK_BARK = new DarkBarkBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_BARK_KEY));
-    public static final RegistryKey<Block> LIGHT_CHISELED_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_chiseled_bricks"));
+    public static final RegistryKey<Block> LIGHT_CHISELED_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_chiseled_bricks"));
     public static final Block LIGHT_CHISELED_BRICKS = new LightChiseledBricksBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_CHISELED_BRICKS_KEY));
-    public static final RegistryKey<Block> LIGHT_PLANKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"light_planks"));
+    public static final RegistryKey<Block> LIGHT_PLANKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_planks"));
     public static final Block LIGHT_PLANKS = new LightPlanksBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(LIGHT_PLANKS_KEY));
-    public static final RegistryKey<Block> CORRUPTED_STONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_stone"));
+    public static final RegistryKey<Block> CORRUPTED_STONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_stone"));
     public static final Block CORRUPTED_STONE = new CorruptedStoneBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CORRUPTED_STONE_KEY));
-    public static final RegistryKey<Block> CORRUPTED_COBBLESTONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_cobblestone"));
+    public static final RegistryKey<Block> CORRUPTED_COBBLESTONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_cobblestone"));
     public static final Block CORRUPTED_COBBLESTONE = new CorruptedCobblestoneBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CORRUPTED_COBBLESTONE_KEY));
-    public static final RegistryKey<Block> CONDENSED_CORRUPTION_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"condensed_corruption"));
+    public static final RegistryKey<Block> CONDENSED_CORRUPTION_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"condensed_corruption"));
     public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
-    public static final RegistryKey<Block> CORRUPTED_DIRT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_dirt"));
+    public static final RegistryKey<Block> CORRUPTED_DIRT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_dirt"));
     public static final Block CORRUPTED_DIRT = new CorruptedDirtBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CORRUPTED_DIRT_KEY));
-    public static final RegistryKey<Block> CORRUPTED_GRASS_BLOCK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"corrupted_grass_block"));
+    public static final RegistryKey<Block> CORRUPTED_GRASS_BLOCK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_grass_block"));
     public static final Block CORRUPTED_GRASS_BLOCK = new CorruptedGrassBlock(Settings.create().sounds(BlockSoundGroup.GRASS).strength(2.0F, 1.0F).registryKey(CORRUPTED_GRASS_BLOCK_KEY));
-    public static final RegistryKey<Block> SHIELD_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Main.MOD_ID,"shield_of_light"));
+    public static final RegistryKey<Block> SHIELD_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"shield_of_light"));
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F).registryKey(SHIELD_OF_LIGHT_KEY));
     public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
     private static RegistryKey<Block> keyOfBlock(String name){
-        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Main.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Defiance.MOD_ID, name));
     };
     private static RegistryKey<Item> keyOfItem(String name){
-        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Main.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, name));
     };
     private static Block register_new(String name,Function<Settings, Block> blockFactory,Settings settings,boolean shouldRegisterItem){
         RegistryKey<Block> blockKey=keyOfBlock(name);
@@ -103,7 +103,7 @@ public class ModBlocks {
     };
     /*public static void registerBlockEntities() {
         SHIELD_OF_LIGHT_BLOCK_ENTITY = Registry.register(
-            Registry.BLOCK_ENTITY_TYPE,Identifier.of(Main.MOD_ID, "shield_of_light_block_entity"),FabricBlockEntityTypeBuilder.create(ShieldBlockEntity::new, SHIELD_OF_LIGHT_BLOCK).build()
+            Registry.BLOCK_ENTITY_TYPE,Identifier.of(Defiance.MOD_ID, "shield_of_light_block_entity"),FabricBlockEntityTypeBuilder.create(ShieldBlockEntity::new, SHIELD_OF_LIGHT_BLOCK).build()
         );
     };*/
 };
