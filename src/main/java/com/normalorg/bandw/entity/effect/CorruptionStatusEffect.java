@@ -29,10 +29,10 @@ public class CorruptionStatusEffect extends StatusEffect {
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
             LivingEntity livingEntity=(LivingEntity) entity;
-            Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
-            world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.CORRUPT,SoundCategory.PLAYERS,1.0F,1.0F);
+            BlockPos entityPos=livingEntity.getBlockPos();
+            Vec3d sound_pos=Vec3d.ofBottomCenter(entityPos);
+            world.playSound(null,sound_pos.getX(),sound_pos.getY(),sound_pos.getZ(),ModSounds.CORRUPT,SoundCategory.PLAYERS,1.0F,1.0F);
             int range=2+amplifier;
-            BlockPos entityPos=entity.getBlockPos();
             CorruptionManager corruptionManager=ModBlocks.corruptionManager;
             for (BlockPos pos : BlockPos.iterate(entityPos.add(-range,-range,-range),entityPos.add(range,range,range))){
                 BlockState currentState=world.getBlockState(pos);

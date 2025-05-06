@@ -1,6 +1,7 @@
 package com.normalorg.bandw.item;
 
 import com.normalorg.bandw.Defiance;
+import com.normalorg.bandw.sound.ModSounds;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import com.normalorg.bandw.world.dimension.ModDimensions;
