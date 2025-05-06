@@ -43,6 +43,8 @@ public class ModItems {
     public static final Item light_iron_ingot=new Item(new Item.Settings().maxCount(64).registryKey(light_iron_ingot_key));
     public static final RegistryKey<Item> light_stick_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"light_stick"));
     public static final Item light_stick=new Item(new Item.Settings().maxCount(64).registryKey(light_stick_key));
+    public static final RegistryKey<Item> light_rod_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"light_rod"));
+    public static final Item light_rod=new Item(new Item.Settings().maxCount(64).registryKey(light_rod_key));
     public static final RegistryKey<Item> burnt_flesh_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_rotten_flesh"));
     public static final ConsumableComponent dark_rotten_flesh_consumable_component=ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.DARKENING,80,1),1.0f)).build();
     public static final FoodComponent dark_rotten_flesh_food_component=new FoodComponent.Builder().build();
@@ -50,12 +52,16 @@ public class ModItems {
     //.food(dark_rotten_flesh_food_component,dark_rotten_flesh_consumable_component)
     public static final RegistryKey<Item> dark_bone_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_bone"));
     public static final Item dark_bone=new Item(new Item.Settings().maxCount(64).registryKey(dark_bone_key));
+    public static final RegistryKey<Item> dark_bonemeal_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_bonemeal"));
+    public static final Item dark_bonemeal=new Item(new Item.Settings().maxCount(64).registryKey(dark_bonemeal_key));
     public static final RegistryKey<Item> dark_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_shard"));
     public static final Item dark_shard=new Item(new Item.Settings().maxCount(64).registryKey(dark_shard_key));
     public static final RegistryKey<Item> tec_dust_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"tec_dust"));
     public static final Item tec_dust=new Item(new Item.Settings().maxCount(64).registryKey(tec_dust_key));
     public static final RegistryKey<Item> dark_spider_eye_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_spider_eye"));
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63).registryKey(dark_spider_eye_key));
+    public static final RegistryKey<Item> dark_pouch_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_pouch"));
+    public static final Item dark_pouch=new Item(new Item.Settings().maxCount(63).registryKey(dark_pouch_key));
     public static final RegistryKey<Item> dark_string_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_string"));
     public static final Item dark_string=new Item(new Item.Settings().maxCount(64).registryKey(dark_string_key));
     public static final RegistryKey<Item> dark_leather_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_leather"));
@@ -68,6 +74,8 @@ public class ModItems {
     public static final Item halfshade_stick=new Item(new Item.Settings().maxCount(64).registryKey(halfshade_stick_key));
     public static final RegistryKey<Item> mark_of_the_banished_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"banished_mark"));
     public static final Item mark_of_the_banished=new MarkOfTheBanished(new Item.Settings().maxCount(1).registryKey(mark_of_the_banished_key));
+    public static final RegistryKey<Item> reality_warper_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"reality_warper"));
+    public static final Item reality_warper=new RealityWarper(new Item.Settings().maxCount(1).registryKey(reality_warper_key));
     public static final RegistryKey<Item> mark_of_the_guardian_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"guardian_mark"));
     public static final Item mark_of_the_guardian=new MarkOfTheGuardian(new Item.Settings().maxCount(1).registryKey(mark_of_the_guardian_key));
     public static final RegistryKey<Item> dark_ender_pearl_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_ender_pearl"));
@@ -111,6 +119,7 @@ public class ModItems {
         register(halfshade_blade,halfshade_blade_key);
         register(halfshade_stick,halfshade_stick_key);
         register(light_stick,light_stick_key);
+        register(light_rod,light_rod_key);
         register(light_shard,light_shard_key);
         register(light_iron_ingot,light_iron_ingot_key);
         register(raw_light_ore,raw_light_ore_key);
@@ -118,10 +127,13 @@ public class ModItems {
         register(dark_bone,dark_bone_key);
         register(dark_spider_eye,dark_spider_eye_key);
         register(dark_string,dark_string_key);
+        register(dark_bonemeal,dark_bonemeal_key);
+        register(dark_pouch,dark_pouch_key);
         register(dark_leather,dark_leather_key);
         register(halfshade_ingot,halfshade_ingot_key);
         register(halfshade_nugget,halfshade_nugget_key);
         register(mark_of_the_banished,mark_of_the_banished_key);
+        register(reality_warper,reality_warper_key);
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_ender_pearl,dark_ender_pearl_key);
         register(dark_shard,dark_shard_key);
@@ -149,17 +161,21 @@ public class ModItems {
             ModItems.blade_of_light,
             ModItems.blade_of_darkness,
             ModItems.mark_of_the_banished,
+            ModItems.reality_warper,
             ModItems.mark_of_the_guardian,
             ModItems.dark_ender_pearl,
             ModItems.halfshade_ingot,
             ModItems.halfshade_nugget,
             ModItems.halfshade_stick,
             ModItems.light_stick,
+            ModItems.light_rod,
             ModItems.light_shard,
             ModItems.light_iron_ingot,
             ModItems.raw_light_ore,
             ModItems.burnt_flesh,
             ModItems.dark_bone,
+            ModItems.dark_bonemeal,
+            ModItems.dark_pouch,
             ModItems.tec_dust,
             ModItems.dark_spider_eye,
             ModItems.dark_string,

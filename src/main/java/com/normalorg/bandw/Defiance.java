@@ -9,6 +9,7 @@ import com.normalorg.bandw.sound.ModSounds;
 import com.normalorg.bandw.block.entity.ModBlockEntities;
 import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.entity.damage.ModDamageSources;
+import com.normalorg.bandw.world.dimension.ModDimensions;
 import com.normalorg.bandw.item.ModItems;
 import com.normalorg.bandw.entity.ModEntityAttributes;
 import com.normalorg.bandw.util.CharterContractManager;
@@ -49,6 +50,7 @@ public class Defiance implements ModInitializer {
         ModEntityAttributes.registerAttributes();
         ModComponents.registerComponents();
         ModDamageSources.registerDamageSources();
+        ModDimensions.registerDimensions();
         ModItems.registerItems();
         ModEffects.registerEffects();
         ModSounds.registerSounds();

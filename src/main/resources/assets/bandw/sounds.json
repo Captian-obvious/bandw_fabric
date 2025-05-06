@@ -10,5 +10,11 @@
         "sounds": [
             "bandw:shockwave"
         ]
+    },
+    "reality_warper_hum": {
+        "subtitle": "sound.bandw.reality_warper_hum",
+        "sounds": [
+            "bandw:reality_warper_hum"
+        ]
     }
 }
