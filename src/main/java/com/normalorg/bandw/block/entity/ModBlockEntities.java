@@ -1,6 +1,6 @@
 package com.normalorg.bandw.block.entity;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.*;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
@@ -25,6 +25,6 @@ public class ModBlockEntities {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE,id,FabricBlockEntityTypeBuilder.<T>create(entityFactory,blocks).build());
     };
     public static void registerBlockEntities() {
-        Main.LOGGER.info("Registering block entities...");
+        Defiance.LOGGER.info("Registering block entities...");
     };
 };

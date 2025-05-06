@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.sound.ModSounds;
 import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.entity.damage.ModDamageSources;
@@ -83,7 +83,7 @@ public class Casshen extends SwordItemWithEffect {
             world.spawnEntity(bolt);
             target.setHealth(0.0F);
         }else{
-            Main.LOGGER.info("ERROR: target and attacker must not be null!");
+            Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
     };
     @Override

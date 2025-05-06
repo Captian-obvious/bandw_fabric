@@ -1,7 +1,7 @@
 package com.normalorg.bandw.item;
 
 // Imports
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import com.normalorg.bandw.component.ModComponents;
@@ -101,7 +101,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM,key,item);
     };
     public static void registerItems(){
-        Main.LOGGER.info("Registering items...");
+        Defiance.LOGGER.info("Registering items...");
         Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(casshen,casshen_key);
@@ -126,7 +126,7 @@ public class ModItems {
         register(dark_ender_pearl,dark_ender_pearl_key);
         register(dark_shard,dark_shard_key);
         register(tec_dust,tec_dust_key);
-        Main.LOGGER.info("Registering Item Group Contents...");
+        Defiance.LOGGER.info("Registering Item Group Contents...");
         Block[] blocks={
             ModBlocks.DARK_LOG,
             ModBlocks.DARK_BARK,

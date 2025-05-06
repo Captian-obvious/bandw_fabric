@@ -1,6 +1,6 @@
 package com.normalorg.bandw.entity.effect;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
@@ -30,13 +30,13 @@ public class CleansingStatusEffect extends StatusEffect {
                 boolean success2=entity.addStatusEffect(instance2);
                 boolean success3=entity.addStatusEffect(instance3);
                 if (!success){
-                    Main.LOGGER.info("Failed to remove effect 'bandw:corruption' from entity, ignoring and continuing");
+                    Defiance.LOGGER.info("Failed to remove effect 'bandw:corruption' from entity, ignoring and continuing");
                 };
                 if (!success2){
-                    Main.LOGGER.info("Failed to add effect 'bandw:darkening' to entity, ignoring and continuing");
+                    Defiance.LOGGER.info("Failed to add effect 'bandw:darkening' to entity, ignoring and continuing");
                 };
                 if (!success3){
-                    Main.LOGGER.info("Failed to add effect 'minecraft:nausea' to entity, ignoring and continuing");
+                    Defiance.LOGGER.info("Failed to add effect 'minecraft:nausea' to entity, ignoring and continuing");
                 };
             };
         };

@@ -20,7 +20,7 @@ import net.minecraft.item.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Main implements ModInitializer {
+public class Defiance implements ModInitializer {
     public static boolean isCharterLoaded;
     // Charter hooks
     public static CharterContractManager contract_manager;

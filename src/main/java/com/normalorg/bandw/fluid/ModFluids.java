@@ -1,6 +1,6 @@
 package com.normalorg.bandw.fluid;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.*;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
@@ -26,6 +26,6 @@ public class ModFluids {
     public static final Block PURE_LIGHT_BLOCK = new FluidBlock(STILL_MY_FLUID, Block.Settings.copy(Blocks.WATER));
     */
     public static void registerFluids(){
-        Main.LOGGER.info("Registering fluids...");
+        Defiance.LOGGER.info("Registering fluids...");
     };
 };

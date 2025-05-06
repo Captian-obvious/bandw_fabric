@@ -1,6 +1,6 @@
 package com.normalorg.bandw.mixin.client;
 
-import com.normalorg.bandw.ClientMain;
+import com.normalorg.bandw.DefianceClient;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.util.Identifier;

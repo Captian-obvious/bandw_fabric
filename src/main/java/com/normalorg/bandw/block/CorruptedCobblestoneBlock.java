@@ -1,6 +1,6 @@
 package com.normalorg.bandw.block;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;

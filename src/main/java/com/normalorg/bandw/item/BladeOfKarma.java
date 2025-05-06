@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
@@ -28,7 +28,7 @@ public class BladeOfKarma extends SwordItemWithEffect {
             world.spawnEntity(bolt);
             target.setHealth(0.0F);
         }else{
-            Main.LOGGER.info("ERROR: target and attacker must not be null!");
+            Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
     };
 };

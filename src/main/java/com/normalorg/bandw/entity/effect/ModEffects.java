@@ -1,6 +1,6 @@
 package com.normalorg.bandw.entity.effect;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
@@ -18,7 +18,7 @@ public class ModEffects {
     public static RegistryEntry<StatusEffect> CLEANSING;
     public static RegistryEntry<StatusEffect> HALFSHADE_POISONING;
     public static void registerEffects() {
-        Main.LOGGER.info("Registering effects...");
+        Defiance.LOGGER.info("Registering effects...");
         CORRUPTION=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "corruption"), CORRUPTION_EFFECT);
         DARKENING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "darkening"), DARKENED_EFFECT);
         CLEANSING=Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Main.MOD_ID, "cleansing"), CLEANSING_EFFECT);

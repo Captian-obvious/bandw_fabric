@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.normalorg.bandw.Main"
+      "com.normalorg.bandw.Defiance"
     ],
     "client": [
-      "com.normalorg.bandw.ClientMain"
+      "com.normalorg.bandw.DefianceClient"
     ]
   },
   "mixins": [

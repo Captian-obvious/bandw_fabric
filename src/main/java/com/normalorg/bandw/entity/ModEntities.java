@@ -1,6 +1,6 @@
 package com.normalorg.bandw.entity;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -16,6 +16,6 @@ public class ModEntities {
     public static final RegistryKey<EntityType<?>> DARK_ENDERMAN_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Main.MOD_ID,"dark_enderman"));
     public static final EntityType<DarkEndermanEntity> DARK_ENDERMAN=Registry.register(Registries.ENTITY_TYPE,DARK_ENDERMAN_KEY,EntityType.Builder.create(DarkEndermanEntity::new,SpawnGroup.CREATURE).dimensions(0.6f,2.9f).build(DARK_ENDERMAN_KEY));
     public static void registerEntities() {
-        Main.LOGGER.info("Registering Entities...");
+        Defiance.LOGGER.info("Registering Entities...");
     };
 };

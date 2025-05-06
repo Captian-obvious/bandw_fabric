@@ -1,6 +1,6 @@
 package com.normalorg.bandw.block;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.util.CorruptionManager;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
@@ -79,7 +79,7 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, key, block);
     };
     public static void registerBlocks() {
-        Main.LOGGER.info("Registering blocks...");
+        Defiance.LOGGER.info("Registering blocks...");
         register(DARK_BRICKS,DARK_BRICKS_KEY,true);
         register(LIGHT_BRICKS,LIGHT_BRICKS_KEY,true);
         register(DARK_LOG,DARK_LOG_KEY,true);
@@ -94,7 +94,7 @@ public class ModBlocks {
         register(SHIELD_OF_LIGHT_BLOCK,SHIELD_OF_LIGHT_KEY,true);
     };
     public static void registerCorruptableBlocks(){
-        Main.LOGGER.info("Setting up CorruptionManager...");
+        Defiance.LOGGER.info("Setting up CorruptionManager...");
         corruptionManager.addReplacement(Blocks.DIRT,CORRUPTED_DIRT);
         corruptionManager.addReplacement(Blocks.STONE,CORRUPTED_STONE);
         corruptionManager.addReplacement(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);

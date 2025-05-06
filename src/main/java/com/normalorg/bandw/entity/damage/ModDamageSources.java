@@ -1,6 +1,6 @@
 package com.normalorg.bandw.entity.damage;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.*;
 import com.mojang.serialization.Codec;
 import net.minecraft.component.ComponentType;
@@ -18,6 +18,6 @@ public class ModDamageSources {
     public static final RegistryKey<DamageType> FRACTURED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Main.MOD_ID, "fractured"));
     public static final RegistryKey<DamageType> DARKENED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Main.MOD_ID, "darkened"));
     public static void registerDamageSources() {
-        Main.LOGGER.info("Registering damage types",Main.MOD_ID);
+        Defiance.LOGGER.info("Registering damage types",Main.MOD_ID);
     };
 };

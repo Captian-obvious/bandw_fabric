@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
@@ -31,9 +31,9 @@ public class SwordItemWithEffect extends SwordItem {
     };
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
-            Main.LOGGER.info("Method must be overridden");
+            Defiance.LOGGER.info("Method must be overridden");
         }else{
-            Main.LOGGER.info("ERROR: target and attacker must not be null!");
+            Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
     };
 };

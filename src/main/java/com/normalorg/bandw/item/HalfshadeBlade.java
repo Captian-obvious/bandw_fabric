@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import net.minecraft.item.SwordItem;
 import net.minecraft.entity.effect.StatusEffects;
@@ -27,10 +27,10 @@ public class HalfshadeBlade extends SwordItem {
                 StatusEffectInstance instance = new StatusEffectInstance(ModEffects.HALFSHADE_POISONING,200,1,false,true,true);
                 boolean success=target.addStatusEffect(instance);
                 if (!success){
-                    Main.LOGGER.info("Failed to apply effect 'bandw:halfshade_poisoning' to entity, ignoring and continuing");
+                    Defiance.LOGGER.info("Failed to apply effect 'bandw:halfshade_poisoning' to entity, ignoring and continuing");
                 };
             }else{
-                Main.LOGGER.info("ERROR: target and attacker must not be null!");
+                Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
             };
         };
         return super.postHit(stack,target,attacker);

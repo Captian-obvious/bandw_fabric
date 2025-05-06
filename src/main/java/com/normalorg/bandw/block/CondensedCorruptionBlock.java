@@ -1,6 +1,6 @@
 package com.normalorg.bandw.block;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;
@@ -25,7 +25,7 @@ public class CondensedCorruptionBlock extends Block {
                     StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,100,1,false,true,true);
                     boolean success=livingEntity.addStatusEffect(instance);
                     if (!success){
-                        Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
+                        Defiance.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
                     };
                 };
             };

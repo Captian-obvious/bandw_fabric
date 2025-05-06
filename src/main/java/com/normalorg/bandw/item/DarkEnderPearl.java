@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -26,7 +26,7 @@ public class DarkEnderPearl extends EnderPearlItem {
                 StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,100,1,false,true,true);
                 boolean success=livingEntity.addStatusEffect(instance);
                 if (!success){
-                    Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
+                    Defiance.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
                 };
             };
         };

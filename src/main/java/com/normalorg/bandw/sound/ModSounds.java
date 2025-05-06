@@ -1,6 +1,6 @@
 package com.normalorg.bandw.sound;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.*;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -16,6 +16,6 @@ public class ModSounds {
         return Registry.register(Registries.SOUND_EVENT,identifier,SoundEvent.of(identifier));
     };
     public static void registerSounds() {
-        Main.LOGGER.info("Registering Sounds...");
+        Defiance.LOGGER.info("Registering Sounds...");
     };
 };

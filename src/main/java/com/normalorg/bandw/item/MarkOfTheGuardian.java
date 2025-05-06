@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
@@ -38,7 +38,7 @@ public class MarkOfTheGuardian extends Item {
                     StatusEffectInstance instance = new StatusEffectInstance(StatusEffects.RESISTANCE,100,5,false,true,true);
                     boolean success=livingEntity.addStatusEffect(instance);
                     if (!success){
-                        Main.LOGGER.info("Failed to apply effect 'minecraft:resistance' to entity, ignoring and continuing");
+                        Defiance.LOGGER.info("Failed to apply effect 'minecraft:resistance' to entity, ignoring and continuing");
                     };
                     effectAcc=0;
                 };

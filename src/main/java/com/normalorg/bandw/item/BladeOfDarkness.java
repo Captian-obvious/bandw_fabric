@@ -1,6 +1,6 @@
 package com.normalorg.bandw.item;
 
-import com.normalorg.bandw.Main;
+import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.item.SwordItemWithEffect;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import net.minecraft.entity.effect.StatusEffects;
@@ -27,10 +27,10 @@ public class BladeOfDarkness extends SwordItemWithEffect {
                 StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,200,1,false,true,true);
                 boolean success=target.addStatusEffect(instance);
                 if (!success){
-                    Main.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
+                    Defiance.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
                 };
             }else{
-                Main.LOGGER.info("ERROR: target and attacker must not be null!");
+                Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
             };
         };
         return super.postHit(stack,target,attacker);
@@ -46,7 +46,7 @@ public class BladeOfDarkness extends SwordItemWithEffect {
             world.spawnEntity(bolt);
             target.setHealth(0.0F);*/
         }else{
-            Main.LOGGER.info("ERROR: target and attacker must not be null!");
+            Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
     };
 };
