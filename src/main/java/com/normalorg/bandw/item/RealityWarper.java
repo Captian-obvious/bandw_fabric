@@ -43,7 +43,7 @@ public class RealityWarper extends Item {
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper").formatted(Formatting.PURPLE,Formatting.ITALIC));
+        tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper").formatted(Formatting.RED,Formatting.ITALIC));
     };
     /*private void teleportPlayer(ServerWorld world, Entity entity) {
         if (entity instanceof PlayerEntity player) {
