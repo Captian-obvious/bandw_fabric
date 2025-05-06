@@ -4,6 +4,7 @@ import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.util.CorruptionManager;
 import com.normalorg.bandw.sound.ModSounds;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.LivingEntity;
@@ -12,6 +13,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 
 public class CorruptionStatusEffect extends StatusEffect {
     public CorruptionStatusEffect(StatusEffectCategory category, int color) {

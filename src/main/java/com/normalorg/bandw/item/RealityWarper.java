@@ -7,6 +7,7 @@ import com.normalorg.bandw.world.dimension.ModDimensions;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.TeleportTarget;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
@@ -32,6 +33,8 @@ public class RealityWarper extends Item {
     public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected) {
         if (!world.isClient()){
             if (entity instanceof LivingEntity && selected){
+                LivingEntity livingEntity=(LivingEntity) entity;
+                Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
                 world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
             };
         };
