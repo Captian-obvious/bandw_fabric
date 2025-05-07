@@ -36,8 +36,7 @@ public class RealityWarper extends Item {
             if (entity instanceof LivingEntity && selected){
                 LivingEntity livingEntity=(LivingEntity) entity;
                 Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
-                //Play the hum sound
-                //world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
+                world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
             };
         };
         super.inventoryTick(stack, world, entity, slot, selected); // Call the super method to retain default behavior

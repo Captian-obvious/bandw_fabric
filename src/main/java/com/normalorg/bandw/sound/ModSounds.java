@@ -11,7 +11,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 public class ModSounds {
     public static final SoundEvent CORRUPT=registerSound("corrupt");
     public static final SoundEvent SHOCKWAVE=registerSound("shockwave");
-    //public static final SoundEvent REALITY_WARPER_HUM=registerSound("reality_warper_hum");
+    public static final SoundEvent REALITY_WARPER_HUM=registerSound("reality_warper_hum");
     private static SoundEvent registerSound(String id){
         Identifier identifier=Identifier.of(Defiance.MOD_ID,id);
         return Registry.register(Registries.SOUND_EVENT,identifier,SoundEvent.of(identifier));
