@@ -43,7 +43,6 @@ public class Defiance implements ModInitializer {
         LOGGER.info("Server Initialized (Defiance v"+VERSION+")");
     };
     public static void registerModules(){
-        // modules
         ModBlocks.registerBlocks();
         ModBlockEntities.registerBlockEntities();
         ModFluids.registerFluids();
@@ -53,7 +52,7 @@ public class Defiance implements ModInitializer {
         ModDamageSources.registerDamageSources();
         // and so it begins!
         ModDimensions.registerDimensions();
-        // other modules
+        // (dimensions registered)
         ModItems.registerItems();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
