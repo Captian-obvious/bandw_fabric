@@ -26,4 +26,8 @@ public class DarkPouch extends ThrowablePotionItem {
     public DarkPouch(Item.Settings settings){
         super(settings);
     };
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("itemTooltip.bandw.dark_pouch").formatted(Formatting.GOLD,Formatting.ITALIC));
+    };
 };
