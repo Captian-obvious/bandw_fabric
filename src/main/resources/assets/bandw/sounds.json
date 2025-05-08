@@ -16,5 +16,11 @@
         "sounds": [
             "bandw:reality_warper_hum"
         ]
+    },
+    "reality_warper_teleport": {
+        "subtitle": "sound.bandw.reality_warper_teleport",
+        "sounds": [
+            "bandw:reality_warper_teleport"
+        ]
     }
 }
