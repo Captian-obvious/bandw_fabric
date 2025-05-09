@@ -18,7 +18,6 @@ public record SunderbeamEnchantmentEffect(EnchantmentLevelBasedValue amount) imp
 	public static final MapCodec<SunderbeamEnchantmentEffect> CODEC=RecordCodecBuilder.mapCodec(instance ->instance.group(EnchantmentLevelBasedValue.CODEC.fieldOf("amount").forGetter(LightningEnchantmentEffect::amount)).apply(instance, SunderbeamEnchantmentEffect::new));
     public void apply(ServerWorld world,int level,EnchantmentEffectContext context,Entity target,Vec3d pos){
         if (target instanceof LivingEntity victim){
-
         };
     };
     public MapCodec<? extends EnchantmentEntityEffect> getCodec() {
