@@ -6,7 +6,7 @@ import net.minecraft.client.render.entity.EndermanEntityRenderer;
 import net.minecraft.util.Identifier;
 
 public class DarkEndermanEntityRenderer extends EndermanEntityRenderer {
-    private static final Identifier DARK_ENDERMAN_TEXTURE = Identifier.of(DefianceClient.MOD_ID, "textures/entity/dark_enderman.png");
+    private static final Identifier TEXTURE = Identifier.of(DefianceClient.MOD_ID, "textures/entity/dark_enderman.png");
     public DarkEndermanEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
     };
