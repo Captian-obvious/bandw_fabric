@@ -1,15 +1,15 @@
 package com.normalorg.bandw.enchantment;
 
 import com.normalorg.bandw.Defiance;
-import com.normalorg.bandw.enchantment.effect.SunderbeamEnchantmentEffect;
-import com.mojang.serialization.MapCodec;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
-import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
+import com.normalorg.bandw.enchantment.effect.SunderbeamEnchantmentEffect;
 
 public class ModEnchantmentEffects {
     public static final RegistryKey<Enchantment> SUNDERBEAM=of("sunderbeam");

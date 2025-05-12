@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public record SunderbeamEnchantmentEffect(EnchantmentLevelBasedValue amount) implements EnchantmentEntityEffect {
-	public static final MapCodec<SunderbeamEnchantmentEffect> CODEC=RecordCodecBuilder.mapCodec(instance ->instance.group(EnchantmentLevelBasedValue.CODEC.fieldOf("amount").forGetter(LightningEnchantmentEffect::amount)).apply(instance, SunderbeamEnchantmentEffect::new));
+	public static final MapCodec<SunderbeamEnchantmentEffect> CODEC=RecordCodecBuilder.mapCodec(instance ->instance.group(EnchantmentLevelBasedValue.CODEC.fieldOf("amount").forGetter(SunderbeamEnchantmentEffect::amount)).apply(instance, SunderbeamEnchantmentEffect::new));
     public void apply(ServerWorld world,int level,EnchantmentEffectContext context,Entity target,Vec3d pos){
         if (target instanceof LivingEntity victim){
         };
