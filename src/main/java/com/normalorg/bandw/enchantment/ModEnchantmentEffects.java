@@ -1,7 +1,7 @@
 package com.normalorg.bandw.enchantment;
 
 import com.normalorg.bandw.Defiance;
-import com.normalorg.bandw.enchantment.effect.SunderbeamEnchantmentEffect
+import com.normalorg.bandw.enchantment.effect.SunderbeamEnchantmentEffect;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.effect.EnchantmentEntityEffect;

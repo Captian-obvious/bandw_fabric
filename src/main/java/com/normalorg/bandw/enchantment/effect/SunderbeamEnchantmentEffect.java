@@ -1,5 +1,6 @@
 package com.normalorg.bandw.enchantment.effect;
 
+import com.normalorg.bandw.Defiance;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.enchantment.EnchantmentEffectContext;
