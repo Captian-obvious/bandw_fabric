@@ -1,7 +1,7 @@
 package com.normalorg.bandw;
 
-import com.normalorg.bandw.render.block.ModBlockEntityRenderers;
 import com.normalorg.bandw.render.entity.ModEntityRenderers;
+import com.normalorg.bandw.render.block.entity.ModBlockEntityRenderers;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import org.slf4j.Logger;

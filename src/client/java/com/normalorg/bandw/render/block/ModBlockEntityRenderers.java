@@ -1,4 +1,4 @@
-package com.normalorg.bandw.render.block;
+package com.normalorg.bandw.render.block.entity;
 
 import com.normalorg.bandw.DefianceClient;
 import com.normalorg.bandw.block.entity.ModBlockEntities;
