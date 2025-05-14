@@ -26,7 +26,7 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class RealityWarper extends Item {
-    int effectDelay=60; //delay in ticks before applying effect
+    int effectDelay=155; //delay in ticks before applying effect
     int effectAcc=0;
     public RealityWarper(Settings settings){
         super(settings);
@@ -34,9 +34,13 @@ public class RealityWarper extends Item {
     public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected) {
         if (!world.isClient()){
             if (entity instanceof LivingEntity && selected){
-                LivingEntity livingEntity=(LivingEntity) entity;
-                Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
-                world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
+                effectAcc++;
+                if (effectAcc>=effectDelay){
+                    effectAcc=0;
+                    LivingEntity livingEntity=(LivingEntity) entity;
+                    Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
+                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
+                };
             };
         };
         super.inventoryTick(stack, world, entity, slot, selected); // Call the super method to retain default behavior
