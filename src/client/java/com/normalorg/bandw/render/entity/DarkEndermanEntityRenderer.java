@@ -10,6 +10,7 @@ public class DarkEndermanEntityRenderer extends EndermanEntityRenderer {
     public DarkEndermanEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
     };
+    // comment out old code to fix issue with entity renderer erroring
     /*@Override
     public Identifier getTexture(EndermanEntity entity) {
         return DARK_ENDERMAN_TEXTURE;
