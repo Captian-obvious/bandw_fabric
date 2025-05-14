@@ -1,6 +1,7 @@
 package com.normalorg.bandw;
 
 import com.normalorg.bandw.render.block.ModBlockEntityRenderers;
+import com.normalorg.bandw.render.entity.ModEntityRenderers;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ public class DefianceClient implements ClientModInitializer {
     public void onInitializeClient() {
         LOGGER.info("Client Initializing...");
         ModBlockEntityRenderers.registerBlockEntityRenderers();
+        ModEntityRenderers.registerEntityRenderers();
         LOGGER.info("Client Initialized (Defiance v"+VERSION+")");
     };
 };
