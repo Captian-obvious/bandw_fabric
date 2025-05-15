@@ -33,8 +33,10 @@ import java.util.function.Function;
 public class ModItems {
     //l
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
-    public static final RegistryKey<ItemGroup> bandw_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_group"));
-    public static final ItemGroup bandw_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.dark_bone)).displayName(Text.translatable("itemGroup.bandw")).build();
+    public static final RegistryKey<ItemGroup> bandw_items_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_items"));
+    public static final ItemGroup bandw_items_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.dark_bone)).displayName(Text.translatable("itemGroup.bandw_items")).build();
+    public static final RegistryKey<ItemGroup> bandw_blocks_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_blocks"));
+    public static final ItemGroup bandw_blocks_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem())).displayName(Text.translatable("itemGroup.bandw_blocks")).build();
     public static final RegistryKey<Item> raw_light_ore_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"raw_light_ore"));
     public static final Item raw_light_ore=new Item(new Item.Settings().maxCount(64).registryKey(raw_light_ore_key));
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"light_shard"));
@@ -110,7 +112,8 @@ public class ModItems {
     };
     public static void registerItems(){
         Defiance.LOGGER.info("Registering items...");
-        Registry.register(Registries.ITEM_GROUP,bandw_group_key,bandw_group);
+        Registry.register(Registries.ITEM_GROUP,bandw_items_group_key,bandw_items_group);
+        Registry.register(Registries.ITEM_GROUP,bandw_blocks_group_key,bandw_blocks_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(casshen,casshen_key);
         register(blade_of_karma,blade_of_karma_key);
@@ -182,10 +185,12 @@ public class ModItems {
             ModItems.dark_leather,
             ModItems.dark_shard
         };
-        ItemGroupEvents.modifyEntriesEvent(bandw_group_key).register(itemGroup -> {
+        ItemGroupEvents.modifyEntriesEvent(bandw_items_group_key).register(itemGroup -> {
             for (Item item : items) {
                 itemGroup.add(item);
             };
+        });
+        ItemGroupEvents.modifyEntriesEvent(bandw_blocks_group_key).register(itemGroup -> {
             for (Block block : blocks) {
                 itemGroup.add(block.asItem());
             };
