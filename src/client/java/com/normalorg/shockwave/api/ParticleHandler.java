@@ -1,4 +1,4 @@
-package com.normalorg.dev_particle.api;
+package com.normalorg.shockwave.api;
 
 import net.minecraft.client.particle.Particle;
 

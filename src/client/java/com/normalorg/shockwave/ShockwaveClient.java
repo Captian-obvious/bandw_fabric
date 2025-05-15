@@ -1,4 +1,4 @@
-package com.normalorg.dev_particle;
+package com.normalorg.shockwave;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

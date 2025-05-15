@@ -1,4 +1,4 @@
-package com.normalorg.dev_particle;
+package com.normalorg.shockwave;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
