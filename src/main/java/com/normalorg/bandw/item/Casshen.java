@@ -4,7 +4,6 @@ import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.sound.ModSounds;
 import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.entity.damage.ModDamageSources;
-import com.normalorg.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.sound.SoundEvents;

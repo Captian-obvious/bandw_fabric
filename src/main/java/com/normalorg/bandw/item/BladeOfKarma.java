@@ -1,7 +1,6 @@
 package com.normalorg.bandw.item;
 
 import com.normalorg.bandw.Defiance;
-import com.normalorg.bandw.item.SwordItemWithEffect;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
