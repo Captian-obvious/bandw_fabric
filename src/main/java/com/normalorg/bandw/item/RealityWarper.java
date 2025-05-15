@@ -28,7 +28,9 @@ import java.util.List;
 public class RealityWarper extends Item {
     int effectDelay=155; //delay in ticks before playing the sound (its length, in this case 8 seconds)
     int effectAcc=0;
-    boolean hasPlayedFirstSound=false;
+    // this is used to prevent the delay from interfering with the sound playing when item is first equipped, 
+    // (when it first is equipped the sound will not be playing, thus this fixes that)
+    boolean hasPlayedFirstSound=false; 
     public RealityWarper(Settings settings){
         super(settings);
     };
