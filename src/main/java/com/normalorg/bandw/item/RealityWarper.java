@@ -26,8 +26,9 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class RealityWarper extends Item {
-    int effectDelay=155; //delay in ticks before applying effect
+    int effectDelay=155; //delay in ticks before playing the sound (its length, in this case 8 seconds)
     int effectAcc=0;
+    boolean hasPlayedFirstSound=false;
     public RealityWarper(Settings settings){
         super(settings);
     };
@@ -35,7 +36,8 @@ public class RealityWarper extends Item {
         if (!world.isClient()){
             if (entity instanceof LivingEntity && selected){
                 effectAcc++;
-                if (effectAcc>=effectDelay){
+                if (effectAcc>=effectDelay || !hasPlayedFirstSound){
+                    hasPlayedFirstSound=true;
                     effectAcc=0;
                     LivingEntity livingEntity=(LivingEntity) entity;
                     Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
