@@ -48,6 +48,7 @@ public class Casshen extends SwordItemWithEffect {
                     Vec3d pos=Vec3d.ofBottomCenter(target.getBlockPos());
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
                     ServerWorld serverworld=(ServerWorld) world;
+                    // Superduperdev2 was here - 2025-10-5
                     DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CASSHEN_EXPLOSION.getValue()).get());
                     world.createExplosion(null,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),8.0F,false,World.ExplosionSourceType.NONE);
                 };

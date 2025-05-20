@@ -42,6 +42,8 @@ public class RealityWarper extends Item {
                     hasPlayedFirstSound=true;
                     effectAcc=0;
                     LivingEntity livingEntity=(LivingEntity) entity;
+                    // Play the sound
+                    // hey Doctor4t, you found my secret signature - Superduperdev2
                     Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
                 };
