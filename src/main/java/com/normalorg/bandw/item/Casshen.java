@@ -29,7 +29,8 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class Casshen extends SwordItemWithEffect {
-    int oldCharge=0;
+    private int oldCharge=0;
+    private boolean isLaserEnabled=false;
     public Casshen(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
     };
@@ -49,8 +50,13 @@ public class Casshen extends SwordItemWithEffect {
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
                     ServerWorld serverworld=(ServerWorld) world;
                     // Superduperdev2 was here - 2025-10-5
-                    DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CASSHEN_EXPLOSION.getValue()).get());
-                    world.createExplosion(null,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),8.0F,false,World.ExplosionSourceType.NONE);
+                    if (this.isLaserEnabled){
+                        DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CASSHEN_BEAM.getValue()).get());
+                        
+                    }else{
+                        DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CASSHEN_EXPLOSION.getValue()).get());
+                        world.createExplosion(null,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),8.0F,false,World.ExplosionSourceType.NONE);
+                    };
                 };
                 // Reset the charge
                 this.setCharge(stack,0);
