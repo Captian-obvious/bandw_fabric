@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#R#",
+        "B# "
+    ],
+    "key": {
+        "#": "bandw:light_iron",
+        "R": "minecraft:red_carpet",
+        "B": "bandw:light_shard"
+    },
+    "result": {
+        "id": "bandw:blade_of_karma",
+        "count": 1
+    }
+}
