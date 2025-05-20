@@ -10,6 +10,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
@@ -54,8 +55,9 @@ public class Casshen extends SwordItemWithEffect {
                         DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CASSHEN_BEAM.getValue()).get());
                         
                     }else{
+                        Entity entityAttacker=(Entity) attacker;
                         DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CASSHEN_EXPLOSION.getValue()).get());
-                        world.createExplosion(null,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),8.0F,false,World.ExplosionSourceType.NONE);
+                        world.createExplosion(entityAttacker,damageSource,null,pos.getX(),pos.getY(),pos.getZ(),8.0F,false,World.ExplosionSourceType.NONE);
                     };
                 };
                 // Reset the charge
