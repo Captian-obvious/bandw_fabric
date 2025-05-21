@@ -28,6 +28,7 @@ public class WalkerEntityModel extends EntityModel<WalkerEntity> {
     private ModelPart lowerRightLeg;
     private ModelPart rightFoot;
     public WalkerEntityModel(ModelPart root) {
+        super(root);
         this.walker = root.getChild("walker");
         this.back = this.walker.getChild("back");
         this.shoulder = this.back.getChild("shoulder");
@@ -45,7 +46,10 @@ public class WalkerEntityModel extends EntityModel<WalkerEntity> {
         this.lowerRightLeg = this.rightLeg.getChild("lowerRightLeg");
         this.rightFoot = this.lowerRightLeg.getChild("rightFoot");
     };
-    public static TexturedModelData getTexturedModelData() {ModelData modelData = new ModelData();ModelPartData modelPartData = modelData.getRoot();ModelPartData walker = modelPartData.addChild("walker", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+    public static TexturedModelData getTexturedModelData() {
+        ModelData modelData = new ModelData();
+        ModelPartData modelPartData = modelData.getRoot();
+        ModelPartData walker = modelPartData.addChild("walker", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
         ModelPartData back = walker.addChild("back", ModelPartBuilder.create(), ModelTransform.pivot(1.0F, -22.0F, 1.0F));
         ModelPartData cube_r1 = back.addChild("cube_r1", ModelPartBuilder.create().uv(40, 37).cuboid(-3.0F, -4.0F, -1.0F, 4.0F, 4.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -7.0F, 4.0F, 0.0436F, 0.0F, 0.0F));
         ModelPartData cube_r2 = back.addChild("cube_r2", ModelPartBuilder.create().uv(0, 13).cuboid(-7.0F, -9.0F, -1.0F, 8.0F, 9.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(2.0F, -11.0F, 3.0F, 0.4363F, 0.0F, 0.0F));
@@ -94,9 +98,5 @@ public class WalkerEntityModel extends EntityModel<WalkerEntity> {
         ModelPartData rightFoot = lowerRightLeg.addChild("rightFoot", ModelPartBuilder.create().uv(56, 27).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 8.0F, 7.0F));
         ModelPartData cube_r32 = rightFoot.addChild("cube_r32", ModelPartBuilder.create().uv(46, 4).cuboid(0.0F, -2.5F, -1.0F, 1.0F, 2.5F, 1.0F, new Dilation(0.0F)).uv(56, 17).cuboid(0.0F, -2.0F, 0.0F, 1.0F, 2.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 2.0F, -2.0F, 0.0F, 0.0F, 1.5708F));
         return TexturedModelData.of(modelData, 64, 64);
-    };
-    @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) {
-        walker.render(matrices, vertexConsumer, light, overlay, color);
     };
 };
