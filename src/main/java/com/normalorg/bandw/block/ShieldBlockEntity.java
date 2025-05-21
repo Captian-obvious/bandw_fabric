@@ -46,9 +46,9 @@ public class ShieldBlockEntity extends BlockEntity {
     };
     @Override
     protected void writeNbt(NbtCompound nbt,RegistryWrapper.WrapperLookup registryLookup) {
-        nbt.putFloat("size",this.size);
-        nbt.putFloat("strength",this.strength);
-        nbt.putBoolean("active",this.active);
+        nbt.putFloat("size",this.shield.getSize());
+        nbt.putFloat("strength",this.shield.getStrength());
+        nbt.putBoolean("active",this.shield.getIsActive());
         super.writeNbt(nbt,registryLookup);
     };
     @Override

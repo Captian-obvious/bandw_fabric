@@ -45,7 +45,7 @@ public class RealityWarper extends Item {
                     // Play the sound
                     // hey Doctor4t, you found my secret signature - Superduperdev2
                     Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
-                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,1.0F,1.0F);
+                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,0.25F,1.0F);
                 };
             };
         };
