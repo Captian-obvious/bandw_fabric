@@ -26,7 +26,7 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class RealityWarper extends Item {
-    int effectDelay=155; //delay in ticks before playing the sound again (its length, in this case 8 seconds)
+    int effectDelay=160; //delay in ticks before playing the sound again (its length, in this case 8 seconds)
     int effectAcc=0;
     public RealityWarper(Settings settings){
         super(settings);
