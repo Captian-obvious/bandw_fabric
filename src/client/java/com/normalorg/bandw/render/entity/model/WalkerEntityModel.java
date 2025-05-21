@@ -1,6 +1,7 @@
 package com.normalorg.bandw.render.entity.model;
 
 import com.normalorg.bandw.entity.WalkerEntity;
+import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.model.ModelData;
