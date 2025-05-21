@@ -26,28 +26,26 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class RealityWarper extends Item {
-    int effectDelay=155; //delay in ticks before playing the sound (its length, in this case 8 seconds)
+    int effectDelay=155; //delay in ticks before playing the sound again (its length, in this case 8 seconds)
     int effectAcc=0;
-    // this is used to prevent the delay from interfering with the sound playing when item is first equipped, 
-    // (when it first is equipped the sound will not be playing, thus this fixes that)
-    boolean hasPlayedFirstSound=false; 
     public RealityWarper(Settings settings){
         super(settings);
     };
     public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected) {
         if (!world.isClient()){
             if (entity instanceof LivingEntity && selected){
-                effectAcc++;
-                if (effectAcc>=effectDelay || !hasPlayedFirstSound){
-                    hasPlayedFirstSound=true;
+                if (effectAcc==0){
                     effectAcc=0;
                     LivingEntity livingEntity=(LivingEntity) entity;
                     // Play the sound
                     // hey Doctor4t, you found my secret signature - Superduperdev2
                     Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,0.25F,1.0F);
+                }else if(effectAcc>=effectDelay){
+                    effectAcc=0;
                 };
             };
+            effectAcc++;
         };
         super.inventoryTick(stack, world, entity, slot, selected); // Call the super method to retain default behavior
     };
