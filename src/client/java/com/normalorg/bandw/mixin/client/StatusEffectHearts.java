@@ -60,6 +60,7 @@ public abstract class StatusEffectHearts {
                 int heartX = x + (i % 10) * 8;
                 int heartY = y - (i / 10) * 10;
                 boolean halfHeart = ((i==health_loop) && ((health % 2) == 1);
+                // draw the heart
                 ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,halfHeart ? 9.0F : 0.0F,0.0F,9,9,18,9);
             };
             // Cancel default rendering to use custom logic
