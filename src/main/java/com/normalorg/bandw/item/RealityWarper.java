@@ -18,12 +18,14 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.network.packet.s2c.play.PositionFlag;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
 import net.minecraft.text.Text;
 import java.util.List;
+import java.util.Set;
 
 public class RealityWarper extends Item {
     int effectDelay=160; //delay in ticks before playing the sound again (its length, in this case 8 seconds)
@@ -51,16 +53,17 @@ public class RealityWarper extends Item {
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper").formatted(Formatting.GOLD,Formatting.ITALIC));
+        tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper").formatted(Formatting.LIGHT_PURPLE,Formatting.ITALIC));
     };
-    /*private void teleportPlayer(ServerWorld world, Entity entity) {
+    private void teleportPlayer(ServerWorld world, Entity entity) {
         if (entity instanceof PlayerEntity player) {
             ServerWorld targetWorld = world.getServer().getWorld(ModDimensions.THE_VOID);
             if (targetWorld != null) {
-                //player.teleportCrossDimension(targetWorld)
-                //player.sendMessage(Text.of("You feel reality shift around you..."), false);
+                //TeleportTarget teleportTarget = new TeleportTarget(targetWorld,entity.getPos(),TeleportTarget.NO_OP);
+                Set<PositionFlag> flags=Set.of(PositionFlag.X, PositionFlag.Y, PositionFlag.Z);
+                player.teleport(targetWorld,player.getX(),player.getY(),player.getZ(),flags,player.getYaw(),player.getPitch(),false);
+                player.sendMessage(Text.of("You feel reality shift around you...").formatted(Formatting.GOLD,Formatting.ITALIC), false);
             };
         };
     };
-    */
 };
