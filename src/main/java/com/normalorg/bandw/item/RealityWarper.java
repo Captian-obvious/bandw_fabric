@@ -63,7 +63,7 @@ public class RealityWarper extends Item {
                 //TeleportTarget teleportTarget = new TeleportTarget(targetWorld,entity.getPos(),TeleportTarget.NO_OP);
                 Set<PositionFlag> flags=Set.of(PositionFlag.X, PositionFlag.Y, PositionFlag.Z);
                 player.teleport(targetWorld,player.getX(),player.getY(),player.getZ(),flags,player.getYaw(),player.getPitch(),false);
-                player.sendMessage(Text.of("You feel reality shift around you...").formatted(Formatting.GOLD,Formatting.ITALIC), false);
+                player.sendMessage(Text.literal("You feel reality shift around you...").formatted(Formatting.GOLD,Formatting.ITALIC), false);
             };
         };
     };
