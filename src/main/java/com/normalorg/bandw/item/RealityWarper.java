@@ -24,6 +24,8 @@ import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.text.Text;
 import java.util.List;
 import java.util.Set;
@@ -38,7 +40,6 @@ public class RealityWarper extends Item {
         if (!world.isClient()){
             if (entity instanceof LivingEntity && selected){
                 if (effectAcc==0){
-                    effectAcc=0;
                     LivingEntity livingEntity=(LivingEntity) entity;
                     // Play the sound
                     // hey Doctor4t, you found my secret signature - Superduperdev2
@@ -56,9 +57,24 @@ public class RealityWarper extends Item {
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper").formatted(Formatting.LIGHT_PURPLE,Formatting.ITALIC));
     };
+    @Override
+    public ActionResult use(World world,PlayerEntity user,Hand hand){
+        if (!world.isClient()){
+            if (user instanceof LivingEntity livingEntity){
+                ServerWorld serverworld=(ServerWorld) world;
+                teleportPlayer(serverworld,user);
+            };
+        };
+        return super.use(world,user,hand);
+    };
     private void teleportPlayer(ServerWorld world, Entity entity) {
         if (entity instanceof PlayerEntity player) {
-            ServerWorld targetWorld = world.getServer().getWorld(ModDimensions.THE_VOID);
+            ServerWorld targetWorld;
+            if (world.getRegistryKey()==ModDimensions.THE_VOID){
+                targetWorld=world.getServer().getWorld(World.OVERWORLD);
+            }else{
+                targetWorld=world.getServer().getWorld(ModDimensions.THE_VOID);
+            };
             if (targetWorld != null) {
                 //TeleportTarget teleportTarget = new TeleportTarget(targetWorld,entity.getPos(),TeleportTarget.NO_OP);
                 Set<PositionFlag> flags=Set.of(PositionFlag.X, PositionFlag.Y, PositionFlag.Z);
