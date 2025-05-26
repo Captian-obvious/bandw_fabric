@@ -69,6 +69,7 @@ public class ModItems {
     public static final RegistryKey<Item> dark_leather_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_leather"));
     public static final Item dark_leather=new Item(new Item.Settings().maxCount(64).registryKey(dark_leather_key));
     public static final RegistryKey<Item> halfshade_ingot_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"halfshade_ingot"));
+    // finally added the poison to the halfshade ingot
     public static final Item halfshade_ingot=new HalfshadeIngot(new Item.Settings().maxCount(64).registryKey(halfshade_ingot_key));
     public static final RegistryKey<Item> halfshade_nugget_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"halfshade_nugget"));
     public static final Item halfshade_nugget=new Item(new Item.Settings().maxCount(64).registryKey(halfshade_nugget_key));

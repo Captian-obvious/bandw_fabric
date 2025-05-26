@@ -44,6 +44,7 @@ public class Defiance implements ModInitializer {
     };
     public static void registerModules(){
         ModBlocks.registerBlocks();
+        // register the corruptables
         ModBlocks.registerCorruptableBlocks();
         ModBlockEntities.registerBlockEntities();
         ModFluids.registerFluids();
