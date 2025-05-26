@@ -1,11 +1,23 @@
 package com.normalorg.bandw.block;
 
-import net.minecraft.block.FallingBlock;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.block.AbstractBlock.Settings;
+package com.normalorg.bandw.block;
 
-public class CorruptedFallingBlock extends FallingBlock {
-    public CorruptedFallingBlock(Settings settings) {
+import net.minecraft.block.FallingBlock;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.AbstractBlock.Settings;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+
+public class CustomFallingBlock extends FallingBlock {
+    public static final MapCodec<CustomFallingBlock> CODEC = RecordCodecBuilder.mapCodec(instance ->
+        instance.group(
+            Settings.CODEC.fieldOf("settings").forGetter(block -> block.settings)
+        ).apply(instance, CustomFallingBlock::new);
+    );
+    public CustomFallingBlock(Settings settings) {
         super(settings);
+    };
+    @Override
+    protected MapCodec<? extends FallingBlock> getCodec() {
+        return CODEC.cast();
     };
 };

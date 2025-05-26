@@ -41,9 +41,9 @@ public class ModBlocks {
     public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
     //falling blocks
     public static final RegistryKey<Block> CORRUPTED_SAND_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_sand"));
-    public static final FallingBlock CORRUPTED_SAND = new CorruptedFallingBlock(Settings.create().sounds(BlockSoundGroup.SAND).strength(1.5F, 1.0F).registryKey(CORRUPTED_SAND_KEY));
+    public static final FallingBlock CORRUPTED_SAND = new CustomFallingBlock(Settings.create().sounds(BlockSoundGroup.SAND).strength(1.5F, 1.0F).registryKey(CORRUPTED_SAND_KEY));
     public static final RegistryKey<Block> CORRUPTED_GRAVEL_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_gravel"));
-    public static final FallingBlock CORRUPTED_GRAVEL = new CorruptedFallingBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(1.5F, 1.0F).registryKey(CORRUPTED_GRAVEL_KEY));
+    public static final FallingBlock CORRUPTED_GRAVEL = new CustomFallingBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(1.5F, 1.0F).registryKey(CORRUPTED_GRAVEL_KEY));
     //end falling blocks
     public static final RegistryKey<Block> CORRUPTED_DIRT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_dirt"));
     public static final Block CORRUPTED_DIRT = new CorruptedDirtBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CORRUPTED_DIRT_KEY));
