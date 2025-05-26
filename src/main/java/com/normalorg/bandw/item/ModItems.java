@@ -152,8 +152,6 @@ public class ModItems {
             ModBlocks.CORRUPTED_COBBLESTONE,
             ModBlocks.CORRUPTED_STONE,
             ModBlocks.CONDENSED_CORRUPTION,
-            ModBlocks.CORRUPTED_SAND,
-            ModBlocks.CORRUPTED_GRAVEL,
             ModBlocks.CORRUPTED_DIRT,
             ModBlocks.CORRUPTED_GRASS_BLOCK,
             ModBlocks.SHIELD_OF_LIGHT_BLOCK,
