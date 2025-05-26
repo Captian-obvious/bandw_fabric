@@ -8,11 +8,7 @@ import net.minecraft.block.AbstractBlock.Settings;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 public class CustomFallingBlock extends FallingBlock {
-    public static final MapCodec<CustomFallingBlock> CODEC = RecordCodecBuilder.mapCodec(instance ->
-        instance.group(
-            Settings.CODEC.fieldOf("settings").forGetter(block -> block.settings)
-        ).apply(instance, CustomFallingBlock::new);
-    );
+    public static final MapCodec<CustomFallingBlock> CODEC = RecordCodecBuilder.mapCodec(instance ->instance.group(Settings.CODEC.fieldOf("settings").forGetter(block -> block.settings)).apply(instance, CustomFallingBlock::new));
     public CustomFallingBlock(Settings settings) {
         super(settings);
     };
