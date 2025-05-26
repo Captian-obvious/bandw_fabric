@@ -96,8 +96,7 @@ public class ModBlocks {
     };
     public static void registerCorruptableBlocks(){
         Defiance.LOGGER.info("Setting up CorruptionManager...");
-        corruptionManager.addReplacement(Blocks.SAND,CORRUPTED_SAND);
-        corruptionManager.addReplacement(Blocks.GRAVEL,CORRUPTED_GRAVEL);
+        // will eventually fix the falling blocks but for now they no more
         corruptionManager.addReplacement(Blocks.DIRT,CORRUPTED_DIRT);
         corruptionManager.addReplacement(Blocks.STONE,CORRUPTED_STONE);
         corruptionManager.addReplacement(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);
