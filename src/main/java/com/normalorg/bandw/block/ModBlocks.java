@@ -6,6 +6,7 @@ import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.PillarBlock;
+import net.minecraft.block.FallingBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -38,6 +39,10 @@ public class ModBlocks {
     public static final Block CORRUPTED_COBBLESTONE = new CorruptedCobblestoneBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CORRUPTED_COBBLESTONE_KEY));
     public static final RegistryKey<Block> CONDENSED_CORRUPTION_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"condensed_corruption"));
     public static final Block CONDENSED_CORRUPTION = new CondensedCorruptionBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CONDENSED_CORRUPTION_KEY));
+    public static final RegistryKey<Block> CORRUPTED_SAND_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_sand"));
+    public static final FallingBlock CORRUPTED_SAND = new FallingBlock(Settings.create().sounds(BlockSoundGroup.SAND).strength(1.5F, 1.0F).registryKey(CORRUPTED_SAND_KEY));
+    public static final RegistryKey<Block> CORRUPTED_GRAVEL_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_gravel"));
+    public static final FallingBlock CORRUPTED_GRAVEL = new FallingBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(1.5F, 1.0F).registryKey(CORRUPTED_GRAVEL_KEY));
     public static final RegistryKey<Block> CORRUPTED_DIRT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_dirt"));
     public static final Block CORRUPTED_DIRT = new CorruptedDirtBlock(Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F).registryKey(CORRUPTED_DIRT_KEY));
     public static final RegistryKey<Block> CORRUPTED_GRASS_BLOCK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_grass_block"));
@@ -89,12 +94,16 @@ public class ModBlocks {
         register(CORRUPTED_COBBLESTONE,CORRUPTED_COBBLESTONE_KEY,true);
         register(CORRUPTED_STONE,CORRUPTED_STONE_KEY,true);
         register(CONDENSED_CORRUPTION,CONDENSED_CORRUPTION_KEY,true);
+        register(CORRUPTED_SAND,CORRUPTED_SAND_KEY,true);
+        register(CORRUPTED_GRAVEL,CORRUPTED_GRAVEL_KEY,true);
         register(CORRUPTED_DIRT,CORRUPTED_DIRT_KEY,true);
         register(CORRUPTED_GRASS_BLOCK,CORRUPTED_GRASS_BLOCK_KEY,true);
         register(SHIELD_OF_LIGHT_BLOCK,SHIELD_OF_LIGHT_KEY,true);
     };
     public static void registerCorruptableBlocks(){
         Defiance.LOGGER.info("Setting up CorruptionManager...");
+        corruptionManager.addReplacement(Blocks.SAND,CORRUPTED_SAND);
+        corruptionManager.addReplacement(Blocks.GRAVEL,CORRUPTED_GRAVEL);
         corruptionManager.addReplacement(Blocks.DIRT,CORRUPTED_DIRT);
         corruptionManager.addReplacement(Blocks.STONE,CORRUPTED_STONE);
         corruptionManager.addReplacement(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);
