@@ -1,6 +1,5 @@
 package com.normalorg.bandw.block.entity;
 
-//imports
 import com.normalorg.bandw.shields.Shield;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.BlockState;

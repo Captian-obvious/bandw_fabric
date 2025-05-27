@@ -1,6 +1,5 @@
 package com.normalorg.bandw.block;
 
-//imports
 import com.mojang.serialization.MapCodec;
 import com.normalorg.bandw.block.entity.ShieldBlockEntity;
 import net.minecraft.block.Block;
