@@ -46,7 +46,6 @@ public class ModBlocks {
     public static final Block CORRUPTED_GRASS_BLOCK = new CorruptedGrassBlock(Settings.create().sounds(BlockSoundGroup.GRASS).strength(2.0F, 1.0F).registryKey(CORRUPTED_GRASS_BLOCK_KEY));
     public static final RegistryKey<Block> SHIELD_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"shield_of_light"));
     public static final Block SHIELD_OF_LIGHT_BLOCK = new ShieldOfLightBlock(Settings.create().sounds(BlockSoundGroup.STONE).strength(4.0F, 12.0F).registryKey(SHIELD_OF_LIGHT_KEY));
-    public static BlockEntityType<ShieldBlockEntity> SHIELD_OF_LIGHT_BLOCK_ENTITY;
     private static RegistryKey<Block> keyOfBlock(String name){
         return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Defiance.MOD_ID, name));
     };
