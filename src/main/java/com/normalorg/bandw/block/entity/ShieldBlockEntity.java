@@ -1,8 +1,6 @@
-package com.normalorg.bandw.block;
+package com.normalorg.bandw.block.entity;
 
 import com.normalorg.bandw.shields.Shield;
-import com.normalorg.bandw.block.ModBlocks;
-import com.normalorg.bandw.block.entity.ModBlockEntities;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.Vec3d;

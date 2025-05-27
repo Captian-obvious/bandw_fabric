@@ -1,7 +1,7 @@
 package com.normalorg.bandw.block.entity;
 
 import com.normalorg.bandw.Defiance;
-import com.normalorg.bandw.block.*;
+import com.normalorg.bandw.block.ModBlocks;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;

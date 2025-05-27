@@ -1,7 +1,7 @@
 package com.normalorg.bandw.render.block.entity;
 
 import com.normalorg.bandw.DefianceClient;
-import com.normalorg.bandw.block.ShieldBlockEntity;
+import com.normalorg.bandw.block.entity.ShieldBlockEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;

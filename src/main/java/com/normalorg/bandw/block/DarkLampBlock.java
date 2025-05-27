@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.AbstractBlock.Settings;
 
-public class CorruptedCobblestoneBlock extends Block {
-    public CorruptedCobblestoneBlock(Settings settings) {
+public class DarkLampBlock extends Block {
+    public DarkLampBlock(Settings settings){
         super(settings);
     };
 };
