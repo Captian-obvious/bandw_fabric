@@ -1,6 +1,7 @@
 package com.normalorg.bandw.block;
 
 import com.normalorg.bandw.Defiance;
+import com.normalorg.bandw.block.entity.ShieldBlockEntity;
 import com.normalorg.bandw.util.CorruptionManager;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;

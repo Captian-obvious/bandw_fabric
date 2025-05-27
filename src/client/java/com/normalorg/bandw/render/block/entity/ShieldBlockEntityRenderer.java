@@ -1,5 +1,6 @@
 package com.normalorg.bandw.render.block.entity;
 
+//imports
 import com.normalorg.bandw.DefianceClient;
 import com.normalorg.bandw.block.entity.ShieldBlockEntity;
 import net.fabricmc.api.EnvType;
