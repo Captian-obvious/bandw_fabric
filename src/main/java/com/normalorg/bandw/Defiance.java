@@ -11,6 +11,7 @@ import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.entity.damage.ModDamageSources;
 import com.normalorg.bandw.world.dimension.ModDimensions;
 import com.normalorg.bandw.item.ModItems;
+import com.normalorg.bandw.potion.ModPotions;
 import com.normalorg.bandw.entity.ModEntityAttributes;
 import com.normalorg.bandw.util.CharterContractManager;
 import com.normalorg.bandw.util.ModChecker;
@@ -44,7 +45,6 @@ public class Defiance implements ModInitializer {
     };
     public static void registerModules(){
         ModBlocks.registerBlocks();
-        // h
         ModBlocks.registerCorruptableBlocks();
         ModBlockEntities.registerBlockEntities();
         ModFluids.registerFluids();
@@ -56,6 +56,7 @@ public class Defiance implements ModInitializer {
         ModDimensions.registerDimensions();
         // (dimensions registered)
         ModItems.registerItems();
+        ModPotions.registerPotions();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
     };
