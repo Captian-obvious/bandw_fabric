@@ -148,13 +148,13 @@ public class ModItems {
             ModBlocks.DARK_BRICKS,
             ModBlocks.LIGHT_PLANKS,
             ModBlocks.LIGHT_BRICKS,
+            ModBlocks.LIGHT_CHISELED_BRICKS,
             ModBlocks.CORRUPTED_COBBLESTONE,
             ModBlocks.CORRUPTED_STONE,
             ModBlocks.CONDENSED_CORRUPTION,
             ModBlocks.CORRUPTED_DIRT,
             ModBlocks.CORRUPTED_GRASS_BLOCK,
-            ModBlocks.SHIELD_OF_LIGHT_BLOCK,
-            ModBlocks.LIGHT_CHISELED_BRICKS
+            ModBlocks.SHIELD_OF_LIGHT_BLOCK
         };
         Item[] items={
             ModItems.blade_of_infinite_sorrow,
