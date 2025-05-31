@@ -30,7 +30,7 @@ public class HalfshadeIngot extends Item {
             if (entity instanceof LivingEntity && selected){
                 effectAcc+=1;
                 LivingEntity livingEntity=(LivingEntity) entity;
-                if (!livingEntity.hasStatusEffect(ModEffects.DARKENING)){
+                if (!livingEntity.hasStatusEffect(ModEffects.HALFSHADE_POISONING)){
                     // apply darkening to the player
                     StatusEffectInstance instance = new StatusEffectInstance(ModEffects.HALFSHADE_POISONING,100,0,false,true,true);
                     boolean success=livingEntity.addStatusEffect(instance);
