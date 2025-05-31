@@ -56,6 +56,8 @@ public class RealityWarper extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper").formatted(Formatting.LIGHT_PURPLE,Formatting.ITALIC));
+        tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper_L2").formatted(Formatting.GOLD,Formatting.ITALIC));
+        tooltip.add(Text.translatable("itemTooltip.bandw.reality_warper_L3").formatted(Formatting.GOLD,Formatting.ITALIC));
     };
     @Override
     public ActionResult use(World world,PlayerEntity user,Hand hand){

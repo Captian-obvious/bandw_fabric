@@ -62,6 +62,8 @@
     "item.bandw.dark_ender_pearl": "Dark Ender Pearl",
     "item.bandw.reality_warper": "Reality Warper",
     "itemTooltip.bandw.reality_warper": "You feel a strange power resonating from this item",
+    "itemTooltip.bandw.reality_warper_L2":"May or may not defy gravity on occasion.",
+    "itemTooltip.bandw.reality_warper_L3":"We don't know why, but we're rolling with it.",
     "itemGroup.bandw_items": "Defiance",
     "itemGroup.bandw_blocks": "Defiance: Blocks",
     "itemGroup.bandw_tec": "Defiance: Tec",
