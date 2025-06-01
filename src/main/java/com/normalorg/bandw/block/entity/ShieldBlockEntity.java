@@ -18,7 +18,7 @@ public class ShieldBlockEntity extends BlockEntity {
     private boolean active=true;
     public ShieldBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SHIELD_BLOCK_ENTITY,pos,state);
-        this.shield=new Shield(new Vec3d(pos.getX(),pos.getY(),pos.getZ()),100.0f,1.0f);
+        this.shield=new Shield(new Vec3d(pos.getX(),pos.getY(),pos.getZ()),200.0f,1.0f);
     };
     public void initialize(){
         BiFunction<Float, Float, Void> changeHandler = (newSize, newStrength) -> {
@@ -29,7 +29,6 @@ public class ShieldBlockEntity extends BlockEntity {
             return null;
         };
         Function<Float, Void> collapseHandler = (newSize) -> {
-            
             this.markDirty();
             return null;
         };
