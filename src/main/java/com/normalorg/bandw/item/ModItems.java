@@ -142,6 +142,7 @@ public class ModItems {
         register(dark_shard,dark_shard_key);
         register(tec_dust,tec_dust_key);
         Defiance.LOGGER.info("Registering Item Group Contents...");
+        
         Block[] blocks={
             ModBlocks.DARK_LOG,
             ModBlocks.DEAD_DARK_LOG,

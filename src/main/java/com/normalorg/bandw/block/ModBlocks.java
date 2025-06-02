@@ -91,7 +91,7 @@ public class ModBlocks {
         register(DARK_BARK,DARK_BARK_KEY,true);
         register(LIGHT_BRICKS,LIGHT_BRICKS_KEY,true);
         register(LIGHT_CHISELED_BRICKS,LIGHT_CHISELED_BRICKS_KEY,true);
-        register(CRACKED_LIGHT_BRICKS,CRACKED_LIGHT_BRICKS_KEY);
+        register(CRACKED_LIGHT_BRICKS,CRACKED_LIGHT_BRICKS_KEY,true);
         register(LIGHT_PLANKS,LIGHT_PLANKS_KEY,true);
         register(CORRUPTED_COBBLESTONE,CORRUPTED_COBBLESTONE_KEY,true);
         register(CORRUPTED_STONE,CORRUPTED_STONE_KEY,true);
