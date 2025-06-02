@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"side": "bandw:block/log_dark",
+		"end": "bandw:block/log_dead_dark_top"
+	}
+}

@@ -144,11 +144,13 @@ public class ModItems {
         Defiance.LOGGER.info("Registering Item Group Contents...");
         Block[] blocks={
             ModBlocks.DARK_LOG,
+            ModBlocks.DEAD_DARK_LOG,
             ModBlocks.DARK_BARK,
             ModBlocks.DARK_BRICKS,
             ModBlocks.LIGHT_PLANKS,
             ModBlocks.LIGHT_BRICKS,
             ModBlocks.LIGHT_CHISELED_BRICKS,
+            ModBlocks.CRACKED_LIGHT_BRICKS,
             ModBlocks.CORRUPTED_COBBLESTONE,
             ModBlocks.CORRUPTED_STONE,
             ModBlocks.CONDENSED_CORRUPTION,

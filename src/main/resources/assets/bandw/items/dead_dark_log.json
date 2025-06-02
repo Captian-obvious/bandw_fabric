@@ -1,0 +1,6 @@
+{
+    "model": {
+        "type":"minecraft:model",
+        "model":"bandw:block/dead_dark_log"
+    }
+}

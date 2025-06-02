@@ -1,7 +1,7 @@
 {
 	"parent": "minecraft:block/cube_column_horizontal",
 	"textures": {
-		"end": "bandw:block/log_dark_top",
+		"end": "bandw:block/log_dead_dark_top",
 		"side": "bandw:block/log_dark"
 	}
 }

@@ -24,14 +24,18 @@ public class ModBlocks {
     public static final CorruptionManager corruptionManager=new CorruptionManager();
     public static final RegistryKey<Block> DARK_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dark_bricks"));
     public static final Block DARK_BRICKS = new Block(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(DARK_BRICKS_KEY));
-    public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_bricks"));
-    public static final Block LIGHT_BRICKS = new Block(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_BRICKS_KEY));
     public static final RegistryKey<Block> DARK_LOG_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dark_log"));
     public static final PillarBlock DARK_LOG = new PillarBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_LOG_KEY));
+    public static final RegistryKey<Block> DEAD_DARK_LOG_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dead_dark_log"));
+    public static final PillarBlock DEAD_DARK_LOG = new PillarBlock(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DEAD_DARK_LOG_KEY));
     public static final RegistryKey<Block> DARK_BARK_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"dark_bark"));
     public static final Block DARK_BARK = new Block(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(DARK_BARK_KEY));
+    public static final RegistryKey<Block> LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_bricks"));
+    public static final Block LIGHT_BRICKS = new Block(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_BRICKS_KEY));
     public static final RegistryKey<Block> LIGHT_CHISELED_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_chiseled_bricks"));
     public static final Block LIGHT_CHISELED_BRICKS = new Block(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(LIGHT_CHISELED_BRICKS_KEY));
+    public static final RegistryKey<Block> CRACKED_LIGHT_BRICKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"cracked_light_bricks"));
+    public static final Block CRACKED_LIGHT_BRICKS = new Block(Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F).registryKey(CRACKED_LIGHT_BRICKS_KEY));
     public static final RegistryKey<Block> LIGHT_PLANKS_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"light_planks"));
     public static final Block LIGHT_PLANKS = new Block(Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F).registryKey(LIGHT_PLANKS_KEY));
     public static final RegistryKey<Block> CORRUPTED_STONE_KEY = RegistryKey.of(RegistryKeys.BLOCK,Identifier.of(Defiance.MOD_ID,"corrupted_stone"));
@@ -82,10 +86,12 @@ public class ModBlocks {
     public static void registerBlocks() {
         Defiance.LOGGER.info("Registering blocks...");
         register(DARK_BRICKS,DARK_BRICKS_KEY,true);
-        register(LIGHT_BRICKS,LIGHT_BRICKS_KEY,true);
         register(DARK_LOG,DARK_LOG_KEY,true);
+        register(DEAD_DARK_LOG,DEAD_DARK_LOG_KEY,true);
         register(DARK_BARK,DARK_BARK_KEY,true);
+        register(LIGHT_BRICKS,LIGHT_BRICKS_KEY,true);
         register(LIGHT_CHISELED_BRICKS,LIGHT_CHISELED_BRICKS_KEY,true);
+        register(CRACKED_LIGHT_BRICKS,CRACKED_LIGHT_BRICKS_KEY);
         register(LIGHT_PLANKS,LIGHT_PLANKS_KEY,true);
         register(CORRUPTED_COBBLESTONE,CORRUPTED_COBBLESTONE_KEY,true);
         register(CORRUPTED_STONE,CORRUPTED_STONE_KEY,true);
