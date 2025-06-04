@@ -32,6 +32,7 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class ModItems {
+    //h
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
     public static final RegistryKey<ItemGroup> bandw_items_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_items"));
     public static final ItemGroup bandw_items_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.dark_bone)).displayName(Text.translatable("itemGroup.bandw_items")).build();
