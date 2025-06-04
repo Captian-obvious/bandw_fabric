@@ -2,6 +2,7 @@ package com.normalorg.bandw.item;
 
 // Imports
 import com.normalorg.bandw.Defiance;
+import com.normalorg.bandw.item.tec.TecItems;
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import com.normalorg.bandw.component.ModComponents;
@@ -31,12 +32,13 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class ModItems {
-    //l
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
     public static final RegistryKey<ItemGroup> bandw_items_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_items"));
     public static final ItemGroup bandw_items_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.dark_bone)).displayName(Text.translatable("itemGroup.bandw_items")).build();
     public static final RegistryKey<ItemGroup> bandw_blocks_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_blocks"));
     public static final ItemGroup bandw_blocks_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem())).displayName(Text.translatable("itemGroup.bandw_blocks")).build();
+    public static final RegistryKey<ItemGroup> bandw_tec_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_tec"));
+    public static final ItemGroup bandw_tec_group=FabricItemGroup.builder().icon(() -> new ItemStack(TecItems.tec_dust)).displayName(Text.translatable("itemGroup.bandw_tec")).build();
     public static final RegistryKey<Item> raw_light_ore_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"raw_light_ore"));
     public static final Item raw_light_ore=new Item(new Item.Settings().maxCount(64).registryKey(raw_light_ore_key));
     public static final RegistryKey<Item> light_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"light_shard"));
@@ -58,8 +60,6 @@ public class ModItems {
     public static final Item dark_bonemeal=new Item(new Item.Settings().maxCount(64).registryKey(dark_bonemeal_key));
     public static final RegistryKey<Item> dark_shard_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_shard"));
     public static final Item dark_shard=new Item(new Item.Settings().maxCount(64).registryKey(dark_shard_key));
-    public static final RegistryKey<Item> tec_dust_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"tec_dust"));
-    public static final Item tec_dust=new Item(new Item.Settings().maxCount(64).registryKey(tec_dust_key));
     public static final RegistryKey<Item> dark_spider_eye_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_spider_eye"));
     public static final Item dark_spider_eye=new Item(new Item.Settings().maxCount(63).registryKey(dark_spider_eye_key));
     public static final RegistryKey<Item> dark_pouch_key=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,"dark_pouch"));
@@ -114,6 +114,7 @@ public class ModItems {
         Defiance.LOGGER.info("Registering items...");
         Registry.register(Registries.ITEM_GROUP,bandw_items_group_key,bandw_items_group);
         Registry.register(Registries.ITEM_GROUP,bandw_blocks_group_key,bandw_blocks_group);
+        Registry.register(Registries.ITEM_GROUP,bandw_tec_group_key,bandw_tec_group);
         register(blade_of_infinite_sorrow,blade_of_infinite_sorrow_key);
         register(casshen,casshen_key);
         register(blade_of_karma,blade_of_karma_key);
@@ -140,9 +141,8 @@ public class ModItems {
         register(mark_of_the_guardian,mark_of_the_guardian_key);
         register(dark_ender_pearl,dark_ender_pearl_key);
         register(dark_shard,dark_shard_key);
-        register(tec_dust,tec_dust_key);
+        TecItems.registerTecItems();
         Defiance.LOGGER.info("Registering Item Group Contents...");
-        
         Block[] blocks={
             ModBlocks.DARK_LOG,
             ModBlocks.DEAD_DARK_LOG,
@@ -182,14 +182,21 @@ public class ModItems {
             ModItems.dark_bone,
             ModItems.dark_bonemeal,
             ModItems.dark_pouch,
-            ModItems.tec_dust,
             ModItems.dark_spider_eye,
             ModItems.dark_string,
             ModItems.dark_leather,
             ModItems.dark_shard
         };
+        Item[] tec_items={
+            TecItems.TEC_DUST
+        };
         ItemGroupEvents.modifyEntriesEvent(bandw_items_group_key).register(itemGroup -> {
             for (Item item : items) {
+                itemGroup.add(item);
+            };
+        });
+        ItemGroupEvents.modifyEntriesEvent(bandw_tec_group_key).register(itemGroup -> {
+            for (Item item : tec_items) {
                 itemGroup.add(item);
             };
         });
