@@ -31,7 +31,7 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class TecItems {
-    public static final Item TEC_DUST=register("tec_dust",Item::new,new Item.Settings().maxCount(64).registryKey(tec_dust_key))
+    public static final Item TEC_DUST=register("tec_dust",Item::new,new Item.Settings().maxCount(64))
     private static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,name));
         Item item=itemFactory.apply(settings.registryKey(itemKey));
