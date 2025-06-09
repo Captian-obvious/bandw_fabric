@@ -1,6 +1,5 @@
 package com.normalorg.bandw;
 
-//Imports
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.entity.ModEntities;
 import com.normalorg.bandw.entity.effect.ModEffects;
