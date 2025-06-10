@@ -42,12 +42,12 @@ public abstract class StatusEffectHearts {
     };*/
     @Inject(method = "renderHealthBar", at = @At("HEAD"), cancellable = true)
     private void onRenderHealthBar(DrawContext ctx,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
-            if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) && !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING)) {
+        if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) && !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING) && !player.hasStatusEffect(ModEffects.CRYSTAL_INFESTATION)) {
             // Default rendering logic (do nothing special)
             return;
         };
         Identifier heartTexture = null;
-        boolean hasCrystalInfestation = player.hasStatusEffect(ModEffects.CRYSTAL_INFESTATION);
+        boolean hasCrystalInfestation = (player.hasStatusEffect(ModEffects.CRYSTAL_INFESTATION));
         // Determine which texture to use based on the effect
         if (player.hasStatusEffect(ModEffects.DARKENING)) {
             heartTexture = DARKENING_HEARTS;
