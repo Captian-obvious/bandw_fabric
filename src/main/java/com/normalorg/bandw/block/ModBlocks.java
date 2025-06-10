@@ -85,9 +85,4 @@ public class ModBlocks {
         corruptionManager.addReplacement(Blocks.GRASS_BLOCK,CORRUPTED_GRASS_BLOCK);
         corruptionManager.addReplacement(LIGHT_BRICKS,DARK_BRICKS);
     };
-    /*public static void registerBlockEntities() {
-        SHIELD_OF_LIGHT_BLOCK_ENTITY=Registry.register(
-            Registry.BLOCK_ENTITY_TYPE,Identifier.of(Defiance.MOD_ID, "shield_of_light_block_entity"),FabricBlockEntityTypeBuilder.create(ShieldBlockEntity::new, SHIELD_OF_LIGHT_BLOCK).build()
-        );
-    };*/
 };
