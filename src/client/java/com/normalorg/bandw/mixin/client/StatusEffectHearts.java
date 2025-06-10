@@ -23,6 +23,8 @@ public abstract class StatusEffectHearts {
     private static final Identifier DARKENING_HEARTS=Identifier.of(DefianceClient.MOD_ID,"textures/gui/darkening_hearts.png");
     @Unique
     private static final Identifier HALFSHADE_POISONING_HEARTS=Identifier.of(DefianceClient.MOD_ID,"textures/gui/halfshade_poisoning_hearts.png");
+    @Unique
+    private static final Identifier CRYSTAL_INFESTATION_HEARTS=Identifier.of(DefianceClient.MOD_ID,"textures/gui/crystal_infestation_hearts.png");
     /*@Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
     private void drawEffectHeart(DrawContext ctx,InGameHud.HeartType type,int x,int y,boolean hardcore,boolean blinking,boolean half,CallbackInfo info){
         if (!blinking && type == InGameHud.HeartType.NORMAL && MinecraftClient.getInstance().cameraEntity instanceof PlayerEntity player && (player.hasStatusEffect(ModEffects.DARKENING))){
@@ -45,15 +47,25 @@ public abstract class StatusEffectHearts {
             return;
         };
         Identifier heartTexture = null;
+        boolean hasCrystalInfestation = player.hasStatusEffect(ModEffects.CRYSTAL_INFESTATION);
         // Determine which texture to use based on the effect
         if (player.hasStatusEffect(ModEffects.DARKENING)) {
             heartTexture = DARKENING_HEARTS;
         } else if (player.hasStatusEffect(ModEffects.HALFSHADE_POISONING)) {
             heartTexture = HALFSHADE_POISONING_HEARTS;
+        } else if (hasCrystalInfestation) {
+            heartTexture = CRYSTAL_INFESTATION_HEARTS;
         };
         if (heartTexture != null) {
             // Begin custom rendering of hearts
             //ctx.bindTexture(heartTexture);
+            if (hasCrystalInfestation) {
+                for (int i = 0; i < (int) maxHealth; i++) {
+                    int heartX = x + (i % 10) * 8;
+                    int heartY = y - (i / 10) * 10;
+                    ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,18.0F,0.0F,9,9,27,9); // Draw the empty heart
+                };
+            };
             double health_loop=Math.ceil((double) health / (double) 2);
             //RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F); // Ensure default coloring
             for (int i = 0; i < (int) health_loop; i++) {
@@ -61,7 +73,7 @@ public abstract class StatusEffectHearts {
                 int heartY = y - (i / 10) * 10;
                 boolean halfHeart = ((i+1==health_loop) && ((health % 2) != 0));
                 // draw the heart
-                ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,halfHeart ? 9.0F : 0.0F,0.0F,9,9,18,9);
+                ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,halfHeart ? 9.0F : 0.0F,0.0F,9,9,hasCrystalInfestation ? 27 : 18,9);
             };
             // Cancel default rendering to use custom logic
             info.cancel();
