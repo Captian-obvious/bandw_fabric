@@ -29,11 +29,11 @@ public class CustomFallingBlock extends Block {
     };
     @Override
     protected void neighborUpdate(BlockState state,World world,BlockPos pos,Block sourceBlock,WireOrientation wireOrientation,boolean notify) {
+        super.neighborUpdate(state,world,pos,sourceBlock,wireOrientation,notify);
         if (world.isAir(pos.down())) {
             CustomFallingBlock.spawnFallingBlock(world, pos, state);
             world.removeBlock(pos, false);
         };
-        super.neighborUpdate(state,world,pos,sourceBlock,wireOrientation,notify);
     };
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
