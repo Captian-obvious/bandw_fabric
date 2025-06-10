@@ -46,6 +46,7 @@ public class Casshen extends SwordItemWithEffect {
             }else{
                 // Trigger the explosion if charge is above or at 30
                 World world=target.getWorld();
+                // this.isLaserEnabled = stack.hasEnchantments() && stack.getEnchantmentLevel(ModEnchantments.SUNDERBEAM) > 0;
                 if (!world.isClient()){
                     Vec3d pos=Vec3d.ofBottomCenter(target.getBlockPos());
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,1.0F,1.0F);
