@@ -2,6 +2,8 @@ package com.normalorg.bandw.item.tec;
 
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
+import com.normalorg.bandw.entity.DarkEndermanEntity;
+import com.normalorg.bandw.entity.ModEntities;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
@@ -35,7 +37,7 @@ public class LaserTurret extends Item {
             // Item stack
             ItemStack stack=context.getStack();
             //PLACEHOLDER ENTITY
-            CowEntity entity=new CowEntity(EntityType.COW,world);
+            DarkEndermanEntity entity=new DarkEndermanEntity(ModEntities.DARK_ENDERMAN,world);
             entity.refreshPositionAfterTeleport(pos);
             world.spawnEntity(entity);
             // Decrement the stack
