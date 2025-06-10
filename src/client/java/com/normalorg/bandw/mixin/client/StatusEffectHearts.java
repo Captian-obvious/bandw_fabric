@@ -60,7 +60,7 @@ public abstract class StatusEffectHearts {
             // Begin custom rendering of hearts
             //ctx.bindTexture(heartTexture);
             if (hasCrystalInfestation) {
-                for (int i = 0; i < (int) maxHealth; i++) {
+                for (int i = 0; i < (int) (maxHealth/2); i++) {
                     int heartX = x + (i % 10) * 8;
                     int heartY = y - (i / 10) * 10;
                     ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,18.0F,0.0F,9,9,27,9); // Draw the empty heart

@@ -10,7 +10,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 public class ModPotions {
-    public static final Potion DARKENING_POTION=registerPotion("darkening_potion",new StatusEffectInstance(ModEffects.DARKENING, 200, 0));
+    //public static final Potion DARKENING_POTION=registerPotion("darkening_potion",new StatusEffectInstance(ModEffects.DARKENING, 200, 0));
     private static Potion registerPotion(String name, StatusEffectInstance effect) {
         Identifier id=Identifier.of(Defiance.MOD_ID,name);
         Potion potion=new Potion(name,effect);
