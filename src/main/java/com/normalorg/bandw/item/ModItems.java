@@ -123,6 +123,8 @@ public class ModItems {
             ModBlocks.CRACKED_LIGHT_BRICKS,
             ModBlocks.CORRUPTED_COBBLESTONE,
             ModBlocks.CORRUPTED_STONE,
+            ModBlocks.CORRUPTED_SAND,
+            ModBlocks.CORRUPTED_GRAVEL,
             ModBlocks.CONDENSED_CORRUPTION,
             ModBlocks.CORRUPTED_DIRT,
             ModBlocks.CORRUPTED_GRASS_BLOCK,
