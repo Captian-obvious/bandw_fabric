@@ -11,6 +11,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.World;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.AbstractBlock.Settings;
@@ -28,6 +29,15 @@ public class CustomFallingBlock extends Block {
     };
     @Override
     protected void neighborUpdate(BlockState state,World world,BlockPos pos,Block sourceBlock,WireOrientation wireOrientation,boolean notify) {
+        if (world.isAir(pos.down())) {
+            CustomFallingBlock.spawnFallingBlock(world, pos, state);
+            world.removeBlock(pos, false);
+        };
+        super.neighborUpdate(state,world,pos,sourceBlock,wireOrientation,notify);
+    };
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
+        super.onPlaced(world, pos, state, placer, itemStack);
         if (world.isAir(pos.down())) {
             CustomFallingBlock.spawnFallingBlock(world, pos, state);
             world.removeBlock(pos, false);
