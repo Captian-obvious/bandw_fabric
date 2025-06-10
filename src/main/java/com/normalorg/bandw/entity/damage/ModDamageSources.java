@@ -18,6 +18,6 @@ public class ModDamageSources {
     public static final RegistryKey<DamageType> FRACTURED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "fractured"));
     public static final RegistryKey<DamageType> DARKENED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "darkened"));
     public static void registerDamageSources() {
-        Defiance.LOGGER.info("Registering damage types",Defiance.MOD_ID);
+        Defiance.LOGGER.info("Registering damage types for " + Defiance.MOD_ID);
     };
 };
