@@ -188,7 +188,12 @@ public class ModItems {
             ModItems.dark_shard
         };
         Item[] tec_items={
-            TecItems.TEC_DUST
+            TecItems.TEC_DUST,
+            TecItems.LASER_TURRET,
+            TecItems.LASER_TURRET_HEAD,
+            TecItems.TURRET_BASE,
+            TecItems.TURRET_BOX,
+            TecItems.TURRET_JOINTS
         };
         ItemGroupEvents.modifyEntriesEvent(bandw_items_group_key).register(itemGroup -> {
             for (Item item : items) {
