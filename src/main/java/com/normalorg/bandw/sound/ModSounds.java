@@ -18,6 +18,6 @@ public class ModSounds {
         return Registry.register(Registries.SOUND_EVENT,identifier,SoundEvent.of(identifier));
     };
     public static void registerSounds() {
-        Defiance.LOGGER.info("Registering Sounds...");
+        Defiance.LOGGER.info("Registering Sounds for " + Defiance.MOD_ID);
     };
 };

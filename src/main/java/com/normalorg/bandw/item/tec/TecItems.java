@@ -42,6 +42,6 @@ public class TecItems {
         return Registry.register(Registries.ITEM,itemKey,item);
     };
     public static void registerTecItems(){
-        Defiance.LOGGER.info("Registering Tec Items...");
+        Defiance.LOGGER.info("Registering Tec Items for " + Defiance.MOD_ID);
     };
 };

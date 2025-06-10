@@ -72,11 +72,10 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, key, block);
     };
     public static void registerBlocks() {
-        Defiance.LOGGER.info("Registering blocks...");
+        Defiance.LOGGER.info("Registering blocks for " + Defiance.MOD_ID);
     };
     public static void registerCorruptableBlocks(){
         Defiance.LOGGER.info("Setting up CorruptionManager...");
-        // will eventually fix the falling blocks but for now they no more
         corruptionManager.addReplacement(Blocks.DIRT,CORRUPTED_DIRT);
         corruptionManager.addReplacement(Blocks.STONE,CORRUPTED_STONE);
         corruptionManager.addReplacement(Blocks.GRAVEL,CORRUPTED_GRAVEL);

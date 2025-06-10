@@ -26,6 +26,6 @@ public class ModFluids {
     public static final Block PURE_LIGHT_BLOCK = new FluidBlock(STILL_MY_FLUID, Block.Settings.copy(Blocks.WATER));
     */
     public static void registerFluids(){
-        Defiance.LOGGER.info("Registering fluids...");
+        Defiance.LOGGER.info("Registering fluids for " + Defiance.MOD_ID);
     };
 };

@@ -97,7 +97,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM,key,item);
     };
     public static void registerItems(){
-        Defiance.LOGGER.info("Registering items...");
+        Defiance.LOGGER.info("Registering items for " + Defiance.MOD_ID);
         Registry.register(Registries.ITEM_GROUP,bandw_items_group_key,bandw_items_group);
         Registry.register(Registries.ITEM_GROUP,bandw_blocks_group_key,bandw_blocks_group);
         Registry.register(Registries.ITEM_GROUP,bandw_tec_group_key,bandw_tec_group);
@@ -111,7 +111,7 @@ public class ModItems {
         register(HALFSHADE_INGOT,HALFSHADE_INGOT_KEY);
         register(DARK_ENDER_PEARL,DARK_ENDER_PEARL_KEY);
         TecItems.registerTecItems();
-        Defiance.LOGGER.info("Registering Item Group Contents...");
+        Defiance.LOGGER.info("Registering Item Group Contents for " + Defiance.MOD_ID);
         Block[] blocks={
             ModBlocks.DARK_LOG,
             ModBlocks.DEAD_DARK_LOG,

@@ -22,6 +22,6 @@ public class ModEnchantmentEffects {
         return Registry.register(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE,Identifier.of(Defiance.MOD_ID, id),codec);
 	};
     public static void registerEnchantmentEffects(){
-        Defiance.LOGGER.info("Registering EnchantmentEffects...");
+        Defiance.LOGGER.info("Registering EnchantmentEffects for " + Defiance.MOD_ID);
     };
 };

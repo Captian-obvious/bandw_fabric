@@ -7,7 +7,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 
 public class ModEntityAttributes {
     public static void registerAttributes() {
-        Defiance.LOGGER.info("Registering Entity Attributes...");
+        Defiance.LOGGER.info("Registering Entity Attributes for " + Defiance.MOD_ID);
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_ENDERMAN,DarkEndermanEntity.createEndermanAttributes());
     };
 };

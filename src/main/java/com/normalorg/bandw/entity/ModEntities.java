@@ -18,6 +18,6 @@ public class ModEntities {
     public static final RegistryKey<EntityType<?>> WALKER_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Defiance.MOD_ID,"walker"));
     public static final EntityType<WalkerEntity> WALKER=Registry.register(Registries.ENTITY_TYPE,WALKER_KEY,EntityType.Builder.create(WalkerEntity::new,SpawnGroup.MONSTER).dimensions(0.6f,2.9f).build(WALKER_KEY));
     public static void registerEntities() {
-        Defiance.LOGGER.info("Registering Entities...");
+        Defiance.LOGGER.info("Registering Entities for " + Defiance.MOD_ID);
     };
 };

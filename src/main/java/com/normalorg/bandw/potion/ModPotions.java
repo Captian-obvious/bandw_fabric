@@ -17,6 +17,6 @@ public class ModPotions {
         return Registry.register(Registries.POTION,id,potion);
     };
     public static void registerPotions() {
-        Defiance.LOGGER.info("Registering potions...");
+        Defiance.LOGGER.info("Registering potions for " + Defiance.MOD_ID);
     };
 };

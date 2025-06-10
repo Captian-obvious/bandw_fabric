@@ -25,6 +25,6 @@ public class ModBlockEntities {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE,id,FabricBlockEntityTypeBuilder.<T>create(entityFactory,blocks).build());
     };
     public static void registerBlockEntities() {
-        Defiance.LOGGER.info("Registering block entities...");
+        Defiance.LOGGER.info("Registering block entities for " + Defiance.MOD_ID);
     };
 };

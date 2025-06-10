@@ -13,6 +13,6 @@ import java.util.function.Function;
 public class ModDimensions {
     public static final RegistryKey<World> THE_VOID=RegistryKey.of(RegistryKeys.WORLD,Identifier.of(Defiance.MOD_ID,"the_void"));
     public static void registerDimensions(){
-        Defiance.LOGGER.info("Registering dimensions...");
+        Defiance.LOGGER.info("Registering dimensions for " + Defiance.MOD_ID);
     };
 };
