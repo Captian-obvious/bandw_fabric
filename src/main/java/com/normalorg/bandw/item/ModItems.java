@@ -33,53 +33,53 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class ModItems {
-    //public static final ToolMaterial INFINITE_SORROW_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
-    public static final RegistryKey<ItemGroup> bandw_items_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_items"));
+    //public static final ToolMaterial INFINITE_SORROW_MATERIAL=new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
+    public static final RegistryKey<ItemGroup> bandw_items_group_key=RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_items"));
     public static final ItemGroup bandw_items_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.DARK_BONE)).displayName(Text.translatable("itemGroup.bandw_items")).build();
-    public static final RegistryKey<ItemGroup> bandw_blocks_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_blocks"));
+    public static final RegistryKey<ItemGroup> bandw_blocks_group_key=RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_blocks"));
     public static final ItemGroup bandw_blocks_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem())).displayName(Text.translatable("itemGroup.bandw_blocks")).build();
-    public static final RegistryKey<ItemGroup> bandw_tec_group_key = RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_tec"));
+    public static final RegistryKey<ItemGroup> bandw_tec_group_key=RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_tec"));
     public static final ItemGroup bandw_tec_group=FabricItemGroup.builder().icon(() -> new ItemStack(TecItems.TEC_DUST)).displayName(Text.translatable("itemGroup.bandw_tec")).build();
-    public static final Item HALFSHADE_STICK = register("halfshade_stick", Item::new, new Item.Settings().maxCount(64));
-    public static final Item LIGHT_STICK = register("light_stick", Item::new, new Item.Settings().maxCount(64));
-    public static final Item LIGHT_ROD = register("light_rod", Item::new, new Item.Settings().maxCount(64));
-    public static final Item LIGHT_SHARD = register("light_shard", Item::new, new Item.Settings().maxCount(64));
-    public static final Item LIGHT_IRON_INGOT = register("light_iron_ingot", Item::new, new Item.Settings().maxCount(64));
-    public static final Item RAW_LIGHT_ORE = register("raw_light_ore", Item::new, new Item.Settings().maxCount(64));
-    public static final RegistryKey<Item> BURNT_FLESH_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_rotten_flesh"));
-    public static final Item BURNT_FLESH = new Item(
+    public static final Item HALFSHADE_STICK=register("halfshade_stick", Item::new, new Item.Settings().maxCount(64));
+    public static final Item LIGHT_STICK=register("light_stick", Item::new, new Item.Settings().maxCount(64));
+    public static final Item LIGHT_ROD=register("light_rod", Item::new, new Item.Settings().maxCount(64));
+    public static final Item LIGHT_SHARD=register("light_shard", Item::new, new Item.Settings().maxCount(64));
+    public static final Item LIGHT_IRON_INGOT=register("light_iron_ingot", Item::new, new Item.Settings().maxCount(64));
+    public static final Item RAW_LIGHT_ORE=register("raw_light_ore", Item::new, new Item.Settings().maxCount(64));
+    public static final RegistryKey<Item> BURNT_FLESH_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_rotten_flesh"));
+    public static final Item BURNT_FLESH=new Item(
         new Item.Settings()
             .maxCount(64)
             .food(new FoodComponent.Builder().nutrition(2).saturationModifier(2.0f).build())
             .registryKey(BURNT_FLESH_KEY)
     );
-    public static final Item DARK_BONE = register("dark_bone", Item::new, new Item.Settings().maxCount(64));
-    public static final Item DARK_SPIDER_EYE = register("dark_spider_eye", Item::new, new Item.Settings().maxCount(63));
+    public static final Item DARK_BONE=register("dark_bone", Item::new, new Item.Settings().maxCount(64));
+    public static final Item DARK_SPIDER_EYE=register("dark_spider_eye", Item::new, new Item.Settings().maxCount(63));
     public static final Item DARK_SHARD=register("dark_shard",Item::new,new Item.Settings().maxCount(64));
-    public static final Item DARK_STRING = register("dark_string", Item::new, new Item.Settings().maxCount(64));
-    public static final Item DARK_BONEMEAL = register("dark_bonemeal", Item::new, new Item.Settings().maxCount(64));
-    public static final Item DARK_POUCH = register("dark_pouch", Item::new, new Item.Settings().maxCount(63));
-    public static final Item DARK_LEATHER = register("dark_leather", Item::new, new Item.Settings().maxCount(64));
-    public static final RegistryKey<Item> HALFSHADE_INGOT_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_ingot"));
-    public static final Item HALFSHADE_INGOT = new HalfshadeIngot(new Item.Settings().maxCount(64).registryKey(HALFSHADE_INGOT_KEY));
-    public static final Item HALFSHADE_NUGGET = register("halfshade_nugget", Item::new, new Item.Settings().maxCount(64));
+    public static final Item DARK_STRING=register("dark_string", Item::new, new Item.Settings().maxCount(64));
+    public static final Item DARK_BONEMEAL=register("dark_bonemeal", Item::new, new Item.Settings().maxCount(64));
+    public static final Item DARK_POUCH=register("dark_pouch", Item::new, new Item.Settings().maxCount(63));
+    public static final Item DARK_LEATHER=register("dark_leather", Item::new, new Item.Settings().maxCount(64));
+    public static final RegistryKey<Item> HALFSHADE_INGOT_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_ingot"));
+    public static final Item HALFSHADE_INGOT=new HalfshadeIngot(new Item.Settings().maxCount(64).registryKey(HALFSHADE_INGOT_KEY));
+    public static final Item HALFSHADE_NUGGET=register("halfshade_nugget", Item::new, new Item.Settings().maxCount(64));
     public static final Item BANISHED_MARK=register("banished_mark",MarkOfTheBanished::new,new Item.Settings().maxCount(1));
     public static final Item GUARDIAN_MARK=register("guardian_mark",MarkOfTheGuardian::new,new Item.Settings().maxCount(1));
     public static final Item REALITY_WARPER=register("reality_warper",RealityWarper::new,new Item.Settings().maxCount(1));
-    public static final RegistryKey<Item> DARK_ENDER_PEARL_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_ender_pearl"));
-    public static final EnderPearlItem DARK_ENDER_PEARL = new DarkEnderPearl(new Item.Settings().maxCount(1).registryKey(DARK_ENDER_PEARL_KEY));
-    public static final RegistryKey<Item> BLADE_OF_INFINITE_SORROW_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_infinite_sorrow"));
-    public static final SwordItem BLADE_OF_INFINITE_SORROW = new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND, 15, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_INFINITE_SORROW_KEY));
-    public static final RegistryKey<Item> HALFSHADE_BLADE_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_blade"));
-    public static final SwordItem HALFSHADE_BLADE = new HalfshadeBlade(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(HALFSHADE_BLADE_KEY));
-    public static final RegistryKey<Item> BLADE_OF_LIGHT_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_light"));
-    public static final SwordItem BLADE_OF_LIGHT = new BladeOfLight(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_LIGHT_KEY));
-    public static final RegistryKey<Item> BLADE_OF_DARKNESS_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_darkness"));
-    public static final SwordItem BLADE_OF_DARKNESS = new BladeOfDarkness(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_DARKNESS_KEY));
-    public static final RegistryKey<Item> BLADE_OF_KARMA_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_karma"));
-    public static final SwordItem BLADE_OF_KARMA = new BladeOfKarma(ToolMaterial.DIAMOND, 10, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_KARMA_KEY));
-    public static final RegistryKey<Item> CASSHEN_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "casshen"));
-    public static final SwordItem CASSHEN = new Casshen(ToolMaterial.DIAMOND, 10, -2.4F, new Item.Settings().enchantable(10).component(ModComponents.CHARGE_COMPONENT, 0).registryKey(CASSHEN_KEY));
+    public static final RegistryKey<Item> DARK_ENDER_PEARL_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_ender_pearl"));
+    public static final EnderPearlItem DARK_ENDER_PEARL=new DarkEnderPearl(new Item.Settings().maxCount(1).registryKey(DARK_ENDER_PEARL_KEY));
+    public static final RegistryKey<Item> BLADE_OF_INFINITE_SORROW_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_infinite_sorrow"));
+    public static final SwordItem BLADE_OF_INFINITE_SORROW=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND, 15, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_INFINITE_SORROW_KEY));
+    public static final RegistryKey<Item> HALFSHADE_BLADE_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_blade"));
+    public static final SwordItem HALFSHADE_BLADE=new HalfshadeBlade(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(HALFSHADE_BLADE_KEY));
+    public static final RegistryKey<Item> BLADE_OF_LIGHT_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_light"));
+    public static final SwordItem BLADE_OF_LIGHT=new BladeOfLight(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_LIGHT_KEY));
+    public static final RegistryKey<Item> BLADE_OF_DARKNESS_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_darkness"));
+    public static final SwordItem BLADE_OF_DARKNESS=new BladeOfDarkness(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_DARKNESS_KEY));
+    public static final RegistryKey<Item> BLADE_OF_KARMA_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_karma"));
+    public static final SwordItem BLADE_OF_KARMA=new BladeOfKarma(ToolMaterial.DIAMOND, 10, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_KARMA_KEY));
+    public static final RegistryKey<Item> CASSHEN_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "casshen"));
+    public static final SwordItem CASSHEN=new Casshen(ToolMaterial.DIAMOND, 10, -2.4F, new Item.Settings().enchantable(10).component(ModComponents.CHARGE_COMPONENT, 0).registryKey(CASSHEN_KEY));
     public static void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
