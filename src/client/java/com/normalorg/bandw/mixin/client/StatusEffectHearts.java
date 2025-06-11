@@ -40,7 +40,7 @@ public abstract class StatusEffectHearts {
             info.cancel();
         };
     };*/
-    @Inject(method = "renderHealthBar", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;drawHeartV"))
+    @Inject(method = "renderHealthBar", at = @At("RETURN"))
     private void onRenderHealthBar(DrawContext ctx,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
         if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) && !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING) && !player.hasStatusEffect(ModEffects.CRYSTAL_INFESTATION)) {
             // Default rendering logic (do nothing special)
