@@ -40,7 +40,7 @@ public abstract class StatusEffectHearts {
             info.cancel();
         };
     };*/
-    @Inject(method = "renderHealthBar", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "renderHealthBar", at = @At("TAIL"))
     private void onRenderHealthBar(DrawContext ctx,PlayerEntity player,int x,int y,int lines,int regeneratingHeartIndex,float maxHealth,int lastHealth,int health,int absorption,boolean blinking,CallbackInfo info) {
         if (player == null || !player.hasStatusEffect(ModEffects.DARKENING) && !player.hasStatusEffect(ModEffects.HALFSHADE_POISONING) && !player.hasStatusEffect(ModEffects.CRYSTAL_INFESTATION)) {
             // Default rendering logic (do nothing special)
@@ -75,8 +75,6 @@ public abstract class StatusEffectHearts {
                 // draw the heart
                 ctx.drawTexture(RenderLayer::getGuiTextured,heartTexture,heartX,heartY,halfHeart ? 9.0F : 0.0F,0.0F,9,9,hasCrystalInfestation ? 27 : 18,9);
             };
-            // Cancel default rendering to use custom logic
-            info.cancel();
         };
     };
 };
