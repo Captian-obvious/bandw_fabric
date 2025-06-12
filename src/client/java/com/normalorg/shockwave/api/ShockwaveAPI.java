@@ -1,3 +1,5 @@
+package com.normalorg.shockwave.api;
+
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.particle.Particle;
 import org.slf4j.Logger;
