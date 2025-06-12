@@ -25,16 +25,16 @@ public class ShieldBlockEntity extends BlockEntity {
             this.size=newSize;
             this.strength=newStrength;
             this.max_strength=this.shield.getMaxStrength();
-            this.markDirty();
+            this.markChanged();
             return null;
         };
         Function<Float, Void> collapseHandler = (newSize) -> {
-            this.markDirty();
+            this.markChanged();
             return null;
         };
         Function<Boolean, Void> activeChangedHandler = (isActive) -> {
             this.active=isActive;
-            this.markDirty();
+            this.markChanged();
             return null;
         };
         this.shield.setChangeHandler(changeHandler);
@@ -45,6 +45,7 @@ public class ShieldBlockEntity extends BlockEntity {
     protected void writeNbt(NbtCompound nbt,RegistryWrapper.WrapperLookup registryLookup) {
         nbt.putFloat("size",this.shield.getSize());
         nbt.putFloat("strength",this.shield.getStrength());
+        nbt.putFloat("maxStrength",this.shield.getMaxStrength());
         nbt.putBoolean("active",this.shield.getIsActive());
         super.writeNbt(nbt,registryLookup);
     };
@@ -53,7 +54,14 @@ public class ShieldBlockEntity extends BlockEntity {
         super.readNbt(nbt, registryLookup);
         this.shield.setSize(nbt.getFloat("size"));
         this.shield.setStrength(nbt.getFloat("strength"));
+        this.shield.setMaxStrength(nbt.getFloat("maxStrength"));
         this.shield.setIsActive(nbt.getBoolean("active"));
+    };
+    public void markChanged() {
+        if (this.world != null) {
+            this.world.markDirty(this.pos); // Ensures saving
+        };
+        this.markDirty(); // Tells Minecraft data has changed
     };
     public void tick() {
         if (this.shield != null) {
