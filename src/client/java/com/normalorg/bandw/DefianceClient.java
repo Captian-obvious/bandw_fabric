@@ -14,8 +14,11 @@ public class DefianceClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         LOGGER.info("Client Initializing...");
+        registerClientModules();
+        LOGGER.info("Client Initialized (Defiance v"+VERSION+")");
+    };
+    public static void registerClientModules(){
         ModBlockEntityRenderers.registerBlockEntityRenderers();
         ModEntityRenderers.registerEntityRenderers();
-        LOGGER.info("Client Initialized (Defiance v"+VERSION+")");
     };
 };
