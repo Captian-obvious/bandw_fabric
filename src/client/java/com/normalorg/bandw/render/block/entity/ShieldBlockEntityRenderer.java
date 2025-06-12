@@ -27,12 +27,14 @@ public class ShieldBlockEntityRenderer implements BlockEntityRenderer<ShieldBloc
         matrices.push();
         BlockPos blockpos = entity.getPos();
         Vec3d pos=Vec3d.ofBottomCenter(blockpos);
-        double camX = MinecraftClient.getInstance().gameRenderer.getCamera().getPos().x;
-        double camY = MinecraftClient.getInstance().gameRenderer.getCamera().getPos().y;
-        double camZ = MinecraftClient.getInstance().gameRenderer.getCamera().getPos().z;
-        // do not render 200 blocks in the air this time please >:(
-        //matrices.translate((pos.getX()+0.5d), (pos.getY()+0.5d), (pos.getZ()+0.5d));
-        float size = MathHelper.clamp(entity.getShield().getSize(), 1.0F, 200.0F);
+        Vec3d camPos = MinecraftClient.getInstance().gameRenderer.getCamera().getPos();
+        double distance = camPos.distanceTo(pos);
+        float size = entity.getShield().getSize();
+        // Set a custom render distance (e.g., 256 blocks)
+        if (distance > (double) size * 2.0d) {
+            matrices.pop();
+            return; // Exit if shield is beyond set render distance
+        };
         matrices.scale(size, size, size);
         renderCube(matrices, vertexConsumers, light, overlay, TEXTURE, size);
         matrices.pop();
