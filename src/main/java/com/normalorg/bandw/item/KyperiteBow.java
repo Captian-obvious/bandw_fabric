@@ -40,8 +40,9 @@ public class KyperiteBow extends BowItem {
     };
     @Override
     protected void shoot(LivingEntity shooter, ProjectileEntity projectile, int index, float speed, float divergence, float yaw, LivingEntity target){
+        super.shoot(shooter, projectile, index, speed, divergence, yaw, target);
         if (shooter.getWorld() instanceof ServerWorld serverWorld) {
-            if (target != null) {
+            if (target != null && target instanceof LivingEntity) {
                 // Apply Crystal Infestation effect to the target
                 boolean success=target.addStatusEffect(new StatusEffectInstance(ModEffects.CRYSTAL_INFESTATION, 200, 1));
                 if (!success){
@@ -49,7 +50,6 @@ public class KyperiteBow extends BowItem {
                 };
             };
         };
-        super.shoot(shooter, projectile, index, speed, divergence, yaw, target);
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
