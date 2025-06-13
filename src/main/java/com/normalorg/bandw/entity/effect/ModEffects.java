@@ -13,7 +13,7 @@ public class ModEffects {
     public static final StatusEffect DARKENED_EFFECT = new DarkeningStatusEffect(StatusEffectCategory.HARMFUL, 0x111111);
     public static final StatusEffect CLEANSING_EFFECT = new CleansingStatusEffect(StatusEffectCategory.BENEFICIAL, 0x111111);
     public static final StatusEffect HALFSHADE_POISONING_EFFECT = new HalfshadePoisoningStatusEffect(StatusEffectCategory.HARMFUL,0x9f9999);
-    public static final StatusEffect CRYSTAL_INFESTATION_EFFECT = new CrystalInfestation(StatusEffectCategory.HARMFUL,0x9f9999);
+    public static final StatusEffect CRYSTAL_INFESTATION_EFFECT = new CrystalInfestation(StatusEffectCategory.HARMFUL,0x10d6f0);
     public static RegistryEntry<StatusEffect> CORRUPTION;
     public static RegistryEntry<StatusEffect> DARKENING;
     public static RegistryEntry<StatusEffect> CLEANSING;
