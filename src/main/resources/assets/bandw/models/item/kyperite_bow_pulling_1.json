@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:item/generated",
+    "parent": "minecraft:item/handheld",
     "textures": {
         "layer0": "bandw:item/kyperite_bow_pulling_1"
     }
