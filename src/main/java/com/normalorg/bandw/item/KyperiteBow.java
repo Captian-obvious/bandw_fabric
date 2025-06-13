@@ -42,7 +42,7 @@ public class KyperiteBow extends BowItem {
     protected void shoot(LivingEntity shooter, ProjectileEntity projectile, int index, float speed, float divergence, float yaw, LivingEntity target){
         if (shooter.getWorld() instanceof ServerWorld serverWorld) {
             if (target != null) {
-                // Apply Kyperite effect to the target
+                // Apply Crystal Infestation effect to the target
                 boolean success=target.addStatusEffect(new StatusEffectInstance(ModEffects.CRYSTAL_INFESTATION, 200, 1));
                 if (!success){
                     Defiance.LOGGER.info("Failed to apply effect 'bandw:crystal_infestation' to entity, ignoring and continuing");
