@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "bandw:item/kyperite_bow"
+    },
+    "overrides": [
+        { "predicate": { "pulling": 1 }, "model": "bandw:item/kyperite_bow_pulling_0" },
+        { "predicate": { "pulling": 1, "pull": 0.5 }, "model": "bandw:item/kyperite_bow_pulling_1" },
+        { "predicate": { "pulling": 1, "pull": 0.75 }, "model": "bandw:item/kyperite_bow_pulling_2" },
+        { "predicate": { "pulling": 1, "pull": 1 }, "model": "bandw:item/kyperite_bow_pulling_3" }
+    ]
+}
