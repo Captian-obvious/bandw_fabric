@@ -43,6 +43,7 @@ public class ModItems {
     public static final Item HALFSHADE_STICK=register("halfshade_stick", Item::new, new Item.Settings().maxCount(64));
     public static final Item LIGHT_STICK=register("light_stick", Item::new, new Item.Settings().maxCount(64));
     public static final Item LIGHT_ROD=register("light_rod", Item::new, new Item.Settings().maxCount(64));
+    public static final Item LIGHT_PLATE=register("light_plate", Item::new, new Item.Settings().maxCount(64));
     public static final Item LIGHT_SHARD=register("light_shard", Item::new, new Item.Settings().maxCount(64));
     public static final Item LIGHT_IRON_INGOT=register("light_iron_ingot", Item::new, new Item.Settings().maxCount(64));
     public static final Item RAW_LIGHT_ORE=register("raw_light_ore", Item::new, new Item.Settings().maxCount(64));
@@ -148,6 +149,7 @@ public class ModItems {
             ModItems.HALFSHADE_STICK,
             ModItems.LIGHT_STICK,
             ModItems.LIGHT_ROD,
+            ModItems.LIGHT_PLATE,
             ModItems.LIGHT_SHARD,
             ModItems.LIGHT_IRON_INGOT,
             ModItems.RAW_LIGHT_ORE,
@@ -162,6 +164,13 @@ public class ModItems {
         };
         Item[] tec_items={
             TecItems.TEC_DUST,
+            TecItems.TEC_GEARBOX,
+            TecItems.TEC_CHIP_BASE,
+            TecItems.TEC_COMPUTER_CHIP,
+            TecItems.TEC_COMPUTER_BASE,
+            TecItems.IRON_ROD,
+            TecItems.IRON_HOOK,
+            TecItems.IRON_BASE,
             TecItems.LASER_TURRET,
             TecItems.LASER_TURRET_HEAD,
             TecItems.TURRET_BASE,

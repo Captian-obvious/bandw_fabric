@@ -31,6 +31,13 @@ import java.util.function.Function;
 
 public class TecItems {
     public static final Item TEC_DUST=register("tec_dust",Item::new,new Item.Settings().maxCount(64));
+    public static final Item IRON_ROD=register("iron_rod",Item::new,new Item.Settings().maxCount(64));
+    public static final Item IRON_HOOK=register("iron_hook",Item::new,new Item.Settings().maxCount(64));
+    public static final Item IRON_BASE=register("iron_base",Item::new,new Item.Settings().maxCount(64));
+    public static final Item TEC_CHIP_BASE=register("tec_chip_base",Item::new,new Item.Settings().maxCount(64));
+    public static final Item TEC_COMPUTER_BOX=register("tec_computer_box",Item::new,new Item.Settings().maxCount(64));
+    public static final Item TEC_COMPUTER_CHIP=register("tec_computer_chip",Item::new,new Item.Settings().maxCount(64));
+    public static final Item TEC_GEARBOX=register("tec_gearbox",Item::new,new Item.Settings().maxCount(64));
     public static final Item TURRET_JOINTS=register("turret_joints",Item::new,new Item.Settings().maxCount(64));
     public static final Item TURRET_BASE=register("turret_base",Item::new,new Item.Settings().maxCount(64));
     public static final Item TURRET_BOX=register("turret_box",Item::new,new Item.Settings().maxCount(64));
