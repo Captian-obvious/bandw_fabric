@@ -1,5 +1,6 @@
 package com.normalorg.bandw.item.tec;
 
+// Import necessary classes
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.entity.effect.ModEffects;

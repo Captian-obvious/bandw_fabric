@@ -167,7 +167,7 @@ public class ModItems {
             TecItems.TEC_GEARBOX,
             TecItems.TEC_CHIP_BASE,
             TecItems.TEC_COMPUTER_CHIP,
-            TecItems.TEC_COMPUTER_BASE,
+            TecItems.TEC_COMPUTER_BOX,
             TecItems.IRON_ROD,
             TecItems.IRON_HOOK,
             TecItems.IRON_BASE,
