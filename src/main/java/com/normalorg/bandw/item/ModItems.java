@@ -123,6 +123,7 @@ public class ModItems {
             ModBlocks.LIGHT_BRICKS,
             ModBlocks.LIGHT_CHISELED_BRICKS,
             ModBlocks.CRACKED_LIGHT_BRICKS,
+            ModBlocks.LIGHT_IRON_BLOCK,
             ModBlocks.CORRUPTED_COBBLESTONE,
             ModBlocks.CORRUPTED_STONE,
             ModBlocks.CORRUPTED_SAND,
