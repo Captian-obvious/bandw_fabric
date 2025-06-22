@@ -59,7 +59,7 @@ public class ModItems {
     public static final Item DARK_SHARD=register("dark_shard",Item::new,new Item.Settings().maxCount(64));
     public static final Item DARK_STRING=register("dark_string", Item::new, new Item.Settings().maxCount(64));
     public static final Item DARK_BONEMEAL=register("dark_bonemeal", Item::new, new Item.Settings().maxCount(64));
-    public static final Item DARK_POUCH=register("dark_pouch", Item::new, new Item.Settings().maxCount(63));
+    public static final Item DARK_POUCH=register("dark_pouch", DarkPouch::new, new Item.Settings().maxCount(63));
     public static final Item DARK_LEATHER=register("dark_leather", Item::new, new Item.Settings().maxCount(64));
     public static final RegistryKey<Item> HALFSHADE_INGOT_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_ingot"));
     public static final Item HALFSHADE_INGOT=new HalfshadeIngot(new Item.Settings().maxCount(64).registryKey(HALFSHADE_INGOT_KEY));
