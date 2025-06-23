@@ -1,5 +1,10 @@
 {
     "exhaustion": 0.0,
     "message_id": "severing_strike",
-    "scaling": "when_caused_by_living_non_player"
+    "scaling": "when_caused_by_living_non_player",
+    "scales_with_difficulty": false,
+    "bypasses_armor": true,
+    "bypasses_invulnerability": true,
+    "bypasses_effects": true,
+    "bypasses_enchantments": true
 }

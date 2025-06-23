@@ -71,6 +71,7 @@ public class Casshen extends SwordItemWithEffect {
     @Override
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
+            DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
             target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
             BlockPos pos=target.getBlockPos();
@@ -90,7 +91,7 @@ public class Casshen extends SwordItemWithEffect {
             };
             */
             world.spawnEntity(bolt);
-            target.setHealth(0.0F);
+            target.damage(world,damageSource,target.getMaxHealth());
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
