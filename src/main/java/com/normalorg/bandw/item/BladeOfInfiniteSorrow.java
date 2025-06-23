@@ -38,12 +38,19 @@ public class BladeOfInfiniteSorrow extends SwordItemWithEffect {
         if (target!=null && attacker!=null){
             target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
-            DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
-            BlockPos pos=target.getBlockPos();
-            LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
-            bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
-            world.spawnEntity(bolt);
-            target.damage(world,damageSource,target.getMaxHealth());
+            new Thread(()->{
+                try{
+                    Thread.sleep(500);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                };
+                DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
+                BlockPos pos=target.getBlockPos();
+                LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
+                bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                world.spawnEntity(bolt);
+                target.damage(world,damageSource,target.getMaxHealth());
+            });
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };

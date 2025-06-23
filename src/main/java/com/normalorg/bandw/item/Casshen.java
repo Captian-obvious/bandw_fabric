@@ -73,25 +73,32 @@ public class Casshen extends SwordItemWithEffect {
         if (target!=null && attacker!=null){
             target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
-            DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
-            BlockPos pos=target.getBlockPos();
-            Vec3d particlePos=Vec3d.ofBottomCenter(pos);
-            LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
-            bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
-            /*int charter_color=16762880;
-            // Create dust effect with RGB (255,200,0) in floating-point format
-            DustParticleEffect charterSeverEffect=new DustParticleEffect(charter_color, 1.0F);
-            // Spawn particles in an outward expanding effect
-            for (int i = 0; i < 5;i++) {
-                world.spawnParticles(charterSeverEffect,
-                    particlePos.getX() + (Math.random() - 0.5) * i,
-                    particlePos.getY() + (Math.random() - 0.5) * i,
-                    particlePos.getZ() + (Math.random() - 0.5) * i,
-                    20, 0.5 * i, 0.5 * i, 0.5 * i, 0.05);
-            };
-            */
-            world.spawnEntity(bolt);
-            target.damage(world,damageSource,target.getMaxHealth());
+            new Thread(()->{
+                DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
+                BlockPos pos=target.getBlockPos();
+                Vec3d particlePos=Vec3d.ofBottomCenter(pos);
+                try{
+                    Thread.sleep(500);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                };
+                LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
+                bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                /*int charter_color=16762880;
+                // Create dust effect with RGB (255,200,0) in floating-point format
+                DustParticleEffect charterSeverEffect=new DustParticleEffect(charter_color, 1.0F);
+                // Spawn particles in an outward expanding effect
+                for (int i = 0; i < 5;i++) {
+                    world.spawnParticles(charterSeverEffect,
+                        particlePos.getX() + (Math.random() - 0.5) * i,
+                        particlePos.getY() + (Math.random() - 0.5) * i,
+                        particlePos.getZ() + (Math.random() - 0.5) * i,
+                        20, 0.5 * i, 0.5 * i, 0.5 * i, 0.05);
+                };
+                */
+                world.spawnEntity(bolt);
+                target.damage(world,damageSource,target.getMaxHealth());
+            });
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
