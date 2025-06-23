@@ -103,6 +103,12 @@
     "death.attack.casshen_explode.player": "%1$s was turned to dust by %2$s",
     "death.attack.casshen_beam": "%1$s was undone",
     "death.attack.casshen_beam.player": "%1$s was undone by %2$s",
+    "death.attack.severing_strike": "%1$s's Conevant thread was unspun",
+    "death.attack.severing_strike.player": "%2$s shattered %1$s's soulbind",
+    "death.attack.nonsevering_strike": "%1$s faded into silence",
+    "death.attack.nonsevering_strike.player": "%2$s consigned %1$s to the dark beyond",
     "death.attack.fractured": "%1$s's existence was fractured",
-    "death.attack.darkened": "%1$s was darkened"
+    "death.attack.fractured.player": "%1$s's existence was fractured by %2$s",
+    "death.attack.darkened": "%1$s fell into darkness",
+    "death.attack.darkened.player": "%2$s consigned %1$s's fall into darkness"
 }
