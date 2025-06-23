@@ -36,9 +36,9 @@ public class BladeOfInfiniteSorrow extends SwordItemWithEffect {
     @Override
     public void weapon_effect(ItemStack stack, LivingEntity target, LivingEntity attacker){
         if (target!=null && attacker!=null){
-            DamageSource damageSource=new DamageSource(serverworld.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
             target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
+            DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
             BlockPos pos=target.getBlockPos();
             LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
             bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));

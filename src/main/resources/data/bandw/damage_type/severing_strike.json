@@ -4,7 +4,7 @@
     "scaling": "when_caused_by_living_non_player",
     "scales_with_difficulty": false,
     "bypasses_armor": true,
-    "bypasses_invulnerability": true,
     "bypasses_effects": true,
+    "bypasses_invulnerability": true,
     "bypasses_enchantments": true
 }
