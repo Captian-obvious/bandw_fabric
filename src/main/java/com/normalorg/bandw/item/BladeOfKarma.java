@@ -50,7 +50,7 @@ public class BladeOfKarma extends SwordItemWithEffect {
                 bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
                 world.spawnEntity(bolt);
                 target.damage(world,damageSource,target.getMaxHealth());
-            });
+            }).start();
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };

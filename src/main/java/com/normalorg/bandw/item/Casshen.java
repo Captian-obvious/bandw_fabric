@@ -98,7 +98,7 @@ public class Casshen extends SwordItemWithEffect {
                 */
                 world.spawnEntity(bolt);
                 target.damage(world,damageSource,target.getMaxHealth());
-            });
+            }).start();
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
