@@ -1,5 +1,7 @@
 package com.normalorg.bandw.entity.effect;
 
+import com.normalorg.bandw.Defiance;
+import com.normalorg.bandw.entity.damage.ModDamageSources;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.LivingEntity;
@@ -22,7 +24,7 @@ public class CrystalInfestation extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
-            DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.MAGIC.getValue()).get());
+            DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.CRYSTAL_INFESTATION.getValue()).get());
             float damage = 1.0F; // You can adjust this value as needed
             entity.damage(world,damageSource,damage);
         };

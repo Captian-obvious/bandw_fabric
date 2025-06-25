@@ -110,5 +110,7 @@
     "death.attack.fractured": "%1$s's existence was fractured",
     "death.attack.fractured.player": "%1$s's existence was fractured by %2$s",
     "death.attack.darkened": "%1$s fell into darkness",
-    "death.attack.darkened.player": "%2$s consigned %1$s's fall into darkness"
+    "death.attack.darkened.player": "%2$s consigned %1$s's fall into darkness",
+    "death.attack.crystal_infestation": "%1$s heart was crystalized",
+    "death.attack.crystal_infestation.player": "%1$s heart was crystalized by %2$s"
 }

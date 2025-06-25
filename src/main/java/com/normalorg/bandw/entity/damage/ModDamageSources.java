@@ -19,6 +19,7 @@ public class ModDamageSources {
     public static final RegistryKey<DamageType> NONSEVERING_STRIKE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "nonsevering_strike"));
     public static final RegistryKey<DamageType> FRACTURED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "fractured"));
     public static final RegistryKey<DamageType> DARKENED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "darkened"));
+    public static final RegistryKey<DamageType> CRYSTAL_INFESTATION = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "crystal_infestation"));
     public static void registerDamageSources() {
         Defiance.LOGGER.info("Registering damage types for " + Defiance.MOD_ID);
     };
