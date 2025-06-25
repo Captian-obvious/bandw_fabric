@@ -23,9 +23,9 @@ public class CleansingStatusEffect extends StatusEffect {
     public boolean applyUpdateEffect(ServerWorld world,LivingEntity entity, int amplifier) {
         if (entity instanceof LivingEntity){
             if (entity.hasStatusEffect(ModEffects.CORRUPTION)){
-                StatusEffectInstance instance = new StatusEffectInstance(ModEffects.CORRUPTION,100,0);
-                StatusEffectInstance instance2 = new StatusEffectInstance(ModEffects.DARKENING,200,0);
-                StatusEffectInstance instance3 = new StatusEffectInstance(StatusEffects.NAUSEA,200,0);
+                StatusEffectInstance instance = new StatusEffectInstance(ModEffects.CORRUPTION,1,255);
+                StatusEffectInstance instance2 = new StatusEffectInstance(ModEffects.DARKENING,200,1);
+                StatusEffectInstance instance3 = new StatusEffectInstance(StatusEffects.NAUSEA,200,2);
                 boolean success=entity.addStatusEffect(instance);
                 boolean success2=entity.addStatusEffect(instance2);
                 boolean success3=entity.addStatusEffect(instance3);
