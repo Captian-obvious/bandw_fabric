@@ -36,6 +36,7 @@ public class RealityWarper extends Item {
     public RealityWarper(Settings settings){
         super(settings);
     };
+    @Override
     public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected) {
         if (!world.isClient()){
             if (entity instanceof LivingEntity && selected){
