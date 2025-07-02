@@ -146,6 +146,7 @@ public class ModItems {
             ModItems.REALITY_WARPER,
             ModItems.GUARDIAN_MARK,
             ModItems.DARK_ENDER_PEARL,
+            ModItems.PURE_DIVINITY,
             ModItems.HALFSHADE_INGOT,
             ModItems.HALFSHADE_NUGGET,
             ModItems.HALFSHADE_STICK,
