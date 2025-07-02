@@ -35,7 +35,28 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class PureDivinity extends Item {
+    int effectDelay=20; //delay in ticks before applying effect
+    int effectAcc=0;
     public PureDivinity(Settings settings) {
         super(settings);
+    };
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected){
+        if (entity instanceof LivingEntity livingEntity) {
+            effectAcc+=1;
+            if (!livingEntity.hasStatusEffect(StatusEffects.INVISIBILITY)){
+                // apply resistance to the player (they are immortal)
+                StatusEffectInstance instance = new StatusEffectInstance(StatusEffects.INVISIBILITY,100,5,false,true,true);
+                boolean success=livingEntity.addStatusEffect(instance);
+                if (!success){
+                    Defiance.LOGGER.info("Failed to apply effect 'minecraft:resistance' to entity, ignoring and continuing");
+                };
+                effectAcc=0;
+            };
+        };
+    };
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
+        tooltip.add(Text.translatable("itemTooltip.bandw.pure_divinity").formatted(Formatting.GOLD))
     };
 };
