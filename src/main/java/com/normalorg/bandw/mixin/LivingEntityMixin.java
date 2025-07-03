@@ -27,7 +27,7 @@ public class LivingEntityMixin{
                     for (ItemStack stack : attacker.getInventory().main) {
                         if (stack.getItem() instanceof PureDivinity pureDivinity) {
                             if (pureDivinity.isEnabled()) {
-                                pureDivinity.onKill(attacker, target);
+                                pureDivinity.onKill(target, attacker);
                                 break;
                             };
                         };
