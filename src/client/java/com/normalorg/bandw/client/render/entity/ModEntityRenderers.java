@@ -1,4 +1,4 @@
-package com.normalorg.bandw.render.entity;
+package com.normalorg.bandw.client.render.entity;
 
 import com.normalorg.bandw.entity.ModEntities;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;

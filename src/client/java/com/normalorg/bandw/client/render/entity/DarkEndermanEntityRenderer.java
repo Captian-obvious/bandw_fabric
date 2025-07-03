@@ -1,6 +1,6 @@
-package com.normalorg.bandw.render.entity;
+package com.normalorg.bandw.client.render.entity;
 
-import com.normalorg.bandw.DefianceClient;
+import com.normalorg.bandw.client.DefianceClient;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.EndermanEntityRenderer;
 import net.minecraft.client.render.entity.state.EndermanEntityRenderState;

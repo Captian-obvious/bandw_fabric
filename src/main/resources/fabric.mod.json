@@ -19,7 +19,7 @@
       "com.normalorg.bandw.Defiance"
     ],
     "client": [
-      "com.normalorg.bandw.DefianceClient"
+      "com.normalorg.bandw.client.DefianceClient"
     ]
   },
   "mixins": [
