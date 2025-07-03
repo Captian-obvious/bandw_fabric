@@ -23,14 +23,21 @@ public class LivingEntityMixin{
             float resultingHealth = target.getHealth() - amount;
             if (resultingHealth <= 0.0F && source.getAttacker() instanceof PlayerEntity attacker) {
                 ItemStack used = attacker.getMainHandStack();
+                ItemStack offhand = attacker.getOffHandStack();
                 if (!(used.getItem() instanceof PureDivinity)) {
                     for (ItemStack stack : attacker.getInventory().main) {
                         if (stack.getItem() instanceof PureDivinity pureDivinity) {
                             if (pureDivinity.isEnabled()) {
+                                target.setHealth(target.getMaxHealth());
                                 pureDivinity.onKill(target, attacker);
                                 break;
                             };
                         };
+                    };
+                }else if(offhand.getItem() instanceof PureDivinity pureDivinity) {
+                    if (pureDivinity.isEnabled()) {
+                        target.setHealth(target.getMaxHealth());
+                        pureDivinity.onKill(target, attacker);
                     };
                 };
             };
