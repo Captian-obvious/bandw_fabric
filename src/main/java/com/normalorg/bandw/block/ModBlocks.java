@@ -30,6 +30,8 @@ public class ModBlocks {
     public static final Block PURE_LIGHT_BRICKS=register("pure_light_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block LIGHT_CHISELED_BRICKS=register("light_chiseled_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block CRACKED_LIGHT_BRICKS=register("cracked_light_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
+    public static final Block LIGHT_TILES=register("light_tiles", Block::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
+    public static final Block CRACKED_LIGHT_TILES=register("cracked_light_tiles", Block::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
     public static final Block LIGHT_PLANKS=register("light_planks", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_IRON_BLOCK=register("light_iron_block", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(4.0F, 2.0F),true);
     public static final Block CORRUPTED_STONE=register("corrupted_stone", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
