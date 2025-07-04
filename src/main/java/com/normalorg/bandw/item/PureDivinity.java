@@ -53,7 +53,7 @@ public class PureDivinity extends Item {
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 };
-                DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
+                DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.PURE_DIVINITY_STRIKE.getValue()).get());
                 BlockPos pos=target.getBlockPos();
                 LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));

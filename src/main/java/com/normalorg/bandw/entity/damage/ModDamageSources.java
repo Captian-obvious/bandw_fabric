@@ -15,6 +15,7 @@ import net.minecraft.entity.damage.DamageType;
 public class ModDamageSources {
     public static final RegistryKey<DamageType> CASSHEN_EXPLOSION = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "casshen_explode"));
     public static final RegistryKey<DamageType> CASSHEN_BEAM = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "casshen_beam"));
+    public static final RegistryKey<DamageType> PURE_DIVINITY_STRIKE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "pure_divinity_strike"));
     public static final RegistryKey<DamageType> SEVERING_STRIKE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "severing_strike"));
     public static final RegistryKey<DamageType> NONSEVERING_STRIKE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "nonsevering_strike"));
     public static final RegistryKey<DamageType> FRACTURED = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Defiance.MOD_ID, "fractured"));
