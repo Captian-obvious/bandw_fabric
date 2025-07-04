@@ -38,6 +38,7 @@ public class ModBlocks {
     public static final Block LIGHT_TILES=register("light_tiles", Block::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
     public static final Block CRACKED_LIGHT_TILES=register("cracked_light_tiles", Block::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
     public static final Block LIGHT_TILE_SLAB=register("light_tile_slab", SlabBlock::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
+    public static final Block LIGHT_TILE_STAIRS=registerStairs("light_tile_stairs", StairsBlock::new, LIGHT_TILES.getDefaultState(), Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
     public static final Block LIGHT_PLANKS=register("light_planks", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_PLANK_SLAB=register("light_plank_slab", SlabBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_PLANK_STAIRS=registerStairs("light_plank_stairs", StairsBlock::new, LIGHT_PLANKS.getDefaultState(),Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
