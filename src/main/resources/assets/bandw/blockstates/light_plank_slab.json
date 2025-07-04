@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "bandw:block/light_plan_slab"
+        },
+        "type=double": {
+            "model": "bandw:block/light_planks"
+        },
+        "type=top": {
+            "model": "bandw:block/light_plan_slab_top"
+        }
+    }
+}
