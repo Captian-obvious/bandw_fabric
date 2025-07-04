@@ -131,6 +131,7 @@ public class ModItems {
             ModBlocks.LIGHT_BRICK_STAIRS,
             ModBlocks.LIGHT_TILES,
             ModBlocks.CRACKED_LIGHT_TILES,
+            ModBlocks.LIGHT_TILE_SLAB,
             ModBlocks.LIGHT_IRON_BLOCK,
             ModBlocks.CORRUPTED_COBBLESTONE,
             ModBlocks.CORRUPTED_STONE,
