@@ -7,7 +7,7 @@ import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.PillarBlock;
-import net.minecraft.block.FallingBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
