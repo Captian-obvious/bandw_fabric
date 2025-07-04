@@ -3,9 +3,9 @@ package com.normalorg.bandw.block;
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.entity.ShieldBlockEntity;
 import com.normalorg.bandw.util.CorruptionManager;
-import java.util.function.Function;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
@@ -20,6 +20,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.block.AbstractBlock.Settings;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class ModBlocks {
     public static final CorruptionManager corruptionManager=new CorruptionManager();
@@ -32,12 +34,12 @@ public class ModBlocks {
     public static final Block LIGHT_CHISELED_BRICKS=register("light_chiseled_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block CRACKED_LIGHT_BRICKS=register("cracked_light_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block LIGHT_BRICK_SLAB=register("light_brick_slab", SlabBlock::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
-    public static final Block LIGHT_BRICK_STAIRS=register("light_brick_stairs", StairsBlock::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
+    public static final Block LIGHT_BRICK_STAIRS=registerStairs("light_brick_stairs", StairsBlock::new,LIGHT_BRICKS.getDefaultState(), Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block LIGHT_TILES=register("light_tiles", Block::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
     public static final Block CRACKED_LIGHT_TILES=register("cracked_light_tiles", Block::new, Settings.create().sounds(BlockSoundGroup.DEEPSLATE_TILES).strength(2.0F, 3.0F),true);
     public static final Block LIGHT_PLANKS=register("light_planks", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_PLANK_SLAB=register("light_plank_slab", SlabBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
-    public static final Block LIGHT_PLANK_STAIRS=register("light_plank_stairs", StairsBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
+    public static final Block LIGHT_PLANK_STAIRS=registerStairs("light_plank_stairs", StairsBlock::new, LIGHT_PLANKS.getDefaultState(),Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_IRON_BLOCK=register("light_iron_block", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(4.0F, 2.0F),true);
     public static final Block CORRUPTED_STONE=register("corrupted_stone", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block CORRUPTED_GRAVEL=register("corrupted_gravel", CustomFallingBlock::new, Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F),true);
@@ -56,6 +58,18 @@ public class ModBlocks {
     private static Block register(String name,Function<Settings, Block> blockFactory,Settings settings,boolean shouldRegisterItem){
         RegistryKey<Block> blockKey=keyOfBlock(name);
         Block block=blockFactory.apply(settings.registryKey(blockKey));
+        // Sometimes, you may not want to register an item for the block.
+        // // Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
+        if (shouldRegisterItem){
+            RegistryKey<Item> itemKey=keyOfItem(name);
+            BlockItem blockItem=new BlockItem(block,new Item.Settings().registryKey(itemKey));
+            Registry.register(Registries.ITEM,itemKey,blockItem);
+        };
+        return Registry.register(Registries.BLOCK, blockKey, block);
+    };
+    private static Block registerStairs(String name,BiFunction<BlockState, Settings, Block> blockFactory,BlockState baseState,Settings settings,boolean shouldRegisterItem){
+        RegistryKey<Block> blockKey=keyOfBlock(name);
+        Block block=blockFactory.apply(baseState,settings.registryKey(blockKey));
         // Sometimes, you may not want to register an item for the block.
         // // Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
         if (shouldRegisterItem){
