@@ -15,6 +15,8 @@ import net.minecraft.registry.entry.RegistryEntry;
 public class ModEntities {
     public static final RegistryKey<EntityType<?>> DARK_ENDERMAN_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Defiance.MOD_ID,"dark_enderman"));
     public static final EntityType<DarkEndermanEntity> DARK_ENDERMAN=Registry.register(Registries.ENTITY_TYPE,DARK_ENDERMAN_KEY,EntityType.Builder.create(DarkEndermanEntity::new,SpawnGroup.CREATURE).dimensions(0.6f,2.9f).build(DARK_ENDERMAN_KEY));
+    public static final RegistryKey<EntityType<?>> DARK_ZOMBIE_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Defiance.MOD_ID,"dark_zombie"));
+    public static final EntityType<DarkZombieEntity> DARK_ZOMBIE=Registry.register(Registries.ENTITY_TYPE,DARK_ZOMBIE_KEY,EntityType.Builder.create(DarkZombieEntity::new,SpawnGroup.CREATURE).dimensions(0.6f,2.9f).build(DARK_ZOMBIE_KEY));
     public static final RegistryKey<EntityType<?>> WALKER_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Defiance.MOD_ID,"walker"));
     public static final EntityType<WalkerEntity> WALKER=Registry.register(Registries.ENTITY_TYPE,WALKER_KEY,EntityType.Builder.create(WalkerEntity::new,SpawnGroup.MONSTER).dimensions(0.6f,2.9f).build(WALKER_KEY));
     public static void registerEntities() {
