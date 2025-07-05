@@ -40,6 +40,7 @@ public class PureDivinity extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
         tooltip.add(Text.translatable("itemTooltip.bandw.pure_divinity").formatted(Formatting.GOLD));
+        super.appendTooltip(stack, context, tooltip, type);
     };
     public boolean isEnabled() {
         return true;

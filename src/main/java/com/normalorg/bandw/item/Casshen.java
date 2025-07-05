@@ -111,6 +111,7 @@ public class Casshen extends SwordItemWithEffect {
         }else{
             tooltip.add(Text.translatable("item.bandw.casshen.charge",charge).formatted(Formatting.GOLD));
         };
+        super.appendTooltip(stack, context, tooltip, type);
     };
     public void setCharge(ItemStack stack, int charge) {
         this.oldCharge=stack.set(ModComponents.CHARGE_COMPONENT,charge);

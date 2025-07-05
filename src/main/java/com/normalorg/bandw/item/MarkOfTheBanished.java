@@ -49,5 +49,6 @@ public class MarkOfTheBanished extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("itemTooltip.bandw.banished_mark").formatted(Formatting.RED));
+        super.appendTooltip(stack, context, tooltip, type);
     };
 };

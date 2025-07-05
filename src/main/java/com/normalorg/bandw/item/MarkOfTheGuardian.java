@@ -49,5 +49,6 @@ public class MarkOfTheGuardian extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("itemTooltip.bandw.guardian_mark").formatted(Formatting.GOLD));
+        super.appendTooltip(stack, context, tooltip, type);
     };
 };
