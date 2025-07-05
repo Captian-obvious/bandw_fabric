@@ -68,6 +68,7 @@ public class ModItems {
     public static final Item BANISHED_MARK=register("banished_mark",MarkOfTheBanished::new,new Item.Settings().maxCount(1));
     public static final Item GUARDIAN_MARK=register("guardian_mark",MarkOfTheGuardian::new,new Item.Settings().maxCount(1));
     public static final Item REALITY_WARPER=register("reality_warper",RealityWarper::new,new Item.Settings().maxCount(1));
+    public static final Item EMBERS_FLAME=register("embers_flame",EmbersFlame::new,new Item.Settings().maxCount(1));
     public static final Item KYPERITE_BOW=register("kyperite_bow",KyperiteBow::new,new Item.Settings().maxCount(1).enchantable(1));
     public static final RegistryKey<Item> DARK_ENDER_PEARL_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_ender_pearl"));
     public static final EnderPearlItem DARK_ENDER_PEARL=new DarkEnderPearl(new Item.Settings().maxCount(1).registryKey(DARK_ENDER_PEARL_KEY));
@@ -152,6 +153,7 @@ public class ModItems {
             ModItems.BLADE_OF_LIGHT,
             ModItems.BLADE_OF_DARKNESS,
             ModItems.BANISHED_MARK,
+            ModItems.EMBERS_FLAME,
             ModItems.REALITY_WARPER,
             ModItems.GUARDIAN_MARK,
             ModItems.DARK_ENDER_PEARL,
