@@ -66,6 +66,8 @@ public class EmbersFlame extends Item {
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos();
+        // Item stack
+        ItemStack stack=context.getStack();
         if (!world.isClient()) {
             if (world instanceof ServerWorld serverWorld){
                 BlockState blockState = serverWorld.getBlockState(pos);
