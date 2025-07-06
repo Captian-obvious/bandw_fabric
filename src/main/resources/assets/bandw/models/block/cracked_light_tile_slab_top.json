@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+        "bottom": "bandw:block/cracked_light_tiles",
+        "side": "bandw:block/cracked_light_tiles",
+        "top": "bandw:block/cracked_light_tiles"
+    }
+}
