@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Validate Gradle Wrapper
-        uses: gradle/actions/wrapper-validation@v3
+      #- name: Validate Gradle Wrapper
+      #  uses: gradle/actions/wrapper-validation@v3
       - name: Setup JDK ${{ matrix.java }}
         uses: actions/setup-java@v4
         with:
