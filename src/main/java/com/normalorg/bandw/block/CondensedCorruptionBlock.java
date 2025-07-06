@@ -23,6 +23,7 @@ public class CondensedCorruptionBlock extends Block {
                 LivingEntity livingEntity=(LivingEntity) entity;
                 if (!livingEntity.hasStatusEffect(ModEffects.DARKENING)){
                     StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,100,1,false,true,true);
+                    
                     boolean success=livingEntity.addStatusEffect(instance);
                     if (!success){
                         Defiance.LOGGER.info("Failed to apply effect 'bandw:darkening' to entity, ignoring and continuing");
