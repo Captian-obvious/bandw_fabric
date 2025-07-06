@@ -107,6 +107,9 @@ public class ModBlocks {
         corruptionManager.addReplacement(Blocks.SAND,CORRUPTED_SAND);
         corruptionManager.addReplacement(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);
         corruptionManager.addReplacement(Blocks.GRASS_BLOCK,CORRUPTED_GRASS_BLOCK);
+        corruptionManager.addReplacement(Blocks.OAK_LOG,DARK_LOG);
+        corruptionManager.addReplacement(Blocks.OAK_WOOD,DARK_BARK);
+        corruptionManager.addReplacement(Blocks.MOSS_BLOCK,CONDENSED_CORRUPTION);
         corruptionManager.addReplacement(LIGHT_BRICKS,DARK_BRICKS);
     };
 };
