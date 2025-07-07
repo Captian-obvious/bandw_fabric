@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 
 public class ModEntityModelLayers {
     public static final EntityModelLayer WALKER = new EntityModelLayer(Identifier.of(DefianceClient.MOD_ID, "walker"),"main");
+    
     public static void init() {
         EntityModelLayerRegistry.registerModelLayer(WALKER, WalkerEntityModel::getTexturedModelData);
     };

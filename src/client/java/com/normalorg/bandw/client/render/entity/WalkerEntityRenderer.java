@@ -12,10 +12,14 @@ import net.minecraft.util.Identifier;
 public class WalkerEntityRenderer extends MobEntityRenderer<WalkerEntity,WalkerEntityRenderState,WalkerEntityModel> {
     private static final Identifier TEXTURE = Identifier.of(DefianceClient.MOD_ID, "textures/entity/walker.png");
     public WalkerEntityRenderer(EntityRendererFactory.Context context) {
-        super(context,new WalkerEntityModel(context.getModelLoader().getModelPart(ModEntityModelLayers.WALKER)),0.6f);
+        super(context,new WalkerEntityModel(context.getPart(ModEntityModelLayers.WALKER)),0.6f);
     };
     @Override
     public Identifier getTexture(WalkerEntityRenderState state){
         return TEXTURE;
+    };
+    @Override
+    protected WalkerEntityRenderState createRenderState(WalkerEntity entity, float tickDelta) {
+        return new WalkerEntityRenderState(); // You can flesh this out later
     };
 };
