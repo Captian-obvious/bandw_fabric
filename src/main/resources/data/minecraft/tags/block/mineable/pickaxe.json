@@ -1,4 +1,4 @@
 {
-    "replace": false,
+    "replace": "false",
     "values": ["bandw:corrupted_stone","bandw:corrupted_cobblestone","bandw:light_bricks","bandw:dark_bricks","bandw:light_chisled_bricks","bandw:shield_of_light"]
 }
