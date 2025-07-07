@@ -1,7 +1,7 @@
 {
     "variants": {
         "type=bottom": {
-            "model": "bandw:block/cracked_light_bricks_slab"
+            "model": "bandw:block/cracked_light_brick_slab"
         },
         "type=double": {
             "model": "bandw:block/cracked_light_bricks"

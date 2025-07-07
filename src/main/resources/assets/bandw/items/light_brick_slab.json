@@ -1,6 +1,6 @@
 {
     "model": {
         "type":"minecraft:model",
-        "model":"bandw:block/light_plank_slab"
+        "model":"bandw:block/light_brick_slab"
     }
 }
