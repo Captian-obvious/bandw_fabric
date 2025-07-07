@@ -19,7 +19,7 @@ public class WalkerEntityRenderer extends MobEntityRenderer<WalkerEntity,WalkerE
         return TEXTURE;
     };
     @Override
-    protected WalkerEntityRenderState createRenderState(WalkerEntity entity, float tickDelta) {
+    protected WalkerEntityRenderState createRenderState() {
         return new WalkerEntityRenderState(); // You can flesh this out later
     };
 };
