@@ -65,23 +65,28 @@ public class EmbersFlame extends Item {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
-        BlockPos pos = context.getBlockPos();
-        // Item stack
-        ItemStack stack=context.getStack();
         if (!world.isClient()) {
+            BlockPos pos = context.getBlockPos();
+            // Item stack
+            ItemStack stack=context.getStack();
             if (world instanceof ServerWorld serverWorld){
                 BlockState blockState = serverWorld.getBlockState(pos);
                 // If the block is the portal block, we initiate its activation;
                 if (blockState.isOf(ModBlocks.PURE_LIGHT_BRICKS)) {
                     Defiance.LOGGER.info("Embers Flame: Activating portal at " + pos);
+                    // Summon lightning for effect
+                    LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,serverWorld);
+                    bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                    world.spawnEntity(bolt);
                     // Decrement the stack
                     if (!(context.getPlayer() instanceof ServerPlayerEntity serverPlayer && serverPlayer.isCreative())) { 
                         stack.decrement(1);
                     };
                     // For now we do nothing, when the portal is finished, it will activate it.
+                    return ActionResult.SUCCESS;
                 };
             };
         };
-        return ActionResult.SUCCESS;
+        return ActionResult.PASS;
     };
 };
