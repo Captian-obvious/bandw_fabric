@@ -4,7 +4,7 @@ import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.sound.ModSounds;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import com.normalorg.bandw.world.dimension.ModDimensions;
+import com.normalorg.bandw.world.ModDimensions;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.TeleportTarget;

@@ -1,4 +1,4 @@
-package com.normalorg.bandw.world.dimension;
+package com.normalorg.bandw.world;
 
 // Imports
 import com.normalorg.bandw.Defiance;

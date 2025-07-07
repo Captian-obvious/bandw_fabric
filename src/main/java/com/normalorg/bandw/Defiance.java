@@ -8,7 +8,8 @@ import com.normalorg.bandw.sound.ModSounds;
 import com.normalorg.bandw.block.entity.ModBlockEntities;
 import com.normalorg.bandw.component.ModComponents;
 import com.normalorg.bandw.entity.damage.ModDamageSources;
-import com.normalorg.bandw.world.dimension.ModDimensions;
+import com.normalorg.bandw.world.ModDimensions;
+import com.normalorg.bandw.world.dimension.ModDimensionTypes;
 import com.normalorg.bandw.item.ModItems;
 import com.normalorg.bandw.potion.ModPotions;
 import com.normalorg.bandw.entity.ModEntityAttributes;
@@ -53,6 +54,7 @@ public class Defiance implements ModInitializer {
         ModDamageSources.registerDamageSources();
         // and so it begins!
         ModDimensions.registerDimensions();
+        ModDimensionTypes.registerDimensionTypes();
         // (dimensions registered)
         ModItems.registerItems();
         ModPotions.registerPotions();
