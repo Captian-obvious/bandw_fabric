@@ -10,5 +10,6 @@ public class ModEntityAttributes {
         Defiance.LOGGER.info("Registering Entity Attributes for " + Defiance.MOD_ID);
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_ENDERMAN,DarkEndermanEntity.createEndermanAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_ZOMBIE,DarkZombieEntity.createZombieAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.WALKER,WalkerEntity.createWalkerAttributes());
     };
 };

@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.fabricmc.api.ClientModInitializer;
 import com.normalorg.bandw.client.render.entity.ModEntityRenderers;
+import com.normalorg.bandw.client.render.entity.model.ModEntityModelLayers;
 import com.normalorg.bandw.client.render.block.entity.ModBlockEntityRenderers;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 
@@ -19,6 +20,7 @@ public class DefianceClient implements ClientModInitializer {
     };
     public static void registerClientModules(){
         ModBlockEntityRenderers.registerBlockEntityRenderers();
+        ModEntityModelLayers.registerEntityModelLayers();
         ModEntityRenderers.registerEntityRenderers();
     };
 };
