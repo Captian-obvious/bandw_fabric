@@ -16,10 +16,11 @@ import net.minecraft.client.model.Dilation;
 public class WalkerEntityModel extends EntityModel<WalkerEntityRenderState>{
     private ModelPart walker;
 	private ModelPart head;
-	protected WalkerEntityModel(ModelPart root) {
+	public WalkerEntityModel(ModelPart root) {
+        super(root);
         // No need to store all of the parts in the model class, just the ones SinglePartEntityModel expects
 		this.walker = root.getChild("walker");
-		this.head = this.back.getChild("head");
+		this.head = this.walker.getChild("back").getChild("head");
 	};
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
@@ -77,9 +78,5 @@ public class WalkerEntityModel extends EntityModel<WalkerEntityRenderState>{
 	};
 	@Override
 	public void setAngles(WalkerEntityRenderState state) {
-	};
-	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay) {
-		walker.render(matrices, vertexConsumer, light, overlay);
 	};
 };
