@@ -13,7 +13,7 @@ public class WalkerEntity extends PathAwareEntity {
         super(entityType, world);
     };
     public static DefaultAttributeContainer.Builder createWalkerAttributes() {
-        return MobEntity.createMobAttributes()
+        return PathAwareEntity.createMobAttributes()
             .add(EntityAttributes.MAX_HEALTH, 80.0d)
             .add(EntityAttributes.MOVEMENT_SPEED, 0.25d)
             .add(EntityAttributes.ATTACK_DAMAGE, 6.0d);
