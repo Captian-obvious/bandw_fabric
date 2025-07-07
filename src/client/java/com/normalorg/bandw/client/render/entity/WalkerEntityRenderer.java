@@ -1,7 +1,7 @@
 package com.normalorg.bandw.client.render.entity;
 
 import com.normalorg.bandw.client.DefianceClient;
-import com.normalorg.bandw.client.model.ModModelLayers;
+import com.normalorg.bandw.client.entity.model.ModModelLayers;
 import com.normalorg.bandw.client.render.entity.state.WalkerEntityRenderState;
 import com.normalorg.bandw.client.render.entity.model.WalkerEntityModel;
 import com.normalorg.bandw.entity.WalkerEntity;
