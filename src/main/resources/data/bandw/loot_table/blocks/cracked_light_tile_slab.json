@@ -2,12 +2,40 @@
   "type": "minecraft:block",
   "pools": [
     {
-      
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bandw:cracked_light_tile_slab"
+          "name": "bandw:cracked_light_tile_slab",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2,
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "type": "double"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "conditions": [
+                {
+                  "condition": "minecraft:invert",
+                  "term": {
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "type": "double"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ],
       "conditions": [
