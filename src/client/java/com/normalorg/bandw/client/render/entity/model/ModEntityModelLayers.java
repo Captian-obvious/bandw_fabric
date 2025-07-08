@@ -9,7 +9,6 @@ public class ModEntityModelLayers {
     public static final EntityModelLayer WALKER = new EntityModelLayer(Identifier.of(DefianceClient.MOD_ID, "walker"),"main");
     public static final EntityModelLayer LASER_TURRET = new EntityModelLayer(Identifier.of(DefianceClient.MOD_ID, "laser_turret"),"main");
     public static void registerEntityModelLayers() {
-        DefianceClient.LOGGER.info("Registering Entity Model Layers for " + DefianceClient.MOD_ID);
         EntityModelLayerRegistry.registerModelLayer(WALKER, WalkerEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(LASER_TURRET, LaserTurretEntityModel::getTexturedModelData);
     };

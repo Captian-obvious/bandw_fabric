@@ -25,3 +25,4 @@ public class ModEntities {
         Defiance.LOGGER.info("Registering Entities for " + Defiance.MOD_ID);
     };
 };
+
