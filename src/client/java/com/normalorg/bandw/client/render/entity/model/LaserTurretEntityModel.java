@@ -21,13 +21,13 @@ public class LaserTurretEntityModel extends EntityModel<LaserTurretEntityRenderS
 	private ModelPart gun;
 	private ModelPart barrel;
 	public LaserTurretEntityModel(ModelPart root) {
+		super(root);
 		this.base = root.getChild("base");
 		this.joint = this.base.getChild("joint");
 		this.upperjoint = this.joint.getChild("upperjoint");
 		this.conechen = this.upperjoint.getChild("conechen");
 		this.gun = this.conechen.getChild("gun");
 		this.barrel = this.gun.getChild("barrel");
-		super(root);
 	};
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
