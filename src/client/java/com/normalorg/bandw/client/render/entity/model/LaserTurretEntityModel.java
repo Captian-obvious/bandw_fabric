@@ -13,6 +13,7 @@ import net.minecraft.client.model.ModelData;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.Dilation;
 
+
 public class LaserTurretEntityModel extends EntityModel<LaserTurretEntityRenderState> {
     private ModelPart base;
 	private ModelPart joint;

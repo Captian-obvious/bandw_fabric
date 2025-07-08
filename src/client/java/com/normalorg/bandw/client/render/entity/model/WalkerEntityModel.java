@@ -13,7 +13,6 @@ import net.minecraft.client.model.ModelData;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.Dilation;
 
-
 public class WalkerEntityModel extends EntityModel<WalkerEntityRenderState>{
     private ModelPart walker;
 	private ModelPart head;
