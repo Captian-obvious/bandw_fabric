@@ -13,7 +13,6 @@ import net.minecraft.client.model.ModelData;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.Dilation;
 
-
 public class LaserTurretEntityModel extends EntityModel<LaserTurretEntityRenderState> {
     private ModelPart base;
 	private ModelPart joint;
@@ -28,7 +27,8 @@ public class LaserTurretEntityModel extends EntityModel<LaserTurretEntityRenderS
 		this.conechen = this.upperjoint.getChild("conechen");
 		this.gun = this.conechen.getChild("gun");
 		this.barrel = this.gun.getChild("barrel");
-	}
+		super(root);
+	};
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
