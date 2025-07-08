@@ -11,5 +11,6 @@ public class ModEntityAttributes {
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_ENDERMAN,DarkEndermanEntity.createEndermanAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_ZOMBIE,DarkZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.WALKER,WalkerEntity.createWalkerAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.WALKER,LaserTurretEntity.createLaserTurretAttributes());
     };
 };
