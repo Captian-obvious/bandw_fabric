@@ -20,6 +20,7 @@ public class LaserTurretEntityModel extends EntityModel<LaserTurretEntityRenderS
 	private ModelPart conechen;
 	private ModelPart gun;
 	private ModelPart barrel;
+	
 	public LaserTurretEntityModel(ModelPart root) {
 		super(root);
 		this.base = root.getChild("base");
