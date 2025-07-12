@@ -444,7 +444,7 @@
                               "if_true": {
                                 "type": "minecraft:biome",
                                 "biome_is": [
-                                  "minecraft:windswept_hills"
+                                  "bandw:corrupted_mountains"
                                 ]
                               },
                               "then_run": {
@@ -531,7 +531,7 @@
                               "if_true": {
                                 "type": "minecraft:biome",
                                 "biome_is": [
-                                  "minecraft:windswept_hills"
+                                  "bandw:corrupted_mountains"
                                 ]
                               },
                               "then_run": {
