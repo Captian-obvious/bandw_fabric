@@ -23,7 +23,7 @@ public class CorruptionManager {
         // Spawn tendrils outward
         int tendrilCount = 3 + random.nextInt(3); // 3 to 5 tendrils
         for (int i = 0; i < tendrilCount; i++) {
-            spawnTendril(world, center, range + 2 + random.nextInt(3));
+            spawnTendril(world, center, range + 5 + random.nextInt(4));
         };
     };
     private static void spawnTendril(ServerWorld world, BlockPos origin, int length) {
