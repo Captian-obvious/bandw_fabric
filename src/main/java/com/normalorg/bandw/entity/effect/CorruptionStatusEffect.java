@@ -2,7 +2,7 @@ package com.normalorg.bandw.entity.effect;
 
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.ModBlocks;
-import com.normalorg.bandw.util.CorruptionManager;
+import com.normalorg.bandw.logic.corruption.CorruptionManager;
 import com.normalorg.bandw.sound.ModSounds;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.entity.effect.StatusEffect;
@@ -30,17 +30,8 @@ public class CorruptionStatusEffect extends StatusEffect {
         if (entity instanceof LivingEntity){
             LivingEntity livingEntity=(LivingEntity) entity;
             BlockPos entityPos=livingEntity.getBlockPos();
-            Vec3d sound_pos=Vec3d.ofBottomCenter(entityPos);
-            world.playSound(null,sound_pos.getX(),sound_pos.getY(),sound_pos.getZ(),ModSounds.CORRUPT,SoundCategory.PLAYERS,1.0F,1.0F);
             int range=2+amplifier;
-            CorruptionManager corruptionManager=ModBlocks.corruptionManager;
-            for (BlockPos pos : BlockPos.iterate(entityPos.add(-range,-range,-range),entityPos.add(range,range,range))){
-                BlockState currentState=world.getBlockState(pos);
-                Block corruptBlock=corruptionManager.getReplacement(currentState.getBlock());
-                if (corruptBlock!=currentState.getBlock()){
-                    world.setBlockState(pos,corruptBlock.getDefaultState());
-                };
-            };
+            CorruptionManager.corruptArea(world,entityPos,range);
         };
         return super.applyUpdateEffect(world,entity, amplifier);
     };

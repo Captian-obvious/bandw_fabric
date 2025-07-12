@@ -1,16 +1,12 @@
-package com.normalorg.bandw.util;
+package com.normalorg.bandw.registry;
 
 import net.minecraft.block.Block;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CorruptionManager {
-    private static Map<Block, Block> replacementMap;
-    
-    public CorruptionManager() {
-        this.replacementMap = new HashMap<>();
-    };
-    public static void addReplacement(Block original, Block corrupted) {
+public class CorruptionRegistry {
+    private static Map<Block, Block> replacementMap=new HashMap<>();
+    public static void register(Block original, Block corrupted) {
         replacementMap.put(original,corrupted);
     };
     public static Block getReplacement(Block original) {

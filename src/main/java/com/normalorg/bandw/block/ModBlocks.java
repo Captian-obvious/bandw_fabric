@@ -2,7 +2,7 @@ package com.normalorg.bandw.block;
 
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.entity.ShieldBlockEntity;
-import com.normalorg.bandw.util.CorruptionManager;
+import com.normalorg.bandw.registry.CorruptionRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -24,7 +24,6 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class ModBlocks {
-    public static final CorruptionManager corruptionManager=new CorruptionManager();
     public static final Block DARK_BRICKS=register("dark_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block DARK_LOG=register("dark_log", PillarBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block DEAD_DARK_LOG=register("dead_dark_log", PillarBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
@@ -104,16 +103,16 @@ public class ModBlocks {
         Defiance.LOGGER.info("Registering blocks for " + Defiance.MOD_ID);
     };
     public static void registerCorruptableBlocks(){
-        Defiance.LOGGER.info("Setting up CorruptionManager...");
-        corruptionManager.addReplacement(Blocks.DIRT,CORRUPTED_DIRT);
-        corruptionManager.addReplacement(Blocks.STONE,CORRUPTED_STONE);
-        corruptionManager.addReplacement(Blocks.GRAVEL,CORRUPTED_GRAVEL);
-        corruptionManager.addReplacement(Blocks.SAND,CORRUPTED_SAND);
-        corruptionManager.addReplacement(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);
-        corruptionManager.addReplacement(Blocks.GRASS_BLOCK,CORRUPTED_GRASS_BLOCK);
-        corruptionManager.addReplacement(Blocks.OAK_LOG,DARK_LOG);
-        corruptionManager.addReplacement(Blocks.OAK_WOOD,DARK_BARK);
-        corruptionManager.addReplacement(Blocks.MOSS_BLOCK,CONDENSED_CORRUPTION);
-        corruptionManager.addReplacement(LIGHT_BRICKS,DARK_BRICKS);
+        Defiance.LOGGER.info("Setting up CorruptionRegistry...");
+        CorruptionRegistry.register(Blocks.DIRT,CORRUPTED_DIRT);
+        CorruptionRegistry.register(Blocks.STONE,CORRUPTED_STONE);
+        CorruptionRegistry.register(Blocks.GRAVEL,CORRUPTED_GRAVEL);
+        CorruptionRegistry.register(Blocks.SAND,CORRUPTED_SAND);
+        CorruptionRegistry.register(Blocks.COBBLESTONE,CORRUPTED_COBBLESTONE);
+        CorruptionRegistry.register(Blocks.GRASS_BLOCK,CORRUPTED_GRASS_BLOCK);
+        CorruptionRegistry.register(Blocks.OAK_LOG,DARK_LOG);
+        CorruptionRegistry.register(Blocks.OAK_WOOD,DARK_BARK);
+        CorruptionRegistry.register(Blocks.MOSS_BLOCK,CONDENSED_CORRUPTION);
+        CorruptionRegistry.register(LIGHT_BRICKS,DARK_BRICKS);
     };
 };
