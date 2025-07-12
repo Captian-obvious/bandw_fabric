@@ -2,6 +2,7 @@ package com.normalorg.bandw.entity.effect;
 
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.ModBlocks;
+import com.normalorg.bandw.world.ModDimensions;
 import com.normalorg.bandw.logic.corruption.CorruptionManager;
 import com.normalorg.bandw.sound.ModSounds;
 import net.minecraft.sound.SoundCategory;
@@ -31,7 +32,9 @@ public class CorruptionStatusEffect extends StatusEffect {
             LivingEntity livingEntity=(LivingEntity) entity;
             BlockPos entityPos=livingEntity.getBlockPos();
             int range=2+amplifier;
-            CorruptionManager.corruptArea(world,entityPos,range);
+            if (world.getRegistryKey()!=ModDimensions.THE_VOID){
+                CorruptionManager.corruptArea(world,entityPos,range);
+            };
         };
         return super.applyUpdateEffect(world,entity, amplifier);
     };
