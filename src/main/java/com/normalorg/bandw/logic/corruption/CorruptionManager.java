@@ -34,7 +34,7 @@ public class CorruptionManager {
         BlockPos pos = origin;
         for (int i = 0; i < length; i++) {
             pos = pos.add(dx, dy, dz);
-            if (random.nextFloat() < 0.9f) corruptBlock(world, pos);
+            corruptBlock(world, pos);
         };
     };
     private static void corruptBlock(ServerWorld world, BlockPos pos) {
