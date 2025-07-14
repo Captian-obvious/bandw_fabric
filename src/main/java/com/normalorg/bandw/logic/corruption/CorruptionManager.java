@@ -28,11 +28,16 @@ public class CorruptionManager {
     };
     private static void spawnTendril(ServerWorld world, BlockPos origin, int length) {
         BlockPos pos = origin;
+        int dx = random.nextInt(3) - 1;
+        int dy = random.nextInt(2); // Prefer horizontal spread
+        int dz = random.nextInt(3) - 1;
+        if (dx == 0 && dz == 0) dx = 1; // Avoid null direction
+        int[] directions = {-1, 0, 1};
         for (int i = 0; i < length; i++) {
-            int dx = random.nextInt(3) - 1;
-            int dy = random.nextInt(2); // Prefer horizontal spread
-            int dz = random.nextInt(3) - 1;
-            if (dx == 0 && dz == 0) dx = 1; // Avoid null direction
+            dx = directions[random.nextInt(3)];
+            dz = directions[random.nextInt(3)];
+            if (dx == 0 && dz == 0) dx = 1;
+            dy = random.nextInt(4) == 0 ? 1 : 0; // Rare vertical step
             pos = pos.add(dx, dy, dz);
             corruptBlock(world, pos);
         };
