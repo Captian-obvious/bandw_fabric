@@ -59,7 +59,7 @@
             ]
           }
         },
-		{
+		    {
           "biome": "bandw:corrupted_forest",
           "parameters": {
             "continentalness": [
@@ -83,6 +83,33 @@
             "weirdness": [
               -0.9333,
               -0.7666
+            ]
+          }
+        },
+        {
+          "biome": "bandw:spider_fields",
+          "parameters": {
+            "continentalness": [
+              -0.25,
+              0.05
+            ],
+            "depth": -0.1,
+            "erosion": [
+              -0.75,
+              -0.2
+            ],
+            "humidity": [
+              -0.6,
+              0.2
+            ],
+            "offset": 0.05,
+            "temperature": [
+              -0.6,
+              0.1
+            ],
+            "weirdness": [
+              -1.0,
+              -0.4
             ]
           }
         }
