@@ -7,6 +7,7 @@
         "north": "bandw:block/shield_of_light_side",
         "south": "bandw:block/shield_of_light_side",
         "west": "bandw:block/shield_of_light_side",
-        "east": "bandw:block/shield_of_light_side"
+        "east": "bandw:block/shield_of_light_side",
+        "particle": "bandw:block/shield_of_light_side"
     }
 }

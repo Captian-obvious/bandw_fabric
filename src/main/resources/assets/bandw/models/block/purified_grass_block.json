@@ -1,0 +1,13 @@
+{
+    "credit": "Made with Blockbench",
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "down": "bandw:block/purified_grass_block_bottom",
+        "up": "bandw:block/purified_grass_block_top",
+        "north": "bandw:block/purified_grass_block_side",
+        "south": "bandw:block/purified_grass_block_side",
+        "west": "bandw:block/purified_grass_block_side",
+        "east": "bandw:block/purified_grass_block_side",
+        "particle": "bandw:block/purified_grass_block_top"
+    }
+}
