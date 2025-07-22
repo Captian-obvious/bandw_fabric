@@ -46,6 +46,12 @@ public class ModBlocks {
     public static final Block LIGHT_PLANK_SLAB=register("light_plank_slab", SlabBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_PLANK_STAIRS=registerStairs("light_plank_stairs", StairsBlock::new, LIGHT_PLANKS.getDefaultState(),Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block LIGHT_IRON_BLOCK=register("light_iron_block", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(4.0F, 2.0F),true);
+    public static final Block PURIFIED_STONE=register("purified_stone", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
+    public static final Block PURIFIED_GRAVEL=register("purified_gravel", CustomFallingBlock::new, Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F),true);
+    public static final Block PURIFED_SAND=register("purified_sand", CustomFallingBlock::new, Settings.create().sounds(BlockSoundGroup.SAND).strength(2.0F, 1.0F),true);
+    public static final Block PURIFIED_COBBLESTONE=register("purified_cobblestone", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
+    public static final Block PURIFIED_DIRT=register("purified_dirt", Block::new, Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F),true);
+    public static final Block PURIFIED_GRASS_BLOCK=register("purified_grass_block", PurifiedGrassBlock::new, Settings.create().sounds(BlockSoundGroup.GRASS).strength(2.0F, 1.0F),true);
     public static final Block CORRUPTED_STONE=register("corrupted_stone", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block CORRUPTED_GRAVEL=register("corrupted_gravel", CustomFallingBlock::new, Settings.create().sounds(BlockSoundGroup.GRAVEL).strength(2.0F, 1.0F),true);
     public static final Block CORRUPTED_SAND=register("corrupted_sand", CustomFallingBlock::new, Settings.create().sounds(BlockSoundGroup.SAND).strength(2.0F, 1.0F),true);
