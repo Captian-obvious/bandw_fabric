@@ -1,6 +1,6 @@
 {
     "model": {
         "type":"minecraft:model",
-        "model":"bandw:block/purified_stone"
+        "model":"bandw:block/purified_dirt"
     }
 }
