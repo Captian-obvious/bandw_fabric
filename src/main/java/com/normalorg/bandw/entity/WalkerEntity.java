@@ -26,7 +26,7 @@ public class WalkerEntity extends PathAwareEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0, true)); // Attack targets
-        this.goalSelector.add(2, new ActiveTargetGoal<>(this,LivingEntity.class,10.0F,true,true)); // Follow targets
+        this.goalSelector.add(2, new ActiveTargetGoal<LivingEntity>(this,LivingEntity.class,10.0F,true,true)); // Follow targets
         this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0)); // Wander behavior
         this.goalSelector.add(4, new LookAroundGoal(this)); // Optional: look around randomly
     };
