@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.mob.HostileEntity;
