@@ -55,6 +55,13 @@ public class ModItems {
             .food(new FoodComponent.Builder().nutrition(2).saturationModifier(2.0f).build())
             .registryKey(BURNT_FLESH_KEY)
     );
+    public static final RegistryKey<Item> WORM_MEAT_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "worm_meat"));
+    public static final Item WORM_MEAT=new Item(
+        new Item.Settings()
+            .maxCount(64)
+            .food(new FoodComponent.Builder().nutrition(5).saturationModifier(10.0f).build())
+            .registryKey(WORM_MEAT_KEY)
+    );
     public static final Item DARK_BONE=register("dark_bone", Item::new, new Item.Settings().maxCount(64));
     public static final Item DARK_SPIDER_EYE=register("dark_spider_eye", Item::new, new Item.Settings().maxCount(63));
     public static final Item DARK_SHARD=register("dark_shard",Item::new,new Item.Settings().maxCount(64));
@@ -112,6 +119,7 @@ public class ModItems {
         register(BLADE_OF_DARKNESS,BLADE_OF_DARKNESS_KEY);
         register(HALFSHADE_BLADE,HALFSHADE_BLADE_KEY);
         register(BURNT_FLESH,BURNT_FLESH_KEY);
+        register(WORM_MEAT,WORM_MEAT_KEY);
         register(HALFSHADE_INGOT,HALFSHADE_INGOT_KEY);
         register(DARK_ENDER_PEARL,DARK_ENDER_PEARL_KEY);
         TecItems.registerTecItems();
@@ -178,6 +186,7 @@ public class ModItems {
             ModItems.LIGHT_IRON_INGOT,
             ModItems.RAW_LIGHT_ORE,
             ModItems.BURNT_FLESH,
+            ModItems.WORM_MEAT,
             ModItems.DARK_BONE,
             ModItems.DARK_BONEMEAL,
             ModItems.DARK_POUCH,
