@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "bandw:light_sword",
+                    "name": "bandw:blade_of_light",
                     "weight": 20,
                     "functions": [
                         {
