@@ -48,19 +48,13 @@ public class ModItems {
     public static final Item LIGHT_SHARD=register("light_shard", Item::new, new Item.Settings().maxCount(64));
     public static final Item LIGHT_IRON_INGOT=register("light_iron_ingot", Item::new, new Item.Settings().maxCount(64));
     public static final Item RAW_LIGHT_ORE=register("raw_light_ore", Item::new, new Item.Settings().maxCount(64));
-    public static final RegistryKey<Item> BURNT_FLESH_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_rotten_flesh"));
-    public static final Item BURNT_FLESH=new Item(
-        new Item.Settings()
-            .maxCount(64)
-            .food(new FoodComponent.Builder().nutrition(2).saturationModifier(2.0f).build())
-            .registryKey(BURNT_FLESH_KEY)
+    public static final Item BURNT_FLESH=register("dark_rotten_flesh",Item::new,new Item.Settings()
+        .maxCount(64)
+        .food(new FoodComponent.Builder().nutrition(2).saturationModifier(2.0f).build())
     );
-    public static final RegistryKey<Item> WORM_MEAT_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "worm_meat"));
-    public static final Item WORM_MEAT=new Item(
-        new Item.Settings()
-            .maxCount(64)
-            .food(new FoodComponent.Builder().nutrition(5).saturationModifier(10.0f).build())
-            .registryKey(WORM_MEAT_KEY)
+    public static final Item WORM_MEAT=register("worm_meat",Item::new,new Item.Settings()
+        .maxCount(64)
+        .food(new FoodComponent.Builder().nutrition(5).saturationModifier(10.0f).build())
     );
     public static final Item DARK_BONE=register("dark_bone", Item::new, new Item.Settings().maxCount(64));
     public static final Item DARK_SPIDER_EYE=register("dark_spider_eye", Item::new, new Item.Settings().maxCount(63));
@@ -116,8 +110,6 @@ public class ModItems {
         register(BLADE_OF_LIGHT,BLADE_OF_LIGHT_KEY);
         register(BLADE_OF_DARKNESS,BLADE_OF_DARKNESS_KEY);
         register(HALFSHADE_BLADE,HALFSHADE_BLADE_KEY);
-        register(BURNT_FLESH,BURNT_FLESH_KEY);
-        register(WORM_MEAT,WORM_MEAT_KEY);
         TecItems.registerTecItems();
         Defiance.LOGGER.info("Registering Item Group Contents for " + Defiance.MOD_ID);
         Block[] blocks={
