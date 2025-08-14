@@ -17,15 +17,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin{
+    @Unique
+    private boolean hasLesserDivinityFired=false;
     @Inject(method = "damage", at = @At("HEAD"))
     private void onDamage(ServerWorld world,DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if ((Object)this instanceof LivingEntity target && !target.getWorld().isClient) {
             float resultingHealth = target.getHealth() - amount;
-            if (resultingHealth <= 0.0F && source.getAttacker() instanceof PlayerEntity attacker) {
+            if (resultingHealth <= 0.0F && source.getAttacker() instanceof PlayerEntity attacker && !hasLesserDivinityFired) {
                 ItemStack used = attacker.getMainHandStack();
                 ItemStack offhand = attacker.getOffHandStack();
                 if(offhand.getItem() instanceof PureDivinity pureDivinity) {
                     if (pureDivinity.isEnabled()) {
+                        hasLesserDivinityFired=true;
                         target.setHealth(target.getMaxHealth());
                         pureDivinity.onKill(target, attacker);
                     };
@@ -33,12 +36,17 @@ public class LivingEntityMixin{
                     for (ItemStack stack : attacker.getInventory().main) {
                         if (stack.getItem() instanceof PureDivinity pureDivinity) {
                             if (pureDivinity.isEnabled()) {
+                                hasLesserDivinityFired=true;
                                 target.setHealth(target.getMaxHealth());
                                 pureDivinity.onKill(target, attacker);
                                 break;
                             };
                         };
                     };
+                };
+                if (hasLesserDivinityFired){
+                    hasLesserDivinityFired=false;
+                    cir.cancel();
                 };
             };
         };
