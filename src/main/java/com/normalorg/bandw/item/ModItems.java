@@ -76,8 +76,7 @@ public class ModItems {
     public static final Item REALITY_WARPER=register("reality_warper",RealityWarper::new,new Item.Settings().maxCount(1));
     public static final Item EMBERS_FLAME=register("embers_flame",EmbersFlame::new,new Item.Settings().maxCount(1));
     public static final Item KYPERITE_BOW=register("kyperite_bow",KyperiteBow::new,new Item.Settings().maxCount(1).enchantable(1));
-    public static final RegistryKey<Item> DARK_ENDER_PEARL_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "dark_ender_pearl"));
-    public static final EnderPearlItem DARK_ENDER_PEARL=new DarkEnderPearl(new Item.Settings().maxCount(1).registryKey(DARK_ENDER_PEARL_KEY));
+    public static final Item DARK_ENDER_PEARL=register("dark_ender_pearl",DarkEnderPearl::new,new Item.Settings().maxCount(1));
     public static final RegistryKey<Item> BLADE_OF_INFINITE_SORROW_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_infinite_sorrow"));
     public static final SwordItem BLADE_OF_INFINITE_SORROW=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND, 15, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_INFINITE_SORROW_KEY));
     public static final RegistryKey<Item> HALFSHADE_BLADE_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_blade"));
@@ -119,7 +118,6 @@ public class ModItems {
         register(HALFSHADE_BLADE,HALFSHADE_BLADE_KEY);
         register(BURNT_FLESH,BURNT_FLESH_KEY);
         register(WORM_MEAT,WORM_MEAT_KEY);
-        register(DARK_ENDER_PEARL,DARK_ENDER_PEARL_KEY);
         TecItems.registerTecItems();
         Defiance.LOGGER.info("Registering Item Group Contents for " + Defiance.MOD_ID);
         Block[] blocks={
