@@ -56,6 +56,10 @@ public class ModItems {
         .maxCount(64)
         .food(new FoodComponent.Builder().nutrition(5).saturationModifier(10.0f).build())
     );
+    public static final Item COOKED_WORM_MEAT=register("cooked_worm_meat",Item::new,new Item.Settings()
+        .maxCount(64)
+        .food(new FoodComponent.Builder().nutrition(8).saturationModifier(15.0f).build())
+    );
     public static final Item DARK_BONE=register("dark_bone", Item::new, new Item.Settings().maxCount(64));
     public static final Item DARK_SPIDER_EYE=register("dark_spider_eye", Item::new, new Item.Settings().maxCount(63));
     public static final Item DARK_SHARD=register("dark_shard",Item::new,new Item.Settings().maxCount(64));
@@ -175,6 +179,7 @@ public class ModItems {
             ModItems.RAW_LIGHT_ORE,
             ModItems.BURNT_FLESH,
             ModItems.WORM_MEAT,
+            ModItems.COOKED_WORM_MEAT,
             ModItems.DARK_BONE,
             ModItems.DARK_BONEMEAL,
             ModItems.DARK_POUCH,
