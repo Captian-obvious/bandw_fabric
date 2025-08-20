@@ -22,7 +22,8 @@ public class WormMeat extends Item {
         super(settings);
     };
     @Override
-    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipType context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
         tooltip.add(Text.translatable("itemTooltip.bandw.worm_meat").formatted(Formatting.GRAY));
+        super.appendTooltip(stack, context, tooltip, type);
     };
 };
