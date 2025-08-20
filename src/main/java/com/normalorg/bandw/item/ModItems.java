@@ -52,7 +52,7 @@ public class ModItems {
         .maxCount(64)
         .food(new FoodComponent.Builder().nutrition(2).saturationModifier(2.0f).build())
     );
-    public static final Item WORM_MEAT=register("worm_meat",Item::new,new Item.Settings()
+    public static final Item WORM_MEAT=register("worm_meat",WormMeat::new,new Item.Settings()
         .maxCount(64)
         .food(new FoodComponent.Builder().nutrition(5).saturationModifier(10.0f).build())
     );
