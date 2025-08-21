@@ -13,6 +13,7 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -25,12 +26,30 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.text.Text;
 import java.util.List;
 
 public class LightRepulsor extends BowItem {
+    private boolean isActive = false; // is the user "pulling" the repulsor
+    private int activeTime = 0; // how long the user has been "pulling" the repulsor
+    private final int maxActiveTime = 20; // max time
     public LightRepulsor(Settings settings) {
         super(settings);
+    };
+    @Override
+    public ActionResult use(World world, PlayerEntity user, Hand hand){
+        if (!world.isClient){
+            this.isActive=true;
+        };
+        return super.use(world, user, hand); // preserve bow functionality
+    };
+    @Override
+    public boolean onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks){
+        if (!world.isClient && user instanceof ServerPlayerEntity){
+            this.isActive=false;
+        };
+        return super.onStoppedUsing(stack, world, user, remainingUseTicks);
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
