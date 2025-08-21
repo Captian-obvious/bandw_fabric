@@ -48,6 +48,7 @@ public class PureDivinity extends Item {
     public void onKill(LivingEntity target, LivingEntity attacker) {
         if (attacker.getWorld() instanceof ServerWorld world) {
             target.setHealth(target.getMaxHealth());
+            // Temporary thread for delay, it will be replaced with an entity soon
             new Thread(()->{
                 try{
                     Thread.sleep(500);
