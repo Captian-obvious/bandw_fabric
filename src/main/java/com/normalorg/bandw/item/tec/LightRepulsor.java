@@ -7,6 +7,7 @@ import com.normalorg.bandw.entity.LaserTurretEntity;
 import com.normalorg.bandw.entity.ModEntities;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
+import net.minecraft.item.BowItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.Item.Settings;
@@ -27,7 +28,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.text.Text;
 import java.util.List;
 
-public class LightRepulsor extends Item {
+public class LightRepulsor extends BowItem {
     public LightRepulsor(Settings settings) {
         super(settings);
     };
