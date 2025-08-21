@@ -44,6 +44,7 @@ public class TecItems {
     public static final Item TURRET_BOX=register("turret_box",Item::new,new Item.Settings().maxCount(64));
     public static final Item LASER_TURRET_HEAD=register("laser_turret_head",Item::new,new Item.Settings().maxCount(64));
     public static final Item LASER_TURRET=register("laser_turret",LaserTurret::new,new Item.Settings().maxCount(64));
+    public static final Item LIGHT_REPULSOR=register("light_repulsor",LightRepulsor::new,new Item.Settings().maxCount(1));
     private static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,name));
         Item item=itemFactory.apply(settings.registryKey(itemKey));
