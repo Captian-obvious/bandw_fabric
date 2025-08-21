@@ -202,7 +202,8 @@ public class ModItems {
             TecItems.LASER_TURRET_HEAD,
             TecItems.TURRET_BASE,
             TecItems.TURRET_BOX,
-            TecItems.TURRET_JOINTS
+            TecItems.TURRET_JOINTS,
+            TecItems.LIGHT_REPULSOR
         };
         ItemGroupEvents.modifyEntriesEvent(bandw_items_group_key).register(itemGroup -> {
             for (Item item : items) {
