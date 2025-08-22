@@ -19,8 +19,7 @@ public class CondensedCorruptionBlock extends Block {
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity){
         if (!world.isClient()){
-            if (entity instanceof LivingEntity){
-                LivingEntity livingEntity=(LivingEntity) entity;
+            if (entity instanceof LivingEntity livingEntity){
                 if (!livingEntity.hasStatusEffect(ModEffects.DARKENING)){
                     StatusEffectInstance instance = new StatusEffectInstance(ModEffects.DARKENING,100,1,false,true,true);
                     
