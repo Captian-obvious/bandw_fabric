@@ -1,0 +1,6 @@
+{
+    "model": {
+        "type":"minecraft:model",
+        "model":"bandw:block/cracked_light_brick_wall_inventory"
+    }
+}
