@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:block/wall_inventory",
     "textures": {
-        "wall": "minecraft:block/cracked_light_tiles"
+        "wall": "bandw:block/cracked_light_tiles"
     }
 }
