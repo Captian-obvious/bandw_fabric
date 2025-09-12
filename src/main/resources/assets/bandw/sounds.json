@@ -22,5 +22,11 @@
         "sounds": [
             "bandw:reality_warper_teleport"
         ]
+    },
+    "light_repulsor_charge": {
+        "subtitle": "sound.bandw.light_repulsor_charge",
+        "sounds": [
+            "bandw:light_repulsor_charge"
+        ]
     }
 }
