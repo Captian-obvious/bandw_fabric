@@ -28,5 +28,11 @@
         "sounds": [
             "bandw:light_repulsor_charge"
         ]
+    },
+    "light_repulsor_fire": {
+        "subtitle": "sound.bandw.light_repulsor_fire",
+        "sounds": [
+            "bandw:light_repulsor_fire"
+        ]
     }
 }
