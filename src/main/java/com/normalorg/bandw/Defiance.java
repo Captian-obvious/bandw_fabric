@@ -23,7 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 // MAIN MOD HANDLER AND INITIALIZER - For most things, this is the target initializer, If you need to register things, register them here.
-// -- Superduperdev2
+// --Superduperdev2
 public class Defiance implements ModInitializer {
     public static boolean isCharterLoaded;
     // Charter hooks
