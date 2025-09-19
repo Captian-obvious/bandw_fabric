@@ -50,14 +50,14 @@ public class LightRepulsor extends BowItem {
             // which dont *directly* affect game state
             // and the thread is killed when the user stops using the item )
             // (or when the max time is reached)
-            (new Thread()->{
+            new Thread(()->{
                 int toconverttoseconds=50; // 0.05 seconds
                 while (this.isActive && this.activeTime<this.maxActiveTime){
                     try {
                         Thread.sleep(toconverttoseconds);
                     } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+                        e.printStackTrace();
+                    };
                     this.activeTime+=(float) toconverttoseconds/1000; // convert to seconds
                     // increase sound pitch
                     if (this.soundPitch<5){
