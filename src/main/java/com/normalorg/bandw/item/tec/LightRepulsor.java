@@ -32,10 +32,10 @@ import java.util.List;
 
 public class LightRepulsor extends BowItem {
     private boolean isActive = false; // is the user "pulling" the repulsor
-    private int activeTime = 0.0f; // how long the user has been "pulling" the repulsor
-    private int chargeLevel=0.0f; // current charge level
-    private int chargeMaxLevel=30.0f; // max charge level
-    private int soundPitch=0.0f; // sound pitch (increases with charge level)
+    private float activeTime = 0.0f; // how long the user has been "pulling" the repulsor
+    private float chargeLevel=0.0f; // current charge level
+    private float chargeMaxLevel=30.0f; // max charge level
+    private float soundPitch=0.0f; // sound pitch (increases with charge level)
     private final int maxActiveTime = 20.0f; // max time (seconds)
     public LightRepulsor(Settings settings) {
         super(settings);
