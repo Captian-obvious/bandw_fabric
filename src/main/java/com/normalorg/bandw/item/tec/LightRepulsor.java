@@ -32,8 +32,11 @@ import java.util.List;
 
 public class LightRepulsor extends BowItem {
     private boolean isActive = false; // is the user "pulling" the repulsor
-    private int activeTime = 0; // how long the user has been "pulling" the repulsor
-    private final int maxActiveTime = 20; // max time
+    private int activeTime = 0.0f; // how long the user has been "pulling" the repulsor
+    private int chargeLevel=0.0f; // current charge level
+    private int chargeMaxLevel=30.0f; // max charge level
+    private int soundPitch=0.0f; // sound pitch (increases with charge level)
+    private final int maxActiveTime = 20.0f; // max time (seconds)
     public LightRepulsor(Settings settings) {
         super(settings);
     };
@@ -41,6 +44,30 @@ public class LightRepulsor extends BowItem {
     public ActionResult use(World world, PlayerEntity user, Hand hand){
         if (!world.isClient){
             this.isActive=true;
+            this.activeTime=0.0f;
+            // number manipulation thread 
+            // ( safe in this context since its only changing numbers, 
+            // which dont *directly* affect game state
+            // and the thread is killed when the user stops using the item )
+            // (or when the max time is reached)
+            (new Thread()->{
+                int toconverttoseconds=50; // 0.05 seconds
+                while (this.isActive && this.activeTime<this.maxActiveTime){
+                    try {
+                        Thread.sleep(toconverttoseconds);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    this.activeTime+=(float) toconverttoseconds/1000; // convert to seconds
+                    // increase sound pitch
+                    if (this.soundPitch<5){
+                        this.soundPitch+=5/this.maxActiveTime;
+                    };
+                    if (this.chargeLevel<this.chargeMaxLevel){
+                        this.chargeLevel=this.activeTime*(this.maxChargeLevel/this.maxActiveTime); //Linear charge increase
+                    };
+                };
+            }).start();
         };
         return super.use(world, user, hand); // preserve bow functionality
     };
