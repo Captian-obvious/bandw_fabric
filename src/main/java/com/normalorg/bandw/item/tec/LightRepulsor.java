@@ -36,7 +36,7 @@ public class LightRepulsor extends BowItem {
     private float chargeLevel=0.0f; // current charge level
     private float chargeMaxLevel=30.0f; // max charge level
     private float soundPitch=0.0f; // sound pitch (increases with charge level)
-    private final int maxActiveTime = 20.0f; // max time (seconds)
+    private final float maxActiveTime = 20.0f; // max time (seconds)
     public LightRepulsor(Settings settings) {
         super(settings);
     };
