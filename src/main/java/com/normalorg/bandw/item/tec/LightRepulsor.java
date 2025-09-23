@@ -137,7 +137,7 @@ public class LightRepulsor extends BowItem {
             };
             this.activeTime += ((float) toconverttoseconds)/1000.0f; // convert to seconds
             // increase sound pitch
-            this.soundPitch = Math.min(5.0f,1.0f+(this.activeTime*(maxSoundPitch-1.0f/this.maxActiveTime)));
+            this.soundPitch = Math.min(5.0f,1.0f+(this.activeTime*((maxSoundPitch-1.0f)/this.maxActiveTime)));
             this.chargeLevel = Math.min(this.chargeMaxLevel,this.activeTime*(this.chargeMaxLevel/this.maxActiveTime));
         },0,toconverttoseconds,TimeUnit.MILLISECONDS);
     };
