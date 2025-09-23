@@ -155,9 +155,7 @@ public class LightRepulsor extends BowItem {
         this.executor = Executors.newSingleThreadScheduledExecutor();
         this.executor.schedule(() -> {
             this.wasOverheated=false;
-            if (this.executor != null && !this.executor.isShutdown()) {
-                this.executor.shutdown();
-            };
+            this.executor.shutdown();
         },(long)(this.overheatTime*1000),TimeUnit.MILLISECONDS);
     };
     public void decrease_overheated_accumulator(float amount){
