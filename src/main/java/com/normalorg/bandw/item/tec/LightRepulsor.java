@@ -59,7 +59,7 @@ public class LightRepulsor extends BowItem {
     };
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand){
-        if (!world.isClient){
+        if (!world.isClient && user instanceof ServerPlayerEntity serverPlayer){
             if (this.wasOverheated) return ActionResult.FAIL; // prevent use if overheated
             if (this.isActive) return ActionResult.PASS; // prevent re-activation if already active
             this.isActive=true;
@@ -72,7 +72,7 @@ public class LightRepulsor extends BowItem {
     };
     @Override
     public boolean onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks){
-        if (!world.isClient && user instanceof ServerPlayerEntity){
+        if (!world.isClient && user instanceof ServerPlayerEntity serverPlayer){
             this.isActive=false;
             this.stopCharging();
             Vec3d pos=Vec3d.ofBottomCenter(user.getBlockPos());
