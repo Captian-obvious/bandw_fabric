@@ -21,6 +21,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
@@ -66,7 +68,9 @@ public class LightRepulsor extends BowItem {
             this.isActive=false;
             this.stopCharging();
             if (this.chargeLevel >= this.minChargeToRepulse){
-                // repulse effect
+                //repulse effect
+                Vec3d pos=Vec3d.ofBottomCenter(user.getBlockPos());
+                world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.LIGHT_REPULSOR_FIRE,SoundCategory.PLAYERS,1.0F,1.0F);
             };
         };
         return super.onStoppedUsing(stack, world, user, remainingUseTicks);
