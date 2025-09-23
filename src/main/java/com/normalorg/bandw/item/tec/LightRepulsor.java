@@ -45,6 +45,8 @@ public class LightRepulsor extends BowItem {
         if (!world.isClient){
             this.isActive=true;
             this.activeTime=0.0f;
+            this.chargeLevel=0.0f;
+            this.soundPitch=1.0f;
             // number manipulation thread 
             // ( safe in this context since its only changing numbers, 
             // which dont *directly* affect game state
