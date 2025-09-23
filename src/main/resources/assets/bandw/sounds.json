@@ -29,6 +29,12 @@
             "bandw:light_repulsor_charge"
         ]
     },
+    "light_repulsor_overheat": {
+        "subtitle": "sound.bandw.light_repulsor_overheat",
+        "sounds": [
+            "bandw:light_repulsor_overheat"
+        ]
+    },
     "light_repulsor_fire": {
         "subtitle": "sound.bandw.light_repulsor_fire",
         "sounds": [
