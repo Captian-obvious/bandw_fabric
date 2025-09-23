@@ -3,6 +3,7 @@ package com.normalorg.bandw.item.tec;
 //h
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.entity.effect.ModEffects;
+import com.normalorg.bandw.sound.ModSounds;
 import com.normalorg.bandw.entity.LaserTurretEntity;
 import com.normalorg.bandw.entity.ModEntities;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -44,6 +45,7 @@ public class LightRepulsor extends BowItem {
     private final float minChargeToRepulse=5.0f; // min charge level to repulse
     private final float maxSoundPitch=5.0f; // max sound pitch
     private final float maxActiveTime = 20.0f; // max time (seconds)
+    private final float overheatTime = 5.0f; // overheat time (seconds)
     public LightRepulsor(Settings settings) {
         super(settings);
     };
