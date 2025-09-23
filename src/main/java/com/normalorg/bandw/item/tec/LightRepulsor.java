@@ -97,6 +97,9 @@ public class LightRepulsor extends BowItem {
         tooltip.add(Text.translatable("itemTooltip.bandw.light_repulsor_L1").formatted(Formatting.LIGHT_PURPLE));
         tooltip.add(Text.translatable("itemTooltip.bandw.light_repulsor_L2").formatted(Formatting.LIGHT_PURPLE));
         tooltip.add(Text.translatable("itemTooltip.bandw.light_repulsor_L3").formatted(Formatting.GOLD));
+        if (this.wasOverheated){
+            tooltip.add(Text.translatable("itemTooltip.bandw.light_repulsor_overheated").formatted(Formatting.RED));
+        };
         super.appendTooltip(stack, context, tooltip, type);
     };
     public float getChargeLevel(){

@@ -68,6 +68,7 @@
     "itemTooltip.bandw.light_repulsor_L1": "A power stored within, bold and broken, lies a powerful pulse",
     "itemTooltip.bandw.light_repulsor_L2": "A power, stronger than any corruption could ever hope to be, lies within",
     "itemTooltip.bandw.light_repulsor_L3": "Emits a burst of light, repelling nearby dark entities.",
+    "itemTooltip.bandw.light_repulsor_overheated":" Overheated! Cooldown in progress...",
     "item.bandw.light_planks": "Light Planks",
     "item.bandw.light_plank_slab": "Light Plank Slab",
     "item.bandw.light_plank_stairs": "Light Plank Stairs",
