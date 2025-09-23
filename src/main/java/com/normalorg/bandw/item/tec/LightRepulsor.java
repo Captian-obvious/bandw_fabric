@@ -41,12 +41,13 @@ public class LightRepulsor extends BowItem {
     private float activeTime = 0.0f; // how long the user has been "pulling" the repulsor
     private ScheduledExecutorService executor;
     private boolean isCharging = false; // is the repulsor charging
+    private boolean wasOverheated = false; // was the repulsor overheated
     private float chargeLevel=0.0f; // current charge level
     private float soundPitch=0.0f; // sound pitch (increases with charge level)
     private final float chargeMaxLevel=30.0f; // max charge level
-    private final float minChargeToRepulse=5.0f; // min charge level to repulse
+    private final float minChargeToRepulse=1.0f; // min charge level to repulse
     private final float maxSoundPitch=5.0f; // max sound pitch
-    private final float maxActiveTime = 20.0f; // max time (seconds)
+    private final float maxActiveTime = 10.0f; // max time (seconds)
     private final float overheatTime = 5.0f; // overheat time (seconds)
     public LightRepulsor(Settings settings) {
         super(settings);
@@ -81,6 +82,24 @@ public class LightRepulsor extends BowItem {
         tooltip.add(Text.translatable("itemTooltip.bandw.light_repulsor_L2").formatted(Formatting.LIGHT_PURPLE));
         tooltip.add(Text.translatable("itemTooltip.bandw.light_repulsor_L3").formatted(Formatting.GOLD));
         super.appendTooltip(stack, context, tooltip, type);
+    };
+    public float getChargeLevel(){
+        return this.chargeLevel;
+    };
+    public boolean getIsOverheated(){
+        return this.wasOverheated;
+    };
+    public float getSoundPitch(){
+        return this.soundPitch;
+    };
+    public float getMaxSoundPitch(){
+        return this.maxSoundPitch;
+    };
+    public float getMaxChargeLevel(){
+        return this.chargeMaxLevel;
+    };
+    public float getMaxActiveTime(){
+        return this.maxActiveTime;
     };
     // number manipulation thread 
     // ( safe in this context since its only changing numbers, 
