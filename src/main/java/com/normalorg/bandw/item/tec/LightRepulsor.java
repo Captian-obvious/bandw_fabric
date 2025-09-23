@@ -36,12 +36,14 @@ import java.util.List;
 public class LightRepulsor extends BowItem {
     private boolean isActive = false; // is the user "pulling" the repulsor
     private float activeTime = 0.0f; // how long the user has been "pulling" the repulsor
-    private float chargeLevel=0.0f; // current charge level
-    private float chargeMaxLevel=30.0f; // max charge level
-    private float soundPitch=0.0f; // sound pitch (increases with charge level)
-    private final float maxActiveTime = 20.0f; // max time (seconds)
     private ScheduledExecutorService executor;
-    private boolean isCharging = false;
+    private boolean isCharging = false; // is the repulsor charging
+    private float chargeLevel=0.0f; // current charge level
+    private float soundPitch=0.0f; // sound pitch (increases with charge level)
+    private final float chargeMaxLevel=30.0f; // max charge level
+    private final float minChargeToRepulse=5.0f; // min charge level to repulse
+    private final float maxSoundPitch=5.0f; // max sound pitch
+    private final float maxActiveTime = 20.0f; // max time (seconds)
     public LightRepulsor(Settings settings) {
         super(settings);
     };
@@ -60,6 +62,10 @@ public class LightRepulsor extends BowItem {
     public boolean onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks){
         if (!world.isClient && user instanceof ServerPlayerEntity){
             this.isActive=false;
+            this.stopCharging();
+            if (this.chargeLevel >= this.minChargeToRepulse){
+                // repulse effect
+            };
         };
         return super.onStoppedUsing(stack, world, user, remainingUseTicks);
     };
@@ -76,39 +82,25 @@ public class LightRepulsor extends BowItem {
     // and the thread is killed when the user stops using the item )
     // (or when the max time is reached)
     public void startCharging() {
-        if (this.isCharging) return;
+        if (this.isCharging || (this.executor != null && !this.executor.isShutdown())) return;
         this.isCharging = true;
         this.executor = Executors.newSingleThreadScheduledExecutor();
-        int toconverttoseconds=50; // 0.05 seconds
+        int toconverttoseconds=20; // 0.02 seconds
         this.executor.scheduleAtFixedRate(() -> {
             if (!this.isActive || !this.isCharging || activeTime >= maxActiveTime) {
-                executor.shutdown();
-                this.isCharging = false;
+                this.stopCharging();
                 return;
             };
             this.activeTime += ((float) toconverttoseconds)/1000.0f; // convert to seconds
             // increase sound pitch
-            this.soundPitch = Math.min(5.0f, 1.0f + (this.activeTime*(4.0f/this.maxActiveTime)));
+            this.soundPitch = Math.min(5.0f,1.0f+(this.activeTime*(maxSoundPitch-1.0f/this.maxActiveTime)));
             this.chargeLevel = Math.min(this.chargeMaxLevel,this.activeTime*(this.chargeMaxLevel/this.maxActiveTime));
         },0,toconverttoseconds,TimeUnit.MILLISECONDS);
     };
+    private void stopCharging() {
+        this.isCharging = false;
+        if (this.executor != null && !this.executor.isShutdown()) {
+            this.executor.shutdown();
+        };
+    };
 };
-/*new Thread(()->{
-                int toconverttoseconds=50; // 0.05 seconds
-                while (this.isActive && this.activeTime<this.maxActiveTime){
-                    try {
-                        Thread.sleep(toconverttoseconds);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    };
-                    this.activeTime+=((float) toconverttoseconds)/1000.0f; // convert to seconds
-                    // increase sound pitch
-                    if (this.soundPitch<5.0f){
-                        this.soundPitch+=5.0f/this.maxActiveTime;
-                    };
-                    if (this.chargeLevel<this.chargeMaxLevel){
-                        this.chargeLevel=this.activeTime*(this.chargeMaxLevel/this.maxActiveTime); //Linear charge increase
-                    };
-                };
-            }).start();
-            */
