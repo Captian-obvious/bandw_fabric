@@ -1,0 +1,6 @@
+{
+    "parent": "bandw:item/light_repulsor",
+    "textures": {
+        "layer0": "bandw:item/light_repulsor_charging_4"
+    }
+}
