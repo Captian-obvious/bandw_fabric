@@ -48,7 +48,7 @@ public class LightRepulsor extends BowItem {
     private final float minChargeToRepulse=1.0f; // min charge level to repulse
     private final float maxSoundPitch=5.0f; // max sound pitch
     private final float maxActiveTime = 10.0f; // max time (seconds)
-    private final float overheatTime = 5.0f; // overheat time (seconds)
+    private final float overheatTime = 5.0f; // overheat time (seconds) (this is basically a cooldown)
     public LightRepulsor(Settings settings) {
         super(settings);
     };
@@ -85,6 +85,9 @@ public class LightRepulsor extends BowItem {
     };
     public float getChargeLevel(){
         return this.chargeLevel;
+    };
+    public boolean getWasOverheated(){
+        return this.wasOverheated;
     };
     public boolean getIsOverheated(){
         return this.wasOverheated;
