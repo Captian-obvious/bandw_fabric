@@ -1,6 +1,14 @@
 {
-    "parent": "minecraft:item/generated",
+    "parent": "minecraft:item/bow",
     "textures": {
         "layer0": "bandw:item/light_repulsor"
-    }
+    },
+    "comments":"repulsor has 5 stages of charge",
+    "overrides": [
+        { "predicate": { "pulling": 1 }, "model": "bandw:item/light_repulsor_charging_0" },
+        { "predicate": { "pulling": 1, "pull": 0.3 }, "model": "bandw:item/light_repulsor_charging_1" },
+        { "predicate": { "pulling": 1, "pull": 0.5 }, "model": "bandw:item/light_repulsor_charging_2" },
+        { "predicate": { "pulling": 1, "pull": 0.75 }, "model": "bandw:item/light_repulsor_charging_3" },
+        { "predicate": { "pulling": 1, "pull": 1 }, "model": "bandw:item/light_repulsor_charging_4" }
+    ]
 }
