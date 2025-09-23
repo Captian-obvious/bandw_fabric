@@ -40,6 +40,7 @@ public class LightRepulsor extends BowItem {
     private boolean isActive = false; // is the user "pulling" the repulsor
     private float activeTime = 0.0f; // how long the user has been "pulling" the repulsor
     private ScheduledExecutorService executor;
+    private ScheduledExecutorService timer_executor;
     private ScheduledExecutorService overheated_executor;
     private boolean isCharging = false; // is the repulsor charging
     private boolean wasOverheated = false; // was the repulsor overheated
@@ -149,13 +150,13 @@ public class LightRepulsor extends BowItem {
         this.wasOverheated=true;
         this.chargeLevel=0.0f;
         this.soundPitch=1.0f;
-        if (this.executor != null && !this.executor.isShutdown()) {
-            this.executor.shutdown();
+        if (this.timer_executor != null && !this.timer_executor.isShutdown()) {
+            this.timer_executor.shutdown();
         };
-        this.executor = Executors.newSingleThreadScheduledExecutor();
-        this.executor.schedule(() -> {
+        this.timer_executor = Executors.newSingleThreadScheduledExecutor();
+        this.timer_executor.schedule(() -> {
             this.wasOverheated=false;
-            this.executor.shutdown();
+            this.timer_executor.shutdown();
         },(long)(this.overheatTime*1000),TimeUnit.MILLISECONDS);
     };
     public void decrease_overheated_accumulator(float amount){
