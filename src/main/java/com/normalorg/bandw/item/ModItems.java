@@ -3,6 +3,7 @@ package com.normalorg.bandw.item;
 // Imports
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.item.tec.TecItems;
+import com.normalorg.bandw.item.magic.MagicItems;
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.entity.effect.ModEffects;
 import com.normalorg.bandw.component.ModComponents;
@@ -115,6 +116,7 @@ public class ModItems {
         register(BLADE_OF_DARKNESS,BLADE_OF_DARKNESS_KEY);
         register(HALFSHADE_BLADE,HALFSHADE_BLADE_KEY);
         TecItems.registerTecItems();
+        MagicItems.registerMagicItems();
         Defiance.LOGGER.info("Registering Item Group Contents for " + Defiance.MOD_ID);
         Block[] blocks={
             ModBlocks.DARK_LOG,
