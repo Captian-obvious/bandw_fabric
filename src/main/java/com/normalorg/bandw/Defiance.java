@@ -32,7 +32,7 @@ public class Defiance implements ModInitializer {
     public static Item LESSER_DIVINITY;
     // End Charter Hooks
     public static final String MOD_ID = "bandw";
-    public static final String VERSION="2.7.7";
+    public static final String VERSION="2.7.8";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static boolean judgmentEnabled=false;
     @Override
