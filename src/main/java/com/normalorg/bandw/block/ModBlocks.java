@@ -29,6 +29,7 @@ public class ModBlocks {
     public static final Block DARK_LOG=register("dark_log", PillarBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block DEAD_DARK_LOG=register("dead_dark_log", PillarBlock::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block DARK_BARK=register("dark_bark", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
+    public static final Block DARK_PLANKS=register("dark_planks", Block::new, Settings.create().sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F),true);
     public static final Block PURE_LIGHT_BRICKS=register("pure_light_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block LIGHT_BRICKS=register("light_bricks", Block::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);
     public static final Block LIGHT_BRICK_SLAB=register("light_brick_slab", SlabBlock::new, Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0F, 3.0F),true);

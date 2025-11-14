@@ -122,6 +122,7 @@ public class ModItems {
             ModBlocks.DARK_LOG,
             ModBlocks.DEAD_DARK_LOG,
             ModBlocks.DARK_BARK,
+            ModBlocks.DARK_PLANKS,
             ModBlocks.DARK_BRICKS,
             ModBlocks.LIGHT_PLANKS,
             ModBlocks.LIGHT_PLANK_SLAB,
