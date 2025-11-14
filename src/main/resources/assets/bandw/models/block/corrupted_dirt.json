@@ -2,6 +2,6 @@
     "credit": "Made with Blockbench",
     "parent": "minecraft:block/cube_all",
     "textures": {
-        "all": "bandw:block/condensed_corruption"
+        "all": "bandw:block/corrupted_dirt"
     }
 }

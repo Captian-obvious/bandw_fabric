@@ -2,12 +2,12 @@
     "credit": "Made with Blockbench",
     "parent": "minecraft:block/cube",
     "textures": {
-        "down": "bandw:block/corrupted_grass_block_bottom",
+        "down": "bandw:block/corrupted_dirt",
         "up": "bandw:block/corrupted_grass_block_top",
         "north": "bandw:block/corrupted_grass_block_side",
         "south": "bandw:block/corrupted_grass_block_side",
         "west": "bandw:block/corrupted_grass_block_side",
         "east": "bandw:block/corrupted_grass_block_side",
-        "particle": "bandw:block/corrupted_grass_block_bottom"
+        "particle": "bandw:block/corrupted_dirt"
     }
 }
