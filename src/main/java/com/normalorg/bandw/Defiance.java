@@ -39,7 +39,7 @@ public class Defiance implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Server Initializing...");
         registerModules();
-        isCharterLoaded=ModChecker.isModLoaded("charter");
+        isCharterLoaded=ModChecker.isModLoaded("charter"); // may or may not work, this will have to be tested on Quilt
         LOGGER.info(isCharterLoaded ? "Charter mod is loaded! Enabling additional features." : "Charter mod is not loaded.");
         if (isCharterLoaded) registerCharterHooks();
         judgmentEnabled=isCharterLoaded;
