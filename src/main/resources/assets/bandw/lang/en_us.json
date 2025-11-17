@@ -47,6 +47,7 @@
     "item.bandw.dark_log": "Dark Log",
     "item.bandw.dead_dark_log": "Dead Dark Log",
     "item.bandw.dark_bark": "Dark Bark",
+    "item.bandw.dark_planks": "Dark Planks",
     "item.bandw.light_bricks": "Light Bricks",
     "item.bandw.light_brick_slab": "Light Brick Slab",
     "item.bandw.light_brick_stairs": "Light Brick Stairs",
@@ -89,6 +90,7 @@
     "item.bandw.corrupted_grass_block": "Corrupted Grass Block",
     "item.bandw.shield_of_light": "Shield of Light",
     "item.bandw.scroll": "Scroll",
+    "itemTooltip.bandw.scroll": "A mysterious scroll inscribed with ancient runes.",
     "item.bandw.dark_rotten_flesh": "Dark Rotten Flesh",
     "item.bandw.dark_bone": "Dark Bone",
     "item.bandw.dark_leather": "Dark Leather",
@@ -178,6 +180,6 @@
     "death.attack.fractured.player": "%1$s's existence was fractured by %2$s",
     "death.attack.darkened": "%1$s fell into darkness",
     "death.attack.darkened.player": "%2$s consigned %1$s's fall into darkness",
-    "death.attack.crystal_infestation": "%1$s heart was crystalized",
-    "death.attack.crystal_infestation.player": "%1$s heart was crystalized by %2$s"
+    "death.attack.crystal_infestation": "%1$s's heart was crystalized",
+    "death.attack.crystal_infestation.player": "%1$s's heart was crystalized by %2$s"
 }

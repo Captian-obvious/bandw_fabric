@@ -193,7 +193,8 @@ public class ModItems {
             ModItems.DARK_SPIDER_EYE,
             ModItems.DARK_STRING,
             ModItems.DARK_LEATHER,
-            ModItems.DARK_SHARD
+            ModItems.DARK_SHARD,
+            MagicItems.SCROLL
         };
         Item[] tec_items={
             TecItems.TEC_DUST,
