@@ -1,4 +1,4 @@
-package com.normalorg.bandw.item;
+package com.normalorg.bandw.item.magic;
 
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.sound.ModSounds;

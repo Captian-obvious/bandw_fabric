@@ -1,6 +1,5 @@
 package com.normalorg.bandw.item.magic;
 
-// Import necessary classes
 import com.normalorg.bandw.Defiance;
 import com.normalorg.bandw.block.ModBlocks;
 import com.normalorg.bandw.entity.effect.ModEffects;
