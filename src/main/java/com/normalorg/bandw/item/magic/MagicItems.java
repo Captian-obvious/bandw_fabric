@@ -31,7 +31,7 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class MagicItems {
-    public static final Item SCROLL=register("scroll",Item::new,new Item.Settings().maxCount(1));
+    public static final Item SCROLL=register("scroll",ScrollItem::new,new Item.Settings().maxCount(1));
     private static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,name));
         Item item=itemFactory.apply(settings.registryKey(itemKey));
