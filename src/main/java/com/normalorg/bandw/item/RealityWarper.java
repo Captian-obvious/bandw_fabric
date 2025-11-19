@@ -42,7 +42,7 @@ public class RealityWarper extends Item {
             if (entity instanceof LivingEntity && selected){
                 if (effectAcc==0){
                     LivingEntity livingEntity=(LivingEntity) entity;
-                    // Play the sound
+                    // play the sound
                     // hey Doctor4t, you found my secret signature - Superduperdev2
                     Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
                     world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.REALITY_WARPER_HUM,SoundCategory.PLAYERS,0.25F,1.0F);
@@ -52,7 +52,7 @@ public class RealityWarper extends Item {
             };
             effectAcc++;
         };
-        super.inventoryTick(stack, world, entity, slot, selected); // Call the super method to retain default behavior
+        super.inventoryTick(stack, world, entity, slot, selected); // call the superclass's method to retain default behavior
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
