@@ -126,6 +126,7 @@ public class ModBlocks {
         CorruptionRegistry.register(Blocks.OAK_LOG,DARK_LOG);
         CorruptionRegistry.register(Blocks.OAK_WOOD,DARK_BARK);
         CorruptionRegistry.register(Blocks.MOSS_BLOCK,CONDENSED_CORRUPTION);
+        CorruptionRegistry.register(LIGHT_PLANKS,DARK_PLANKS);
         CorruptionRegistry.register(LIGHT_BRICKS,DARK_BRICKS);
     };
 };
