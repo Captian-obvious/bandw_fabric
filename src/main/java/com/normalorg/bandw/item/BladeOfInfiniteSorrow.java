@@ -54,7 +54,7 @@ public class BladeOfInfiniteSorrow extends SwordItemWithEffect {
                 world.spawnEntity(bolt);
                 target.damage(world,damageSource,target.getMaxHealth());
                 this.timed_effect_executor.shutdown();
-            },(long) 500.0,TimeUnit.MILLISECONDS);
+            },(long) 500,TimeUnit.MILLISECONDS);
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };

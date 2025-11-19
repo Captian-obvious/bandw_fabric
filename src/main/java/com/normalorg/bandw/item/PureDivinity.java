@@ -31,9 +31,13 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
 import net.minecraft.item.Item;
 import net.minecraft.text.Text;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.List;
 
 public class PureDivinity extends Item {
+    private ScheduledExecutorService timed_effect_executor;
     public PureDivinity(Settings settings) {
         super(settings);
     };
@@ -48,20 +52,20 @@ public class PureDivinity extends Item {
     public void onKill(LivingEntity target, LivingEntity attacker) {
         if (attacker.getWorld() instanceof ServerWorld world) {
             target.setHealth(target.getMaxHealth());
-            // Temporary thread for delay, it will be replaced with an entity soon
-            new Thread(()->{
-                try{
-                    Thread.sleep(500);
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                };
+            // Temporary system for delay, it will be replaced with an entity soon
+            if (this.timed_effect_executor != null && !this.timed_effect_executor.isShutdown()) {
+                this.timed_effect_executor.shutdown();
+            };
+            this.timed_effect_executor=Executors.newSingleThreadScheduledExecutor(); // little more safe than a random new thread
+            this.timed_effect_executor.schedule(() -> {
                 DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.PURE_DIVINITY_STRIKE.getValue()).get());
                 BlockPos pos=target.getBlockPos();
                 LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
                 world.spawnEntity(bolt);
                 target.damage(world,damageSource,target.getMaxHealth());
-            }).start();
+                this.timed_effect_executor.shutdown();
+            },(long) 500,TimeUnit.MILLISECONDS);
         };
     };
 };
