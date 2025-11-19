@@ -34,7 +34,9 @@ public class ScrollItem extends Item {
     public ScrollItem(Settings settings) {
         super(settings);
     };
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
         tooltip.add(Text.translatable("itemTooltip.bandw.scroll").formatted(Formatting.GRAY));
+        super.appendTooltip(stack, context, tooltip, type);
     };
 };
