@@ -35,12 +35,9 @@ import java.util.function.Function;
 
 public class ModItems {
     //public static final ToolMaterial INFINITE_SORROW_MATERIAL=new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL,455,5.0F,1.5F,22);
-    public static final RegistryKey<ItemGroup> bandw_items_group_key=RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_items"));
-    public static final ItemGroup bandw_items_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.DARK_BONE)).displayName(Text.translatable("itemGroup.bandw_items")).build();
-    public static final RegistryKey<ItemGroup> bandw_blocks_group_key=RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_blocks"));
-    public static final ItemGroup bandw_blocks_group=FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.CORRUPTED_GRASS_BLOCK.asItem())).displayName(Text.translatable("itemGroup.bandw_blocks")).build();
-    public static final RegistryKey<ItemGroup> bandw_tec_group_key=RegistryKey.of(Registries.ITEM_GROUP.getKey(),Identifier.of(Defiance.MOD_ID, "bandw_tec"));
-    public static final ItemGroup bandw_tec_group=FabricItemGroup.builder().icon(() -> new ItemStack(TecItems.TEC_DUST)).displayName(Text.translatable("itemGroup.bandw_tec")).build();
+    public static final ItemGroup bandw_items_group=registerItemGroup("bandw_items",ModItems.DARK_BONE,Text.translatable("itemGroup.bandw_items"));
+    public static final ItemGroup bandw_blocks_group=registerItemGroup("bandw_blocks",ModBlocks.CORRUPTED_GRASS_BLOCK.asItem(),Text.translatable("itemGroup.bandw_blocks"));
+    public static final ItemGroup bandw_tec_group=registerItemGroup("bandw_tec",TecItems.TEC_DUST,Text.translatable("itemGroup.bandw_tec"));
     public static final Item PURE_DIVINITY=register("pure_divinity",PureDivinity::new,new Item.Settings().maxCount(1));
     public static final Item HALFSHADE_STICK=register("halfshade_stick", Item::new, new Item.Settings().maxCount(64));
     public static final Item LIGHT_STICK=register("light_stick", Item::new, new Item.Settings().maxCount(64));
@@ -95,6 +92,9 @@ public class ModItems {
     private static RegistryKey<Item> keyOfItem(String name){
         return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, name));
     };
+    private static RegistryKey<ItemGroup> keyOfItemGroup(String name){
+        return RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(Defiance.MOD_ID, name));
+    };
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key.
         RegistryKey<Item> itemKey=RegistryKey.of(RegistryKeys.ITEM,Identifier.of(Defiance.MOD_ID,name));
@@ -104,14 +104,19 @@ public class ModItems {
         Registry.register(Registries.ITEM,itemKey,item);
         return item;
     };
+    public static ItemGroup registerItemGroup(String name,Item iconItem,Text displayName) {
+        RegistryKey<ItemGroup> key=keyOfItemGroup("bandw_tec");
+        ItemGroup group=FabricItemGroup.builder()
+            .icon(() -> new ItemStack(iconItem))
+            .displayName(displayName)
+            .build();
+        return Registry.register(Registries.ITEM_GROUP,key,group);
+    };
     public static Item register(Item item,RegistryKey key){
         return Registry.register(Registries.ITEM,key,item);
     };
     public static void registerItems(){
         Defiance.LOGGER.info("Registering items for " + Defiance.MOD_ID);
-        Registry.register(Registries.ITEM_GROUP,bandw_items_group_key,bandw_items_group);
-        Registry.register(Registries.ITEM_GROUP,bandw_blocks_group_key,bandw_blocks_group);
-        Registry.register(Registries.ITEM_GROUP,bandw_tec_group_key,bandw_tec_group);
         register(BLADE_OF_INFINITE_SORROW,BLADE_OF_INFINITE_SORROW_KEY);
         register(CASSHEN,CASSHEN_KEY);
         register(BLADE_OF_KARMA,BLADE_OF_KARMA_KEY);
