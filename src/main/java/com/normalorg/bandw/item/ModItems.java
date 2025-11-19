@@ -76,21 +76,24 @@ public class ModItems {
     public static final Item EMBERS_FLAME=register("embers_flame",EmbersFlame::new,new Item.Settings().maxCount(1));
     public static final Item KYPERITE_BOW=register("kyperite_bow",KyperiteBow::new,new Item.Settings().maxCount(1).enchantable(1));
     public static final Item DARK_ENDER_PEARL=register("dark_ender_pearl",DarkEnderPearl::new,new Item.Settings().maxCount(1));
-    public static final RegistryKey<Item> BLADE_OF_INFINITE_SORROW_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_infinite_sorrow"));
+    public static final RegistryKey<Item> BLADE_OF_INFINITE_SORROW_KEY=keyOfItem("blade_of_infinite_sorrow");
     public static final SwordItem BLADE_OF_INFINITE_SORROW=new BladeOfInfiniteSorrow(ToolMaterial.DIAMOND, 15, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_INFINITE_SORROW_KEY));
-    public static final RegistryKey<Item> HALFSHADE_BLADE_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "halfshade_blade"));
+    public static final RegistryKey<Item> HALFSHADE_BLADE_KEY=keyOfItem("halfshade_blade");
     public static final SwordItem HALFSHADE_BLADE=new HalfshadeBlade(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(HALFSHADE_BLADE_KEY));
-    public static final RegistryKey<Item> BLADE_OF_LIGHT_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_light"));
+    public static final RegistryKey<Item> BLADE_OF_LIGHT_KEY=keyOfItem("blade_of_light");
     public static final SwordItem BLADE_OF_LIGHT=new BladeOfLight(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_LIGHT_KEY));
-    public static final RegistryKey<Item> BLADE_OF_DARKNESS_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_darkness"));
+    public static final RegistryKey<Item> BLADE_OF_DARKNESS_KEY=keyOfItem("blade_of_darkness");
     public static final SwordItem BLADE_OF_DARKNESS=new BladeOfDarkness(ToolMaterial.DIAMOND, 6, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_DARKNESS_KEY));
-    public static final RegistryKey<Item> BLADE_OF_KARMA_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "blade_of_karma"));
+    public static final RegistryKey<Item> BLADE_OF_KARMA_KEY=keyOfItem("blade_of_karma");
     public static final SwordItem BLADE_OF_KARMA=new BladeOfKarma(ToolMaterial.DIAMOND, 10, -2.4F, new Item.Settings().enchantable(10).registryKey(BLADE_OF_KARMA_KEY));
-    public static final RegistryKey<Item> CASSHEN_KEY=RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, "casshen"));
+    public static final RegistryKey<Item> CASSHEN_KEY=keyOfItem("casshen");
     public static final SwordItem CASSHEN=new Casshen(ToolMaterial.DIAMOND, 10, -2.4F, new Item.Settings().enchantable(10).component(ModComponents.CHARGE_COMPONENT, 0).registryKey(CASSHEN_KEY));
     public static void initialize(){
         System.out.println("Mod Items Initialized!");
         registerItems();
+    };
+    private static RegistryKey<Item> keyOfItem(String name){
+        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Defiance.MOD_ID, name));
     };
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key.
