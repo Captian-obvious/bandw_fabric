@@ -27,11 +27,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
 import net.minecraft.text.Text;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.List;
 
 public class Casshen extends SwordItemWithEffect {
     private int oldCharge=0;
     private boolean isLaserEnabled=false;
+    private ScheduledExecutorService timed_effect_executor;
     public Casshen(ToolMaterial material,int attackDamage,float attackSpeed,Settings settings){
         super(material,attackDamage,attackSpeed,settings);
     };
@@ -73,15 +77,14 @@ public class Casshen extends SwordItemWithEffect {
         if (target!=null && attacker!=null){
             target.setHealth(target.getMaxHealth());
             ServerWorld world=(ServerWorld) target.getWorld();
-            new Thread(()->{
+            if (this.timed_effect_executor != null && !this.timed_effect_executor.isShutdown()) {
+                this.timed_effect_executor.shutdown();
+            };
+            this.timed_effect_executor=Executors.newSingleThreadScheduledExecutor(); // little more safe than a random new thread
+            this.timed_effect_executor.schedule(() -> {
                 DamageSource damageSource=new DamageSource(world.getRegistryManager().getOrThrow(RegistryKeys.DAMAGE_TYPE).getEntry(ModDamageSources.NONSEVERING_STRIKE.getValue()).get());
                 BlockPos pos=target.getBlockPos();
                 Vec3d particlePos=Vec3d.ofBottomCenter(pos);
-                try{
-                    Thread.sleep(500);
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                };
                 LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
                 /*int charter_color=16762880;
@@ -98,7 +101,7 @@ public class Casshen extends SwordItemWithEffect {
                 */
                 world.spawnEntity(bolt);
                 target.damage(world,damageSource,target.getMaxHealth());
-            }).start();
+            },(long) 500.0,TimeUnit.MILLISECONDS);
         }else{
             Defiance.LOGGER.info("ERROR: target and attacker must not be null!");
         };
