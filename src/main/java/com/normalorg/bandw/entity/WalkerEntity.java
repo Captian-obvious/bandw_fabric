@@ -12,7 +12,6 @@ import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.world.World;
 
 public class WalkerEntity extends PathAwareEntity {

@@ -5,7 +5,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.world.World;
 
 public class DivinityCrosshairEntity extends HostileEntity { //this is odd but, lets us do things like spam damage
