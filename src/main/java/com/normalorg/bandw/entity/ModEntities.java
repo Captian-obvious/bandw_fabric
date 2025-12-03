@@ -1,6 +1,7 @@
 package com.normalorg.bandw.entity;
 
 import com.normalorg.bandw.Defiance;
+import com.normalorg.bandw.entity.custom.DivinityCrosshairEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
