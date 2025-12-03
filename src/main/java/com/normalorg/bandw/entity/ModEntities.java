@@ -21,6 +21,8 @@ public class ModEntities {
     public static final EntityType<WalkerEntity> WALKER=Registry.register(Registries.ENTITY_TYPE,WALKER_KEY,EntityType.Builder.create(WalkerEntity::new,SpawnGroup.MONSTER).dimensions(0.6f,2.9f).build(WALKER_KEY));
     public static final RegistryKey<EntityType<?>> LASER_TURRET_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Defiance.MOD_ID,"laser_turret"));
     public static final EntityType<LaserTurretEntity> LASER_TURRET=Registry.register(Registries.ENTITY_TYPE,LASER_TURRET_KEY,EntityType.Builder.create(LaserTurretEntity::new,SpawnGroup.CREATURE).dimensions(0.6f,2.9f).build(LASER_TURRET_KEY));
+    public static final RegistryKey<EntityType<?>> DIVINITY_CROSSHAIR_KEY=RegistryKey.of(RegistryKeys.ENTITY_TYPE,Identifier.of(Defiance.MOD_ID,"divinty_crosshair"));
+    public static final EntityType<DivinityCrosshairEntity> DIVINITY_CROSSHAIR=Registry.register(Registries.ENTITY_TYPE,DIVINITY_CROSSHAIR_KEY,EntityType.Builder.create(DivinityCrosshairEntity::new,SpawnGroup.AMBIENT).dimensions(0.6f,2.9f).build(DIVINITY_CROSSHAIR_KEY));
     public static void registerEntities() {
         Defiance.LOGGER.info("Registering Entities for " + Defiance.MOD_ID);
     };
