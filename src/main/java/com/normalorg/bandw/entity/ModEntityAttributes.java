@@ -1,6 +1,7 @@
 package com.normalorg.bandw.entity;
 
 import com.normalorg.bandw.Defiance;
+import com.normalorg.bandw.entity.custom.CustomEntityAttributes;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -12,5 +13,6 @@ public class ModEntityAttributes {
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_ZOMBIE,DarkZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.WALKER,WalkerEntity.createWalkerAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.LASER_TURRET,LaserTurretEntity.createLaserTurretAttributes());
+        CustomEntityAttributes.registerCustomAttributes();
     };
 };
