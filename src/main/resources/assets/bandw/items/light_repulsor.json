@@ -13,28 +13,28 @@
                         "type": "minecraft:model",
                         "model": "bandw:item/light_repulsor_charging_1"
                     },
-                    "threshold": 0.2
+                    "threshold": 1.0
                 },
                 {
                     "model": {
                         "type": "minecraft:model",
                         "model": "bandw:item/light_repulsor_charging_2"
                     },
-                    "threshold": 0.5
+                    "threshold": 1.5
                 },
                 {
                     "model": {
                         "type": "minecraft:model",
                         "model": "bandw:item/light_repulsor_charging_3"
                     },
-                    "threshold": 0.75
+                    "threshold": 3.5
                 },
                 {
                     "model": {
                         "type": "minecraft:model",
                         "model": "bandw:item/light_repulsor_charging_4"
                     },
-                    "threshold": 1
+                    "threshold": 4.0
                 }
             ],
             "fallback": {
