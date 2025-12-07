@@ -25,7 +25,7 @@ public class LoadingScreenMixin {
     @Unique
     private float animationTime=2.0f;
     @Unique
-    private Identifier runes=Identifier.of(DefianceClient.MOD_ID,"textures/gui/runes/symbols_of_power.png");
+    private final Identifier RUNES=Identifier.of(DefianceClient.MOD_ID,"textures/gui/runes/symbols_of_power.png");
     @Inject(method = "render", at = @At("TAIL"), cancellable = true)
     public void onRender(DrawContext context,int mouseX,int mouseY,float delta, CallbackInfo ci){
         MinecraftClient client=MinecraftClient.getInstance();
@@ -36,9 +36,9 @@ public class LoadingScreenMixin {
         int baseColor=0xFF004F;
         int argbColor=((int)(alpha * 255) << 24) | baseColor;
         // drawTexture(Function<Identifier,RenderLayer> renderLayers, Identifier sprite, int x, int y, float u, float v, int width, int height, int textureWidth, int textureHeight, int color)
-        context.drawTexture(RenderLayer::getGuiTextured,runes,0,0,0,0,48,48,48,192,argbColor);
-        context.drawTexture(RenderLayer::getGuiTextured,runes,screenWidth-48,0,0,48,48,48,48,192,argbColor);
-        context.drawTexture(RenderLayer::getGuiTextured,runes,0,screenHeight-48,0,96,48,48,48,192,argbColor);
-        context.drawTexture(RenderLayer::getGuiTextured,runes,screenWidth-48,screenHeight-48,0,144,48,48,48,192,argbColor);
+        context.drawTexture(RenderLayer::getGuiTextured,RUNES,0,0,0,0,48,48,48,192,argbColor);
+        context.drawTexture(RenderLayer::getGuiTextured,RUNES,screenWidth-48,0,0,48,48,48,48,192,argbColor);
+        context.drawTexture(RenderLayer::getGuiTextured,RUNES,0,screenHeight-48,0,96,48,48,48,192,argbColor);
+        context.drawTexture(RenderLayer::getGuiTextured,RUNES,screenWidth-48,screenHeight-48,0,144,48,48,48,192,argbColor);
     };
 };
