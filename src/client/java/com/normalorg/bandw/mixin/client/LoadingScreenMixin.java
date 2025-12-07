@@ -20,8 +20,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LevelLoadingScreen.class)
 public class LoadingScreenMixin {
-    @Inject(method = "renderBackgroundTexture", at = @At("TAIL"), cancellable = true)
-    private void onRenderBackgroundTexture(DrawContext context,Identifier texture,int x,int y,float u,float v,int width,int height,CallbackInfo ci){
+    @Inject(method = "render", at = @At("TAIL"), cancellable = true)
+    public void render(DrawContext context,int mouseX,int mouseY,float delta, CallbackInfo ci){
         MinecraftClient client=MinecraftClient.getInstance();
         int screenWidth=client.getWindow().getScaledWidth();
         int screenHeight=client.getWindow().getScaledHeight();
