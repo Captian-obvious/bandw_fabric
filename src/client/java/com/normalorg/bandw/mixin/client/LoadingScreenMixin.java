@@ -29,11 +29,8 @@ public class LoadingScreenMixin {
         MinecraftClient client=MinecraftClient.getInstance();
         int screenWidth=client.getWindow().getScaledWidth();
         int screenHeight=client.getWindow().getScaledHeight();
-        accumlator+=delta;
-        if (accumlator>animationTime){
-            accumlator=0.0f;
-        };
-        float alpha=(float)((Math.sin(accumlator*Math.PI)+1.0) / 2.0);
+        accumlator=(accumlator+delta) % animationTime;
+        float alpha=(float)((Math.sin((accumlator/animationTime)*(2.0*Math.PI))+1.0) / 2.0);
         int baseColor=0xFF004F;
         int argbColor=((int)(alpha * 255) << 24) | baseColor;
     };
