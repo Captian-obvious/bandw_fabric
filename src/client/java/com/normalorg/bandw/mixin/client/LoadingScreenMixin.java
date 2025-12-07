@@ -25,7 +25,7 @@ public class LoadingScreenMixin {
         MinecraftClient client=MinecraftClient.getInstance();
         int screenWidth=client.getWindow().getScaledWidth();
         int screenHeight=client.getWindow().getScaledHeight();
-        float alpha=((Math.sin((((float) System.currentTimeMillis())/500.0f))+1.0f)/2.0f);
+        float alpha=1.0f;
         int baseColor=0xFF004F;
         int argbColor=((int)(alpha * 255) << 24) | baseColor;
     };
