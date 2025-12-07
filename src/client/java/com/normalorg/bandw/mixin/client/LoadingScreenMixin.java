@@ -20,12 +20,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LevelLoadingScreen.class)
 public class LoadingScreenMixin {
+    @Unique
+    private float accumlator=0.0f;
+    @Unique
+    private float animationTime=2.0f;
     @Inject(method = "render", at = @At("TAIL"), cancellable = true)
     public void onRender(DrawContext context,int mouseX,int mouseY,float delta, CallbackInfo ci){
         MinecraftClient client=MinecraftClient.getInstance();
         int screenWidth=client.getWindow().getScaledWidth();
         int screenHeight=client.getWindow().getScaledHeight();
-        float alpha=(Math.sin(delta*Math.PI)+1.0f) / 2.0f;
+        accumlator+=delta;
+        if (accumlator>animationTime){
+            accumlator=0.0f;
+        };
+        float alpha=(float)((Math.sin(accumlator*Math.PI)+1.0) / 2.0);
         int baseColor=0xFF004F;
         int argbColor=((int)(alpha * 255) << 24) | baseColor;
     };
