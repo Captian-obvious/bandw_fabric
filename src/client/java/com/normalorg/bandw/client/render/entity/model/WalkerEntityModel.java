@@ -53,99 +53,52 @@ public class WalkerEntityModel extends EntityModel<WalkerEntityRenderState>{
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
 		ModelPartData walker = modelPartData.addChild("walker", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
-
 		ModelPartData back = walker.addChild("back", ModelPartBuilder.create(), ModelTransform.pivot(1.0F, -22.0F, 1.0F));
-
 		ModelPartData cube_r1 = back.addChild("cube_r1", ModelPartBuilder.create().uv(40, 37).cuboid(-3.0F, -4.0F, -1.0F, 4.0F, 4.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -7.0F, 4.0F, 0.0436F, 0.0F, 0.0F));
-
 		ModelPartData cube_r2 = back.addChild("cube_r2", ModelPartBuilder.create().uv(0, 13).cuboid(-7.0F, -9.0F, -1.0F, 8.0F, 9.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(2.0F, -11.0F, 3.0F, 0.4363F, 0.0F, 0.0F));
-
 		ModelPartData cube_r3 = back.addChild("cube_r3", ModelPartBuilder.create().uv(48, 24).cuboid(-1.0F, -8.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 0.0F, 1.0F, -0.5672F, 0.0F, 0.0F));
-
 		ModelPartData cube_r4 = back.addChild("cube_r4", ModelPartBuilder.create().uv(54, 34).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 4.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -23.0F, -5.0F, 1.8326F, 0.0F, 0.0F));
-
 		ModelPartData cube_r5 = back.addChild("cube_r5", ModelPartBuilder.create().uv(52, 11).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 4.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -23.0F, -2.0F, 1.5708F, 0.0F, 0.0F));
-
 		ModelPartData cube_r6 = back.addChild("cube_r6", ModelPartBuilder.create().uv(24, 50).cuboid(-1.0F, -6.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -21.0F, 3.0F, 1.309F, 0.0F, 0.0F));
-
 		ModelPartData cube_r7 = back.addChild("cube_r7", ModelPartBuilder.create().uv(16, 50).cuboid(-1.0F, -6.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -16.0F, 6.0F, 0.6545F, 0.0F, 0.0F));
-
 		ModelPartData cube_r8 = back.addChild("cube_r8", ModelPartBuilder.create().uv(8, 50).cuboid(-1.0F, -6.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -11.0F, 7.0F, 0.2182F, 0.0F, 0.0F));
-
 		ModelPartData cube_r9 = back.addChild("cube_r9", ModelPartBuilder.create().uv(0, 50).cuboid(-1.0F, -6.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -6.0F, 5.0F, -0.2618F, 0.0F, 0.0F));
-
 		ModelPartData shoulder = back.addChild("shoulder", ModelPartBuilder.create(), ModelTransform.pivot(-1.0F, -20.0F, 2.0F));
-
 		ModelPartData cube_r10 = shoulder.addChild("cube_r10", ModelPartBuilder.create().uv(32, 50).cuboid(-1.0F, -5.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -1.0F, 1.0F, -0.3054F, 0.0F, 1.5708F));
-
 		ModelPartData cube_r11 = shoulder.addChild("cube_r11", ModelPartBuilder.create().uv(48, 48).cuboid(-1.0F, -8.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -1.0F, -1.0F, -0.5672F, 0.0F, 1.5708F));
-
 		ModelPartData cube_r12 = shoulder.addChild("cube_r12", ModelPartBuilder.create().uv(52, 4).cuboid(-1.0F, -5.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -1.0F, 1.0F, -0.3054F, 0.0F, -1.5708F));
-
 		ModelPartData cube_r13 = shoulder.addChild("cube_r13", ModelPartBuilder.create().uv(40, 48).cuboid(-1.0F, -8.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -1.0F, -1.0F, -0.4363F, 0.0F, -1.5708F));
-
 		ModelPartData leftArm = shoulder.addChild("leftArm", ModelPartBuilder.create(), ModelTransform.pivot(-7.0F, -1.0F, 1.0F));
-
 		ModelPartData cube_r14 = leftArm.addChild("cube_r14", ModelPartBuilder.create().uv(8, 26).cuboid(-1.0F, -22.0F, -1.0F, 2.0F, 22.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 20.0F, 8.0F, 0.3491F, 0.0F, 0.2182F));
-
 		ModelPartData leftLowerArm = leftArm.addChild("leftLowerArm", ModelPartBuilder.create(), ModelTransform.pivot(-4.0F, 20.0F, 8.0F));
-
 		ModelPartData cube_r15 = leftLowerArm.addChild("cube_r15", ModelPartBuilder.create().uv(16, 26).cuboid(-1.0F, -22.0F, -1.0F, 2.0F, 22.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 2.2689F, 0.0F, 0.0F));
-
 		ModelPartData rightArm = shoulder.addChild("rightArm", ModelPartBuilder.create(), ModelTransform.pivot(7.0F, -1.0F, 2.0F));
-
 		ModelPartData cube_r16 = rightArm.addChild("cube_r16", ModelPartBuilder.create().uv(24, 13).cuboid(-1.0F, -22.0F, -1.0F, 2.0F, 22.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(4.0F, 20.0F, 8.0F, 0.3491F, 0.0F, -0.2182F));
-
 		ModelPartData rightLowerArm = rightArm.addChild("rightLowerArm", ModelPartBuilder.create(), ModelTransform.pivot(4.0F, 20.0F, 8.0F));
-
 		ModelPartData cube_r17 = rightLowerArm.addChild("cube_r17", ModelPartBuilder.create().uv(0, 26).cuboid(-1.0F, -22.0F, -1.0F, 2.0F, 22.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 2.2689F, 0.0F, 0.0F));
-
 		ModelPartData head = back.addChild("head", ModelPartBuilder.create(), ModelTransform.pivot(-1.0F, -23.0F, -10.0F));
-
 		ModelPartData cube_r18 = head.addChild("cube_r18", ModelPartBuilder.create().uv(32, 10).cuboid(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 8.0F, new Dilation(0.0F)), ModelTransform.of(3.0F, 4.0F, -6.0F, 0.3491F, -0.2618F, 0.0F));
-
 		ModelPartData cube_r19 = head.addChild("cube_r19", ModelPartBuilder.create().uv(26, 0).cuboid(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 8.0F, new Dilation(0.0F)), ModelTransform.of(-3.0F, 4.0F, -6.0F, 0.3491F, 0.2618F, 0.0F));
-
 		ModelPartData cube_r20 = head.addChild("cube_r20", ModelPartBuilder.create().uv(0, 0).cuboid(-3.0F, -4.0F, -1.0F, 4.0F, 4.0F, 9.0F, new Dilation(0.0F)), ModelTransform.of(1.0F, 5.0F, -5.0F, 0.3491F, 0.0F, 0.0F));
-
 		ModelPartData eye = head.addChild("eye", ModelPartBuilder.create(), ModelTransform.pivot(-7.0F, 22.0F, 21.0F));
-
 		ModelPartData cube_r21 = eye.addChild("cube_r21", ModelPartBuilder.create().uv(56, 48).cuboid(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(7.0F, -18.0F, -27.0F, 0.3491F, 0.0F, 0.0F));
-
 		ModelPartData hip = walker.addChild("hip", ModelPartBuilder.create(), ModelTransform.pivot(1.0F, -23.0F, 0.0F));
-
 		ModelPartData cube_r22 = hip.addChild("cube_r22", ModelPartBuilder.create().uv(46, 0).cuboid(-5.0F, -2.0F, -1.0F, 6.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 2.0F, 1.0F, -0.2618F, 0.0F, -0.2618F));
-
 		ModelPartData cube_r23 = hip.addChild("cube_r23", ModelPartBuilder.create().uv(40, 44).cuboid(-5.0F, -2.0F, -1.0F, 6.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(3.0F, 3.0F, 1.0F, -0.2618F, 0.0F, 0.2618F));
-
 		ModelPartData cube_r24 = hip.addChild("cube_r24", ModelPartBuilder.create().uv(56, 44).cuboid(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 1.0F, 2.0F, -0.2618F, 0.0F, 0.0F));
-
 		ModelPartData cube_r25 = hip.addChild("cube_r25", ModelPartBuilder.create().uv(32, 20).cuboid(-9.0F, -2.0F, -1.0F, 10.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(3.0F, 4.0F, 1.0F, -0.2618F, 0.0F, 0.0F));
-
 		ModelPartData rightLeg = hip.addChild("rightLeg", ModelPartBuilder.create(), ModelTransform.pivot(4.0F, 5.0F, 1.0F));
-
 		ModelPartData cube_r26 = rightLeg.addChild("cube_r26", ModelPartBuilder.create().uv(40, 24).cuboid(-1.0F, -11.0F, -1.0F, 2.0F, 11.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 7.0F, -7.0F, -0.7854F, 0.0F, 0.0F));
-
 		ModelPartData rightLowerLeg = rightLeg.addChild("rightLowerLeg", ModelPartBuilder.create(), ModelTransform.pivot(-1.0F, 7.0F, -6.0F));
-
 		ModelPartData cube_r27 = rightLowerLeg.addChild("cube_r27", ModelPartBuilder.create().uv(32, 37).cuboid(-1.0F, -11.0F, -1.0F, 2.0F, 11.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 8.0F, 7.0F, 0.7418F, 0.0F, 0.0F));
-
 		ModelPartData rightFoot = rightLowerLeg.addChild("rightFoot", ModelPartBuilder.create().uv(54, 40).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 8.0F, 7.0F));
-
 		ModelPartData cube_r28 = rightFoot.addChild("cube_r28", ModelPartBuilder.create().uv(56, 22).cuboid(0.0F, -2.0F, 0.0F, 1.0F, 2.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 2.0F, -2.0F, 0.0F, 0.0F, 1.5708F));
-
 		ModelPartData cube_r29 = rightFoot.addChild("cube_r29", ModelPartBuilder.create().uv(0, 0).cuboid(0.0F, 2.5F, -1.0F, 1.0F, -2.5F, 1.0F, new Dilation(0.0F)), ModelTransform.of(1.0F, 2.0F, -2.0F, 0.0F, 0.0F, 1.5708F));
-
 		ModelPartData leftLeg = hip.addChild("leftLeg", ModelPartBuilder.create(), ModelTransform.pivot(-5.0F, 5.0F, 1.0F));
-
 		ModelPartData cube_r30 = leftLeg.addChild("cube_r30", ModelPartBuilder.create().uv(24, 37).cuboid(-1.0F, -11.0F, -1.0F, 2.0F, 11.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 7.0F, -7.0F, -0.7854F, 0.0F, 0.0F));
-
 		ModelPartData leftLowerLeg = leftLeg.addChild("leftLowerLeg", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 7.0F, -6.0F));
-
 		ModelPartData cube_r31 = leftLowerLeg.addChild("cube_r31", ModelPartBuilder.create().uv(32, 24).cuboid(-1.0F, -11.0F, -1.0F, 2.0F, 11.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 8.0F, 7.0F, 0.7418F, 0.0F, 0.0F));
-
 		ModelPartData leftFoot = leftLowerLeg.addChild("leftFoot", ModelPartBuilder.create().uv(56, 27).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 8.0F, 7.0F));
-
 		ModelPartData cube_r32 = leftFoot.addChild("cube_r32", ModelPartBuilder.create().uv(46, 4).cuboid(0.0F, -2.5F, -1.0F, 1.0F, 2.5F, 1.0F, new Dilation(0.0F))
 		.uv(56, 17).cuboid(0.0F, -2.0F, 0.0F, 1.0F, 2.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, 2.0F, -2.0F, 0.0F, 0.0F, 1.5708F));
 		return TexturedModelData.of(modelData, 64, 64);
