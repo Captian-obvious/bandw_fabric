@@ -62,6 +62,7 @@ public class Defiance implements ModInitializer {
         ModPotions.registerPotions();
         ModEffects.registerEffects();
         ModSounds.registerSounds();
+        // gradle builder time
     };
     public static void registerCharterHooks(){
         LOGGER.info("Registering Charter Hooks (contract severing functionality)...");
