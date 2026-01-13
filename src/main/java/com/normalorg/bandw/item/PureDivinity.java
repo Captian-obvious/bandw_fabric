@@ -17,6 +17,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
@@ -56,6 +57,11 @@ public class PureDivinity extends Item {
             };
         };
         super.inventoryTick(stack,world,entity,slot,selected);
+    };
+    @Override
+    public void onItemEntityDestroyed(ItemEntity entity){
+        // soon
+        super.onItemEntityDestroyed(entity);
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
