@@ -47,10 +47,11 @@ public class PureDivinity extends Item {
     public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected){
         if (!world.isClient() && selected){
             if (entity instanceof LivingEntity livingEntity){
+                Vec3d pos=Vec3d.ofBottomCenter(livingEntity.getBlockPos());
                 this.timeSinceLastSoundPlayed+=1;
                 if (this.timeSinceLastSoundPlayed>this.timeBetweenSoundsTicks){
                     this.timeSinceLastSoundPlayed=0;
-                    //play the sound from a list
+                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.PURE_DIVINITY_AMBIENCE,SoundCategory.PLAYERS,1.0F,1.0F);
                 };
             };
         };
