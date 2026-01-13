@@ -166,6 +166,7 @@
     "sound.bandw.light_repulsor_overheat": "Light Repulsor Overheats",
     "sound.bandw.laser_turret_idle": "Laser Turret Idle",
     "sound.bandw.laser_turret_shoot": "Laser Turret Shoots",
+    "sound.bandw.pure_divinity_ambience":"Ominous Ringing",
     "death.attack.casshen_explode": "%1$s was turned to dust",
     "death.attack.casshen_explode.player": "%1$s was turned to dust by %2$s",
     "death.attack.casshen_beam": "%1$s was undone",
