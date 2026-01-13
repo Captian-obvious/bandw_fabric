@@ -43,13 +43,13 @@ public class PureDivinity extends Item {
         super(settings);
     };
     @Override
-    public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected){
-        if (!world.isClient()){
+    public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean isSelected){
+        if (!world.isClient() && isSelected){
             if (entity instanceof LivingEntity livingEntity){
                 // will add soon
             };
         };
-        super.inventoryTick(stack,world,entity,slot,selected);
+        super.inventoryTick(stack,world,entity,slot,isSelected);
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
