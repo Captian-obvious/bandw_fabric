@@ -40,5 +40,14 @@
         "sounds": [
             "bandw:light_repulsor_fire"
         ]
+    },
+    "pure_divinity_ambience":{
+        "subtitle": "sound.bandw.pure_divinity_ambience",
+        "sounds":[
+            "bandw:pure_divinity_ambience.1",
+            "bandw:pure_divinity_ambience.2",
+            "bandw:pure_divinity_ambience.3",
+            "bandw:pure_divinity_ambience.4"
+        ]
     }
 }
