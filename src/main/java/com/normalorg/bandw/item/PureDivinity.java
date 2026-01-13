@@ -62,7 +62,7 @@ public class PureDivinity extends Item {
     public void onItemEntityDestroyed(ItemEntity entity){
         World world=entity.getWorld();
         if (!world.isClient() && world instanceof ServerWorld serverWorld){
-            Vec3d pos=entity.getBlockPos();
+            Vec3d pos=Vec3d.ofBottomCenter(entity.getBlockPos());
             // world effects soon
         };
         super.onItemEntityDestroyed(entity);
