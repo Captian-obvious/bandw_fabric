@@ -15,6 +15,7 @@ public class ModSounds {
     public static final SoundEvent LIGHT_REPULSOR_CHARGE=registerSound("light_repulsor_charge");
     public static final SoundEvent LIGHT_REPULSOR_FIRE=registerSound("light_repulsor_fire");
     public static final SoundEvent LIGHT_REPULSOR_OVERHEAT=registerSound("light_repulsor_overheat");
+    public static final SoundEvent PURE_DIVINITY_AMBIENCE=registerSound("pure_divinity_ambience");
     //public static final SoundEvent REALITY_WARPER_TELEPORT=registerSound("reality_warper_teleport");
     private static SoundEvent registerSound(String id){
         Identifier identifier=Identifier.of(Defiance.MOD_ID,id);
