@@ -38,8 +38,18 @@ import java.util.List;
 
 public class PureDivinity extends Item {
     private ScheduledExecutorService timed_effect_executor;
+    private int timeSinceLastSoundPlayed=0;
     public PureDivinity(Settings settings) {
         super(settings);
+    };
+    @Override
+    public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected){
+        if (!world.isClient()){
+            if (entity instanceof LivingEntity livingEntity){
+                // will add soon
+            };
+        };
+        super.inventoryTick(stack,world,entity,slot,selected);
     };
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type){
