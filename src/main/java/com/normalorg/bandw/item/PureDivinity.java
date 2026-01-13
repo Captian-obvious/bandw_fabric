@@ -51,7 +51,7 @@ public class PureDivinity extends Item {
                 this.timeSinceLastSoundPlayed+=1;
                 if (this.timeSinceLastSoundPlayed>this.timeBetweenSoundsTicks){
                     this.timeSinceLastSoundPlayed=0;
-                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.PURE_DIVINITY_AMBIENCE,SoundCategory.PLAYERS,1.0F,1.0F);
+                    world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),ModSounds.PURE_DIVINITY_AMBIENCE,SoundCategory.AMBIENT,1.0F,1.0F);
                 };
             };
         };
