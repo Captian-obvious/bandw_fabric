@@ -64,6 +64,8 @@ public class PureDivinity extends Item {
         if (!world.isClient() && world instanceof ServerWorld serverWorld){
             Vec3d pos=Vec3d.ofBottomCenter(entity.getBlockPos());
             // world effects soon
+            
+            world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.BLOCK_BEACON_DEACTIVATE,SoundCategory.AMBIENT,1.0F,1.0F);
         };
         super.onItemEntityDestroyed(entity);
     };
