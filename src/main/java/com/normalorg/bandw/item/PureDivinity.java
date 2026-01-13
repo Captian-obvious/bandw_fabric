@@ -39,6 +39,7 @@ import java.util.List;
 public class PureDivinity extends Item {
     private ScheduledExecutorService timed_effect_executor;
     private int timeSinceLastSoundPlayed=0;
+    private int timeBetweenSoundsTicks=10000;
     public PureDivinity(Settings settings) {
         super(settings);
     };
@@ -46,7 +47,11 @@ public class PureDivinity extends Item {
     public void inventoryTick(ItemStack stack,World world,Entity entity,int slot,boolean selected){
         if (!world.isClient() && selected){
             if (entity instanceof LivingEntity livingEntity){
-                // will add soon
+                this.timeSinceLastSoundPlayed+=1;
+                if (this.timeSinceLastSoundPlayed>this.timeBetweenSoundsTicks){
+                    this.timeSinceLastSoundPlayed=0;
+                    //play the sound from a list
+                };
             };
         };
         super.inventoryTick(stack,world,entity,slot,selected);
