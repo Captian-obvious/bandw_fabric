@@ -64,8 +64,8 @@ public class PureDivinity extends Item {
         if (!world.isClient() && world instanceof ServerWorld serverWorld){
             Vec3d pos=Vec3d.ofBottomCenter(entity.getBlockPos());
             // dramtic explosion
-            float power=8.0F;
-            for (int i=0;i<5;i++){
+            float power=5.0F; // starting explosion power
+            for (int i=0;i<6;i++){
                 LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(pos);
                 world.spawnEntity(bolt);
