@@ -64,14 +64,14 @@ public class PureDivinity extends Item {
         if (!world.isClient() && world instanceof ServerWorld serverWorld){
             Vec3d pos=Vec3d.ofBottomCenter(entity.getBlockPos());
             // dramtic explosion
-            float power=5.0F; // starting explosion power
+            float power=15.0F; // starting explosion power
             for (int i=0;i<6;i++){
                 LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(pos);
                 world.spawnEntity(bolt);
-                // world.createExplosion(null,null,null,pos.getX(),pos.getY(),pos.getZ(),power,true,World.ExplosionSourceType.NONE);
-                power+=3.0F;
+                //power+=3.0F;
             };
+            world.createExplosion(entity,null,null,pos.getX(),pos.getY(),pos.getZ(),power,true,World.ExplosionSourceType.NONE);
             power=0.0F;
             world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.BLOCK_BEACON_DEACTIVATE,SoundCategory.AMBIENT,1.0F,1.0F);
         };
