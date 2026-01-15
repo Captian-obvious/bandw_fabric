@@ -71,7 +71,7 @@ public class PureDivinity extends Item {
                 world.spawnEntity(bolt);
                 //power+=3.0F;
             };
-            world.createExplosion(entity,null,null,pos.getX(),pos.getY(),pos.getZ(),power,true,World.ExplosionSourceType.NONE);
+            serverWorld.createExplosion(entity,null,null,pos.getX(),pos.getY(),pos.getZ(),power,true,World.ExplosionSourceType.NONE);
             //power=0.0F;
             world.playSound(null,pos.getX(),pos.getY(),pos.getZ(),SoundEvents.BLOCK_BEACON_DEACTIVATE,SoundCategory.AMBIENT,1.0F,1.0F);
         };
