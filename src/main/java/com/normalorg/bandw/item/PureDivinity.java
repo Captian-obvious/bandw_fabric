@@ -69,7 +69,7 @@ public class PureDivinity extends Item {
                 LightningEntity bolt=new LightningEntity(EntityType.LIGHTNING_BOLT,world);
                 bolt.refreshPositionAfterTeleport(pos);
                 world.spawnEntity(bolt);
-                world.createExplosion(null,null,null,pos.getX(),pos.getY(),pos.getZ(),power,true,World.ExplosionSourceType.BLOCK);
+                world.createExplosion(null,null,null,pos.getX(),pos.getY(),pos.getZ(),power,true,World.ExplosionSourceType.NONE);
                 power+=3.0F;
             };
             power=0.0F;
