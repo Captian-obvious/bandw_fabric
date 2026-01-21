@@ -3,6 +3,7 @@ package com.normalorg.bandw.client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.fabricmc.api.ClientModInitializer;
+import com.normalorg.bandw.client.particle.ModParticlesClient;
 import com.normalorg.bandw.client.render.entity.ModEntityRenderers;
 import com.normalorg.bandw.client.render.entity.model.ModEntityModelLayers;
 import com.normalorg.bandw.client.render.block.entity.ModBlockEntityRenderers;
@@ -24,5 +25,6 @@ public class DefianceClient implements ClientModInitializer {
         ModBlockEntityRenderers.registerBlockEntityRenderers();
         ModEntityModelLayers.registerEntityModelLayers();
         ModEntityRenderers.registerEntityRenderers();
+        ModParticlesClient.registerParticleFactories();
     };
 };
