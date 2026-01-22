@@ -10,3 +10,5 @@ public class ModParticlesClient {
         //ParticleFactoryRegistry.getInstance().register(ModParticles.CUSTOM_PARTICLE, CustomParticle.Factory::new);
     }
 }
+
+//ITS PARTICLE TIME!!
