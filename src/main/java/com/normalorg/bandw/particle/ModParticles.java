@@ -10,11 +10,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModParticles {
-    public static final SimpleParticleType EXAMPLE_PARTICLE = register("example_particle", true);
+    public static final SimpleParticleType DIVINITY_SPARKLE = register("divinity_sparkle", true);
     public static SimpleParticleType register(String name,boolean alwaysShow) {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Defiance.MOD_ID, name), FabricParticleTypes.simple());
     };
     public static void registerParticles() {
-        Defiance.LOGGER.info("Registering Mod Particles for " + Defiance.MOD_ID);
+        Defiance.LOGGER.info("Registering particles for " + Defiance.MOD_ID);
     };
 };
