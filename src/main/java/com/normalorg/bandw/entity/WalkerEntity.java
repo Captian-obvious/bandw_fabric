@@ -15,6 +15,11 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.world.World;
 
 public class WalkerEntity extends PathAwareEntity {
+    public class WalkerAttackGoal extends MeleeAttackGoal {
+        public WalkerAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
+            super(mob, speed, pauseWhenMobIdle);
+        }
+    };
     public WalkerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
     };
@@ -24,11 +29,6 @@ public class WalkerEntity extends PathAwareEntity {
             .add(EntityAttributes.MOVEMENT_SPEED, 0.25d)
             .add(EntityAttributes.ATTACK_DAMAGE, 10.0d);
     };
-    public class WalkerAttackGoal extends MeleeAttackGoal {
-        public WalkerAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
-            super(mob, speed, pauseWhenMobIdle);
-        }
-    }
     @Override
     protected void initGoals() {
         this.goalSelector.add(1, new WalkerAttackGoal(this, 1.0, true)); // Attack targets
