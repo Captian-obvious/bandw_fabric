@@ -22,7 +22,7 @@ public class WalkerEntity extends PathAwareEntity {
         return PathAwareEntity.createMobAttributes()
             .add(EntityAttributes.MAX_HEALTH, 80.0d)
             .add(EntityAttributes.MOVEMENT_SPEED, 0.25d)
-            .add(EntityAttributes.ATTACK_DAMAGE, 6.0d);
+            .add(EntityAttributes.ATTACK_DAMAGE, 10.0d);
     };
     @Override
     protected void initGoals() {
