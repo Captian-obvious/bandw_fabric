@@ -22,9 +22,9 @@ public class DefianceClient implements ClientModInitializer {
         LOGGER.info("Client Initialized (Defiance v"+VERSION+")");
     };
     public static void registerClientModules(){
-        ModBlockEntityRenderers.registerBlockEntityRenderers();
         ModEntityModelLayers.registerEntityModelLayers();
         ModEntityRenderers.registerEntityRenderers();
+        ModBlockEntityRenderers.registerBlockEntityRenderers();
         ModParticlesClient.registerParticleFactories();
     };
 };

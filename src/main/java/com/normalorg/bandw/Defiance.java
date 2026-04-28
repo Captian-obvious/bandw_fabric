@@ -50,10 +50,10 @@ public class Defiance implements ModInitializer {
         ModBlocks.registerCorruptableBlocks();
         ModBlockEntities.registerBlockEntities();
         ModFluids.registerFluids();
-        ModEntities.registerEntities();
         ModEntityAttributes.registerAttributes();
         ModComponents.registerComponents();
         ModDamageSources.registerDamageSources();
+        ModEntities.registerEntities();
         // and so it begins!
         ModDimensions.registerDimensions();
         ModDimensionTypes.registerDimensionTypes();
